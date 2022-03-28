@@ -126,6 +126,14 @@ def config():
         return render_template("login.html")
     return render_template("config.html")
 
+@app.route("/mesinfos")
+def mesinfos():
+    if not session.get("email"):
+       return redirect("/")
+    a = query_db("SELECT * FROM Joueur WHERE email=:email", {"email": session.get("email")})
+    return render_template("mesinfos.html",infos = a[0])
+
+
 @app.route("/disconnect")
 def disconnect():
     session["pseudo"] = None
