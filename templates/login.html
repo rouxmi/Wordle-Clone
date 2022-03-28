@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>site Wordle</title>
+      <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+      <link rel="stylesheet" href="static/css/styles.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+   </head>
+   <body style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;);">
+      <div class="row justify-content-center align-items-center">
+         <div class="col-md-12">
+            <h2 class="text-center text-info" style="border-color: rgb(45,50,55);color: rgb(45,50,55);--bs-info: rgb(45,50,55);--bs-info-rgb: 45,50,55;">Connexion<br></h2>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 site-form">
+            <form id="my-form" action="/" method="post">
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="firstname">First Name</label></div>
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="lastname">Last Name</label></div>
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="phonenumber">Phone Number</label><input class="form-control" type="tel" id="pseudo" name="pseudo" required="" placeholder="Pseudo"></div>
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="email">Email Address</label><input class="form-control" type="password" id="mot-de-passe" name="mdp" required="" placeholder="Mot de passe" minlength="8"></div>
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="messages">Last Name</label></div>
+               <input type="submit" placeholder="se connecter">
+            </form>
+            <div class="container">
+                <p style="width: auto;">Si vous n&#39;avez pas de compte.  <a href="/register">S&#39;incrire</a></p>
+            </div>
+            <div class="container">
+               {{message}}
+            </div>
+         </div>
+      </div>
+      <script src="static/bootstrap/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script src="static/js/script.min.js"></script>
+   </body>
+</html>

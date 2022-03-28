@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>site Wordle</title>
+      <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+      <link rel="stylesheet" href="static/css/styles.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+   </head>
+   <body style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;), var(--bs-gray-700);">
+      <div class="row justify-content-center">
+         <div class="col-md-12">
+            <h2 class="text-center text-info" style="color: rgb(45,50,55);--bs-info: rgb(45,50,55);--bs-info-rgb: 45,50,55;">Inscription</h2>
+         </div>
+         <div class="col-12 col-sm-6 col-md-6 align-self-center site-form">
+            <form id="my-form" action="/register" method="POST">
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="firstname">First Name</label>
+               <input class="border rounded form-control" type="text" id="pseudo" name="pseudo" placeholder="Pseudo" style="opacity: 1;" required="" minlength="3"></div>
+               <input class="form-control" type="text" id="email" name="email" required="" placeholder="Email">
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="lastname">Last Name</label></div>
+               <input class="form-control" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required="" minlength="8">
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="phonenumber">Phone Number</label></div>
+               <input class="form-control" type="password" id="confirmationmdp" name="confirmationmdp" required="" placeholder="Confirmation mot de passe" minlength="8">
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="email">Email Address</label></div>
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="messages">Last Name</label></div>
+               <input type="submit" placeholder="s'inscrire">
+            </form>
+            <div class="container">
+                <p style="width: auto;">Si vous avez déjà un compte.  <a href="/">Se connecter</a></p>
+            </div>
+            <div class="container">
+               {{message}}
+           </div>
+         </div>
+      </div>
+      <script src="static/bootstrap/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script src="static/js/script.min.js"></script>
+   </body>
+</html>
