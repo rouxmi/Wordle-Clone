@@ -37,8 +37,17 @@
               <div class="row">
                  <div class="col-md-8 offset-md-2">
                     <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Mes Informations</h1>
-                    <div class="ratio ratio-16x9" style="opacity: 0.61;"><iframe></iframe></div>
+                    <div class="ratio ratio-16x9" style="opacity: 0.61;"><iframe></iframe>
+                     <ul>
+                        <!--Importation des données personnelles de l'utilisateur-->
+                            <li>Pseudo: {{ infos[0] }}</li><br>
+                            <li>Email: {{ infos[1] }} </li><br>
+                            <li>Mot De Passe: <span id="texte" style="visibility: hidden;"> {{ infos[2] }}</span>
+                                <input class="btn btn-primary btn-lg" class="btn btn-outline-dark" type="button" value="Voir" onclick="OnOff();"></li><br>
+                            <li>Nombre de parties jouées: {{ infos[3] }}</li><br>
+                    </ul></div>
                  </div>
+                 
               </div>
            </div>
         </header>
@@ -52,14 +61,6 @@
                        <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="https://www.nytimes.com/games/wordle/index.html">Wordle</a></li>
                        <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="https://sutom.nocle.fr/">Sutom</a></li>
                     </ul>
-                    <ul>
-                     <!--Importation des données personnelles de l'utilisateur-->
-                         <li>Pseudo: {{ infos[0] }}</li><br>
-                         <li>Email: {{ infos[1] }} </li><br>
-                         <li>Mot De Passe: <span id="texte" style="visibility: hidden;"> {{ infos[2] }}</span>
-                             <input class="btn btn-primary btn-lg" class="btn btn-outline-dark" type="button" value="Voir" onclick="OnOff();"></li><br>
-                         <li>Nombre de parties jouées: {{ infos[3] }}</li><br>
-                 </ul>
          
                  </div>
                  <div class="col-sm-6 col-md-3 item">
