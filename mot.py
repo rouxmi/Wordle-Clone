@@ -3,8 +3,8 @@ import unidecode
 
 def dictionnaire():
 
-    fichier= open("dictionnaire_fr.txt",'r')
-    dictionnaire=open("dictionnaire.txt",'w')
+    fichier= open("Dictionnaires/en_dictionnaire_minuscules.txt",'r')
+    dictionnaire=open("Dictionnaires/en_dictionnaire.txt",'w')
     mots=fichier.readlines()
     for mot in mots:
         a = mot.split(',')
@@ -14,9 +14,8 @@ def dictionnaire():
 
     fichier.close()
     dictionnaire.close()
-
-
-mots= dictionnaire()
+'''
+#mots= dictionnaire()
 
 def existe(mot):
     if mot in mots:
@@ -46,3 +45,6 @@ def compare(essai,mot):
         
 
 #print(compare("ABAISSA",mot))
+
+
+'''
