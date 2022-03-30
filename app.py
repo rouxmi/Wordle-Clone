@@ -133,6 +133,13 @@ def mesinfos():
     a = query_db("SELECT * FROM Joueur WHERE pseudo=:pseudo", {"pseudo": session.get("pseudo")})
     return render_template("mesinfos.html",infos = a[0])
 
+@app.route("/historique")
+def historique():
+    if not session.get("pseudo"):
+        return redirect("/")
+    a= query_db("SELECT * FROM Partie WHERE pseudo=:pseudo", {"pseudo":session.get("pseudo")})
+    return render_template("historique.html", data = a[0])
+
 
 @app.route("/disconnect")
 def disconnect():
