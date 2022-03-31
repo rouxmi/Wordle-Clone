@@ -36,16 +36,35 @@
            <div class="container hero">
               <div class="row">
                  <div class="col-md-8 offset-md-2">
-                    <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Mes Informations</h1>
+                    <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Historique de mes parties</h1>
                     <div class="ratio ratio-16x9" style="opacity: 0.61;"><iframe></iframe>
-                     <ul>
+                     <table style="color:white">
                         <!--Importation des données personnelles de l'utilisateur-->
-                            <li>Pseudo: {{ infos[0] }}</li><br>
-                            <li>Email: {{ infos[1] }} </li><br>
-                            <li>Mot De Passe: <span id="texte" style="visibility: hidden;"> {{ infos[2] }}</span>
-                                <input class="btn btn-primary btn-lg" class="btn btn-outline-dark" type="button" value="Voir" onclick="OnOff();"></li><br>
-                            <li>Nombre de parties jouées: {{ infos[3] }}</li><br>
-                    </ul></div>
+                        <tr>
+                           <td>Date</td>
+                           <td>Type de configuration de jeu</td>
+                           <td>Niveau du jeu</td>
+                           <td>Nombre d'essais utilisés</td>
+                           <td>Mots tentés</td>
+                        </tr>
+                        
+                       {% for k in range(longueur) %}
+                       <tr>
+                           <td>{{ data[k][2] }}</td>
+                           <td>{{ data[k][3] }} </td>
+                           <td>{{nivdujeu[k]}} </td>
+                           <td>{{data[k][6]}}/{{ data[k][5] }} </td>
+                           <td>{{ data[k][7] }} </td>
+                        
+                       
+                        {% endfor %}
+                        
+
+                    
+                
+
+                            
+                     </table></div>
                  </div>
                  
               </div>
