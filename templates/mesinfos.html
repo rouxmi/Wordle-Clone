@@ -38,14 +38,19 @@
                  <div class="col-md-8 offset-md-2">
                     <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Mes Informations</h1>
                     <div class="ratio ratio-16x9" style="opacity: 0.61;"><iframe></iframe>
+                     <div style="color: white;">
                      <ul>
                         <!--Importation des données personnelles de l'utilisateur-->
                             <li>Pseudo: {{ infos[0] }}</li><br>
                             <li>Email: {{ infos[1] }} </li><br>
-                            <li>Mot De Passe: <span id="texte" style="visibility: hidden;"> {{ infos[2] }}</span>
-                                <input class="btn btn-primary btn-lg" class="btn btn-outline-dark" type="button" value="Voir" onclick="OnOff();"></li><br>
-                            <li>Nombre de parties jouées: {{ infos[3] }}</li><br>
-                    </ul></div>
+                            <li>Mot De Passe: <span id="texte" style="visibility: hidden;">{{ infos[2] }}</span>
+                               <input class="btn btn-primary btn-lg" class="btn btn-outline-dark" type="button" value="Voir" onclick="OnOff();">
+                           </li><br>
+                           
+                           <li>Nombre de parties jouées: {{ infos[3] }}</li><br>
+                    </ul>
+                  </div>
+                  </div>
                  </div>
                  
               </div>
@@ -80,6 +85,16 @@
            </div>
         </footer>
         <script src="static/bootstrap/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script src="static/js/script.min.js"></script>
+        <!--script en javascript pour créer un bouton pour afficher le mot de passe-->
+    <script type="text/javascript">
+      function OnOff() {
+      if (document.getElementById("texte").style.visibility== "visible")
+      document.getElementById("texte").style.visibility= "hidden";
+      else
+      document.getElementById("texte").style.visibility= "visible";
+      }
+      </script>
+
      </body>
 
 </html>

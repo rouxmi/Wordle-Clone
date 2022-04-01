@@ -131,6 +131,9 @@ def mesinfos():
     if not session.get("pseudo"):
        return redirect("/")
     a = query_db("SELECT * FROM Joueur WHERE pseudo=:pseudo", {"pseudo": session.get("pseudo")})
+   # b=decrypto(a[0][2])
+    #a[0].append(b)
+    #print(a[0][2])
     return render_template("mesinfos.html",infos = a[0])
 
 @app.route("/historique")
