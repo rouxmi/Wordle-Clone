@@ -156,7 +156,7 @@ def disconnect():
 
 @app.route("/jeu")
 def jeu():
-    return render_template("jeu.html", nbEssais=6, tailleMot=5)
+    return render_template("jeu.html", nbEssais=6, tailleMot=7)
 
 if __name__=='__main__':
      app.run(debug=1)

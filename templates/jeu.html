@@ -39,12 +39,12 @@
             <div class="row">
                <div class="col-md-8 offset-md-2">
                   <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Wordle de Légende</h1>
-                  <div class="ratio ratio-16x9" style="opacity: 0.61;">
+                  <div style="opacity: 0.61;">
                      <div id="board-container">
-                        <div id="board">
+                        <div id="board" style="grid-template-columns: repeat( {{ tailleMot }} , 1fr);">
                            {% for i in range(nbEssais)%}
                               {% for j in range(tailleMot)%}
-                                 <div class="square animate__animated"></div>
+                                 <div class="square animate__animated" id="{{i*nbEssais+j}}"></div>
                               {%endfor%}
                            {%endfor%}
                         </div>
