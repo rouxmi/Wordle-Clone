@@ -158,5 +158,6 @@ def disconnect():
 def jeu():
     return render_template("jeu.html", nbEssais=6, tailleMot=4)
 
+
 if __name__=='__main__':
      app.run(debug=1)
