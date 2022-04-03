@@ -131,7 +131,8 @@ def mesinfos():
     if not session.get("pseudo"):
        return redirect("/")
     a = query_db("SELECT * FROM Joueur WHERE pseudo=:pseudo", {"pseudo": session.get("pseudo")})
-    return render_template("mesinfos.html",infos = a[0])
+    b=decrypto(a[0][2])
+    return render_template("mesinfos.html",infos = a[0], password = b)
 
 @app.route("/historique")
 def historique():
@@ -152,6 +153,11 @@ def historique():
 def disconnect():
     session["pseudo"] = None
     return redirect("/")
+
+@app.route("/jeu")
+def jeu():
+    return render_template("jeu.html", nbEssais=6, tailleMot=4)
+
 
 if __name__=='__main__':
      app.run(debug=1)

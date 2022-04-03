@@ -8,6 +8,9 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
       <link rel="stylesheet" href="static/css/styles.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/grille.css') }}">
+      <script src="static/js/grille.js"></script>
    </head>
    <body style="background: url(&quot;static/img/motus-modified.jpg&quot;);">
       <header class="header-dark" style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;) round, var(--bs-gray);">
@@ -36,10 +39,21 @@
             <div class="row">
                <div class="col-md-8 offset-md-2">
                   <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Wordle de Légende</h1>
-                  <div class="ratio ratio-16x9" style="opacity: 0.61;"><iframe></iframe></div>
+                  <div style="opacity: 0.61;">
+                     <div id="board-container">
+                        <div id="board" style="grid-template-columns: repeat( {{ tailleMot }} , 1fr);">
+                           {% for i in range(nbEssais)%}
+                              {% for j in range(tailleMot)%}
+                                 <div class="square animate__animated" id="{{i*nbEssais+j}}"></div>
+                              {%endfor%}
+                           {%endfor%}
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
+         
       </header>
       <footer class="footer-dark" style="background: linear-gradient(0deg, rgb(60,65,70) 50%, rgb(110,115,120) 100%);">
          <div class="container">
