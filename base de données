@@ -1,0 +1,6 @@
+Base de données:
+
+CREATE TABLE Partie (id_partie INT NOT NULL,pseudo VARCHAR NOT NULL, date DATE NOT NULL, type_de_jeu VARCHAR, niveau_difficulte INT NOT NULL, nombre_e_max INT NOT NULL, nombre_m_tentes INT, m_tentes VARCHAR, PRIMARY KEY (id_partie,pseudo));
+CREATE TABLE Joueur (pseudo VARCHAR PRIMARY KEY NOT NULL, email VARCHAR NOT NULL, mdp VARCHAR NOT NULL, nombre_parties INT DEFAULT 0);
+CREATE TABLE Mot_du_Jour (date_de_la_partie DATE PRIMARY KEY NOT NULL, mot VARCHAR NOT NULL) ;
+
