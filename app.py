@@ -115,15 +115,8 @@ def checkRegister(pseudo):
             return (False, "Pseudo deja utilisé")
     return (True, "")
 
-@app.route("/config", methods=["GET", "POST"])
+@app.route("/config")
 def config():
-    if request.method == "POST":
-        #On récupère tout ce qui a été rempli dans le form
-        nbEssais = request.form.get("nbEssais")
-        nbLettres = request.form.get("nbLettres")
-    #Ici on teste si le joueur est identifié ou pas
-    if not session.get("pseudo"):
-        return render_template("login.html")
     return render_template("config.html")
 
 @app.route("/mesinfos")
@@ -154,9 +147,18 @@ def disconnect():
     session["pseudo"] = None
     return redirect("/")
 
-@app.route("/jeu")
+@app.route("/jeu", methods=["GET", "POST"])
 def jeu():
-    return render_template("jeu.html", nbEssais=6, tailleMot=4)
+    #Ici on teste si le joueur est identifié ou pas
+    if not session.get("pseudo"):
+        return render_template("login.html")
+    if request.method == "POST":
+        #On récupère tout ce qui a été rempli dans le form
+        libre = bool(request.form.get("libre"))
+        nbEssais = int(request.form.get("nbEssais"))
+        nbLettres = int(request.form.get("tailleMot"))
+        print(libre,nbEssais,nbLettres)
+    return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres)
 
 
 if __name__=='__main__':
