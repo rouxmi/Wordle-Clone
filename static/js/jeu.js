@@ -1,38 +1,42 @@
-  let motstentes = [[]];
-  let placedispo = 1;
+document.addEventListener("DOMContentLoaded", () => {
+  motCourant();
+  let motsTentes = [[]];
+  let placeDispo = 1;
 
   let guessedWordCount = 0;
 
   const touches = document.querySelectorAll(".keyboard-row button");
 
-  function motcourant() {
-    const nbrmotstentes = motstentes.length;
-    return motstentes[nbrmotstentes - 1];
+  function motCourant() {
+    const nbrMotsTentes = motsTentes.length;
+    return motsTentes[nbrMotsTentes - 1];
   }
 
-  function majmotstentes(letter) {
-    const currentWordArr = motcourant();
+  function majMotsTentes(lettre) {
+    const currentWordArr = motCourant();
 
     if (currentWordArr && currentWordArr.length < 5) {
-      currentWordArr.push(letter);
+      currentWordArr.push(lettre);
 
-      const placedispo1 = document.getElementById(String(placedispo));
+      const placeDispo1 = document.getElementById(String(placeDispo));
 
-      placedispo= placedispo + 1;
-      placedispo1.textContent = letter;
+      placeDispo= placeDispo + 1;
+      placeDispo1.textContent = lettre;
     }
   }
 
+});
+
   function lettresupprime() {
-    const currentWordArr = motcourant();
-    //const removedLetter = currentWordArr.pop();
+    const currentWordArr = motCourant();
+    //const removedlettre = currentWordArr.pop();
 
-    motstentes[motstentes.length - 1] = currentWordArr;
+    motsTentes[motsTentes.length - 1] = currentWordArr;
 
-    const lastLetterEl = document.getElementById(String(placedispo - 1));
+    const derLettre1 = document.getElementById(String(placeDispo - 1));
 
-    lastLetterEl.textContent = "";
-    placedispo = placedispo - 1;
+    derLettre1.textContent = "";
+    placeDispo = placeDispo - 1;
   }
 
   for (let i = 0; i < touches.length; i++) {
@@ -49,6 +53,6 @@
         return;
       }
 
-      majmotstentes(lettre);
+      majMotsTentes(lettre);
     };
 }
