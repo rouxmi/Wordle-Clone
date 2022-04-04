@@ -47,18 +47,27 @@ def first():
 
 @app.route('/checkmdp')  
 def checkmdp():
-    session['pseudo']='equipe'
     pseudo = request.args.get('pseudo')
     mdp = request.args.get('mdp')
     response=checkLogin(pseudo,mdp)[0]
+    if response:
+        session['pseudo']=pseudo
     message = {'validation':str(response)}
     return jsonify(message)
 
-@app.route('/connect', methods=["POST"])  
-def connect():
-    if request.method=="POST":
-        pseudo = request.form.get("pseudo")
+@app.route('/checkinscription')
+def checkinscription():
+    pseudo = request.args.get('pseudo')
+    mdp = request.args.get('mdp')
+    mail = request.args.get('mail')
+    response=checkRegister(pseudo)[0]
+    if response:
+        query ="INSERT INTO Joueur(pseudo, email, mdp, nombre_parties) VALUES (?,?,?,?)"
+        query_db(query, (pseudo, mail, mdp,0))
         session["pseudo"] = pseudo
+    message = {'validation':str(response)}
+    return jsonify(message)
+
 
 def checkLogin(pseudo, mdp):
     """
@@ -74,29 +83,8 @@ def checkLogin(pseudo, mdp):
             return (True, "")
     return (False, "Mauvais mot de passe ou pseudo")
 
-@app.route("/register", methods=["GET", "POST"])
+@app.route("/register", methods=["GET"])
 def register():
-    #la methode est POST lorsque le joueur à appuyer sur le bouton 'S'inscrire'
-    if request.method == "POST":
-        #On récupère tout ce qui a été rempli dans le form
-        email = request.form.get("email")
-        mdp = request.form.get("mdp")
-        mdpconfirm = request.form.get("confirmationmdp")
-        pseudo = request.form.get("pseudo")
-        if mdp != mdpconfirm:
-            return render_template("inscription.html", message="La confirmation du mot de passe ne correspond pas au mot de passe")
-        #On crypte le mot de passe
-        mdp = crypto(mdp)
-        #On verifie qu'aucune case du form était vide, si c'est le cas, on renvoie l'utilisateur sur le form avec un message d'erreur
-        if not email or not mdp or not pseudo:
-            return render_template("inscription.html", message="Il faut remplir toutes les cases")
-        #On appelle check register pour savoir si le pseudo n'est pas deja dans la base de données
-        if checkRegister(pseudo)[0]:
-            #Si toute les conditions sont remplies, on inscrit l'utilisateur à l'application et on le connecte
-            query ="INSERT INTO Joueur(pseudo, email, mdp, nombre_parties) VALUES (?,?,?,?)"
-            query_db(query, (pseudo, email, mdp,0))
-            session["pseudo"] = pseudo
-            return redirect("/config")
     #on renvoie la template register lorsque l'utilisateur arrive pour la première fois sur la page register (ici on est en methode GET)
     return render_template("inscription.html")
 
