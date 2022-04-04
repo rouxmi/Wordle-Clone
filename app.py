@@ -14,6 +14,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 
+
 #Flask et SQLite
 #Les fonctions get_db(), close_connection() et query_db() ont été récuperées sur https://flask.palletsprojects.com/en/2.0.x/patterns/sqlite3/
 
@@ -46,6 +47,7 @@ def first():
 
 @app.route('/checkmdp')  
 def checkmdp():
+    session['pseudo']='equipe'
     pseudo = request.args.get('pseudo')
     mdp = request.args.get('mdp')
     response=checkLogin(pseudo,mdp)[0]
