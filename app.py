@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, g, session
+from flask import Flask, render_template, request, redirect, g, session, jsonify
 from flask_session import Session
 import sqlite3
 import datetime
@@ -41,27 +41,22 @@ def query_db(query, args=(), one=False):
 
 @app.route("/", methods=["GET", "POST"])
 def first():
-    #Ici on teste si le joueur est identifié ou pas, si il ne l'est pas on renvoie la template first et si il l'est on renvoie la template main
-    if request.method == "POST":
-        #On récupère le pseudo et le mot de passe qui ont été écrit dans le form
-        pseudo = request.form.get("pseudo")
-        mdp = request.form.get("mdp")
+   #on renvoie la template login lorsque l'utilisateur arrive pour la première fois sur la page login (ici on est en methode GET)
+   return render_template("login.html")
 
-        #si une des deux cases est vide, on renvoie la template login avec un message
-        if not pseudo or not mdp:
-            return render_template("login.html", message="Il faut remplir toutes les cases")
-        #On verifie que toute les conditions sont remplies pour se connecter
-        verif = checkLogin(pseudo, mdp)
-        
-        #si les conditions sont remplies, on créé une session en associant l'email à une session flask
-        if verif[0]:
-            session["pseudo"] = pseudo
-            return redirect("/config")
-        #sinon on renvoie la template login avec un message
-        else:
-            return render_template("login.html", message=verif[1])
-    #on renvoie la template login lorsque l'utilisateur arrive pour la première fois sur la page login (ici on est en methode GET)
-    return render_template("login.html")
+@app.route('/checkmdp')  
+def checkmdp():
+    pseudo = request.args.get('pseudo')
+    mdp = request.args.get('mdp')
+    response=checkLogin(pseudo,mdp)[0]
+    message = {'validation':str(response)}
+    return jsonify(message)
+
+@app.route('/connect', methods=["POST"])  
+def connect():
+    if request.method=="POST":
+        pseudo = request.form.get("pseudo")
+        session["pseudo"] = pseudo
 
 def checkLogin(pseudo, mdp):
     """

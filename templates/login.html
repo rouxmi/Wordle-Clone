@@ -15,19 +15,54 @@
             <h2 class="text-center text-info" style="border-color: rgb(45,50,55);color: rgb(45,50,55);--bs-info: rgb(45,50,55);--bs-info-rgb: 45,50,55;">Connexion<br></h2>
          </div>
          <div class="col-12 col-sm-6 col-md-6 site-form">
-            <form id="my-form" action="/" method="post">
+            <form id="my-form" name="login" action="/" method="post">
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="firstname">First Name</label></div>
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="lastname">Last Name</label></div>
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="phonenumber">Phone Number</label><input class="form-control" type="tel" id="pseudo" name="pseudo" required="" placeholder="Pseudo"></div>
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="email">Email Address</label><input class="form-control" type="password" id="mot-de-passe" name="mdp" required="" placeholder="Mot de passe" minlength="8"></div>
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="messages">Last Name</label></div>
-               <input type="submit" placeholder="se connecter">
+               <input onclick="Login()" type="button" value="Se connecter" name="button"  >
+               <script>function Login(){
+                  var pseudo=document.login.pseudo.value;
+                  var password=document.login.mdp.value;
+                  var reponse=fetch('/checkmdp?pseudo='+pseudo+"&mdp="+password)
+                     .then(function (response) {
+                        return response.json();
+                     }).then(function (text) {
+                        vali=text.validation;
+                        return vali
+                     });
+                  const printreponse = async () => {
+                     const a = await reponse;
+                     if (a=="True") {
+                        let xhr = new XMLHttpRequest();
+                              xhr.open("POST", "/connect");
+
+                              xhr.setRequestHeader("Accept", "application/json");
+                              xhr.setRequestHeader("Content-Type", "application/json");
+
+                              let data = `{
+                              "Pseudo": `+pseudo+`,
+                              }`;
+
+                              xhr.send(data);
+                              window.location.replace("/config")
+                     } else {if (pseudo.length<3){
+                              alert("Votre mot de passe fait au moins 3 caractères")
+                     }else{if (password.length<8){
+                              alert("Votre mot de passe fait au moins 8 caractères")
+                     } else{ 
+                           alert("Mauvais mot de passe"); 
+                               };
+                           };
+                        };
+                     };
+                  printreponse();
+               };
+               </script>
             </form>
             <div class="container">
                 <p style="width: auto;">Si vous n&#39;avez pas de compte.  <a href="/register">S&#39;incrire</a></p>
-            </div>
-            <div class="container">
-               {{message}}
             </div>
          </div>
       </div>
