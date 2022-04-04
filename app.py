@@ -47,10 +47,11 @@ def first():
 
 @app.route('/checkmdp')  
 def checkmdp():
-    session['pseudo']='equipe'
     pseudo = request.args.get('pseudo')
     mdp = request.args.get('mdp')
     response=checkLogin(pseudo,mdp)[0]
+    if response:
+        session['pseudo']=pseudo
     message = {'validation':str(response)}
     return jsonify(message)
 
