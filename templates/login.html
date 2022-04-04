@@ -35,20 +35,9 @@
                   const printreponse = async () => {
                      const a = await reponse;
                      if (a=="True") {
-                        let xhr = new XMLHttpRequest();
-                              xhr.open("POST", "/connect");
-
-                              xhr.setRequestHeader("Accept", "application/json");
-                              xhr.setRequestHeader("Content-Type", "application/json");
-
-                              let data = `{
-                              "Pseudo": `+pseudo+`,
-                              }`;
-
-                              xhr.send(data);
                               window.location.replace("/config")
                      } else {if (pseudo.length<3){
-                              alert("Votre mot de passe fait au moins 3 caractères")
+                              alert("Votre pseudo fait au moins 3 caractères")
                      }else{if (password.length<8){
                               alert("Votre mot de passe fait au moins 8 caractères")
                      } else{ 
