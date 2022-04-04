@@ -4,7 +4,7 @@
 
 .question1{
     position: absolute;
-    top: 45%;
+    top: 40%;
     left: 28%;
     width:400px;
     height: 20px;
@@ -14,7 +14,7 @@
 
 .question2{
     position: absolute;
-    top:80.2%;
+    top:75.2%;
     left:28%;
     width:400px;
     height: 20px;
@@ -42,7 +42,7 @@
   display: block;
   text-align: center;
   right:27.75%;
-  font-size: 6em;
+  font-size: 5em;
   color: rgb(210,210,210);
   font-weight: 400;
   opacity: 1;
@@ -52,7 +52,7 @@
     display: block;
     text-align: center;
     right:27.75%;
-    font-size: 6em;
+    font-size: 5em;
     color: rgb(210,210,210);
     font-weight: 400;
     opacity: 1;
@@ -146,12 +146,15 @@
   .on
   {
     display: none;
+    font-size: 18px;
+
   }
 
   .off
   {
-    left:74%;
-    width: 90px;
+    left:73%;
+    width: 120px;
+    font-size: 18px;
   }
   
   .on, .off
@@ -160,13 +163,12 @@
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
-    font-size: 14px;
     font-family: Verdana, sans-serif;
   }
   
   input:checked+ .slider .on
   {display: block; 
-   left:26%}   
+   left:28%}   
   
   input:checked + .slider .off
   {display: none;}
