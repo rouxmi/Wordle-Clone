@@ -10,8 +10,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
       <link rel="stylesheet" href="{{ url_for('static', filename='css/grille.css') }}">
-      <script src="static/js/grille.js"></script>
-      <script src="static/js/jeu3.js"></script>
+      <script src="static/js/jeu2.js"></script>
    </head>
    <body style="background: url(&quot;static/img/motus-modified.jpg&quot;);">
       <header class="header-dark" style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;) round, var(--bs-gray);">
@@ -43,9 +42,10 @@
                   <div style="opacity: 0.61;">
                      <div id="board-container">
                         <div id="board" style="grid-template-columns: repeat( {{ tailleMot }} , 1fr);">
+                           <script>let size={{tailleMot}}</script>
                            {% for i in range(nbEssais)%}
                               {% for j in range(tailleMot)%}
-                                 <div class="square animate__animated" id="{{i*nbEssais+j+1}}"></div>
+                                 <div class="square animate__animated" id="{{i*tailleMot+j}}"></div>
                               {%endfor%}
                            {%endfor%}
 
@@ -78,7 +78,7 @@
                            <button data-key="m">m</button>
                         </div>
                         <div class="keyboard-row">
-                           <button data-key="entre" class="wide-button">Entrée</button>
+                           <button data-key="entree" class="wide-button">Entrée</button>
                            <button data-key="w">w</button>
                            <button data-key="x">x</button>
                            <button data-key="c">c</button>

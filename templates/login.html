@@ -16,11 +16,11 @@
          </div>
          <div class="col-12 col-sm-6 col-md-6 site-form">
             <form id="my-form" name="login" action="/" method="post">
-               <div class="form-group mb-3"><label class="form-label visually-hidden" for="firstname">First Name</label></div>
-               <div class="form-group mb-3"><label class="form-label visually-hidden" for="lastname">Last Name</label></div>
-               <div class="form-group mb-3"><label class="form-label visually-hidden" for="phonenumber">Phone Number</label><input class="form-control" type="tel" id="pseudo" name="pseudo" required="" placeholder="Pseudo"></div>
-               <div class="form-group mb-3"><label class="form-label visually-hidden" for="email">Email Address</label><input class="form-control" type="password" id="mot-de-passe" name="mdp" required="" placeholder="Mot de passe" minlength="8"></div>
-               <div class="form-group mb-3"><label class="form-label visually-hidden" for="messages">Last Name</label></div>
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="Pseudo">Pseudo</label></div>
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="Spacing1">Spacing1</label></div>
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="Spacing2">Spacing2</label><input class="form-control" type="couleur" id="pseudo" name="pseudo" required="" placeholder="Pseudo"></div>
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="Mot de passe">Mot de passe</label><input class="form-control" type="password" id="mot-de-passe" name="mdp" required="" placeholder="Mot de passe" minlength="8"></div>
+               <div class="form-group mb-3"><label class="form-label visually-hidden" for="Submit">Submit</label></div>
                <input onclick="Login()" type="button" value="Se connecter" name="button"  >
                <script>function Login(){
                   var pseudo=document.login.pseudo.value;
@@ -30,25 +30,14 @@
                         return response.json();
                      }).then(function (text) {
                         vali=text.validation;
-                        return vali
+                        return vali;
                      });
                   const printreponse = async () => {
                      const a = await reponse;
                      if (a=="True") {
-                        let xhr = new XMLHttpRequest();
-                              xhr.open("POST", "/connect");
-
-                              xhr.setRequestHeader("Accept", "application/json");
-                              xhr.setRequestHeader("Content-Type", "application/json");
-
-                              let data = `{
-                              "Pseudo": `+pseudo+`,
-                              }`;
-
-                              xhr.send(data);
                               window.location.replace("/config")
                      } else {if (pseudo.length<3){
-                              alert("Votre mot de passe fait au moins 3 caractères")
+                              alert("Votre pseudo fait au moins 3 caractères")
                      }else{if (password.length<8){
                               alert("Votre mot de passe fait au moins 8 caractères")
                      } else{ 
