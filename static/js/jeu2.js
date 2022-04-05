@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         case "x":
         case "y":
         case "z":
-          majTableau(event.key,size);
+          majTableau(event.key.toUpperCase(),size);
           break;
         default:
           return; // Quitter lorsque cela ne gère pas l'événement touche.
