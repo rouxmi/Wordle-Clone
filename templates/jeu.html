@@ -42,7 +42,9 @@
                   <div style="opacity: 0.61;">
                      <div id="board-container">
                         <div id="board" style="grid-template-columns: repeat( {{ tailleMot }} , 1fr);">
-                           <script>let size={{tailleMot}}</script>
+                           <script>let size={{tailleMot}};
+                           let nbrEssais = {{nbEssais}};
+                           </script>
                            {% for i in range(nbEssais)%}
                               {% for j in range(tailleMot)%}
                                  <div class="square animate__animated" id="{{i*tailleMot+j}}"></div>
@@ -53,38 +55,37 @@
                      </div>
                      <div id="keyboard-container">
                         <div class="keyboard-row">
-                           <button data-key="a">a</button>
-                           <button data-key="z">z</button>
-                           <button data-key="e">e</button>
-                           <button data-key="r">r</button>
-                           <button data-key="t">t</button>
-                           <button data-key="y">y</button>
-                           <button data-key="u">u</button>
-                           <button data-key="i">i</button>
-                           <button data-key="o">o</button>
-                           <button data-key="p">p</button>
+                           <button data-key="A">a</button>
+                           <button data-key="Z">z</button>
+                           <button data-key="E">e</button>
+                           <button data-key="R">r</button>
+                           <button data-key="T">t</button>
+                           <button data-key="Y">y</button>
+                           <button data-key="U">u</button>
+                           <button data-key="I">i</button>
+                           <button data-key="O">o</button>
+                           <button data-key="P">p</button>
                         </div>
                         <div class="keyboard-row">
-                           <div class="spacer-half"></div>
-                           <button data-key="q">q</button>
-                           <button data-key="s">s</button>
-                           <button data-key="d">d</button>
-                           <button data-key="f">f</button>
-                           <button data-key="g">g</button>
-                           <button data-key="h">h</button>
-                           <button data-key="j">j</button>
-                           <button data-key="k">k</button>
-                           <button data-key="l">l</button>
-                           <button data-key="m">m</button>
+                           <button data-key="Q">q</button>
+                           <button data-key="S">s</button>
+                           <button data-key="D">d</button>
+                           <button data-key="F">f</button>
+                           <button data-key="G">g</button>
+                           <button data-key="H">h</button>
+                           <button data-key="J">j</button>
+                           <button data-key="K">k</button>
+                           <button data-key="L">l</button>
+                           <button data-key="M">m</button>
                         </div>
                         <div class="keyboard-row">
                            <button data-key="entree" class="wide-button">Entrée</button>
-                           <button data-key="w">w</button>
-                           <button data-key="x">x</button>
-                           <button data-key="c">c</button>
-                           <button data-key="v">v</button>
-                           <button data-key="b">b</button>
-                           <button data-key="n">n</button>
+                           <button data-key="W">w</button>
+                           <button data-key="X">x</button>
+                           <button data-key="C">c</button>
+                           <button data-key="V">v</button>
+                           <button data-key="B">b</button>
+                           <button data-key="N">n</button>
                            <button data-key="supprimer" class="wide-button">Supprimer</button>
                         </div>
             

@@ -56,14 +56,15 @@ header {
  }
 
 .square {
-  border: 2px solid rgb(130, 35, 30);
+  border: 3px groove #07cc98;
+  background-color: white;
   min-width: 60px;
   min-height: 60px;
   font-size: 50px;
   font-weight: bold;
   color: rgb(3, 1, 1);
   text-transform: uppercase;
-
+  font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,8 +100,4 @@ header {
 
 .keyboard-row button.wide-button {
   flex-grow: 1.5;
-}
-
-.spacer-half {
-  flex-grow: 0.5;
 }
