@@ -1,34 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     let motADevine='LUCIE';
+    
+    //index correspond à la case qui va être rempli
     let index=0;
+
+    //touches correspond à l'enssemble des boutons dans le clavier
     const touches = document.querySelectorAll(".keyboard-row button");
-   
+  
+    //dans motsTentés on stoques tous les mots éssayés
     let motsTentees=[[]]
 
+    /*getMotActuel
+     * @return : un tableau de lettres correspondant au mot actuel en train d'être écrit dans la grille
+     */
     function getMotActuel(){
       return motsTentees[motsTentees.length-1];
     }
 
-    function majTableau(letter, size){
+    /*getMotActuel
+     * @param : lettre, la lettre qui vient d'être soumise
+     * @param : size la taille du mot à deviner
+     * la fonction ajoute au tableau des mots la lettre soumise et réalise l'affichage dans la grille
+     */
+    function majTableau(lettre, size){
       const motActuel= getMotActuel();
       if(motActuel && motActuel.length<size){
-        motActuel.push(letter);
+        motActuel.push(lettre);
         const placeCourante=document.getElementById(String(index));
         index=index+1;
-        placeCourante.textContent=letter;
+        placeCourante.textContent=lettre;
       }
     }
 
+    /*gestionEntree
+     * la fonction gère l'appuie sur la touche ENTREE
+     */
     function gestionEntree(){
       const motActuel=getMotActuel();
+
+      //si le joueur n'a pas rempli toutes les cases de la ligne on affiche un message d'erreur
       if(motActuel.length<size){
         window.alert("Ton mot est trop petit");
       }
+      //si le mot de la ligne correspond au mot à deviner, le joueur à gagné
       else{mot=motActuel.join("");
       if(mot==motADevine){
         window.alert("BRAVO");
       }
       else{
+        //sinon si le nombre d'essais possibles n'est pas atteint
         if(motsTentees.length<nbrEssais){
           motsTentees.push([]);
         }
@@ -39,6 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     }
 
+    /*gestionSupprime
+     * la fonction gère l'appuie sur la touche DEL
+     */
     function gestionSupprime(){
       const motActuel=getMotActuel();
       if(motActuel.length>0){
@@ -48,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         placeCourante.textContent="";
       }
     }
+    //cette partie correspond à l'écoute de l'entrée standard
     window.addEventListener("keydown", function (event) {
       if (event.defaultPrevented) {
         return; // Ne devrait rien faire si l'événement de la touche était déjà consommé.
@@ -94,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Annuler l'action par défaut pour éviter qu'elle ne soit traitée deux fois.
       event.preventDefault();
     }, true);
-
+    
     for (let i = 0; i < touches.length; i++) {
         touches[i].onclick = ({ target }) => {
           const lettre = target.getAttribute("data-key");
