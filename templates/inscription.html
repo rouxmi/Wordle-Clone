@@ -18,9 +18,9 @@
             <form id="my-form" name="inscription" action="/register" method="POST">
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="pseudo">Pseudo</label>
                <input class="border rounded form-control" type="couleur" id="pseudo" name="pseudo" placeholder="Pseudo" style="opacity: 1;" required="" minlength="3"></div>
-               <input class="form-control" type="couleur" id="email" name="email" required="" placeholder="Email (8 caractères minimum)">
+               <input class="form-control" type="couleur" id="email" name="email" required="" placeholder="Email">
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="mail">Mail</label></div>
-               <input class="form-control" type="password" id="mdp" name="mdp" placeholder="Mot de passe" required="" minlength="8">
+               <input class="form-control" type="password" id="mdp" name="mdp" placeholder="Mot de passe  (8 caractères minimum)" required="" minlength="8">
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="mdp">Mot de passe</label></div>
                <input class="form-control" type="password" id="confirmationmdp" name="confirmationmdp" required="" placeholder="Confirmation mot de passe" minlength="8">
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="confirmation">Confirmation</label></div>
@@ -30,7 +30,7 @@
                   var pseudo=document.inscription.pseudo.value;
                   var password=document.inscription.mdp.value;
                   var confpassword=document.inscription.confirmationmdp.value;
-                  var mail=document.inscription.mdp.value;
+                  var mail=document.inscription.email.value;
                   var reponse=fetch('/checkinscription?pseudo='+pseudo+"&mdp="+password+"&mail="+mail)
                      .then(function (response) {
                         return response.json();

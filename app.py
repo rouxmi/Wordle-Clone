@@ -49,7 +49,9 @@ def first():
 def checkmdp():
     pseudo = request.args.get('pseudo')
     mdp = request.args.get('mdp')
+    print(mdp,pseudo)
     response=checkLogin(pseudo,mdp)[0]
+    print(response)
     if response:
         session['pseudo']=pseudo
     message = {'validation':str(response)}
@@ -58,12 +60,12 @@ def checkmdp():
 @app.route('/checkinscription')
 def checkinscription():
     pseudo = request.args.get('pseudo')
-    mdp = request.args.get('mdp')
     mail = request.args.get('mail')
+    mdp = request.args.get('mdp')
     response=checkRegister(pseudo)[0]
     if response:
         query ="INSERT INTO Joueur(pseudo, email, mdp, nombre_parties) VALUES (?,?,?,?)"
-        query_db(query, (pseudo, mail, mdp,0))
+        query_db(query, (pseudo, mail, crypto(mdp),0))
         session["pseudo"] = pseudo
     message = {'validation':str(response)}
     return jsonify(message)
