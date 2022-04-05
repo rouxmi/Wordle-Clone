@@ -121,7 +121,7 @@ def historique():
     niv=[]
     longueur=len(a)
     for k in range (longueur):
-        numniv=a[k][4]
+        numniv=a[k][5]
         n=niveau[numniv-1]
         niv.append(n)
     return render_template("historique.html", data = a, nivdujeu=niv,longueur=longueur)

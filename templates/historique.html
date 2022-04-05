@@ -43,6 +43,7 @@
                         <tr>
                            <td>Date</td>
                            <td>Type de configuration de jeu</td>
+                           <td>Langue</td>
                            <td>Niveau du jeu</td>
                            <td>Nombre d'essais utilisés</td>
                            <td>Mots tentés</td>
@@ -52,9 +53,10 @@
                        <tr>
                            <td>{{ data[k][2] }}</td>
                            <td>{{ data[k][3] }} </td>
+                           <td>{{ data[k][4] }} </td>
                            <td>{{nivdujeu[k]}} </td>
-                           <td>{{data[k][6]}}/{{ data[k][5] }} </td>
-                           <td>{{ data[k][7] }} </td>
+                           <td>{{data[k][7]}}/{{ data[k][6] }} </td>
+                           <td>{{ data[k][8] }} </td>
                         
                        
                         {% endfor %}
