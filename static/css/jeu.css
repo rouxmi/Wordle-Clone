@@ -56,7 +56,7 @@ header {
  }
 
 .square {
-  border: 3px groove #07cc98;
+  border: 4px groove #07cc98;
   background-color: white;
   min-width: 60px;
   min-height: 60px;
@@ -89,7 +89,7 @@ header {
   padding: 0;
   height: 58px;
   cursor: pointer;
-  background-color: rgb(60, 65, 68);
+  background-color: rgb(68, 69, 70);
   color: rgb(17, 17, 17);
   flex-grow: 1;
   text-transform: uppercase;
