@@ -49,9 +49,7 @@ def first():
 def checkmdp():
     pseudo = request.args.get('pseudo')
     mdp = request.args.get('mdp')
-    print(mdp,pseudo)
     response=checkLogin(pseudo,mdp)[0]
-    print(response)
     if response:
         session['pseudo']=pseudo
     message = {'validation':str(response)}

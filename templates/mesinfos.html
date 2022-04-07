@@ -9,7 +9,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
         <link rel="stylesheet" href="static/css/styles.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <script src="static/js/visible.js"></script>
+        <link rel="stylesheet" href="/static/css/style.mesinfos.css">
      </head>
      <body style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;);">
         <header class="header-dark" style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;) round, var(--bs-gray);">
@@ -36,24 +39,18 @@
            </nav>
            <div class="container hero">
               <div class="row">
-                 <div class="col-md-8 offset-md-2">
-                    <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Mes Informations</h1>
-                    <div class="ratio ratio-16x9" style="opacity: 0.61;"><iframe></iframe>
-                     <div style="color: white;">
-                     <ul>
-                        <!--Importation des données personnelles de l'utilisateur-->
-                            <li>Pseudo: {{ infos[0] }}</li><br>
-                            <li>Email: {{ infos[1] }} </li><br>
-                            <li>Mot De Passe: <span id="texte" style="visibility: hidden;">{{ password }}</span>
-                               <input class="btn btn-primary btn-lg" class="btn btn-outline-dark" type="button" value="Voir" onclick="OnOff();">
-                           </li><br>
-                           
-                           <li>Nombre de parties jouées: {{ infos[3] }}</li><br>
-                    </ul>
+               <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+                  <div class="card p-4">
+                     
+                      <div class=" image d-flex flex-column justify-content-center align-items-center"> <span class="tittle mt-3">Mes Informations</span>  <img src="/static/img/user.png" height="100" width="100" /> <span class="name mt-3">{{ infos[0] }}</span> <span class="idd"><i class="material-icons" style="font-size:15px;">email</i> {{ infos[1] }} </span>
+                          <div class="d-flex flex-row justify-content-center align-items-center gap-2"> <span class="idd1"><i class="material-icons" style="font-size:13px;">lock</i>: <span id="texte" style="visibility: hidden;">{{ password }}</span></span> <span><i class="fa fa-copy"></i></span> </div>
+                          <div class="d-flex flex-row justify-content-center align-items-center mt-3"> <span class="follow">Nombre de parties jouées: <strong>{{ infos[3] }}</strong></span> </div>
+                          <div class=" d-flex mt-2"> <button class="btn1 btn-dark" value="Voir" onclick="OnOff();">Afficher le mot de passe</button> </div>
+                          <div class="text mt-3"> <span>Classement en difficulté facile :<br><br> Classement en difficulté moyen : <br><br> Classement en difficulté difficile:</span> </div>
+                        
+                      </div>
                   </div>
-                  </div>
-                 </div>
-                 
+              </div>
               </div>
            </div>
         </header>
