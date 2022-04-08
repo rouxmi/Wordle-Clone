@@ -1,15 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    let motADevine='LUCIE';
+    var mode="libre";
+    var lang="fr";
+    var motsTentees=[[]];
+    var index=0;
+    var motADevine;
+    var couleur;
+    var existe;
+    var mot=fetch('/getmot?mode='+mode+'&lang='+lang+"&size="+size)
+      .then(function (response) {
+          return response.json();
+      }).then(function (text) {
+          motchoisis=text.mot;
+          return motchoisis;
+      });
+    const getmot = async () => {
+        const motADevine = await mot;
+        if (motADevine!=''){
+          start(motADevine)
+          console.log(motADevine)
+        }
+        };
+    getmot();
+
+    function start(motadev){
     
     //index correspond à la case qui va être rempli
-    let index=0;
-
+    motADevine=motadev
     //touches correspond à l'enssemble des boutons dans le clavier
-    const touches = document.querySelectorAll(".keyboard-row button");
+    var touches = document.querySelectorAll(".keyboard-row button");
   
     //dans motsTentés on stoques tous les mots éssayés
-    let motsTentees=[[]]
+    
+
+    for (let i = 0; i < touches.length; i++) {
+      touches[i].onclick = ({ target }) => {
+        var lettre = target.getAttribute("data-key");
+        if (lettre === "entree") {
+          gestionEntree();
+          return;
+        }
+  
+        if (lettre === "supprimer") {
+          gestionSupprime();
+          return;
+        }
+        majTableau(lettre,size);
+  
+      };
+  };
+
+    }
 
     /*getMotActuel
      * @return : un tableau de lettres correspondant au mot actuel en train d'être écrit dans la grille
@@ -38,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
      */
     function gestionEntree(){
       const motActuel=getMotActuel();
-
       //si le joueur n'a pas rempli toutes les cases de la ligne on affiche un message d'erreur
       if(motActuel.length<size){
         window.alert("Ton mot est trop petit");
@@ -52,6 +92,26 @@ document.addEventListener("DOMContentLoaded", () => {
         //sinon si le nombre d'essais possibles n'est pas atteint
         if(motsTentees.length<nbrEssais){
           motsTentees.push([]);
+          var appel=fetch('/checkmot?motadev='+motADevine+"&lang="+lang+"&essais="+mot)
+          .then(function (response) {
+              return response.json();
+          }).then(function (text) {
+              existe=text.existe;
+              couleur=text.couleur;
+              return [existe,couleur];
+          });
+          const coloration = async () => {
+            const couleur = await appel;
+            if (couleur!=""){
+              if (couleur[0]=="True"){
+                alert(couleur[1])
+              }
+              else{
+                alert('ton mot existe pas')
+              }
+            };
+          };
+          coloration();
         }
         else{
           window.alert("tu as réalisé trop d'essais");
@@ -64,10 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
      * la fonction gère l'appuie sur la touche DEL
      */
     function gestionSupprime(){
-      const motActuel=getMotActuel();
+      var motActuel=getMotActuel();
       if(motActuel.length>0){
         motActuel.pop();
-        const placeCourante=document.getElementById(String(index-1));
+        var placeCourante=document.getElementById(String(index-1));
         index=index-1;
         placeCourante.textContent="";
       }
@@ -80,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       switch (event.key) {
         case "Enter":
           gestionEntree();
+
           break;
         case "Backspace":
           gestionSupprime();
@@ -120,22 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
     }, true);
     
-    for (let i = 0; i < touches.length; i++) {
-        touches[i].onclick = ({ target }) => {
-          const lettre = target.getAttribute("data-key");
-          if (lettre === "entree") {
-            gestionEntree();
-            return;
-          }
     
-          if (lettre === "supprimer") {
-            gestionSupprime();
-            return;
-          }
-          majTableau(lettre,size);
-    
-        };
-    };
     
   
   });

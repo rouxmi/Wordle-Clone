@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, g, session, jsonify
 from flask_session import Session
 import sqlite3
 import datetime
+from mot import *
 
 from cesar import *
 
@@ -142,8 +143,36 @@ def jeu():
         libre = bool(request.form.get("libre"))
         nbEssais = int(request.form.get("nbEssais"))
         nbLettres = int(request.form.get("tailleMot"))
-        print(libre,nbEssais,nbLettres)
     return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres)
+
+
+@app.route('/checkmot')  
+def checkmotp():
+    motadev = request.args.get('motadev')
+    lang = request.args.get('lang')
+    essais = request.args.get('essais')
+    if existe(essais,lang):
+        couleur=compare(essais,motadev)
+        message = {'couleur':str(couleur),'existe':str(True)}
+    else:
+        message = {'existe':str(False),'couleur':str([])}
+    return jsonify(message)
+
+@app.route('/getmot')
+def getmot():
+    mode = request.args.get('mode')
+    lang= request.args.get('lang')
+    longeur= request.args.get('size')
+    if mode=="jour":
+        mot=query_db("SELECT * FROM Mot_du_Jour WHERE date_de_la_partie=?", [datetime.date.today()])[0][1]
+    elif mode=='libre':
+        mot=mot_random(longeur,lang).replace("\n","")
+    message = {'mot':str(mot)}
+    return jsonify(message)
+
+
+
+
 
 
 if __name__=='__main__':
