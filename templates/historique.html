@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
         <link rel="stylesheet" href="static/css/styles.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <link rel="stylesheet" href="/static/css/style.historique.css">
      </head>
      <body style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;);">
         <header class="header-dark" style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;) round, var(--bs-gray);">
@@ -35,40 +36,35 @@
            </nav>
            <div class="container hero">
               <div class="row">
-                 <div class="col-md-8 offset-md-2">
-                    <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Historique de mes parties</h1>
-                    <div class="ratio ratio-16x9" style="opacity: 0.61;"><iframe></iframe>
-                     <table style="color:white">
-                        <!--Importation des données personnelles de l'utilisateur-->
-                        <tr>
-                           <td>Date</td>
-                           <td>Type de configuration de jeu</td>
-                           <td>Langue</td>
-                           <td>Niveau du jeu</td>
-                           <td>Nombre d'essais utilisés</td>
-                           <td>Mots tentés</td>
-                        </tr>
-                        
-                       {% for k in range(longueur) %}
-                       <tr>
-                           <td>{{ data[k][2] }}</td>
-                           <td>{{ data[k][3] }} </td>
-                           <td>{{ data[k][4] }} </td>
-                           <td>{{nivdujeu[k]}} </td>
-                           <td>{{data[k][7]}}/{{ data[k][6] }} </td>
-                           <td>{{ data[k][8] }} </td>
-                        
-                       
-                        {% endfor %}
-                        
-
-                    
-                
-
-                            
-                     </table></div>
-                 </div>
-                 
+                 <div class="col-md-8 offset-md-2"> 
+                    <div class="containtable">
+                      <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Historique de mes parties</h1>  
+                        <div class="table">
+                          <div class="table-header">
+                            <div class="header__item"><a id="Date" class="filter__link" >Date</a></div>
+                            <div class="header__item"><a id="Type de configuration de jeu" class="filter__link filter__link--number" >Type de configuration de jeu</a></div>
+                            <div class="header__item"><a id="Langue" class="filter__link filter__link--number" >Langue</a></div>
+                            <div class="header__item"><a id="Niveau du jeu" class="filter__link filter__link--number" >Niveau du jeu</a></div>
+                            <div class="header__item"><a id="Nombre d'essais utilisés" class="filter__link filter__link--number" >Nombre d'essais utilisés</a></div>
+                            <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
+                          </div>
+                          <div class="table-content">	
+                            {% for k in range(longueur) %}
+                              <div class="table-row">		
+                                <div class="table-data">{{ data[k][2] }}</div>
+                                <div class="table-data">{{ data[k][3] }}</div>
+                                <div class="table-data">{{ data[k][4] }}</div>
+                                <div class="table-data">{{nivdujeu[k]}}</div>
+                                <div class="table-data">{{data[k][7]}}/{{ data[k][6] }}</div>
+                                <div class="table-data">{{ data[k][8] }}</div>
+                              </div>
+                              {% endfor %}
+                           
+                          </div>	
+                        </div>
+                      </div>
+                    </div>
+                  </div>
               </div>
            </div>
         </header>
