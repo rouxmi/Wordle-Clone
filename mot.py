@@ -16,6 +16,7 @@ def mot_random(num,lang):
 
 
 def existe(mot,lang):
+    print(mot)
     num=len(mot)
     mots= dictionnaire(num,lang)
     if mot+"\n" in mots:
@@ -40,7 +41,7 @@ def compare(essai,mot):
         else:
             lettre_mot[mot[j]]+=1
     for l in coul[2]:
-        L[l[1]]=2
+        couleur[l[1]]=2
         if essai[l[1]] not in comp:
             comp[essai[l[1]]]=1
         else:
@@ -50,9 +51,11 @@ def compare(essai,mot):
             if (essai[j],j) in coul[1]:
                 if essai[j] not in comp and essai[j] in lettre_mot:
                     couleur[j]=1
-                elif comp[essai[j]]!=lettre_mot[essai[j]]:
+                elif comp[essai[j]]<lettre_mot[essai[j]]:
                     couleur[j]=1
-    return L
+                    comp[essai[j]]+=1
+
+    return couleur
 
 def donne_couleur(essai,mot,j):
     if essai[j]== mot[j]:
@@ -61,3 +64,4 @@ def donne_couleur(essai,mot,j):
         return 1
     else:
         return 0
+
