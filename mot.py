@@ -26,13 +26,22 @@ def compare(essai,mot):
     n=len(essai)
     m=len(mot)
     L=[]
-    for i in range(n):
-        if essai[i]==mot[i]:
-            L.append(2)
-        elif essai[i] in mot:
-            L.append(1)
-        elif essai[i] not in mot:
-            L.append(0)
+
+    for lettre in essai:
+        if lettre in mot:
+            a=1
+            for i in range(n):
+                if lettre ==mot[i]:
+                    a=2
+        else:
+            a=0
+        L.append(a)
+                        #for i in range(n):
+                            #if essai[i]==mot[i]:
+                                #L.append(2)
+                        # elif essai[i] in mot:
+                        #     L.append(1)
+                        # elif essai[i] not in mot:
+                        #     L.append(0)
     return L
-
-
+#print(compare('merci','rares'))
