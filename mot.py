@@ -27,12 +27,11 @@ def compare(essai,mot):
     m=len(mot)
     L=[]
 
-    for lettre in essai:
-        if lettre in mot:
+    for j in range(n):
+        if essai[j] in mot:
             a=1
-            for i in range(n):
-                if lettre ==mot[i]:
-                    a=2
+            if essai[j] ==mot[j]:
+                a=2
         else:
             a=0
         L.append(a)
@@ -44,4 +43,4 @@ def compare(essai,mot):
                         # elif essai[i] not in mot:
                         #     L.append(0)
     return L
-#print(compare('merci','rares'))
+print(compare('merci','raree'))
