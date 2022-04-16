@@ -39,5 +39,3 @@ def decrypto(word):
         else :
             mot_decrypte += lettre    
     return mot_decrypte
-
-

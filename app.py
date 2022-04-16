@@ -118,14 +118,16 @@ def historique():
     if not session.get("pseudo"):
         return redirect("/")
     a= query_db("SELECT * FROM Partie WHERE pseudo=:pseudo", {"pseudo":session.get("pseudo")})
-    niveau=["Facile", "Moyen", "Difficile"]
-    niv=[]
-    longueur=len(a)
-    for k in range (longueur):
-        numniv=a[k][5]
-        n=niveau[numniv-1]
-        niv.append(n)
-    return render_template("historique.html", data = a, nivdujeu=niv,longueur=longueur)
+    l1 = []
+    l2 = []
+    for i in a:
+        if i[3]=="mdj":
+            l1.append(i)
+        else:
+            l2.append(i)
+    print(l1)
+    print(l2)
+    return render_template("historique.html", dataMdj = l1, dataLibre = l2,longueurMdj=len(l1), longueurLibre=len(l2))
 
 
 @app.route("/disconnect")

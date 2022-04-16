@@ -4,13 +4,36 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>site Wordle</title>
         <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
         <link rel="stylesheet" href="static/css/styles.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
         <link rel="stylesheet" href="/static/css/style.historique.css">
+        <link rel="stylesheet" href="static/css/style.config.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
      </head>
+
+     <script>$(document).ready(function(){
+      var i = 1;
+      $('input[type="checkbox"]').click(function(){
+      var inputValue = $(this).attr("value");
+      if((i)%(2)==1){
+         $(".mdj").css("visibility", "collapse");
+         $(".libre").css("visibility", "visible");
+         i=i+1;
+      } else {
+         $(".mdj").css("visibility", "visible");
+         $(".libre").css("visibility", "collapse");
+         i=i+1;
+      }
+      
+      })
+      });
+      </script>
+
+
      <body style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;);">
         <header class="header-dark" style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;) round, var(--bs-gray);">
            <nav class="navbar navbar-dark navbar-expand-lg navigation-clean-search">
@@ -33,74 +56,106 @@
                     <span class="navbar-text"></span>
                  </div>
               </div>
-           </nav>
-           <div class="container hero">
-              <div class="row">
-                 <div class="col-md-8 offset-md-2"> 
-                    <div class="containtable">
-                      <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Historique de mes parties</h1>  
-                        <div class="table">
-                          <div class="table-header">
-                            <div class="header__item"><a id="Date" class="filter__link" >Date</a></div>
-                            <div class="header__item"><a id="Type de configuration de jeu" class="filter__link filter__link--number" >Type de configuration de jeu</a></div>
-                            <div class="header__item"><a id="Langue" class="filter__link filter__link--number" >Langue</a></div>
-                            <div class="header__item"><a id="Niveau du jeu" class="filter__link filter__link--number" >Niveau du jeu</a></div>
-                            <div class="header__item"><a id="Nombre d'essais utilisés" class="filter__link filter__link--number" >Nombre d'essais utilisés</a></div>
-                            <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
-                          </div>
-                          <div class="table-content">	
-                            {% for k in range(longueur) %}
-                              <div class="table-row">		
-                                <div class="table-data">{{ data[k][2] }}</div>
-                                <div class="table-data">{{ data[k][3] }}</div>
-                                <div class="table-data">{{ data[k][4] }}</div>
-                                <div class="table-data">{{nivdujeu[k]}}</div>
-                                <div class="table-data">{{data[k][7]}}/{{ data[k][6] }}</div>
-                                <div class="table-data">{{ data[k][8] }}</div>
-                              </div>
-                              {% endfor %}
-                           
-                          </div>	
+            </nav>
+         <div class="container hero">
+               <div class="data">
+                  <label class="switch">
+                     <input type="checkbox" id="togBtn" name="libre" value="libre">
+                        <div class="slider round">
+                              <span class="on">Mode libre</span>
+                              <span class="off">Mot du jour</span>
                         </div>
-                      </div>
-                    </div>
+                  </label>
+               </div>
+            <div class="row">
+               <div class="col-md-8 offset-md-2"> 
+                  <div class="containtable">
+                     <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Historique de mes parties</h1>  
+                     <div class="mdj" style="visibility: visible;"> 
+                        <div class="table">
+                           <div class="table-header">
+                              <div class="header__item"><a id="Date" class="filter__link" >Date</a></div>
+                              <div class="header__item"><a id="Langue" class="filter__link filter__link--number" >Langue</a></div>
+                              <div class="header__item"><a id="Niveau du jeu" class="filter__link filter__link--number" >Niveau du jeu</a></div>
+                              <div class="header__item"><a id="Nombre d'essais utilisés" class="filter__link filter__link--number" >Nombre d'essais utilisés</a></div>
+                              <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
+                           </div>
+                           <div class="table-content">	
+                              {% for k in range(longueurMdj) %}
+                                       <div class="table-row">		
+                                          <div class="table-data">{{ dataMdj[k][2] }}</div>
+                                          <div class="table-data">{% if dataMdj[k][4] == 'fr' %} <img src="static/img/france.png" height="40px" width="40px"/> {% endif %}
+                                          {% if dataMdj[k][4] == 'en' %} <img src="static/img/royaume-uni.png" height="40px" width="40px"/> {% endif %} </div>
+                                          <div class="table-data">{% if dataMdj[k][5] == 1 %} Facile {% endif %} 
+                                             {% if dataMdj[k][5] == 2 %} Moyen {% endif %} 
+                                             {% if dataMdj[k][5] == 3 %} Difficile {% endif %} </div>
+                                          <div class="table-data">{{dataMdj[k][7]}}/{{ dataMdj[k][6] }}</div>
+                                          <div class="table-data">{{ dataMdj[k][8] }}</div>
+                                       </div>
+                              {% endfor %}
+                           </div>
+                        </div>
+                     </div>                     
+                     <div class="libre" style="visibility: collapse;"> 
+                        <div class="table">
+                           <div class="table-header">
+                              <div class="header__item"><a id="Date" class="filter__link" >Date</a></div>
+                              <div class="header__item"><a id="Langue" class="filter__link filter__link--number" >Langue</a></div>
+                              <div class="header__item"><a id="Niveau du jeu" class="filter__link filter__link--number" >Niveau du jeu</a></div>
+                              <div class="header__item"><a id="Nombre d'essais utilisés" class="filter__link filter__link--number" >Nombre d'essais utilisés</a></div>
+                              <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
+                           </div>
+                           <div class="table-content">	
+                              {% for k in range(longueurLibre) %}
+                                 <div class="table-row">		
+                                    <div class="table-data">{{ dataLibre[k][2] }}</div>
+                                    <div class="table-data">{% if dataLibre[k][4] == 'fr' %} <img src="static/img/france.png" height="40px" width="40px"/> {% endif %}
+                                       {% if dataLibre[k][4] == 'en' %} <img src="static/img/royaume-uni.png" height="40px" width="40px"/> {% endif %} </div>
+                                    <div class="table-data">{% if dataLibre[k][5] == 1 %} Facile {% endif %} 
+                                       {% if dataLibre[k][5] == 2 %} Moyen {% endif %} 
+                                       {% if dataLibre[k][5] == 3 %} Difficile {% endif %} </div>
+                                    <div class="table-data">{{dataLibre[k][7]}}/{{ dataLibre[k][6] }}</div>
+                                    <div class="table-data">{{ dataLibre[k][8] }}</div>
+                                 </div>
+                              {% endfor %}
+                           </div>
+                        </div>    
+                     </div>	                     
                   </div>
-              </div>
-           </div>
-        </header>
+               </div>
+            </div>
+         </div>
+      </header>
         <footer class="footer-dark" style="background: linear-gradient(0deg, rgb(60,65,70) 50%, rgb(110,115,120) 100%);">
-           <div class="container">
-              <div class="row">
-                 <div class="col-sm-6 col-md-3 item">
-                    <h3 data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">A propos</h3>
-                    <ul>
-                       <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="https://fr.wikipedia.org/wiki/Motus_(jeu_t%C3%A9l%C3%A9vis%C3%A9)">Motus</a></li>
-                       <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="https://www.nytimes.com/games/wordle/index.html">Wordle</a></li>
-                       <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="https://sutom.nocle.fr/">Sutom</a></li>
-                    </ul>
-         
-                 </div>
-                 <div class="col-sm-6 col-md-3 item">
-                    <h3 data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">Classement</h3>
-                    <ul>
-                       <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="/classement/1">Facile</a></li>
-                       <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="/classement/2">Moyen</a></li>
-                       <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="/classement/3">Difficile</a></li>
-                    </ul>
-                 </div>
-                 <div class="col-md-6 item text">
-                    <h3 data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">Règle du Jeu</h3>
-                    <p data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">Vous pouvez choisir entre le mot du jour, où vous avez six essais pour deviner le mot de cinq lettres, ou alors choisir votre propre configuration avec les nombres de lettres et d’essais de votre choix.
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-6 col-md-3 item">
+                  <h3 data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">A propos</h3>
+                  <ul>
+                     <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="https://fr.wikipedia.org/wiki/Motus_(jeu_t%C3%A9l%C3%A9vis%C3%A9)">Motus</a></li>
+                     <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="https://www.nytimes.com/games/wordle/index.html">Wordle</a></li>
+                     <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="https://sutom.nocle.fr/">Sutom</a></li>
+                  </ul>
+               </div>
+               <div class="col-sm-6 col-md-3 item">
+                  <h3 data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">Classement</h3>
+                  <ul>
+                     <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="/classement/1">Facile</a></li>
+                     <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="/classement/2">Moyen</a></li>
+                     <li data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50"><a data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50" href="/classement/3">Difficile</a></li>
+                  </ul>
+               </div>
+               <div class="col-md-6 item text">
+                  <h3 data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">Règle du Jeu</h3>
+                  <p data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">Vous pouvez choisir entre le mot du jour, où vous avez six essais pour deviner le mot de cinq lettres, ou alors choisir votre propre configuration avec les nombres de lettres et d’essais de votre choix.
                      <br>Il existe trois modes de difficulté: facile où  la première et la dernière lettre du mot sont données, moyen où seule la première lettre vous est donnée , et enfin difficile où aucune lettre n’est connue .
                      <br>Vos essais ne seront uniquement enregistrés que s’ils font partie de nos dictionnaires.
                      <br>Les lettres colorées en jaune sont dans le mot mais mal placées. Les lettres colorées en rouge sont dans le mot et correctement placées.Les lettres qui ne changent pas de couleur, n’appartiennent pas au mot à deviner.
                      <br></p>
-                 </div>
-              </div>
-              <p class="copyright">Equipe 26 © 2022</p>
-           </div>
-        </footer>
-        <script src="static/bootstrap/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script src="static/js/script.min.js"></script>
-     </body>
-
+               </div>
+            </div>
+            <p class="copyright">Equipe 26 © 2022</p>
+         </div>
+      </footer>
+   </body>
 </html>
