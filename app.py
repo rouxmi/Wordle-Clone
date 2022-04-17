@@ -125,8 +125,6 @@ def historique():
             l1.append(i)
         else:
             l2.append(i)
-    print(l1)
-    print(l2)
     return render_template("historique.html", dataMdj = l1, dataLibre = l2,longueurMdj=len(l1), longueurLibre=len(l2))
 
 

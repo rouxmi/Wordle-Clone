@@ -20,12 +20,16 @@
       $('input[type="checkbox"]').click(function(){
       var inputValue = $(this).attr("value");
       if((i)%(2)==1){
-         $(".mdj").css("visibility", "collapse");
-         $(".libre").css("visibility", "visible");
+         $("#mdj1").css("display", "none");
+         $("#mdj2").css("display", "none");
+         $("#libre1").css("display", "contents");
+         $("#libre2").css("display", "contents");
          i=i+1;
       } else {
-         $(".mdj").css("visibility", "visible");
-         $(".libre").css("visibility", "collapse");
+         $("#mdj1").css("display", "contents");
+         $("#mdj2").css("display", "contents");
+         $("#libre1").css("display", "none");
+         $("#libre2").css("display", "none");
          i=i+1;
       }
       
@@ -71,8 +75,7 @@
                <div class="col-md-8 offset-md-2"> 
                   <div class="containtable">
                      <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Historique de mes parties</h1>  
-                     <div class="mdj" style="visibility: visible;"> 
-                        <div class="table">
+                        <div class="table" id="mdj1" style="display: contents;">
                            <div class="table-header">
                               <div class="header__item"><a id="Date" class="filter__link" >Date</a></div>
                               <div class="header__item"><a id="Langue" class="filter__link filter__link--number" >Langue</a></div>
@@ -80,7 +83,7 @@
                               <div class="header__item"><a id="Nombre d'essais utilisés" class="filter__link filter__link--number" >Nombre d'essais utilisés</a></div>
                               <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
                            </div>
-                           <div class="table-content">	
+                           <div class="table-content" id="mdj2" style="display: contents;">	
                               {% for k in range(longueurMdj) %}
                                        <div class="table-row">		
                                           <div class="table-data">{{ dataMdj[k][2] }}</div>
@@ -94,10 +97,8 @@
                                        </div>
                               {% endfor %}
                            </div>
-                        </div>
-                     </div>                     
-                     <div class="libre" style="visibility: collapse;"> 
-                        <div class="table">
+                        </div>                    
+                        <div class="table" id="libre1" style="display: none;">
                            <div class="table-header">
                               <div class="header__item"><a id="Date" class="filter__link" >Date</a></div>
                               <div class="header__item"><a id="Langue" class="filter__link filter__link--number" >Langue</a></div>
@@ -105,7 +106,7 @@
                               <div class="header__item"><a id="Nombre d'essais utilisés" class="filter__link filter__link--number" >Nombre d'essais utilisés</a></div>
                               <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
                            </div>
-                           <div class="table-content">	
+                           <div class="table-content" id="libre2" style="display: none;">	
                               {% for k in range(longueurLibre) %}
                                  <div class="table-row">		
                                     <div class="table-data">{{ dataLibre[k][2] }}</div>
@@ -119,8 +120,7 @@
                                  </div>
                               {% endfor %}
                            </div>
-                        </div>    
-                     </div>	                     
+                        </div>    	                     
                   </div>
                </div>
             </div>
