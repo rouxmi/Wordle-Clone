@@ -1,6 +1,7 @@
 from mot import *
 import pytest
 
+#test de l'existence du mot
 @pytest.mark.parametrize("existant,lang,resultats",[
     ("OUI","fr",True),
     ("NON","fr",True),
@@ -42,6 +43,7 @@ import pytest
 def test_existant(existant,lang,resultats):
     assert existe(existant,lang)==resultats
 
+#test de la coloration des mots
 @pytest.mark.parametrize("essais,mots,resultats",[
     ("poudrer","pigment",[2,0,0,0,0,1,0]),
     ("parfait","pigment",[2,0,0,0,0,1,2]),
@@ -85,6 +87,7 @@ def test_existant(existant,lang,resultats):
 def test_couleur(essais,mots,resultats):
     assert compare(essais,mots)==resultats
 
+#test de la coloration d'une lettre 
 @pytest.mark.parametrize("essais,mots,js,resultats",[
     ("poutre","parents",3,1),
     ("donne","pomme",0,0),

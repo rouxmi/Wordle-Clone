@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, redirect, g, session, jsonify
 from flask_session import Session
 import sqlite3
 import datetime
-from mot import *
+from mot import * #gestion des dictionnaires
 
-from cesar import *
+from cesar import * #chifrement mot de passe et mot du jour
 
 app = Flask(__name__)
 
@@ -41,35 +41,48 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
         
 
+#App route
+
 @app.route("/", methods=["GET", "POST"])
 def first():
    #on renvoie la template login lorsque l'utilisateur arrive pour la première fois sur la page login (ici on est en methode GET)
    return render_template("login.html")
 
+#vérification du mots de passe
 @app.route('/checkmdp')  
 def checkmdp():
-    pseudo = request.args.get('pseudo')
+    #récupère le mot de passe et le pseudo dans la requête
+    pseudo = request.args.get('pseudo') 
     mdp = request.args.get('mdp')
-    response=checkLogin(pseudo,mdp)[0]
+    #vérifie si le mot de passe est le bon renvoie un booléen
+    response=checkLogin(pseudo,mdp)[0] 
+    #connecte la personne si oui
     if response:
         session['pseudo']=pseudo
+    # renvoie la réponse au JS
     message = {'validation':str(response)}
     return jsonify(message)
 
+
+#vérification de l'inscription
 @app.route('/checkinscription')
 def checkinscription():
+    #récupère les données de l'inscrition dans la requête
     pseudo = request.args.get('pseudo')
     mail = request.args.get('mail')
     mdp = request.args.get('mdp')
+    #vérifie si le pseudo ou le mail n'est pas déjâ utilisé et renvoie un booléen
     response=checkRegister(pseudo)[0]
+    #inscrit le joueur dans la BD si oui
     if response:
         query ="INSERT INTO Joueur(pseudo, email, mdp, nombre_parties) VALUES (?,?,?,?)"
         query_db(query, (pseudo, mail, crypto(mdp),0))
         session["pseudo"] = pseudo
+    #renvoie la réponse au JS
     message = {'validation':str(response)}
     return jsonify(message)
 
-
+#vérification du mot de passe dans la BD
 def checkLogin(pseudo, mdp):
     """
     checkLogin
@@ -89,6 +102,7 @@ def register():
     #on renvoie la template register lorsque l'utilisateur arrive pour la première fois sur la page register (ici on est en methode GET)
     return render_template("inscription.html")
 
+#vérification du mail et du pseudo dans la BD
 def checkRegister(pseudo):
     """
     checkRegister
@@ -127,7 +141,7 @@ def historique():
             l2.append(i)
     return render_template("historique.html", dataMdj = l1, dataLibre = l2,longueurMdj=len(l1), longueurLibre=len(l2))
 
-
+#déconnecte le joueur
 @app.route("/disconnect")
 def disconnect():
     session["pseudo"] = None
@@ -145,34 +159,43 @@ def jeu():
         nbLettres = int(request.form.get("tailleMot"))
     return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres)
 
-
+#vérification du mot et renvoie de la coloration
 @app.route('/checkmot')  
 def checkmotp():
+    #récuperation des arguements néccesaires
     motadev = session.get("mot")
     lang = request.args.get('lang')
     essais = request.args.get('essais')
+    #vérification si le mot existe
     if existe(essais,lang):
+        #renvoie la couleur si oui
         couleur=compare(essais,motadev)
         message = {'couleur':str(couleur),'existe':str(True)}
     else:
+        #renvoie False sinon 
         message = {'existe':str(False),'couleur':str([])}
+    #envoie en json de la réponse au JS
     return jsonify(message)
 
+#renvoie un mot en fonction des paramètres de la partie
 @app.route('/getmot')
 def getmot():
+    #récupère les paramètres de la partie
     mode = request.args.get('mode')
     lang= request.args.get('lang')
     longeur= request.args.get('size')
+    #si mot du jour va chercher le mot dans la BD
     if mode=="jour":
-        mot=query_db("SELECT * FROM Mot_du_Jour WHERE date_de_la_partie=?", [datetime.date.today()])[0][1]
+        mot_crypt=query_db("SELECT * FROM Mot_du_Jour WHERE date_de_la_partie=?", [datetime.date.today()])[0][1]
+        mot=decrypto(mot_crypt)
+    #si mode libre choix aléatoire dans le dictionnaire 
     elif mode=='libre':
         mot=mot_random(longeur,lang).replace("\n","")
     message = {'mot':str(mot)}
+    #inscription du mot dans la session
     session["mot"] = mot
+    #renvoie du mot en json au JS
     return jsonify(message)
-
-
-
 
 
 

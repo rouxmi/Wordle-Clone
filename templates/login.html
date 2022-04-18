@@ -22,31 +22,44 @@
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="Mot de passe">Mot de passe</label><input class="form-control" type="password" id="mot-de-passe" name="mdp" required="" placeholder="Mot de passe" minlength="8"></div>
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="Submit">Submit</label></div>
                <input onclick="Login()" type="button" value="Se connecter" name="button"  >
-               <script>function Login(){
+               <script>function Login(){ //fonction Js de vérification du mot de passe
+                  //récupération des valeurs
                   var pseudo=document.login.pseudo.value;
                   var password=document.login.mdp.value;
-                  var reponse=fetch('/checkmdp?pseudo='+pseudo+"&mdp="+password)
+                  //création de la requête pour communiquer avec le serveur
+                  var reponse=fetch('/checkmdp?pseudo='+pseudo+"&mdp="+password) //envoie du mot de passe et du pseudo par requête get
                      .then(function (response) {
+                        //convertion de la réponse en json
                         return response.json();
                      }).then(function (text) {
+                        //récuperation de la valeur validation dans la requête
                         vali=text.validation;
                         return vali;
                      });
+
+                  //appel de la requête "reponse" de manière asyncrone
                   const printreponse = async () => {
-                     const a = await reponse;
-                     console.log(a);
+                     const a = await reponse; //attente de la réponse du serveur après la requête
+                     // le mot de passe est bon 
                      if (a=="True") {
+                             //renvoie vers config
                               window.location.replace("/config")
+                     //le pseudo est faux et ne fait pas 3 caractères
                      } else {if (pseudo.length<3){
+                              //création d'une alerte
                               alert("Votre pseudo fait au moins 3 caractères")
+                     //le mdp est faux et ne fait pas 8 caractères   
                      }else{if (password.length<8){
+                              //création d'une alerte
                               alert("Votre mot de passe fait au moins 8 caractères")
+                     // le mot de passe est juste faux
                      } else{ 
                            alert("Mauvais mot de passe"); 
                                };
                            };
                         };
                      };
+                  //appel de la fonction
                   printreponse();
                };
                </script>

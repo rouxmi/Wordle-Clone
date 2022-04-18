@@ -1,28 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    var mode="libre";
+    //initialisation des variables
+    var mode="libre"; 
     var lang="fr";
     var motsTentees=[[]];
     var index=0;
     var motADevine;
     var couleur;
     var existe;
-    var mot=fetch('/getmot?mode='+mode+'&lang='+lang+"&size="+size)
+
+    //création de la requête pour obtenir le mot de la partie
+    var mot=fetch('/getmot?mode='+mode+'&lang='+lang+"&size="+size) //envoie du mode, de la langue et la taille du mot voulus
       .then(function (response) {
-          return response.json();
+          //convertion de la réponse en json
+          return response.json(); 
       }).then(function (text) {
+          //récupération de la valeur mot dans la réponse
           motchoisis=text.mot;
           return motchoisis;
       });
-    const getmot = async () => {
-        const motADevine = await mot;
-        if (motADevine!=''){
-          start(motADevine)
+    const getmot = async () => { //création de la fonction asyncrone
+        const motADevine = await mot; //attente de la réponse du serveur 
+        if (motADevine!=''){  //vérication que la réponse n'est pas vite
+          //lancement de la partie
+          start(motADevine) 
           console.log(motADevine)
         }
         };
+    //lancement de la fonction asyncrone
     getmot();
 
+    //fonction de lancement de la partie
     function start(motadev){
     
     //index correspond à la case qui va être rempli
@@ -32,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     //dans motsTentés on stoques tous les mots éssayés
     
-
+    //gestion du clavier virtuel
     for (let i = 0; i < touches.length; i++) {
       touches[i].onclick = ({ target }) => {
         var lettre = target.getAttribute("data-key");
@@ -73,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         placeCourante.textContent=lettre;
       }
     }
+
     function changeColor()
       {
         windoww.alert("je suis rentree dans la fonction");
@@ -111,17 +120,22 @@ document.addEventListener("DOMContentLoaded", () => {
         window.alert("BRAVO");
       }
       else{
+        // si le joueur est arrivé au nombre d'essais maximal et que son mot est faux
         if(motsTentees.length==nbrEssais){
           window.alert("tu as réalisé trop d'essais le mot était:  "+motADevine);
         }
         else{
         //sinon si le nombre d'essais possibles n'est pas atteint
         if(motsTentees.length<nbrEssais){
+          //ajout du mot tentés dans la liste
           motsTentees.push([]);
-          var appel=fetch('/checkmot?lang='+lang+"&essais="+mot)
+          //création du requête pour vérifier si le mot existe et si oui donnée son vecteur couleur
+          var appel=fetch('/checkmot?lang='+lang+"&essais="+mot)//passage du mot et de sa langue au serveur
           .then(function (response) {
+              //convertion de la réponse en json
               return response.json();
           }).then(function (text) {
+              //extraction de la valeur existe(booléen) et du vecteur couleur si oui
               existe=text.existe;
               couleur=text.couleur;
               return [existe,couleur];
@@ -147,24 +161,41 @@ document.addEventListener("DOMContentLoaded", () => {
             };
           };
           jeteste();
+
+          //appel de la requête "appel" de manière asyncrone
           const coloration = async () => {
-            const couleur = await appel;
+
+            const couleur = await appel; //attente de la réponse serveur
+
+            //test si la requête n'a pas échouer
             if (couleur!=""){
+
+              //test si le mot existe
               if (couleur[0]=="True"){
-                alert(couleur[1])
+                alert(couleur[1])//renvoie du vecteur couleur (rajouter la coloration ici)
               }
+
+              //si le mot existe pas suppression
               else{
-                var motActuel=motsTentees[motsTentees.length-1];
+                var motActuel=motsTentees[motsTentees.length-1]; //on récupère le mot
+
+                //on boucle sur la longeur du mot
                 for(i=0;i<size;i++){
+                  //on supprime la dernière lettre
                   motActuel.pop();
+                  //on récupère la case
                   var placeCourante=document.getElementById(String(index-1));
-                  index=index-1;
+                  //on diminue l'index après la suppression
+                  index=index-1; 
+                  //on vide la case pour le visuel
                   placeCourante.textContent="";
                 };
+                //alerte que le mot n'existe pas
                 alert('ton mot n\'est pas dans le dictionnaire')
               }
             };
           };
+          //appel de la requête sur le mot
           coloration();
         }
         }

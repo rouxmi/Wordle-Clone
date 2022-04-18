@@ -27,29 +27,42 @@
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="Submit">Submit</label></div>
                <input onclick="Inscription()" type="button" value="S'inscire" name="button">
                <script>function Inscription(){
+                  //récupération des données du form
                   var pseudo=document.inscription.pseudo.value;
                   var password=document.inscription.mdp.value;
                   var confpassword=document.inscription.confirmationmdp.value;
                   var mail=document.inscription.email.value;
+
+                  //envoie des données par une requête get au serveur
                   var reponse=fetch('/checkinscription?pseudo='+pseudo+"&mdp="+password+"&mail="+mail)
                      .then(function (response) {
+                        //convertion de la réponse en json
                         return response.json();
                      }).then(function (text) {
+                        //extraction de la validation(booléen)
                         vali=text.validation;
                         return vali
                      });
+
+                  //appel de la requête "reponse" de manière asyncrone
                   const printreponse = async () => {
-                     const a = await reponse;
+                     const a = await reponse;//attente de la réponse serveur
+                     //pseudo trop court
                      if (pseudo.length<=3){
                               alert("Votre pseudo doit faire au moins 3 caractères")
+                     //mdp trop court
                      }else{if (password.length<8){
                               alert("Votre mot de passe doit faire au moins 8 caractères")
+                     //mot de passe non correspondant avec la comfirmation
                      } else{if (confpassword!=password){
                                     alert("Les mots de passe ne correspondent pas")
+                     //pas un mail
                      }else{if (mail.length<=3){
                               alert('Veuillez rentrer un vrai mail')
                            }else{if (a=="True") {
+                              //renvoie vers la config
                               window.location.replace("/config")
+                     //Erreur non prévu
                      } else {
                               alert('Veuillez vérifier ce que vous avez saisis')
                            };
@@ -58,6 +71,7 @@
                            };
                         };
                      };
+                  //appel de la requête
                   printreponse();
                };
                </script>
