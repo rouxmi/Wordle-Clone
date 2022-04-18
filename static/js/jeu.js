@@ -178,12 +178,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
               //si le mot n'existe pas suppression
               else{
-                var motActuel=motsTentees[motsTentees.length-1]; //on récupère le mot
+                var motActuel=getMotActuel(); //on récupère le mot
 
                 //on boucle sur la longeur du mot
                 for(i=0;i<size;i++){
                   //on supprime la dernière lettre
-                  motActuel.pop();
+                  motActuel.pop()
                   //on récupère la case
                   var placeCourante=document.getElementById(String(index-1));
                   //on diminue l'index après la suppression
@@ -191,6 +191,8 @@ document.addEventListener("DOMContentLoaded", () => {
                   //on vide la case pour le visuel
                   placeCourante.textContent="";
                 };
+                motsTentees.splice(motsTentees.length-2,1);
+                console.log(motsTentees);
                 //alerte que le mot n'existe pas
                 alert('ton mot n\'est pas dans le dictionnaire')
               }
