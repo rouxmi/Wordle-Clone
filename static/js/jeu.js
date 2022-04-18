@@ -89,6 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
         window.alert("BRAVO");
       }
       else{
+        if(motsTentees.length==nbrEssais){
+          window.alert("tu as réalisé trop d'essais le mot était:  "+motADevine);
+        }
+        else{
         //sinon si le nombre d'essais possibles n'est pas atteint
         if(motsTentees.length<nbrEssais){
           motsTentees.push([]);
@@ -120,8 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
           };
           coloration();
         }
-        else{
-          window.alert("tu as réalisé trop d'essais le mot était:  "+motADevine);
         }
       }
     }
