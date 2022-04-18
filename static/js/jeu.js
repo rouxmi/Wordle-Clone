@@ -107,6 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert(couleur[1])
               }
               else{
+                var motActuel=motsTentees[motsTentees.length-1];
+                for(i=0;i<size;i++){
+                  motActuel.pop();
+                  var placeCourante=document.getElementById(String(index-1));
+                  index=index-1;
+                  placeCourante.textContent="";
+                };
                 alert('ton mot existe pas')
               }
             };

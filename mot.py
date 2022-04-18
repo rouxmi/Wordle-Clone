@@ -16,7 +16,6 @@ def mot_random(num,lang):
 
 
 def existe(mot,lang):
-    print(mot)
     num=len(mot)
     mots= dictionnaire(num,lang)
     if mot+"\n" in mots:
