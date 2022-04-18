@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
     //initialisation des variables
     var mode="libre"; 
     var lang="fr";
@@ -8,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     var motADevine;
     var couleur;
     var existe;
+    var rouge=[];
+    var jaune=[];
+    
 
     //création de la requête pour obtenir le mot de la partie
     var mot=fetch('/getmot?mode='+mode+'&lang='+lang+"&size="+size) //envoie du mode, de la langue et la taille du mot voulus
@@ -82,27 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    function changeColor()
-      {
-        window.alert("je suis rentree dans la fonction");
-        var indication=couleur[1]; /* je recupere la liste avec les chiffres*/
-        var numeroligne=motsTentees.length-1 /* je recupere le numero de la derniere ligne dans lequel l'utilisateur a écrit*/
-        var tailleMot=motADevine.length-1
-        for (let i=0; i<indication.length; i++){ 
-          var numerodecase=numeroligne*tailleMot+i; /* je calcule la case à colorer*/
-          var div=document.getElementById(numerodecase); /*je recupere le div correspondant*/
-          switch(indication[i]){
-            case 1:
-              div.style.backgroundColor="yellow" /*deux facons d'écrire le changement de background aucun n'a marché jusque la"*/
-            break;
-            case 2:
-              div.css('background-color','red');
-            break;
-          };
-        };
-
-      }
-
 
 
     /*gestionEntree
@@ -116,19 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       //si le mot de la ligne correspond au mot à deviner, le joueur à gagné
       else{mot=motActuel.join("");
-      if(mot==motADevine){
-        window.alert("BRAVO");
-      }
-      else{
-        // si le joueur est arrivé au nombre d'essais maximal et que son mot est faux
-        if(motsTentees.length==nbrEssais){
-          window.alert("tu as réalisé trop d'essais le mot était:  "+motADevine);
-        }
-        else{
         //sinon si le nombre d'essais possibles n'est pas atteint
-        if(motsTentees.length<nbrEssais){
-          //ajout du mot tentés dans la liste
-          motsTentees.push([]);
+        if(motsTentees.length<=nbrEssais){
           //création du requête pour vérifier si le mot existe et si oui donnée son vecteur couleur
           var appel=fetch('/checkmot?lang='+lang+"&essais="+mot)//passage du mot et de sa langue au serveur
           .then(function (response) {
@@ -140,30 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
               couleur=text.couleur;
               return [existe,couleur];
           });
-          /*const jeteste = async () => {
-            const couleur = await appel;
-            if (couleur!=""){
-              if (couleur[0]=="True"){
-                var indication=couleur[1];
-                var divs=document.getElementsByClassName('square animate__animated'); // théoriquement je récupère la liste des div dont la classe est square ....
-                for (let i=0; i<indication.length; i++){
-                  var div=divs[i]
-                  switch(indication[i]){
-                    case 1:
-                      div.style.backgroundColor="yellow"; 
-                    break;
-                    case 2:
-                      div.css({'background-color':'red'});
-                    break;
-                  }
-                }
-              };
-            };
-          };
-          jeteste();*/
-
-          //appel de la requête "appel" de manière asyncrone
-          
           const coloration = async () => {
 
             const couleur = await appel; //attente de la réponse serveur
@@ -173,7 +119,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
               //test si le mot existe
               if (couleur[0]=="True"){
-                alert(couleur[1])//renvoie du vecteur couleur (rajouter la coloration ici)
+
+                //ajout du mot tentés dans la liste
+                motsTentees.push([]);
+
+                var numeroligne=motsTentees.length-2; /* je recupere le numero de la derniere ligne dans lequel l'utilisateur a écrit*/
+                var tailleMot=motADevine.length;
+                for (let i = 0; i<couleur[1].length; i++){ 
+                  var numerodecase=numeroligne*tailleMot+i; /* je calcule la case à colorer*/
+                  let square=document.getElementById(numerodecase); /*je recupere le div correspondant*/
+                  var contenu = 'l'+square.innerHTML;
+                  let key= document.getElementById(contenu.toUpperCase());
+                  switch(couleur[1][i]){
+                    case "1":
+                      $(square).css('background-color','yellow');
+                      if(!(rouge.includes(key))){
+                        $(key).css('background-color','yellow');
+                      }
+                      jaune.push(key);
+                      break;
+                    case "2":
+                      $(square).css('background-color','red');
+                      $(key).css('background-color','red');
+                      rouge.push(key);
+                      break;
+                    case "0":
+                      $(square).css('background-color','grey');
+                      if(!(rouge.includes(key))){
+                        if(!(jaune.includes(key))){
+                          $(key).css('background-color','grey');
+                        }
+                      }
+                      break;
+                    default:
+                      break;
+                  }
+                }
+                if(mot==motADevine){
+                  window.alert("BRAVO");
+                }
+                else{
+                  if(motsTentees.length>nbrEssais){
+                    window.alert("tu as réalisé trop d'essais le mot était:  "+motADevine);
+                  }
+                }
               }
 
               //si le mot n'existe pas suppression
@@ -201,9 +190,6 @@ document.addEventListener("DOMContentLoaded", () => {
           //appel de la requête sur le mot
           coloration();
         }
-
-        }
-      }
     }
     }
 
@@ -268,8 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
     }, true);
     
-    
-    
+  
   
   });
 

@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
       <link rel="stylesheet" href="{{ url_for('static', filename='css/jeu.css') }}">
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       <script src="static/js/jeu.js"></script>
    </head>
    <body style="background: url(&quot;static/img/motus-modified.jpg&quot;);">
@@ -47,7 +48,7 @@
                      </script>
                      {% for i in range(nbEssais)%}
                         {% for j in range(tailleMot)%}
-                           <div class="square animate__animated" id="{{i*tailleMot+j}}"></div>
+                           <div class="square animate__animated" id="{{i*tailleMot+j}}" style="background-color: white;"></div>
                         {%endfor%}
                      {%endfor%}
 
@@ -58,37 +59,37 @@
                   <div style="opacity: 0.61;">
                      <div id="keyboard-container">
                         <div class="keyboard-row">
-                           <button data-key="A">a</button>
-                           <button data-key="Z">z</button>
-                           <button data-key="E">e</button>
-                           <button data-key="R">r</button>
-                           <button data-key="T">t</button>
-                           <button data-key="Y">y</button>
-                           <button data-key="U">u</button>
-                           <button data-key="I">i</button>
-                           <button data-key="O">o</button>
-                           <button data-key="P">p</button>
+                           <button data-key="A" id="LA">a</button>
+                           <button data-key="Z" id="LZ">z</button>
+                           <button data-key="E" id="LE">e</button>
+                           <button data-key="R" id="LR">r</button>
+                           <button data-key="T" id="LT">t</button>
+                           <button data-key="Y" id="LY">y</button>
+                           <button data-key="U" id="LU">u</button>
+                           <button data-key="I" id="LI">i</button>
+                           <button data-key="O" id="LO">o</button>
+                           <button data-key="P" id="LP">p</button>
                         </div>
                         <div class="keyboard-row">
-                           <button data-key="Q">q</button>
-                           <button data-key="S">s</button>
-                           <button data-key="D">d</button>
-                           <button data-key="F">f</button>
-                           <button data-key="G">g</button>
-                           <button data-key="H">h</button>
-                           <button data-key="J">j</button>
-                           <button data-key="K">k</button>
-                           <button data-key="L">l</button>
-                           <button data-key="M">m</button>
+                           <button data-key="Q" id="LQ">q</button>
+                           <button data-key="S" id="LS">s</button>
+                           <button data-key="D" id="LD">d</button>
+                           <button data-key="F" id="LF">f</button>
+                           <button data-key="G" id="LG">g</button>
+                           <button data-key="H" id="LK">h</button>
+                           <button data-key="J" id="LJ">j</button>
+                           <button data-key="K" id="LK">k</button>
+                           <button data-key="L" id="LL">l</button>
+                           <button data-key="M" id="LM">m</button>
                         </div>
                         <div class="keyboard-row">
                            <button data-key="entree" class="wide-button">Entrée</button>
-                           <button data-key="W">w</button>
-                           <button data-key="X">x</button>
-                           <button data-key="C">c</button>
-                           <button data-key="V">v</button>
-                           <button data-key="B">b</button>
-                           <button data-key="N">n</button>
+                           <button data-key="W" id="LW">w</button>
+                           <button data-key="X" id="LX">x</button>
+                           <button data-key="C" id="LC">c</button>
+                           <button data-key="V" id="LV">v</button>
+                           <button data-key="B" id="LB">b</button>
+                           <button data-key="N" id="LN">n</button>
                            <button data-key="supprimer" class="wide-button">Supprimer</button>
                         </div>
             

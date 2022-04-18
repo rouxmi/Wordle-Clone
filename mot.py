@@ -93,7 +93,10 @@ def compare(essai,mot):
 
                 #sinon ca reste à 0
     #retourne le vecteur
-    return couleur
+    c=""
+    for i in couleur:
+        c+=str(i)
+    return c
 
 #fonction de coloration d'une lettre
 def donne_couleur(essai,mot,j):
