@@ -73,6 +73,47 @@ document.addEventListener("DOMContentLoaded", () => {
         placeCourante.textContent=lettre;
       }
     }
+    function changeColor()
+      {
+        windoww.alert("je suis rentree dans la fonction");
+        var indication=couleur[1];
+        var numeroligne=motsTentees.length-1
+        var tailleMot=motADevine.length-1
+        for (let i=0; i<indication.length; i++){
+          let numerodecase=numeroligne*tailleMot+i;
+          let div=document.getElementById(numerodecase);
+          switch(indication[i]){
+            case 1:
+              div.style.backgroundColor="yellow"
+            break;
+            case 2:
+              div.css('background-color','red');
+            break;
+          };
+        };
+
+        }
+
+const jeteste = async () => {
+const couleur = await appel;
+if (couleur!=""){
+if (couleur[0]=="True"){
+var indication=couleur[1];
+var divs=document.getElementsByClassName('square animate__animated');
+for (let i=0; i<indication.length; i++){
+var div=divs[i]
+switch(indication[i]){
+case 1:
+div.style.backgrounColor="yellow"; 
+break;
+case 2:
+div.css({'background-color':'red'});
+break;
+}
+}
+}
+};
+jeteste();
 
     /*gestionEntree
      * la fonction gère l'appuie sur la touche ENTREE
@@ -100,6 +141,27 @@ document.addEventListener("DOMContentLoaded", () => {
               couleur=text.couleur;
               return [existe,couleur];
           });
+          const jeteste = async () => {
+            const couleur = await appel;
+            if (couleur!=""){
+              if (couleur[0]=="True"){
+                var indication=couleur[1];
+                var divs=document.getElementsByClassName('square animate__animated');
+                for (let i=0; i<indication.length; i++){
+                  var div=divs[i]
+                  switch(indication[i]){
+                    case 1:
+                      div.style.backgrounColor="yellow"; 
+                    break;
+                    case 2:
+                      div.css({'background-color':'red'});
+                    break;
+                  }
+                }
+              };
+            };
+          };
+          jeteste();
           const coloration = async () => {
             const couleur = await appel;
             if (couleur!=""){
