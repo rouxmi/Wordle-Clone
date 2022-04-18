@@ -84,16 +84,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function changeColor()
       {
-        windoww.alert("je suis rentree dans la fonction");
-        var indication=couleur[1];
-        var numeroligne=motsTentees.length-1
+        window.alert("je suis rentree dans la fonction");
+        var indication=couleur[1]; /* je recupere la liste avec les chiffres*/
+        var numeroligne=motsTentees.length-1 /* je recupere le numero de la derniere ligne dans lequel l'utilisateur a écrit*/
         var tailleMot=motADevine.length-1
-        for (let i=0; i<indication.length; i++){
-          let numerodecase=numeroligne*tailleMot+i;
-          let div=document.getElementById(numerodecase);
+        for (let i=0; i<indication.length; i++){ 
+          var numerodecase=numeroligne*tailleMot+i; /* je calcule la case à colorer*/
+          var div=document.getElementById(numerodecase); /*je recupere le div correspondant*/
           switch(indication[i]){
             case 1:
-              div.style.backgroundColor="yellow"
+              div.style.backgroundColor="yellow" /*deux facons d'écrire le changement de background aucun n'a marché jusque la"*/
             break;
             case 2:
               div.css('background-color','red');
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
           };
         };
 
-        }
+      }
 
 
 
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
               couleur=text.couleur;
               return [existe,couleur];
           });
-          const jeteste = async () => {
+          /*const jeteste = async () => {
             const couleur = await appel;
             if (couleur!=""){
               if (couleur[0]=="True"){
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   var div=divs[i]
                   switch(indication[i]){
                     case 1:
-                      div.style.backgrounColor="yellow"; 
+                      div.style.backgroundColor="yellow"; 
                     break;
                     case 2:
                       div.css({'background-color':'red'});
@@ -163,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
           jeteste();
 
           //appel de la requête "appel" de manière asyncrone
+          jeteste();*/
           const coloration = async () => {
 
             const couleur = await appel; //attente de la réponse serveur
@@ -198,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
           //appel de la requête sur le mot
           coloration();
         }
+
         }
       }
     }
