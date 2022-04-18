@@ -326,3 +326,7 @@ button#form-btn {
 	box-shadow: 0 0 5px #07cc98;
 	font-size: 13px;
 }
+
+a{
+	text-decoration: none;
+}
