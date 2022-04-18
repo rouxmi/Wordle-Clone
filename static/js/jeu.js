@@ -111,6 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
         window.alert("BRAVO");
       }
       else{
+        if(motsTentees.length==nbrEssais){
+          window.alert("tu as réalisé trop d'essais le mot était:  "+motADevine);
+        }
+        else{
         //sinon si le nombre d'essais possibles n'est pas atteint
         if(motsTentees.length<nbrEssais){
           motsTentees.push([]);
@@ -163,8 +167,14 @@ document.addEventListener("DOMContentLoaded", () => {
           };
           coloration();
         }
+<<<<<<< HEAD
         else{
           window.alert("tu as réalisé trop d'essais, le mot à deviner était:  "+motADevine);
+||||||| ce4786c
+        else{
+          window.alert("tu as réalisé trop d'essais le mot était:  "+motADevine);
+=======
+>>>>>>> 3c0f0b4bbe6acece93a7b36aac27aa8e7232ba70
         }
       }
     }
