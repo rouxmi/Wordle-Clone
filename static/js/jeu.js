@@ -94,26 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-const jeteste = async () => {
-const couleur = await appel;
-if (couleur!=""){
-if (couleur[0]=="True"){
-var indication=couleur[1];
-var divs=document.getElementsByClassName('square animate__animated');
-for (let i=0; i<indication.length; i++){
-var div=divs[i]
-switch(indication[i]){
-case 1:
-div.style.backgrounColor="yellow"; 
-break;
-case 2:
-div.css({'background-color':'red'});
-break;
-}
-}
-}
-};
-jeteste();
+
 
     /*gestionEntree
      * la fonction gère l'appuie sur la touche ENTREE
@@ -176,7 +157,7 @@ jeteste();
                   index=index-1;
                   placeCourante.textContent="";
                 };
-                alert('ton mot existe pas')
+                alert('ton mot n\'est pas dans le dictionnaire')
               }
             };
           };
