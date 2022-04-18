@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (couleur!=""){
               if (couleur[0]=="True"){
                 var indication=couleur[1];
-                var divs=document.getElementsByClassName('square animate__animated');
+                var divs=document.getElementsByClassName('square animate__animated'); // théoriquement je récupère la liste des div dont la classe est square ....
                 for (let i=0; i<indication.length; i++){
                   var div=divs[i]
                   switch(indication[i]){
@@ -160,10 +160,10 @@ document.addEventListener("DOMContentLoaded", () => {
               };
             };
           };
-          jeteste();
+          jeteste();*/
 
           //appel de la requête "appel" de manière asyncrone
-          jeteste();*/
+          
           const coloration = async () => {
 
             const couleur = await appel; //attente de la réponse serveur
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert(couleur[1])//renvoie du vecteur couleur (rajouter la coloration ici)
               }
 
-              //si le mot existe pas suppression
+              //si le mot n'existe pas suppression
               else{
                 var motActuel=motsTentees[motsTentees.length-1]; //on récupère le mot
 

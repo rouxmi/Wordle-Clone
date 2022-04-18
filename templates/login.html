@@ -12,6 +12,8 @@
    <body style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;);">
       <div class="row justify-content-center align-items-center">
          <div class="col-md-12">
+            <br>
+            <br>
             <h2 class="text-center text-info" style="border-color: rgb(45,50,55);color: rgb(45,50,55);--bs-info: rgb(45,50,55);--bs-info-rgb: 45,50,55;">Connexion<br></h2>
          </div>
          <div class="col-12 col-sm-6 col-md-6 site-form">
@@ -21,7 +23,10 @@
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="Spacing2">Spacing2</label><input class="form-control" type="couleur" id="pseudo" name="pseudo" required="" placeholder="Pseudo"></div>
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="Mot de passe">Mot de passe</label><input class="form-control" type="password" id="mot-de-passe" name="mdp" required="" placeholder="Mot de passe" minlength="8"></div>
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="Submit">Submit</label></div>
-               <input onclick="Login()" type="button" value="Se connecter" name="button"  >
+               <input onclick="Login()" class="bouton" type="button" value="Se connecter" name="button">
+               <br>
+               <br>
+               <p style="width: auto;"><strong>Si vous n&#39;avez pas de compte, cliquer <a href="/register"><strong>ici</strong></a> pour vous inscrire</strong></p>
                <script>function Login(){ //fonction Js de vérification du mot de passe
                   //récupération des valeurs
                   var pseudo=document.login.pseudo.value;
@@ -47,11 +52,11 @@
                      //le pseudo est faux et ne fait pas 3 caractères
                      } else {if (pseudo.length<3){
                               //création d'une alerte
-                              alert("Votre pseudo fait au moins 3 caractères")
+                              alert("Votre pseudo doit contenir au moins 3 caractères")
                      //le mdp est faux et ne fait pas 8 caractères   
                      }else{if (password.length<8){
                               //création d'une alerte
-                              alert("Votre mot de passe fait au moins 8 caractères")
+                              alert("Votre mot de passe doit contenir au moins 8 caractères")
                      // le mot de passe est juste faux
                      } else{ 
                            alert("Mauvais mot de passe"); 
@@ -63,10 +68,8 @@
                   printreponse();
                };
                </script>
+               <br>
             </form>
-            <div class="container">
-                <p style="width: auto;">Si vous n&#39;avez pas de compte.  <a href="/register">S&#39;incrire</a></p>
-            </div>
          </div>
       </div>
       <script src="static/bootstrap/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script src="static/js/script.min.js"></script>
