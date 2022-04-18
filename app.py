@@ -148,7 +148,7 @@ def jeu():
 
 @app.route('/checkmot')  
 def checkmotp():
-    motadev = request.args.get('motadev')
+    motadev = session.get("mot")
     lang = request.args.get('lang')
     essais = request.args.get('essais')
     if existe(essais,lang):
@@ -168,6 +168,7 @@ def getmot():
     elif mode=='libre':
         mot=mot_random(longeur,lang).replace("\n","")
     message = {'mot':str(mot)}
+    session["mot"] = mot
     return jsonify(message)
 
 

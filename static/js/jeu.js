@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //sinon si le nombre d'essais possibles n'est pas atteint
         if(motsTentees.length<nbrEssais){
           motsTentees.push([]);
-          var appel=fetch('/checkmot?motadev='+motADevine+"&lang="+lang+"&essais="+mot)
+          var appel=fetch('/checkmot?lang='+lang+"&essais="+mot)
           .then(function (response) {
               return response.json();
           }).then(function (text) {
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
           coloration();
         }
         else{
-          window.alert("tu as réalisé trop d'essais");
+          window.alert("tu as réalisé trop d'essais le mot était:  "+motADevine);
         }
       }
     }
@@ -192,4 +192,5 @@ document.addEventListener("DOMContentLoaded", () => {
     
   
   });
+
   
