@@ -12,6 +12,8 @@
    <body style="background: url(&quot;static/img/tricher-au-scrabble-modified.jpg&quot;), var(--bs-gray-700);">
       <div class="row justify-content-center">
          <div class="col-md-12">
+            <br>
+            <br>
             <h2 class="text-center text-info" style="color: rgb(45,50,55);--bs-info: rgb(45,50,55);--bs-info-rgb: 45,50,55;">Inscription</h2>
          </div>
          <div class="col-12 col-sm-6 col-md-6 align-self-center site-form">
@@ -25,7 +27,11 @@
                <input class="form-control" type="password" id="confirmationmdp" name="confirmationmdp" required="" placeholder="Confirmation mot de passe" minlength="8">
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="confirmation">Confirmation</label></div>
                <div class="form-group mb-3"><label class="form-label visually-hidden" for="Submit">Submit</label></div>
-               <input onclick="Inscription()" type="button" value="S'inscire" name="button">
+               <input onclick="Inscription()" class="bouton" type="button" value="S'inscrire" name="button">
+               <br>
+               <br>
+               <p style="width: auto; "><strong>Si vous avez déjà un compte, cliquer <a href="/"><strong>ici</strong></a> pour vous connecter.</strong></p>
+
                <script>function Inscription(){
                   //récupération des données du form
                   var pseudo=document.inscription.pseudo.value;
@@ -58,7 +64,7 @@
                                     alert("Les mots de passe ne correspondent pas")
                      //pas un mail
                      }else{if (mail.length<=3){
-                              alert('Veuillez rentrer un vrai mail')
+                              alert('Veuillez rentrer un email valide')
                            }else{if (a=="True") {
                               //renvoie vers la config
                               window.location.replace("/config")
@@ -76,9 +82,6 @@
                };
                </script>
             </form>
-            <div class="container">
-                <p style="width: auto;">Si vous avez déjà un compte.  <a href="/">Se connecter</a></p>
-            </div>
             <div class="container">
                {{message}}
            </div>

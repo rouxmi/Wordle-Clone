@@ -300,3 +300,28 @@ button#form-btn {
 .header-dark .hero .ratio iframe {
 	background-color: #666
 }
+
+.bouton{
+	position: absolute;
+
+	width: 100px;
+	height: 35px;
+	opacity: 1; 
+	border-radius: 69px;
+	background-color: rgb(230,230,230);
+	font-size: 13px;
+		  
+	
+}
+.bouton:hover{
+	position: absolute;
+	opacity:1;
+	width: 100px;
+	height: 35px;
+	border-radius: 69px;
+	background-color: rgba(7, 204, 152, .2);
+	-moz-box-shadow: 0 0 5px #07cc98;
+	-webkit-box-shadow: 0 0 5px #07cc98;
+	box-shadow: 0 0 5px #07cc98;
+	font-size: 13px;
+}

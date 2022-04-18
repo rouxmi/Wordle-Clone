@@ -15,6 +15,7 @@
          var inputValue = $(this).attr("value");
          $(".input1").toggle();
          $(".input2").toggle();
+         $(".input0").toggle();
          $(".question1").toggle();
          $(".question2").toggle();
          })
@@ -83,6 +84,14 @@
                                  document.getElementById('rangeValue2').innerHTML = value;
                               }
                         </script>
+
+                        <div class="input0">
+                           Choix du niveau : 
+                           Facile <input type="radio" name="niveau" value="0" />
+                           Moyen <input type="radio" name="niveau" value="1" />
+                           Difficile <input type="radio" name="niveau" value="2" checked="yes" />
+                           
+                        </div>
                         <script>
                            rangeSlide1("6");
                            rangeSlide2("5");
@@ -115,7 +124,7 @@
                   </ul>
                </div>
                <div class="col-md-6 item text">
-                  <h3 data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">Règle du Jeu</h3>
+                  <h3 data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">Règles du Jeu</h3>
                   <p data-aos="fade-up" data-aos-duration="1400" data-aos-delay="50">Voir Onglet Règles du jeu <br></p>
                </div>
             </div>

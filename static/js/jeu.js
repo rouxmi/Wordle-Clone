@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
               }
 
-              //si le mot existe pas suppression
+              //si le mot n'existe pas suppression
               else{
                 var motActuel=motsTentees[motsTentees.length-1]; //on récupère le mot
 
