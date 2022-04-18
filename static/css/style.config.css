@@ -22,6 +22,15 @@
     display: none;
 }
 
+.input0 {
+  position: absolute;
+  top: 22%;
+  left: 28%;
+  display: none;
+  opacity: 1;
+  color: rgb(210,210,210);
+}
+
 .input1 {
   position: absolute;
   top: 20%;
