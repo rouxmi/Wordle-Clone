@@ -145,7 +145,11 @@ def jeu():
         nbLettres = int(request.form.get("tailleMot"))
     return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres)
 
+@app.route('/regles')
+def regles():
+    return render_template("regles.html")
 
+    
 @app.route('/checkmot')  
 def checkmotp():
     motadev = session.get("mot")

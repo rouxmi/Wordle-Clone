@@ -50,50 +50,10 @@
          <div class="container hero">
             <div class="row">
                <div class="col-md-8 offset-md-2">
-                  <form action="/jeu" method="post">
-                  <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Configuration</h1>
-                  <div class="ratio ratio-16x9">
-                     <div class="background"></div>
-                     <div class="data">
-                     <label class="switch">
-                        <input type="checkbox" id="togBtn" name="libre" value="libre">
-                           <div class="slider round">
-                                 <span class="on">Mode libre</span>
-                                 <span class="off">Mot du jour</span>
-                     </div>
-                     </label>
-                  </div>
-                        <label class="question1">Choisissez le nombre d'essais maximum:</label>
-                        <div class="input1">
-                           <span id="rangeValue1">0</span>
-                           <Input class="range" name="nbEssais" type="range" value="6" min="2" max="10" onChange="rangeSlide1(this.value)" onmousemove="rangeSlide1(this.value)"></Input>
-                       </div>
-                       <script type="text/javascript">
-                           function rangeSlide1(value) {
-                               document.getElementById('rangeValue1').innerHTML = value;
-                           }
-                       </script>
-                       <label class="question2">Choisissez le nombre de lettres du mot:</label>
-                      <div class="input2">
-                        <span id="rangeValue2">0</span>
-                        <Input class="range" type="range" name="tailleMot" value="5" min="3" max="20" onChange="rangeSlide2(this.value)" onmousemove="rangeSlide2(this.value)"></Input>
-                        </div>
-                        <script type="text/javascript">
-                              function rangeSlide2(value) {
-                                 document.getElementById('rangeValue2').innerHTML = value;
-                              }
-                        </script>
-                        <script>
-                           rangeSlide1("6");
-                           rangeSlide2("5");
-                        </script>
-                        <input class="jouer" type="submit"  value="Jouer">
-                     </div>
-                   </form>
-                  </div>
-               </div>
-            </div>
-         </div>
+                Vous pouvez choisir entre le mot du jour, où vous avez six essais pour deviner le mot de cinq lettres, ou alors choisir votre propre configuration avec les nombres de lettres et d’essais de votre choix.
+                Il existe trois modes de difficulté: facile où  la première et la dernière lettre du mot sont données, moyen où seule la première lettre vous est donnée , et enfin difficile où aucune lettre n’est connue .
+                Vos essais ne seront uniquement enregistrés que s’ils font partie de nos dictionnaires. Les lettres colorées en jaune sont dans le mot mais mal placées. Les lettres colorées en rouge sont dans le mot et correctement placées.Les lettres qui ne changent pas de couleur, n’appartiennent pas au mot à deviner.
+                
       </header>
       <footer class="footer-dark" style="background: linear-gradient(0deg, rgb(60,65,70) 50%, rgb(110,115,120) 100%);">
          <div class="container">
