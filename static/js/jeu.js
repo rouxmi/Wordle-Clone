@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //touches correspond à l'enssemble des boutons dans le clavier
     var touches = document.querySelectorAll(".keyboard-row button");
   
-    //dans motsTentés on stoques tous les mots éssayés
+    //dans motsTentés on stoques tous les mots essayés
     
     //gestion du clavier virtuel
     for (let i = 0; i < touches.length; i++) {
