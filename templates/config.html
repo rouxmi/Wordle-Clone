@@ -70,7 +70,7 @@
                      Facile <input type="radio" name="niveau" value="0" />
                      Moyen <input type="radio" name="niveau" value="1" />
                      Difficile <input type="radio" name="niveau" value="2" checked="yes" />
-                  </div> 
+                  </div>
                         <label class="question1">Choisissez le nombre d'essais maximum:</label>
                         <div class="input1">
                            <span id="rangeValue1">0</span>
@@ -93,25 +93,33 @@
                         </script>
 
                         
-                        <!--en attente que Lola résolve son pb pour que je vérifie si mon dropdown marche--> 
-                        <!--<div class="input3">
-                           <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Langue
-                           </button>
-                           <div class="dropdown-menu dropdown-menu-right">
-                              <button class="dropdown-item" id="fr" type="button">Français</button>
-                              <button class="dropdown-item" id="en" type="button">English</button>
-                              
-                           </div>
-                        </div>-->
+                        
                         <script>
                            rangeSlide1("6");
                            rangeSlide2("5");
                         </script>
                         <input class="jouer" type="submit"  value="Jouer">
                      </div>
+                     <div class="input3">
+                        <select class="liste" name="lang">
+                           <option disabled selected value="">Langue</option>
+                           <option value="fr" style="background-image:url(static/img/france.png);">Français</option>
+                           <option value="en" style="background-image:url(static/img/royaume-uni.png);">English</option>
+                        </select> 
+                        <!-- on peut récupérer la valuer d'un button que si de type submit pb le bouton jouer ne sert a rien -->
+                        <!--<button class="btn liste dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                           Langue
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><button class="dropdown-item" name="button" value="fr" type="submit"><img height=25px width=20px src="static/img/france.png"> Français</button></li>
+                        <li><button class="dropdown-item" name="button" value="en" type="submit"><img height=25px width=20px src="static/img/royaume-uni.png"> English</button></li>
+                        </ul>-->
+                        
+                     </div>
                    </form>
                   </div>
+                  
+                  
                </div>
             </div>
          </div>

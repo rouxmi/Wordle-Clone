@@ -161,6 +161,8 @@ def jeu():
             mode_libre=0
         nbEssais = int(request.form.get("nbEssais"))
         nbLettres = int(request.form.get("tailleMot"))
+        langue=request.form.get("lang")
+        print(langue)
     return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre)
 
 

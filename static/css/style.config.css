@@ -24,7 +24,7 @@
 
 .input0 {
   position: absolute;
-  top: 16%;
+  top: 20%;
   left: 28%;
   display: none;
   opacity: 1;
@@ -48,8 +48,8 @@
 
 .input3{
   position: absolute;
-  top: 70%;
-  left: 28%;
+  top: 71%;
+  left: 47%;
   display: none;
   opacity: 1;
   color: rgb(210,210,210);
@@ -212,10 +212,10 @@
   
 .jouer{
     position: absolute;
-    top:98%;
+    top:100%;
     left: 39.1%;
-    width: 195px;
-    height: 69px;
+    width: 185px;
+    height: 59px;
     opacity: 1; 
     border-radius: 69px;
     background-color: rgb(230,230,230);
@@ -223,6 +223,25 @@
       
 }
 
-  
+.liste{
+	width: 100px;
+	height: 45px;
+	opacity: 1; 
+	border-radius: 69px;
+	background-color: rgb(230,230,230);
+	font-size: 16px;
+}
+.liste:hover{
+	width: 100px;
+	height: 45px;
+	opacity: 1; 
+	border-radius: 69px;
+	font-size: 16px;
+  position: absolute;
+	background-color: rgba(7, 204, 152, .2);
+	-moz-box-shadow: 0 0 5px #07cc98;
+	-webkit-box-shadow: 0 0 5px #07cc98;
+	box-shadow: 0 0 5px #07cc98;
 
+}
   
