@@ -196,8 +196,8 @@ def getmot():
     #si mot du jour va chercher le mot dans la BD
     if mode=="jour":
         mot_crypt=query_db("SELECT * FROM Mot_du_Jour WHERE date_de_la_partie=?", [datetime.date.today()])[0][1]
-        mot=decrypto(mot_crypt)
-        mot=mot.upper()
+        mot_lower=decrypto(mot_crypt)
+        mot=mot_lower.upper()
     #si mode libre choix aléatoire dans le dictionnaire 
     elif mode=='libre':
         mot=mot_random(longeur,lang).replace("\n","")
