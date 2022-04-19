@@ -43,7 +43,9 @@
                <div style="opacity: 0.61;">
                <div id="board-container">
                   <div id="board" style="grid-template-columns: repeat( {{ tailleMot }} , 1fr);">
-                     <script>let size={{tailleMot}};
+                     <script>
+                     let mode_libre = {{ libre }};
+                     let size = {{tailleMot}};
                      let nbrEssais = {{nbEssais}};
                      </script>
                      {% for i in range(nbEssais)%}

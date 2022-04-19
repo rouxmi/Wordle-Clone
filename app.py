@@ -155,9 +155,13 @@ def jeu():
     if request.method == "POST":
         #On récupère tout ce qui a été rempli dans le form
         libre = bool(request.form.get("libre"))
+        if libre:
+            mode_libre=1
+        else:
+            mode_libre=0
         nbEssais = int(request.form.get("nbEssais"))
         nbLettres = int(request.form.get("tailleMot"))
-    return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres)
+    return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre)
 
 
 @app.route('/regles')
@@ -193,6 +197,7 @@ def getmot():
     if mode=="jour":
         mot_crypt=query_db("SELECT * FROM Mot_du_Jour WHERE date_de_la_partie=?", [datetime.date.today()])[0][1]
         mot=decrypto(mot_crypt)
+        mot=mot.upper()
     #si mode libre choix aléatoire dans le dictionnaire 
     elif mode=='libre':
         mot=mot_random(longeur,lang).replace("\n","")

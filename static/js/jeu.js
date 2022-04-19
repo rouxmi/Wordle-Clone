@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     //initialisation des variables
-    var mode="libre"; 
+    if (mode_libre==1){
+      var mode="libre"; 
+    }
+    else{
+      var mode="jour";  
+    }
     var lang="fr";
     var motsTentees=[[]];
     var index=0;

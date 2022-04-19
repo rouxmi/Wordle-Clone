@@ -6,7 +6,7 @@ def crypto(word):
     crypo encode un mot par la méthode de césar clé=5
     """
     n=5
-    word.lower()
+    word=word.lower()
     mot_crypte = ''
     for lettre in word:
         if 97<=ord(lettre)<=122:
@@ -39,3 +39,4 @@ def decrypto(word):
         else :
             mot_decrypte += lettre    
     return mot_decrypte
+
