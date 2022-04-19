@@ -16,6 +16,7 @@
          $(".input1").toggle();
          $(".input2").toggle();
          $(".input0").toggle();
+         $(".input3").toggle();
          $(".question1").toggle();
          $(".question2").toggle();
          })
@@ -32,7 +33,7 @@
                <div class="collapse navbar-collapse" id="navcol-2">
                   <ul class="navbar-nav">
                      <li class="nav-item"><a class="nav-link" href="/config" style="color: rgb(23,23,23);">Configuration</a></li>
-                     <li class="nav-item"><a class="nav-link" href="/regles" style="color: rgb(23,23,23);">Règles du Jour</a></li>
+                     <li class="nav-item"><a class="nav-link" href="/regles" style="color: rgb(23,23,23);">Règles du Jeu</a></li>
                   </ul>
                   <form class="me-auto" target="_self">
                      <div class="d-flex align-items-center"></div>
@@ -90,8 +91,18 @@
                            Facile <input type="radio" name="niveau" value="0" />
                            Moyen <input type="radio" name="niveau" value="1" />
                            Difficile <input type="radio" name="niveau" value="2" checked="yes" />
-                           
-                        </div>
+                        </div>  
+                        <!--en attente que Lola résolve son pb pour que je vérifie si mon dropdown marche--> 
+                        <!--<div class="input3">
+                           <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Langue
+                           </button>
+                           <div class="dropdown-menu dropdown-menu-right">
+                              <button class="dropdown-item" id="fr" type="button">Français</button>
+                              <button class="dropdown-item" id="en" type="button">English</button>
+                              
+                           </div>
+                        </div>-->
                         <script>
                            rangeSlide1("6");
                            rangeSlide2("5");

@@ -46,6 +46,17 @@
     opacity: 1;
 }
 
+.input3{
+  position: absolute;
+  top: 70%;
+  left: 28%;
+  display: none;
+  opacity: 1;
+  color: rgb(210,210,210);
+  
+}
+
+
 #rangeValue1 {
   position: relative;
   display: block;
