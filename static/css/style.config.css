@@ -14,7 +14,7 @@
 
 .question2{
     position: absolute;
-    top:75.2%;
+    top:70.2%;
     left:28%;
     width:400px;
     height: 20px;
@@ -33,7 +33,7 @@
 
 .input1 {
   position: absolute;
-  top: 20%;
+  top: 25%;
   left: 28%;
   display: none;
   opacity: 1;
@@ -48,7 +48,7 @@
 
 .input3{
   position: absolute;
-  top: 71%;
+  top: 69%;
   left: 47%;
   display: none;
   opacity: 1;
@@ -62,7 +62,7 @@
   display: block;
   text-align: center;
   right:27.75%;
-  font-size: 5em;
+  font-size: 4em;
   color: rgb(210,210,210);
   font-weight: 400;
   opacity: 1;
@@ -72,7 +72,7 @@
     display: block;
     text-align: center;
     right:27.75%;
-    font-size: 5em;
+    font-size: 4em;
     color: rgb(210,210,210);
     font-weight: 400;
     opacity: 1;
