@@ -47,13 +47,14 @@
                      let mode_libre = {{ libre }};
                      let size = {{tailleMot}};
                      let nbrEssais = {{nbEssais}};
+                     let niveau = {{niveau}};
                      </script>
                      {% for i in range(nbEssais)%}
                         {% for j in range(tailleMot)%}
                            <div class="square animate__animated" id="{{i*tailleMot+j}}" style="background-color: white;"></div>
                         {%endfor%}
                      {%endfor%}
-
+                     <!--<p>{{niveau}}</p> test si la valeur du niveau est bien récupéré-->
                   </div>
                </div>
             </div>

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     //création de la requête pour obtenir le mot de la partie
-    var mot=fetch('/getmot?mode='+mode+'&lang='+lang+"&size="+size) //envoie du mode, de la langue et la taille du mot voulus
+    var mot=fetch('/getmot?mode='+mode+'&lang='+lang+"&size="+size+"&niveau="+niveau) //envoie du mode, de la langue, la taille et le niveau du mot voulus
       .then(function (response) {
           //convertion de la réponse en json
           return response.json(); 
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     const getmot = async () => { //création de la fonction asyncrone
         const motADevine = await mot; //attente de la réponse du serveur 
-        if (motADevine!=''){  //vérication que la réponse n'est pas vite
+        if (motADevine!=''){  //vérication que la réponse n'est pas vide
           //lancement de la partie
           start(motADevine) 
           console.log(motADevine)
@@ -82,10 +82,35 @@ document.addEventListener("DOMContentLoaded", () => {
     function majTableau(lettre, size){
       const motActuel= getMotActuel();
       if(motActuel && motActuel.length<size){
-        motActuel.push(lettre);
-        const placeCourante=document.getElementById(String(index));
-        index=index+1;
-        placeCourante.textContent=lettre;
+       /* if(niveau ==1){
+            if(index==1){
+              lettre = motadev[1];
+            }
+            if(index==size){
+              lettre = motadev[size];
+            }
+            motActuel.push(lettre);
+            const placeCourante=document.getElementById(String(index));
+            index=index+1;
+            placeCourante.textContent=lettre;
+          }
+          if(niveau ==2){
+            if(index ==1){
+              lettre = motadev[1];
+            }
+            motActuel.push(lettre);
+            const placeCourante=document.getElementById(String(index));
+            index=index+1;
+            placeCourante.textContent=lettre;
+          }
+          else{} */
+            motActuel.push(lettre);
+            const placeCourante=document.getElementById(String(index));
+            index=index+1;
+            placeCourante.textContent=lettre;
+          
+         
+        
       }
     }
 
