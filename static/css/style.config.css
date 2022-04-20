@@ -56,6 +56,13 @@
   
 }
 
+.regles{
+  position: absolute;
+  color:beige;
+  margin-top: 5%;
+  margin-left: 11%;
+}
+
 
 #rangeValue1 {
   position: relative;
