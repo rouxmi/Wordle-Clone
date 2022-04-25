@@ -13,12 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
     var existe;
     var rouge=[];
     var jaune=[];
-    var lang=lang;
+    var lang;
     
     
 
     //création de la requête pour obtenir le mot de la partie
-    var mot=fetch('/getmot?mode='+mode+'&lang='+lang+"&size="+size+"&niveau="+niveau) //envoie du mode, de la langue, la taille et le niveau du mot voulus
+    if (lang==1){
+      langue='fr'}
+    else{
+      langue='en'
+    }
+    var mot=fetch('/getmot?mode='+mode+'&lang='+langue+"&size="+size+"&niveau="+niveau) //envoie du mode, de la langue, la taille et le niveau du mot voulus
       .then(function (response) {
           //convertion de la réponse en json
           return response.json(); 
