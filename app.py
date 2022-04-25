@@ -167,7 +167,7 @@ def jeu():
         else:
             lang=0  
         niveau=int(request.form.get("niveau"))
-    return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre, niveaux=niveau, langs=lang)
+    return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre, niveaux=niveau, langs=int(lang))
 
 
 @app.route('/regles')

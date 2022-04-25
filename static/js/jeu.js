@@ -5,7 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     else{
       var mode="jour"; 
+    };
+    if (lang==1){
+      var langue='fr';
     }
+    else{
+      var langue='en';
+    };
     var motsTentees=[[]];
     var index=0;
     var motADevine;
@@ -13,16 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     var existe;
     var rouge=[];
     var jaune=[];
-    var lang;
-    
+    var langue;
     
 
     //création de la requête pour obtenir le mot de la partie
-    if (lang==1){
-      langue='fr'}
-    else{
-      langue='en'
-    }
     var mot=fetch('/getmot?mode='+mode+'&lang='+langue+"&size="+size+"&niveau="+niveau) //envoie du mode, de la langue, la taille et le niveau du mot voulus
       .then(function (response) {
           //convertion de la réponse en json
