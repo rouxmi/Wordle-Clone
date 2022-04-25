@@ -6,7 +6,6 @@ def dictionnaire():
     fichier= open("Dictionnaires/en_dictionnaire_minuscules.txt",'r')
     dictionnaire=open("Dictionnaires/en_dictionnaire.txt",'w')
     mots=fichier.readlines()
-    print('coucou')
     for mot in mots:
         a = mot.split(',')
         b= a[0].split('\n')
