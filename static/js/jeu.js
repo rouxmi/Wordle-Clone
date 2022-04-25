@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function start(motadev){
     
     //index correspond à la case qui va être rempli
-    motADevine=motadev
+    motADevine=motadev;
     //touches correspond à l'enssemble des boutons dans le clavier
     var touches = document.querySelectorAll(".keyboard-row button");
   
