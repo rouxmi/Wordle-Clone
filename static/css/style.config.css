@@ -229,6 +229,22 @@
     font-size: 30px;
       
 }
+.jouer:hover{
+  position: absolute;
+  top:100%;
+  left: 40.1%;
+  width: 185px;
+  height: 59px;
+  opacity: 1; 
+  border-radius: 69px;
+  background-color: rgb(230,230,230);
+  font-size: 30px;
+	background-color: rgba(7, 204, 152, .2);
+	-moz-box-shadow: 0 0 5px #07cc98;
+	-webkit-box-shadow: 0 0 5px #07cc98;
+	box-shadow: 0 0 5px #07cc98;
+
+}
 
 .liste{
 	width: 100px;
