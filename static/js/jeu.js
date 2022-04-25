@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //sinon si le nombre d'essais possibles n'est pas atteint
         if(motsTentees.length<=nbrEssais){
           //création du requête pour vérifier si le mot existe et si oui donnée son vecteur couleur
-          var appel=fetch('/checkmot?lang='+lang+"&essais="+mot)//passage du mot et de sa langue au serveur
+          var appel=fetch('/checkmot?lang='+langue+"&essais="+mot)//passage du mot et de sa langue au serveur
           .then(function (response) {
               //convertion de la réponse en json
               return response.json();
