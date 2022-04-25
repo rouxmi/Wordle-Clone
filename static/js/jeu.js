@@ -4,9 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
       var mode="libre"; 
     }
     else{
-      var mode="jour";  
+      var mode="jour"; 
     }
-    var lang="fr";
     var motsTentees=[[]];
     var index=0;
     var motADevine;
@@ -14,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     var existe;
     var rouge=[];
     var jaune=[];
+    var lang=lang;
+    
     
 
     //création de la requête pour obtenir le mot de la partie
