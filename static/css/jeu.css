@@ -100,3 +100,49 @@ header {
 .keyboard-row button.wide-button {
   flex-grow: 1.5;
 }
+.bouton1{
+  width: 300px;
+  height: 50px;
+  opacity: 1; 
+  border-radius: 69px;
+  background-color: rgb(230,230,230);
+  font-size: 19px;
+        
+    
+}
+.bouton1:hover{
+  
+    opacity:1;
+    width: 300px;
+    height: 50px;
+    border-radius: 69px;
+    background-color: rgba(7, 204, 152, .2);
+    -moz-box-shadow: 0 0 5px #07cc98;
+    -webkit-box-shadow: 0 0 5px #07cc98;
+    box-shadow: 0 0 5px #07cc98;
+    font-size: 19px;
+  }
+  .bouton2{
+
+
+    width: 300px;
+    height: 50px;
+    opacity: 1; 
+    border-radius: 69px;
+    background-color: rgb(230,230,230);
+    font-size: 19px;
+          
+      
+  }
+  .bouton2:hover{
+
+      opacity:1;
+      width: 300px;
+      height: 50px;
+      border-radius: 69px;
+      background-color: rgba(7, 204, 152, .2);
+      -moz-box-shadow: 0 0 5px #07cc98;
+      -webkit-box-shadow: 0 0 5px #07cc98;
+      box-shadow: 0 0 5px #07cc98;
+      font-size: 19px;
+    }
