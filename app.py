@@ -169,7 +169,12 @@ def jeu():
         else:
             lang=0  
         niveau=int(request.form.get("niveau"))
-    return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre, niveaux=niveau, langs=int(lang))
+        motadev = session.get("mot")
+        premierelettre=motadev[0]
+        dernierelettre=motadev[-1]
+        print(motadev)
+        print(dernierelettre,premierelettre)
+    return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre, niveaux=niveau, langs=int(lang),lettre1=premierelettre,lettre2=dernierelettre)
 
 
 @app.route('/regles')
