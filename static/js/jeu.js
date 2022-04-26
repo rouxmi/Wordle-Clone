@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     var jaune=[];
     var langue;
     
+    
 
     //création de la requête pour obtenir le mot de la partie
     var mot=fetch('/getmot?mode='+mode+'&lang='+langue+"&size="+size+"&niveau="+niveau) //envoie du mode, de la langue, la taille et le niveau du mot voulus
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     //index correspond à la case qui va être rempli
     motADevine=motadev; 
-    console.log(motADevine);
+    
     //touches correspond à l'enssemble des boutons dans le clavier
     var touches = document.querySelectorAll(".keyboard-row button");
   
@@ -70,8 +71,33 @@ document.addEventListener("DOMContentLoaded", () => {
         majTableau(lettre,size);
   
       };
-  };
+      
+    }
+    majlettreniveau();
 
+    }
+
+    function majlettreniveau(){
+      motadev=motADevine
+      const motActuel= getMotActuel();
+      var lettre;
+      if(motActuel && motActuel.length<size){
+    if(niveau ==1){
+      if(index%size==0){
+        lettre = motadev[0];
+        const placeCourante=document.getElementById(String(index+size-1));
+        placeCourante.textContent=motadev[size-1];
+      }
+      majTableau(lettre,size)
+    }
+    if(niveau ==2){
+      if(index%size ==0){
+        lettre = motadev[0];
+        
+      }
+      majTableau(lettre,size)
+      };
+     };
     }
 
     /*getMotActuel
@@ -89,35 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function majTableau(lettre, size){
       const motActuel= getMotActuel();
       if(motActuel && motActuel.length<size){
-       /* if(niveau ==1){
-            if(index==1){
-              lettre = motadev[1];
-            }
-            if(index==size){
-              lettre = motadev[size];
-            }
             motActuel.push(lettre);
             const placeCourante=document.getElementById(String(index));
             index=index+1;
             placeCourante.textContent=lettre;
-          }
-          if(niveau ==2){
-            if(index ==1){
-              lettre = motadev[1];
-            }
-            motActuel.push(lettre);
-            const placeCourante=document.getElementById(String(index));
-            index=index+1;
-            placeCourante.textContent=lettre;
-          }
-          else{} */
-            motActuel.push(lettre);
-            const placeCourante=document.getElementById(String(index));
-            index=index+1;
-            placeCourante.textContent=lettre;
-          
-         
-        
       }
     }
 
@@ -162,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 var numeroligne=motsTentees.length-2; /* je recupere le numero de la derniere ligne dans lequel l'utilisateur a écrit*/
                 var tailleMot=motADevine.length;
+                majlettreniveau();
                 for (let i = 0; i<couleur[1].length; i++){ 
                   var numerodecase=numeroligne*tailleMot+i; /* je calcule la case à colorer*/
                   let square=document.getElementById(numerodecase); /*je recupere le div correspondant*/
@@ -219,6 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
                 //alerte que le mot n'existe pas
                 alert("ton mot n'est pas dans le dictionnaire")
+                majlettreniveau();
               }
             };
           };
