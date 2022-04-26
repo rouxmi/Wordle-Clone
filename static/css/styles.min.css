@@ -57,7 +57,8 @@ button#form-btn {
 }
 
 .footer-dark {
-	height: 250px;
+	height: 100%;
+	min-height: 250px;
 	padding: 50px 0;
 	color: #f0f9ff;
 	background-color: #282d32
