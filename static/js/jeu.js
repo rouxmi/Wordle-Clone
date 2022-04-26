@@ -194,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 if(mot==motADevine){
                   window.alert("BRAVO");
+                  //startconfetti();
                 }
                 else{
                   if(motsTentees.length>nbrEssais){
