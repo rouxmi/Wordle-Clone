@@ -41,11 +41,6 @@
             <div class="row">
                <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Wordle de Légende</h1>
                <div style="opacity: 0.61;">
-                  {%if niveaux ==1%}
-                     <p>Indice : la première lettre est {{lettre1}}, la dernière lettre est {{lettre2}}</p>
-                  {%elif niveaux==2%}
-                     <p>Indice : la première lettre est {{lettre1}}</p>
-                  {%endif%}
                <div id="board-container">
                   
                   <div id="board" style="grid-template-columns: repeat( {{ tailleMot }} , 1fr);">
