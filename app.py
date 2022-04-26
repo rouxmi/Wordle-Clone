@@ -150,6 +150,7 @@ def disconnect():
 @app.route("/jeu", methods=["GET", "POST"])
 def jeu():
     #Ici on teste si le joueur est identifié ou pas
+    global mode_libre
     if not session.get("pseudo"):
         return render_template("login.html")
     if request.method == "POST":
@@ -159,6 +160,7 @@ def jeu():
             mode_libre=1
         else:
             mode_libre=0
+        global nbEssais, nbLettres, niveau, lang
         nbEssais = int(request.form.get("nbEssais"))
         nbLettres = int(request.form.get("tailleMot"))
         lang=str(request.form.get("lang"))

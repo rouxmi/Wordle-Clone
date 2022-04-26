@@ -36,35 +36,23 @@ CREATE TABLE Mot_du_Jour (
 --Votre BDD est vide c'est trop triste
 --copiez-collez ces lignes pour remplir votre BDD
 --n'hesitez pas à rajouter des lignes pour que la BDD soit remplie au max !
-
+--Table Partie--
+INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes) 
+    VALUES (1, 'lola', '2022-04-16', 'mdj', 'fr', 3,'faire' 6, 3, 'crane raser jeter');
+SELECT id_partie, type_de_jeu,niveau_difficulte, mot_a_deviner, m_tentes FROM Partie WHERE pseudo='lola' and DATE='2022-04-16';--a tester--
+UPDATE Partie SET m_tentes='faire boire poire' where id_partie=1 AND pseudo='lola'
+REMOVE FROM Partie WHERE id_partie=1 and pseudo='lola'
+--Table Joueur--
 INSERT into Joueur (pseudo, email, mdp, nombre_parties) 
     VALUES ('lucie', 'lucie.boucher@telecomnancy.eu', 'qzhnjqzhnj', 5);
+UPDATE Joueur SET nombre_parties =10 WHERE pseudo='lucie';
+DELETE FROM Joueur WHERE pseudo='lucie';
+SELECT pseudo WHERE nombre_parties=3;
 
-INSERT into Joueur (pseudo, email, mdp, nombre_parties) 
-    VALUES ('remi', 'remi.bourdais@telecomnancy.eu', 'wjrnwjrn', 0);
-
-INSERT into Joueur (pseudo, email, mdp, nombre_parties) 
-    VALUES ('lola', 'lola.montignier@telecomnancy.eu', 'qtqfqtqf', 1);
-
-INSERT into Joueur (pseudo, email, mdp, nombre_parties) 
-    VALUES ('fromath', 'mathilde.bard@telecomnancy.eu', 'kwtrfymkwtrfym', 0);
-
+--Table Mot_du_Jour
 INSERT INTO Mot_du_Jour (date_de_la_partie, mot)
     VALUES ('2022-04-16', 'jeter');
 
 INSERT INTO Mot_du_Jour (date_de_la_partie, mot)
     VALUES ('2022-04-15', 'arbre');
 
-INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, nombre_m_tentes, m_tentes) 
-    VALUES (1, 'lola', '2022-04-16', 'mdj', 'fr', 3, 6, 3, 'crane raser jeter');
-INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, nombre_m_tentes, m_tentes) 
-    VALUES (1, 'lucie', '2022-04-16', 'mdj', 'fr', 3, 6, 4, 'crane raser raque jeter');
-INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, nombre_m_tentes, m_tentes) 
-    VALUES (2, 'lucie', '2022-04-16', 'libre', 'en', 1, 6, 4, 'coucou bonjou acajou');
-INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, nombre_m_tentes, m_tentes) 
-    VALUES (3, 'lucie', '2022-04-15', 'mdj', 'fr', 3, 8, 2, 'crane arbre');
-
-INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue,niveau_difficulte,nombre_e_max, nombre_m_tentes, m_tentes) 
-    VALUES (4,'lucie','2022-03-23','mdj', 'fr', 3, 6, 2, 'coucou luciee');
-INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue,niveau_difficulte,nombre_e_max, nombre_m_tentes, m_tentes) 
-    VALUES (5,'lucie',2022-03-23,'libre', 'en', 3, 6, 2, 'coucou luciee');
