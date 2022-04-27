@@ -51,3 +51,7 @@
   .contenant{
     min-height: 500px;
   }
+
+  .img{
+    opacity: 3;
+  }
