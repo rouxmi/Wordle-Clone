@@ -12,6 +12,7 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='css/jeu.css') }}">
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       <script src="static/js/jeu.js"></script>
+
    
    </head>
    <body style="background: url(&quot;static/img/motus-modified.jpg&quot;);">
@@ -39,11 +40,12 @@
             </div>
          </nav>
          <div class="container hero">
+            <canvas id="confetti" style="position: absolute; z-index: 2"></canvas>
+            <script src="static/js/confetti.js"></script>
             <div class="row">
                <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Wordle de Légende</h1>
                <div style="opacity: 0.61;">
-               <div id="board-container">
-                  
+               <div id="board-container" class="js-container">
                   <div id="board" style="grid-template-columns: repeat( {{ tailleMot }} , 1fr);">
                      <script>
                      let mode_libre = {{ libre }};
@@ -101,11 +103,13 @@
                            <button data-key="N" id="LN">n</button>
                            <button data-key="supprimer" class="wide-button">Supprimer</button>
                         </div>
-            
+                     
                      </div>
-                     <br>
-                     <form style="display: inline;" action="/jeu"><input class="bouton1" type="submit" value="Jouer avec les mêmes réglages"></form>
-                     <form style="display: inline;" action="/config"><input class="bouton2" type="submit" value="Jouer avec de nouveaux réglages"></form>
+                     {%if libre==1 %}
+                        <br>
+                        <form style="display: inline;" action="/jeu"><input class="bouton1" type="submit" value="Jouer avec les mêmes réglages"></form>
+                        <form style="display: inline;" action="/config"><input class="bouton2" type="submit" value="Jouer avec de nouveaux réglages"></form>
+                     {%endif%}
                   </div>
                </div>
             </div>
