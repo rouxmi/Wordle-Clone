@@ -3,13 +3,13 @@
 WORDLE est un jeu en ligne consistant à deviner un mot par jour. Pour cela, le joueur
 dispose seulement de la taille du mot. A chaque tentative, il obtient des indications : si une
 lettre est dans le mot recherché mais pas au bon endroit, elle se colore en jaune et si une
-lettre est bien placée, elle se colore en vert.
+lettre est bien placée, elle se colore en rouge.
 
 Voici notre version du Wordle...
 
-## Pré-requis et Instalation
+## Pré-requis et Installation
 
-Notre wordle est une application web coder en python3 avec le framework flask. tout cette application repose aussi sur une base de données codées avec sqlite3.
+Notre wordle est une application web coder en python3 avec le framework flask. Toute cette application repose aussi sur une base de données codée avec sqlite3.
 
 Il faut donc installer python3, flask et sqlite3
 
@@ -21,7 +21,7 @@ Il faut donc installer python3, flask et sqlite3
 
 ## Démarrage
 
-la simple commande ``python3 app.py`` lance l'application
+La simple commande ``python3 app.py`` lance l'application
 
 
 ## Auteurs

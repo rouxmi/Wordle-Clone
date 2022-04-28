@@ -48,6 +48,10 @@
     list-style-type: none;
     }
 
-    .contenant{
-      min-height: 500px;
-    }
+  .contenant{
+    min-height: 500px;
+  }
+
+  .img{
+    opacity: 3;
+  }
