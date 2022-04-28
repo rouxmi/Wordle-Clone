@@ -13,9 +13,9 @@
       <script>$(document).ready(function(){
          $('input[type="checkbox"]').click(function(){
          var inputValue = $(this).attr("value");
-         $(".input1").toggle();
+         $(".radio").toggle();
          $(".input2").toggle();
-         $(".input0").toggle();
+         $(".input1").toggle();
          $(".input3").toggle();
          $(".question1").toggle();
          $(".question2").toggle();
@@ -63,24 +63,26 @@
          <div class="container hero">
             <div class="row">
                <div class="col-md-8 offset-md-2">
-                  <form action="/jeu" method="post">
+                  
                   <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Configuration</h1>
-                  <div class="ratio ratio-16x9">
-                     <div class="background"></div>
+                  <div class="contenant">
+                     <div class="background">
+                     <div class="fond"></div>
                      <div class="data">
+                     <form class="fo" action="/jeu" method="post">
                      <label class="switch">
-                        <input type="checkbox" id="togBtn" name="libre" value="libre">
+                        <input class="swap" type="checkbox" id="togBtn" name="libre" value="libre">
                            <div class="slider round">
                                  <span class="on">Mode libre</span>
                                  <span class="off">Mot du jour</span>
                      </div>
                      </label>
-                  </div>
-                  <div class="input0">
-                     Choix du niveau : 
-                     Facile <input type="radio" name="niveau" value="1" />
-                     Moyen <input type="radio" name="niveau" value="2" />
-                     Difficile <input type="radio" name="niveau" value="3" checked="yes" />
+                  <label class="question1">Choix du niveau de difficulté : </label>
+                  <div class="radio">
+                     <input label="Facile" type="radio" id="1" name="niveau" value="1" checked>
+                     <input label="Moyen" type="radio" id="2" name="niveau" value="2">
+                     <input label="Difficile" type="radio" id="3" name="niveau" value="3">
+                     
                   </div>
                         <label class="question1">Choisissez le nombre d'essais maximum:</label>
                         <div class="input1">
@@ -97,20 +99,8 @@
                         <span id="rangeValue2">0</span>
                         <Input class="range" type="range" name="tailleMot" value="5" min="3" max="20" onChange="rangeSlide2(this.value)" onmousemove="rangeSlide2(this.value)"></Input>
                         </div>
-                        <script type="text/javascript">
-                              function rangeSlide2(value) {
-                                 document.getElementById('rangeValue2').innerHTML = value;
-                              }
-                        </script>
-
                         
-                        
-                        <script>
-                           rangeSlide1("6");
-                           rangeSlide2("5");
-                        </script>
-                        <input class="jouer" type="submit"  value="Jouer">
-                     </div>
+                     
                      <div class="input3">
                         <dl id="menu"> 
                            <dt onclick="javascript:montre('smenu2');">Choix de la langue</dt>
@@ -136,9 +126,27 @@
                         </ul>-->
                         
                      </div>
+                     <div class="container-jouer">
+                     <input class="jouer" type="submit"  value="Jouer">
+                  </div>
+                  </div>
+                        <script type="text/javascript">
+                              function rangeSlide2(value) {
+                                 document.getElementById('rangeValue2').innerHTML = value;
+                              }
+                        </script>
+
+                        
+                        
+                        <script>
+                           rangeSlide1("6");
+                           rangeSlide2("5");
+                        </script>
+                        
                    </form>
                   </div>
-                  
+               </div>
+               </div>
                   
                </div>
             </div>
