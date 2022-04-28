@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-
+.swap{
+  display:block;
+}
 
 .question1{
-    position: absolute;
-    top: 40%;
-    left: 28%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
     width:400px;
     height: 20px;
     color:rgb(210,210,210);
@@ -13,43 +15,36 @@
 }
 
 .question2{
-    position: absolute;
-    top:70.2%;
-    left:28%;
+  text-align: center;
+    margin-left:auto;
+    margin-right:auto;
     width:400px;
     height: 20px;
     color: rgb(210,210,210);
     display: none;
 }
 
-.input0 {
-  position: absolute;
-  top: 20%;
-  left: 28%;
-  display: none;
-  opacity: 1;
-  color: rgb(210,210,210);
-}
+
 
 .input1 {
-  position: absolute;
-  top: 25%;
-  left: 28%;
+  left:50%;
+  margin-left:auto;
+  margin-right:auto;
   display: none;
   opacity: 1;
 }
 .input2{
-    position: absolute;
-    top: 55%;
-    left:28%;
+    left:50%;
+    margin-left:auto;
+    margin-right:auto;
     display: none;
     opacity: 1;
 }
 
 .input3{
-  position: absolute;
-  top: 63%;
-  left: 44%;
+  left:50%;
+  margin-left:auto;
+  margin-right:auto;
   display: none;
   opacity: 1;
   color: rgb(210,210,210);
@@ -65,7 +60,8 @@
 
 
 #rangeValue1 {
-  position: relative;
+  margin-left:auto;
+  margin-right:auto;
   display: block;
   text-align: center;
   right:27.75%;
@@ -75,7 +71,8 @@
   opacity: 1;
 }
 #rangeValue2 {
-    position: relative;
+    margin-left:auto;
+    margin-right:auto;
     display: block;
     text-align: center;
     right:27.75%;
@@ -108,23 +105,34 @@
 
 
 .data{
-    display: absolute;
-    width: 100%;
-    height: 100%;
+	height: 100vh;
+  margin-left:auto;
+  margin-right:auto;
+  width: 100%;
+  height: 100%;
+  padding: 3px 3px;
+  max-width: 600px;
+  min-width:300px;
+  max-height: 640px;
+  min-height: 460px;
+  text-overflow: clip;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align:justify;
+  display: flex;
+  justify-content: center;
 }
 
-.libre{
-    position: absolute;
-    top: 60%;
-    left: 25%;
-    width:200px;
-    height: 20px;
-}
+
+
 
 .switch {
-    position: absolute;
-    top:5%;
-    left: 39.1%;
+    margin-left: auto;
+    margin-right: auto;
+    left:auto;
+    margin-top: 10px;
+    display:block;
+    position: relative;
     width: 195px;
     height: 69px;
     opacity: 1;
@@ -133,6 +141,7 @@
   .switch input {display:none;}
   
   .slider {
+    display:block;
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -145,6 +154,7 @@
   }
   
   .slider:before {
+    display:block;
     position: absolute;
     content: "";
     height: 61px;
@@ -174,6 +184,7 @@
   {
     display: none;
     font-size: 18px;
+    
 
   }
 
@@ -182,7 +193,10 @@
     left:73%;
     width: 120px;
     font-size: 18px;
+    display:block;
   }
+
+  
   
   .on, .off
   {
@@ -203,24 +217,50 @@
   
   .slider.round {
     border-radius: 69px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .slider.round:before {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 30px;}
+    
 
   .background{
-    display: absolute;
-    width:  80%;
-    left: 10%;
-    height: 120%;
+    margin-left:auto;
+    margin-right:auto;
+    width: 100%;
+    height: 80%;
+    max-width: 600px;
+    min-width:300px;
+    max-height: 720px;
+    min-height: 520px;
     background-color: #333;
-    opacity: 0.70;
+    opacity: 0.70; 
+    text-overflow: clip;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
   }
+
+.container-jouer{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  align-self: center;
+  width: 185px;
+  height: 59px;
+}
   
 .jouer{
-    position: absolute;
-    top:100%;
-    left: 40.1%;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+    position: relative;
     width: 185px;
     height: 59px;
     opacity: 1; 
@@ -230,9 +270,7 @@
       
 }
 .jouer:hover{
-  position: absolute;
-  top:100%;
-  left: 40.1%;
+  bottom:10px;
   width: 185px;
   height: 59px;
   opacity: 1; 
@@ -246,7 +284,25 @@
 
 }
 
+.container-switch{
+  display:block;  
+}
+
+.contenant{
+  min-height: 600px;
+  max-height: 700px;
+  text-overflow: clip;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align:justify;
+
+}
+
 .liste{
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  left:50%;
 	width: 100px;
 	height: 45px;
 	opacity: 1; 
@@ -274,9 +330,8 @@
   list-style-type: none;
   }
   #menu {
-  position: absolute; /* placement du menu, à modifier selon vos besoins */
-  top: 0;
-  left: 0;
+    margin-left:auto;
+    margin-right:auto;
   }
   #menu {
   width: 15em;
@@ -313,4 +368,56 @@
   }
 .agauche{
   margin-left: 15px;
+}
+
+.fo{
+  display: inline-block;
+  justify-content: center;
+  height: 540px;
+}
+
+.radio {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  display: none;
+  opacity: 1;
+  color: rgb(210,210,210);
+	background: #454857;
+	padding: 4px;
+	border-radius: 3px;
+	box-shadow: inset 0 0 0 3px rgba(35, 33, 45, 0.3),
+		0 0 0 3px rgba(185, 185, 185, 0.3);
+	position: relative;
+}
+
+.radio input {
+	width: auto;
+	height: 100%;
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 2px;
+	padding: 4px 8px;
+	background: #454857;
+	color: #bdbdbdbd;
+	font-size: 14px;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	transition: all 100ms linear;
+}
+
+.radio input:checked {
+	background-image: linear-gradient(180deg, #2fc1a5, #74bbad);
+	color: #fff;
+	box-shadow: 0 1px 1px #0000002e;
+	text-shadow: 0 1px 0px #79485f7a;
+}
+
+.radio input:before {
+	content: attr(label);
+	display: inline-block;
+	text-align: center;
+	width: 100%;
 }

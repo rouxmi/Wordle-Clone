@@ -44,10 +44,10 @@
     display: block;
     width: auto;
     margin: 0;
-    padding: 3% 3%;
+    padding: 5px 5px;
     list-style-type: none;
     }
 
-  .contenant{
-    min-height: 500px;
-  }
+    .contenant{
+      min-height: 500px;
+    }
