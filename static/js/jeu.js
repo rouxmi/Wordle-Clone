@@ -124,8 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const derlettre = motadev[size-1]
         motActuel.push(derlettre);
         const placeCourante=document.getElementById(String(index));
-        index=index+1;
         placeCourante.textContent=derlettre;
+        index=index+1;
       }
     }
 
