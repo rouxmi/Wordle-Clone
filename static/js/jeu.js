@@ -82,20 +82,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const motActuel= getMotActuel();
       var lettre;
       if(motActuel && motActuel.length<size){
-    if(niveau ==1){
+    if(niveau==1){
       if(index%size==0){
         lettre = motadev[0];
         const placeCourante=document.getElementById(String(index+size-1));
         placeCourante.textContent=motadev[size-1];
       }
-      majTableau(lettre,size)
+      majTableau(lettre,size);
     }
-    if(niveau ==2){
+    if(niveau==2){
       if(index%size ==0){
         lettre = motadev[0];
         
       }
-      majTableau(lettre,size)
+      majTableau(lettre,size);
       };
      };
     }
@@ -113,12 +113,20 @@ document.addEventListener("DOMContentLoaded", () => {
      * la fonction ajoute au tableau des mots la lettre soumise et réalise l'affichage dans la grille
      */
     function majTableau(lettre, size){
+      motadev=motADevine
       const motActuel= getMotActuel();
       if(motActuel && motActuel.length<size){
-            motActuel.push(lettre);
-            const placeCourante=document.getElementById(String(index));
-            index=index+1;
-            placeCourante.textContent=lettre;
+        motActuel.push(lettre);
+        const placeCourante=document.getElementById(String(index));
+        index=index+1;
+        placeCourante.textContent=lettre;
+      }
+      if(niveau==1 && motActuel.length==size-1){
+        const derlettre = motadev[size-1]
+        motActuel.push(derlettre);
+        const placeCourante=document.getElementById(String(index));
+        placeCourante.textContent=derlettre;
+        index=index+1;
       }
     }
 
