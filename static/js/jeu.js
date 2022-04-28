@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
      * la fonction ajoute au tableau des mots la lettre soumise et réalise l'affichage dans la grille
      */
     function majTableau(lettre, size){
+      motadev=motADevine
       const motActuel= getMotActuel();
       if(motActuel && motActuel.length<size){
         motActuel.push(lettre);
