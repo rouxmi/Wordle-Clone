@@ -1,3 +1,4 @@
+from traceback import print_tb
 from flask import Flask, render_template, request, redirect, g, session, jsonify
 from flask_session import Session
 import sqlite3
@@ -130,15 +131,6 @@ def mesinfos():
 
 @app.route("/historique")
 def historique():
-    #niveau=int(request.form.get("niveau"))
-    #nbEssais = int(request.form.get("nbEssais"))
-    #mode = str(request.args.get('mode'))
-    #pseudo = str(request.args.get('pseudo'))
-    #date= datetime.today().strftime('%Y-%m-%d')
-    #motadev = session.get("mot")
-    #lang = str(request.args.get('lang'))
-    #essais = str(request.args.get('essais'))
-    #nombremax=1
     if not session.get("pseudo"):
         return redirect("/")
     a= query_db("SELECT * FROM Partie WHERE pseudo=:pseudo", {"pseudo":session.get("pseudo")})
@@ -148,15 +140,7 @@ def historique():
         if i[3]=="mdj":
             l1.append(i)
         else:
-            l2.append(i)
-
-    #requête sql pour créer une partie
-
-    id=query_db("SELECT MAX(id_partie) FROM Partie WHERE pseudo=:pseudo",{"pseudo":session.get("pseudo")})
-    nbrparties=id[0][0]+1
-    #query ="INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, nombre_m_tentes, m_tentes) VALUES (?,?,?,?,?,?,?,?,?)"
-    #query_db(query, (nbrparties, pseudo, date, mode, lang, niveau, nbEssais, nombremax, essais))
-    
+            l2.append(i) 
     return render_template("historique.html", dataMdj = l1, dataLibre = l2,longueurMdj=len(l1), longueurLibre=len(l2))
 
 #déconnecte le joueur
@@ -190,6 +174,29 @@ def jeu():
         motadev = session.get("mot")
     return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre, niveaux=niveau, langs=int(lang))
 
+'''def requete():
+    id=query_db("SELECT MAX(id_partie) FROM Partie WHERE pseudo=:pseudo",{"pseudo":session.get("pseudo")})
+    print(id[0])
+    nbrparties=5#str(id[0][0]+1)
+    libre = bool(request.form.get("libre"))
+    if libre:
+        mode= "libre"
+    else:
+        mode="mdj"
+    pseudo = str(session.get("pseudo"))
+    date= datetime.today().strftime('%Y-%m-%d')
+    essais = str(request.args.get('essais'))
+    lang=request.form.get("lang")
+    motadev = session.get("mot")
+    nombremax=1
+    print(mode)
+    print(lang)
+    #requête sql pour créer une partie
+    query ="INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes) VALUES (?,?,?,?,?,?,?,?,?,?)"
+    query_db(query, (nbrparties, pseudo, date, mode, lang, niveau, nbEssais, motadev, nombremax, essais))
+    session["pseudo"] = pseudo
+    session["lang"] = lang
+    session["essais"] = essais'''
 
 @app.route('/regles')
 def regles():
