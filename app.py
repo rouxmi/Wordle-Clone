@@ -125,7 +125,8 @@ def mesinfos():
        return redirect("/")
     a = query_db("SELECT * FROM Joueur WHERE pseudo=:pseudo", {"pseudo": session.get("pseudo")})
     b=decrypto(a[0][2])
-    return render_template("mesinfos.html",infos = a[0], password = b)
+    c=query_db("SELECT MAX(id_partie) FROM Partie WHERE pseudo=:pseudo",{"pseudo":session.get("pseudo")})
+    return render_template("mesinfos.html",infos = a[0], password = b,parties=c[0])
 
 @app.route("/historique")
 def historique():
