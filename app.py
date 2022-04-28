@@ -4,8 +4,8 @@ import sqlite3
 import datetime
 from mot import * #gestion des dictionnaires
 
-from cesar import * #chifrement mot de passe et mot du jour
-
+from cesar import * #chiffrement mot de passe et mot du jour
+from datetime import datetime # pour récupérer la date du jour
 app = Flask(__name__)
 
 #Gestion de sessions
@@ -130,6 +130,15 @@ def mesinfos():
 
 @app.route("/historique")
 def historique():
+    #niveau=int(request.form.get("niveau"))
+    #nbEssais = int(request.form.get("nbEssais"))
+    #mode = str(request.args.get('mode'))
+    #pseudo = str(request.args.get('pseudo'))
+    #date= datetime.today().strftime('%Y-%m-%d')
+    #motadev = session.get("mot")
+    #lang = str(request.args.get('lang'))
+    #essais = str(request.args.get('essais'))
+    #nombremax=1
     if not session.get("pseudo"):
         return redirect("/")
     a= query_db("SELECT * FROM Partie WHERE pseudo=:pseudo", {"pseudo":session.get("pseudo")})
@@ -140,6 +149,14 @@ def historique():
             l1.append(i)
         else:
             l2.append(i)
+
+    #requête sql pour créer une partie
+
+    id=query_db("SELECT MAX(id_partie) FROM Partie WHERE pseudo=:pseudo",{"pseudo":session.get("pseudo")})
+    nbrparties=id[0][0]+1
+    #query ="INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, nombre_m_tentes, m_tentes) VALUES (?,?,?,?,?,?,?,?,?)"
+    #query_db(query, (nbrparties, pseudo, date, mode, lang, niveau, nbEssais, nombremax, essais))
+    
     return render_template("historique.html", dataMdj = l1, dataLibre = l2,longueurMdj=len(l1), longueurLibre=len(l2))
 
 #déconnecte le joueur
@@ -193,6 +210,7 @@ def checkmotp():
     else:
         #renvoie False sinon 
         message = {'existe':str(False),'couleur':str([])}
+
     #envoie en json de la réponse au JS
     return jsonify(message)
 
