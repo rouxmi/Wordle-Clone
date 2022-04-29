@@ -140,16 +140,8 @@ def historique():
     for i in a:
         if i[3]=="mdj":
             l1.append(i)
-            ''' if i[7] in i[9]:
-                l1.append('Oui')
-            else:
-                l1.append('Non')'''
         else:
             l2.append(i) 
-            '''if i[7] in i[9]:
-                l1.append('Oui')
-            else:
-                l1.append('Non') '''
 
     print(l1)
     print(l2)
