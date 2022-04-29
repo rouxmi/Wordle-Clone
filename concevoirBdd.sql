@@ -19,7 +19,7 @@ CREATE TABLE Partie (
     m_tentes VARCHAR, 
     victoire INT,
     PRIMARY KEY (id_partie,pseudo),
-    CONSTRAINT "check_type_de_jeu" CHECK("type_de_jeu" IN ('mdj', 'libre')),
+    CONSTRAINT "check_type_de_jeu" CHECK("type_de_jeu" IN ('jour', 'libre')),
     CONSTRAINT "check_victoire" CHECK("victoire" IN (0,1)),
     CONSTRAINT "check_langue" CHECK("langue" IN ('en', 'fr')),
     CONSTRAINT "check_niveau_difficulte" CHECK("niveau_difficulte" IN (1, 2, 3))

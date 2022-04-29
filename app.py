@@ -155,13 +155,10 @@ def historique():
     l1 = []
     l2 = []
     for i in a:
-        if i[3]=="mdj":
+        if i[3]=="jour":
             l1.append(i)
         else:
             l2.append(i) 
-
-    print(l1)
-    print(l2)
     
     return render_template("historique.html", dataMdj = l1, dataLibre = l2,longueurMdj=len(l1), longueurLibre=len(l2))
 
@@ -280,13 +277,13 @@ def classement(niveau):
         return render_template("classement.html",data=data,niveau=text)
 
 def getclassementdata(niveau):
-    if niveau==4:
+    if int(niveau)==4:
         a= query_db("SELECT pseudo,COUNT(victoire) AS count FROM Partie WHERE type_de_jeu=? AND victoire=1 GROUP BY pseudo ORDER BY COUNT(victoire) DESC", ("jour",))
     else:
         a= query_db("SELECT pseudo,COUNT(victoire) AS count FROM Partie WHERE type_de_jeu=? AND niveau_difficulte=? AND victoire=1 GROUP BY pseudo ORDER BY COUNT(victoire) DESC", ("libre",str(niveau)))
     L=[]
     if a!=[]:
-        for i in range(min(5,len(a[0]))):
+        for i in range(min(5,len(a))):
             L.append([a[i][0],a[i][1]])
     return L
 
