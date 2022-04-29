@@ -128,7 +128,27 @@ def mesinfos():
     a = query_db("SELECT * FROM Joueur WHERE pseudo=:pseudo", {"pseudo": session.get("pseudo")})
     b=decrypto(a[0][2])
     c=query_db("SELECT MAX(id_partie) FROM Partie WHERE pseudo=:pseudo",{"pseudo":session.get("pseudo")})
-    return render_template("mesinfos.html",infos = a[0], password = b,parties=c[0])
+    clas=getclassement(session.get('pseudo'))
+    return render_template("mesinfos.html",infos = a[0], password = b,parties=c[0],clas=clas)
+
+def getclassement(pseudo):
+    clas=[]
+    for i in range(1,5):
+        if i==4:
+            a= query_db("SELECT pseudo,COUNT(victoire) AS count FROM Partie WHERE type_de_jeu=? AND victoire=1 GROUP BY pseudo ORDER BY COUNT(victoire) DESC", ("jour",))
+        else:
+            a= query_db("SELECT pseudo,COUNT(victoire) AS count FROM Partie WHERE type_de_jeu=? AND niveau_difficulte=? AND victoire=1 GROUP BY pseudo ORDER BY COUNT(victoire) DESC", ("libre",str(i)))
+        if a!=[]:
+            for j in range(len(a[0])):
+                if a[j][0]==pseudo:
+                    if j==0:
+                        clas.append([i,str(j+1)+"er"])
+                    else:
+                        clas.append([i,str(j+1)+"ème"])
+        else:
+            clas.append([i,'Pas joué'])
+    return clas
+
 
 @app.route("/historique")
 def historique():
@@ -272,7 +292,7 @@ def classement(niveau):
 
 def getclassementdata(niveau):
     if niveau==4:
-        a= query_db("SELECT pseudo,COUNT(victoire) AS count FROM Partie WHERE type_de_jeu=? AND victoire=1 GROUP BY pseudo ORDER BY COUNT(victoire) DESC", ("jour"))
+        a= query_db("SELECT pseudo,COUNT(victoire) AS count FROM Partie WHERE type_de_jeu=? AND victoire=1 GROUP BY pseudo ORDER BY COUNT(victoire) DESC", ("jour",))
     else:
         a= query_db("SELECT pseudo,COUNT(victoire) AS count FROM Partie WHERE type_de_jeu=? AND niveau_difficulte=? AND victoire=1 GROUP BY pseudo ORDER BY COUNT(victoire) DESC", ("libre",str(niveau)))
     L=[]
