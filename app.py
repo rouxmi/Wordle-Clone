@@ -139,8 +139,20 @@ def historique():
     for i in a:
         if i[3]=="mdj":
             l1.append(i)
+            ''' if i[7] in i[9]:
+                l1.append('Oui')
+            else:
+                l1.append('Non')'''
         else:
             l2.append(i) 
+            '''if i[7] in i[9]:
+                l1.append('Oui')
+            else:
+                l1.append('Non') '''
+
+    print(l1)
+    print(l2)
+    
     return render_template("historique.html", dataMdj = l1, dataLibre = l2,longueurMdj=len(l1), longueurLibre=len(l2))
 
 #déconnecte le joueur

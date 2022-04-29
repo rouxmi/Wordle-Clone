@@ -83,6 +83,7 @@
                               <div class="header__item"><a id="Niveau du jeu" class="filter__link filter__link--number" >Niveau du jeu</a></div>
                               <div class="header__item"><a id="Nombre d'essais utilisés" class="filter__link filter__link--number" >Nombre d'essais utilisés</a></div>
                               <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
+                              <div class="header__item"><a id="Victoire" class="filter__link filter__link--number" >Victoire</a></div>
                            </div>
                            <div class="table-content" id="mdj2" style="display: contents;">	
                               {% for k in range(longueurMdj) %}
@@ -93,8 +94,11 @@
                                           <div class="table-data">{% if dataMdj[k][5] == 1 %} Facile {% endif %} 
                                              {% if dataMdj[k][5] == 2 %} Moyen {% endif %} 
                                              {% if dataMdj[k][5] == 3 %} Difficile {% endif %} </div>
-                                          <div class="table-data">{{dataMdj[k][7]}}/{{ dataMdj[k][6] }}</div>
-                                          <div class="table-data">{{ dataMdj[k][8] }}</div>
+                                          <div class="table-data">{{dataMdj[k][8]}}/{{ dataMdj[k][6] }}</div>
+                                          <div class="table-data">{{ dataMdj[k][9] }}</div>
+                                          <div class="table-data"> Oui </div> 
+
+
                                        </div>
                               {% endfor %}
                            </div>
@@ -106,6 +110,7 @@
                               <div class="header__item"><a id="Niveau du jeu" class="filter__link filter__link--number" >Niveau du jeu</a></div>
                               <div class="header__item"><a id="Nombre d'essais utilisés" class="filter__link filter__link--number" >Nombre d'essais utilisés</a></div>
                               <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
+                              <div class="header__item"><a id="Victoire" class="filter__link filter__link--number" >Victoire</a></div>
                            </div>
                            <div class="table-content" id="libre2" style="display: none;">	
                               {% for k in range(longueurLibre) %}
@@ -116,8 +121,9 @@
                                     <div class="table-data">{% if dataLibre[k][5] == 1 %} Facile {% endif %} 
                                        {% if dataLibre[k][5] == 2 %} Moyen {% endif %} 
                                        {% if dataLibre[k][5] == 3 %} Difficile {% endif %} </div>
-                                    <div class="table-data">{{dataLibre[k][7]}}/{{ dataLibre[k][6] }}</div>
-                                    <div class="table-data">{{ dataLibre[k][8] }}</div>
+                                    <div class="table-data">{{dataLibre[k][8]}}/{{ dataLibre[k][6] }}</div>
+                                    <div class="table-data">{{ dataLibre[k][9] }}</div>
+                                    <div class="table-data"> Oui </div> 
                                  </div>
                               {% endfor %}
                            </div>
