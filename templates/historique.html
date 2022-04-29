@@ -47,6 +47,13 @@
                        <li class="nav-item"><a class="nav-link" href="/config" style="color: rgb(23,23,23);">Configuration</a></li>
                        <li class="nav-item"><a class="nav-link" href="/regles" style="color: rgb(23,23,23);">Règles du Jeu</a></li>
                     </ul>
+                    <ul class="navbar-nav" style="color: var(--bs-red);">
+                     <li class="nav-item"></li>
+                     <li class="nav-item dropdown" style="color: var(--bs-red);">
+                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" style="color: rgb(23,23,23);">Classement</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="/classement/1">Facile</a><a class="dropdown-item" href="/classement/2">Moyen</a><a class="dropdown-item" href="/classement/3">Difficile</a><a class="dropdown-item" href="/classement/4">Mot du Jour</a></div>
+                     </li>
+                  </ul>
                     <form class="me-auto" target="_self">
                        <div class="d-flex align-items-center"></div>
                     </form>
@@ -66,16 +73,18 @@
                <div class="col-md-8 offset-md-2"> 
                   <div class="containtable" style="text-align: center;"> 
                      <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Historique de mes parties</h1> 
-                     <div class="ratio ratio-16x9">
+                     <div class="block">
                         <div class="data">
                         <label class="switch">
                            <input type="checkbox" id="togBtn" name="libre" value="libre">
                               <div class="slider round">
                                     <span class="on">Mode libre</span>
                                     <span class="off">Mot du jour</span>
-                        </div>
-                        </label>
-                     </div>
+                              </div>
+                              </label>
+                           </div>  
+                        </div> 
+                     
                         <div class="table" id="mdj1" style="display: contents;">
                            <div class="table-header">
                               <div class="header__item"><a id="Date" class="filter__link" >Date</a></div>
@@ -85,6 +94,7 @@
                               <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
                               <div class="header__item"><a id="Victoire" class="filter__link filter__link--number" >Victoire</a></div>
                            </div>
+                           <div class="contenu">
                            <div class="table-content" id="mdj2" style="display: contents;">	
                               {% for k in range(longueurMdj) %}
                                        <div class="table-row">		
@@ -103,7 +113,8 @@
                                        </div>
                               {% endfor %}
                            </div>
-                        </div>                    
+                        </div>   
+                        </div>                 
                         <div class="table" id="libre1" style="display: none;">
                            <div class="table-header">
                               <div class="header__item"><a id="Date" class="filter__link" >Date</a></div>
@@ -113,6 +124,7 @@
                               <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
                               <div class="header__item"><a id="Victoire" class="filter__link filter__link--number" >Victoire</a></div>
                            </div>
+                           <div class="contenu">
                            <div class="table-content" id="libre2" style="display: none;">	
                               {% for k in range(longueurLibre) %}
                                  <div class="table-row">		
@@ -128,7 +140,9 @@
                                                             {%if dataLibre[k][10]==0%} &#10060; {%endif%} </div> 
                                  </div>
                               {% endfor %}
+                              </div>
                            </div>
+                        </div>
                         </div>  
                      </div>  	                     
                   </div>

@@ -188,8 +188,11 @@ def jeu():
         if lang=="fr":
             lang=1
         else:
-            lang=0  
-        niveau=int(request.form.get("niveau"))
+            lang=0
+        if mode_libre==1:  
+            niveau=int(request.form.get("niveau"))
+        else:
+            niveau=3
         motadev = session.get("mot")
     return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre, niveaux=niveau, langs=int(lang))
 
