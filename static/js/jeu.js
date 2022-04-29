@@ -309,8 +309,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
   });
   
-  var maxParticleCount = 150; //set max confetti count
-  var particleSpeed = 2; //set the particle animation speed
+  var maxParticleCount = 300; //set max confetti count
+  var particleSpeed = 0.7; //set the particle animation speed
   var startConfetti; //call to start confetti animation
   var stopConfetti; //call to stop adding confetti
   var toggleConfetti; //call to start or stop the confetti animation depending on whether it's already running
@@ -331,8 +331,8 @@ document.addEventListener("DOMContentLoaded", () => {
       particle.color = colors[(Math.random() * colors.length) | 0];
       particle.x = Math.random() * width;
       particle.y = Math.random() * height - height;
-      particle.diameter = Math.random() * 10 + 5;
-      particle.tilt = Math.random() * 10 - 10;
+      particle.diameter = Math.random() *10+ 5;
+      particle.tilt = Math.random() *10 - 10;
       particle.tiltAngleIncrement = Math.random() * 0.07 + 0.05;
       particle.tiltAngle = 0;
       return particle;
@@ -406,8 +406,8 @@ document.addEventListener("DOMContentLoaded", () => {
         context.lineWidth = particle.diameter;
         context.strokeStyle = particle.color;
         x = particle.x + particle.tilt;
-        context.moveTo(x + particle.diameter / 2, particle.y);
-        context.lineTo(x, particle.y + particle.tilt + particle.diameter / 2);
+        context.moveTo(x + particle.diameter / 8, particle.y);
+        context.lineTo(x, particle.y + particle.tilt + particle.diameter / 8);
         context.stroke();
       }
     }
