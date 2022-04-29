@@ -1,4 +1,5 @@
 from traceback import print_tb
+from types import NoneType
 from flask import Flask, render_template, request, redirect, g, session, jsonify
 from flask_session import Session
 import sqlite3
@@ -174,30 +175,6 @@ def jeu():
         motadev = session.get("mot")
     return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre, niveaux=niveau, langs=int(lang))
 
-'''def requete():
-    id=query_db("SELECT MAX(id_partie) FROM Partie WHERE pseudo=:pseudo",{"pseudo":session.get("pseudo")})
-    print(id[0])
-    nbrparties=5#str(id[0][0]+1)
-    libre = bool(request.form.get("libre"))
-    if libre:
-        mode= "libre"
-    else:
-        mode="mdj"
-    pseudo = str(session.get("pseudo"))
-    date= datetime.today().strftime('%Y-%m-%d')
-    essais = str(request.args.get('essais'))
-    lang=request.form.get("lang")
-    motadev = session.get("mot")
-    nombremax=1
-    print(mode)
-    print(lang)
-    #requête sql pour créer une partie
-    query ="INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes) VALUES (?,?,?,?,?,?,?,?,?,?)"
-    query_db(query, (nbrparties, pseudo, date, mode, lang, niveau, nbEssais, motadev, nombremax, essais))
-    session["pseudo"] = pseudo
-    session["lang"] = lang
-    session["essais"] = essais'''
-
 @app.route('/regles')
 def regles():
     return render_template("regles.html")
@@ -214,6 +191,12 @@ def checkmotp():
         #renvoie la couleur si oui
         couleur=compare(essais,motadev)
         message = {'couleur':str(couleur),'existe':str(True)}
+        mottentes=query_db('SELECT m_tentes FROM Partie WHERE id_partie=? AND pseudo=?',(session.get('idpartie'),session.get("pseudo")))
+        query ="UPDATE Partie SET m_tentes = ?  WHERE id_partie=? AND pseudo=?"
+        if mottentes[0][0]=='None':
+            query_db(query, (str(essais),session.get("idpartie"),session.get("pseudo")))
+        else:
+            query_db(query, (str(mottentes[0][0])+" "+str(essais),session.get("idpartie"),session.get("pseudo")))
     else:
         #renvoie False sinon 
         message = {'existe':str(False),'couleur':str([])}
@@ -239,6 +222,23 @@ def getmot():
     message = {'mot':str(mot)}
     #inscription du mot dans la session
     session["mot"] = mot
+    #création de la requête sql
+    id=query_db("SELECT MAX(id_partie) FROM Partie WHERE pseudo=:pseudo",{"pseudo":session.get("pseudo")})
+    if id[0][0]==None:
+        nbrparties=1
+    else:
+        nbrparties=str(id[0][0]+1)
+    pseudo = str(session.get("pseudo"))
+    date= datetime.today().strftime('%Y-%m-%d')
+    essais = str(request.args.get('essais'))
+    motadev = session.get("mot")
+    nombremax=1
+    #requête sql pour créer une partie
+    query ="INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes) VALUES (?,?,?,?,?,?,?,?,?,?)"
+    query_db(query, (nbrparties, pseudo, date, mode, lang, niveau, nbEssais, motadev, nombremax, essais))
+    session["lang"] = lang
+    session["essais"] = essais
+    session["idpartie"]=nbrparties
     #renvoie du mot en json au JS
     return jsonify(message)
 
