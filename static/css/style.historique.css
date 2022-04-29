@@ -35,13 +35,11 @@ h1{
 }
 
  .containtable {
-	 max-width: 1000px;
 	 margin-right: auto;
 	 margin-left: auto;
 	 display: inline-block;
 	 justify-content: center;
 	 align-items: center;
-	 min-height: 100vh;
 }
  .table {
    display: block;
@@ -214,7 +212,7 @@ h1{
     display: absolute;
     width:  80%;
     left: 10%;
-    height: 120%;
+    height: 100%;
     background-color: #333;
     opacity: 0.70;
   }
