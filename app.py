@@ -1,5 +1,5 @@
 from traceback import print_tb
-from types import NoneType
+#from types import NoneType
 from flask import Flask, render_template, request, redirect, g, session, jsonify
 from flask_session import Session
 import sqlite3
