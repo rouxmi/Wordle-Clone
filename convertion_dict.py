@@ -3,14 +3,16 @@ import unidecode
 
 def dictionnaire():
 
-    fichier= open("Dictionnaires/en_dictionnaire_minuscules.txt",'r')
-    dictionnaire=open("Dictionnaires/en_dictionnaire.txt",'w')
+    fichier= open("Dictionnaires/fr_dictionnaire_minuscules.txt",'r')
+    dictionnaire=open("Dictionnaires/fr_dictionnaire.txt",'w')
     mots=fichier.readlines()
+    tiret="-"
     for mot in mots:
         a = mot.split(',')
         b= a[0].split('\n')
         new=unidecode.unidecode(b[0])
-        dictionnaire.write(new.upper()+"\n")
+        if not(tiret in new):
+            dictionnaire.write(new.upper()+"\n")
 
     fichier.close()
     dictionnaire.close()
