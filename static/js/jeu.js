@@ -203,8 +203,10 @@ document.addEventListener("DOMContentLoaded", () => {
                   }
                 }
                 if(mot==motADevine){
-                  window.alert("BRAVO");
                   startConfetti();
+                  window.alert("BRAVO");
+                  
+                  
                   
 
             
@@ -353,7 +355,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (canvas === null) {
         canvas = document.createElement("canvas");
         canvas.setAttribute("id", "confetti-canvas");
-        canvas.setAttribute("style", "display:block;z-index:999999;pointer-events:none");
+        canvas.setAttribute("style", "position: relative; display:flex;;pointer-events:none");
         document.body.appendChild(canvas);
         canvas.width = width;
         canvas.height = height;
@@ -388,7 +390,6 @@ document.addEventListener("DOMContentLoaded", () => {
       stopConfetti();
       particles = [];
     }
-  
     function toggleConfettiInner() {
       if (streamingConfetti)
         stopConfettiInner();
@@ -437,3 +438,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   })();
+

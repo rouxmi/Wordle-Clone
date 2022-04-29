@@ -1,11 +1,11 @@
 let canvas = document.getElementById('confetti');
 
-canvas.width = 1500;
-canvas.height = 1000;
+canvas.width = 100;
+canvas.height = 100;
 
 let ctx = canvas.getContext('2d');
 let pieces = [];
-let numberOfPieces = 75;
+let numberOfPieces = 100;
 let lastUpdateTime = Date.now();
 
 function randomColor () {
