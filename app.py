@@ -203,12 +203,12 @@ def checkmotp():
         #renvoie la couleur si oui
         couleur=compare(essais,motadev)
         message = {'couleur':str(couleur),'existe':str(True)}
-        mottentes=query_db('SELECT m_tentes FROM Partie WHERE id_partie=? AND pseudo=?',(session.get('idpartie'),session.get("pseudo")))
-        query ="UPDATE Partie SET m_tentes = ?  WHERE id_partie=? AND pseudo=?"
+        mottentes=query_db('SELECT m_tentes,nombre_m_tentes FROM Partie WHERE id_partie=? AND pseudo=?',(session.get('idpartie'),session.get("pseudo")))
+        query ="UPDATE Partie SET m_tentes = ?, nombre_m_tentes=? WHERE id_partie=? AND pseudo=?"
         if mottentes[0][0]=='None':
-            query_db(query, (str(essais),session.get("idpartie"),session.get("pseudo")))
+            query_db(query, (str(essais),mottentes[0][1],session.get("idpartie"),session.get("pseudo")))
         else:
-            query_db(query, (str(mottentes[0][0])+" "+str(essais),session.get("idpartie"),session.get("pseudo")))
+            query_db(query, (str(mottentes[0][0])+" "+str(essais),mottentes[0][1]+1,session.get("idpartie"),session.get("pseudo")))
     else:
         #renvoie False sinon 
         message = {'existe':str(False),'couleur':str([])}
@@ -248,6 +248,8 @@ def getmot():
     #requête sql pour créer une partie
     query ="INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes) VALUES (?,?,?,?,?,?,?,?,?,?)"
     query_db(query, (nbrparties, pseudo, date, mode, lang, niveau, nbEssais, motadev, nombremax, essais))
+    query2 ="UPDATE Joueur SET nombre_parties=? WHERE pseudo=?"
+    query_db(query2, (str(int(nbrparties)+1), pseudo))
     session["lang"] = lang
     session["essais"] = essais
     session["idpartie"]=nbrparties
