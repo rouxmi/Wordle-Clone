@@ -209,6 +209,9 @@ def checkmotp():
             query_db(query, (str(essais),mottentes[0][1],session.get("idpartie"),session.get("pseudo")))
         else:
             query_db(query, (str(mottentes[0][0])+" "+str(essais),mottentes[0][1]+1,session.get("idpartie"),session.get("pseudo")))
+        if motadev==essais:
+            query ="UPDATE Partie SET victoire=? WHERE id_partie=? AND pseudo=?"
+            query_db(query, (1,session.get("idpartie"),session.get("pseudo")))
     else:
         #renvoie False sinon 
         message = {'existe':str(False),'couleur':str([])}
@@ -245,9 +248,10 @@ def getmot():
     essais = str(request.args.get('essais'))
     motadev = session.get("mot")
     nombremax=1
+    victoire=0
     #requête sql pour créer une partie
-    query ="INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes) VALUES (?,?,?,?,?,?,?,?,?,?)"
-    query_db(query, (nbrparties, pseudo, date, mode, lang, niveau, nbEssais, motadev, nombremax, essais))
+    query ="INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes,victoire) VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+    query_db(query, (nbrparties, pseudo, date, mode, lang, niveau, nbEssais, motadev, nombremax, essais,victoire))
     query2 ="UPDATE Joueur SET nombre_parties=? WHERE pseudo=?"
     query_db(query2, (str(int(nbrparties)+1), pseudo))
     session["lang"] = lang
@@ -256,7 +260,27 @@ def getmot():
     #renvoie du mot en json au JS
     return jsonify(message)
 
+@app.route("/classement/<niveau>")
+def classement(niveau):
+    if not session.get("pseudo"):
+        return render_template("login.html")
+    else:
+        data=getclassementdata(niveau)
+        d={1:'Facile',2:"Moyen",3:"Difficile",4:"Mot du Jour"}
+        text=d[int(niveau)]
+        return render_template("classement.html",data=data,niveau=text)
 
+def getclassementdata(niveau):
+    if niveau==4:
+        a= query_db("SELECT pseudo,COUNT(victoire) AS count FROM Partie WHERE type_de_jeu=? AND victoire=1 GROUP BY pseudo ORDER BY COUNT(victoire) DESC", ("jour"))
+    else:
+        a= query_db("SELECT pseudo,COUNT(victoire) AS count FROM Partie WHERE type_de_jeu=? AND niveau_difficulte=? AND victoire=1 GROUP BY pseudo ORDER BY COUNT(victoire) DESC", ("libre",str(niveau)))
+    L=[]
+    if a!=[]:
+        for i in range(min(5,len(a[0]))):
+            L.append([a[i][0],a[i][1]])
+    return L
 
+    
 if __name__=='__main__':
      app.run(debug=1)
