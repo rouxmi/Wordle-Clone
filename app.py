@@ -1,13 +1,10 @@
-from traceback import print_tb
-#from types import NoneType
 from flask import Flask, render_template, request, redirect, g, session, jsonify
 from flask_session import Session
 import sqlite3
-import datetime
 from mot import * #gestion des dictionnaires
 
 from cesar import * #chiffrement mot de passe et mot du jour
-from datetime import datetime # pour récupérer la date du jour
+from datetime import date,datetime # pour récupérer la date du jour
 app = Flask(__name__)
 
 #Gestion de sessions
@@ -139,7 +136,7 @@ def getclassement(pseudo):
         else:
             a= query_db("SELECT pseudo,COUNT(victoire) AS count FROM Partie WHERE type_de_jeu=? AND niveau_difficulte=? AND victoire=1 GROUP BY pseudo ORDER BY COUNT(victoire) DESC", ("libre",str(i)))
         if a!=[]:
-            for j in range(len(a[0])):
+            for j in range(len(a)):
                 if a[j][0]==pseudo:
                     if j==0:
                         clas.append([i,str(j+1)+"er"])
@@ -248,7 +245,7 @@ def getmot():
     longeur= request.args.get('size')
     #si mot du jour va chercher le mot dans la BD
     if mode=="jour":
-        mot_crypt=query_db("SELECT * FROM Mot_du_Jour WHERE date_de_la_partie=?", [datetime.date.today()])[0][1]
+        mot_crypt=query_db("SELECT * FROM Mot_du_Jour WHERE date_de_la_partie=?", [date.today()])[0][1]
         mot_lower=decrypto(mot_crypt)
         mot=mot_lower.upper()
     #si mode libre choix aléatoire dans le dictionnaire 
@@ -264,14 +261,14 @@ def getmot():
     else:
         nbrparties=str(id[0][0]+1)
     pseudo = str(session.get("pseudo"))
-    date= datetime.today().strftime('%Y-%m-%d')
+    date2= datetime.today().strftime('%Y-%m-%d')
     essais = str(request.args.get('essais'))
     motadev = session.get("mot")
     nombremax=1
     victoire=0
     #requête sql pour créer une partie
     query ="INSERT INTO Partie(id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes,victoire) VALUES (?,?,?,?,?,?,?,?,?,?,?)"
-    query_db(query, (nbrparties, pseudo, date, mode, lang, niveau, nbEssais, motadev, nombremax, essais,victoire))
+    query_db(query, (nbrparties, pseudo, date2, mode, lang, niveau, nbEssais, motadev, nombremax, essais,victoire))
     query2 ="UPDATE Joueur SET nombre_parties=? WHERE pseudo=?"
     query_db(query2, (str(int(nbrparties)+1), pseudo))
     session["lang"] = lang
