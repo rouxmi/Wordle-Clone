@@ -4,6 +4,17 @@
    margin: 0;
    padding: 0;
 }
+
+.contenu{
+  display: block;
+  min-height: 500px;
+  max-height: 640px;
+  text-overflow: clip;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align:justify;
+}
+
  .containtable {
 	 padding: 24px;
 	 font-family: 'Source Sans Pro', sans-serif;
@@ -33,6 +44,7 @@ h1{
 	 min-height: 100vh;
 }
  .table {
+   display: block;
 	 width: 100%;
 	 border: 1px solid #eee;
    opacity: 0.5;
@@ -86,11 +98,20 @@ h1{
 	 content: '(asc)';
 }
 
+.block{
+  display: block;
+}
 
 .data{
-    display: absolute;
-    width: 100%;
-    height: 100%;
+  height:100%;
+  min-height: 100px;
+  max-height: 200px;
+  text-overflow: clip;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align:justify;
+  display: flex;
+  justify-content: center;
 }
 
 .libre{
@@ -102,8 +123,10 @@ h1{
 }
 
 .switch {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: absolute;
-    left: 39.1%;
     width: 195px;
     height: 69px;
     opacity: 1;

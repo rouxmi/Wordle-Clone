@@ -73,16 +73,18 @@
                <div class="col-md-8 offset-md-2"> 
                   <div class="containtable" style="text-align: center;"> 
                      <h1 class="text-center" style="color: rgb(0,0,0);font-weight: bold;">Historique de mes parties</h1> 
-                     <div class="ratio ratio-16x9">
+                     <div class="block">
                         <div class="data">
                         <label class="switch">
                            <input type="checkbox" id="togBtn" name="libre" value="libre">
                               <div class="slider round">
                                     <span class="on">Mode libre</span>
                                     <span class="off">Mot du jour</span>
-                        </div>
-                        </label>
-                     </div>
+                              </div>
+                              </label>
+                           </div>  
+                        </div> 
+                     
                         <div class="table" id="mdj1" style="display: contents;">
                            <div class="table-header">
                               <div class="header__item"><a id="Date" class="filter__link" >Date</a></div>
@@ -92,6 +94,7 @@
                               <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
                               <div class="header__item"><a id="Victoire" class="filter__link filter__link--number" >Victoire</a></div>
                            </div>
+                           <div class="contenu">
                            <div class="table-content" id="mdj2" style="display: contents;">	
                               {% for k in range(longueurMdj) %}
                                        <div class="table-row">		
@@ -110,7 +113,8 @@
                                        </div>
                               {% endfor %}
                            </div>
-                        </div>                    
+                        </div>   
+                        </div>                 
                         <div class="table" id="libre1" style="display: none;">
                            <div class="table-header">
                               <div class="header__item"><a id="Date" class="filter__link" >Date</a></div>
@@ -120,6 +124,7 @@
                               <div class="header__item"><a id="Mots tentés" class="filter__link filter__link--number" >Mots tentés</a></div>
                               <div class="header__item"><a id="Victoire" class="filter__link filter__link--number" >Victoire</a></div>
                            </div>
+                           <div class="contenu">
                            <div class="table-content" id="libre2" style="display: none;">	
                               {% for k in range(longueurLibre) %}
                                  <div class="table-row">		
@@ -135,7 +140,9 @@
                                                             {%if dataLibre[k][10]==0%} &#10060; {%endif%} </div> 
                                  </div>
                               {% endfor %}
+                              </div>
                            </div>
+                        </div>
                         </div>  
                      </div>  	                     
                   </div>
