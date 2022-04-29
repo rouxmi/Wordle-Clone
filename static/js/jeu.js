@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     var rouge=[];
     var jaune=[];
     var langue;
-    
+    var victoire=0;
     
 
     //création de la requête pour obtenir le mot de la partie
@@ -37,8 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const motADevine = await mot; //attente de la réponse du serveur 
         if (motADevine!=''){  //vérication que la réponse n'est pas vide
           //lancement de la partie
-          start(motADevine) 
-          console.log(motADevine)
+          if (victoire==0){
+            start(motADevine);
+          } 
+          console.log(motADevine);
         }
         };
     //lancement de la fonction asyncrone
@@ -46,58 +48,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //fonction de lancement de la partie
     function start(motadev){
+      if(victoire==0){
+      //index correspond à la case qui va être rempli
+      motADevine=motadev; 
+      //touches correspond à l'enssemble des boutons dans le clavier
+        var touches = document.querySelectorAll(".keyboard-row button");
     
-    //index correspond à la case qui va être rempli
-    motADevine=motadev; 
-    
-    //touches correspond à l'enssemble des boutons dans le clavier
-    var touches = document.querySelectorAll(".keyboard-row button");
-  
-    //dans motsTentés on stoques tous les mots essayés
-    
-    //gestion du clavier virtuel
-    for (let i = 0; i < touches.length; i++) {
-      touches[i].onclick = ({ target }) => {
-        var lettre = target.getAttribute("data-key");
-        if (lettre === "entree") {
-          gestionEntree();
-          return;
-        }
-  
-        if (lettre === "supprimer") {
-          gestionSupprime();
-          return;
-        }
-        majTableau(lettre,size);
-  
-      };
+      //dans motsTentés on stoques tous les mots essayés
       
-    }
-    majlettreniveau();
-
+        //gestion du clavier virtuel
+        for (let i = 0; i < touches.length; i++) {
+          touches[i].onclick = ({ target }) => {
+            var lettre = target.getAttribute("data-key");
+            if (lettre === "entree") {
+              gestionEntree();
+              return;
+            }
+      
+            if (lettre === "supprimer") {
+              gestionSupprime();
+              return;
+            }
+            majTableau(lettre,size);
+      
+          };
+        
+        }
+        majlettreniveau();
+      }
     }
 
     function majlettreniveau(){
-      motadev=motADevine
-      const motActuel= getMotActuel();
-      var lettre;
-      if(motActuel && motActuel.length<size){
-    if(niveau==1){
-      if(index%size==0){
-        lettre = motadev[0];
-        const placeCourante=document.getElementById(String(index+size-1));
-        placeCourante.textContent=motadev[size-1];
-      }
-      majTableau(lettre,size);
-    }
-    if(niveau==2){
-      if(index%size ==0){
-        lettre = motadev[0];
-        
-      }
-      majTableau(lettre,size);
+      if(victoire==0){
+        motadev=motADevine
+        const motActuel= getMotActuel();
+        var lettre;
+        if(motActuel && motActuel.length<size){
+          if(niveau==1){
+            if(index%size==0){
+              lettre = motadev[0];
+              const placeCourante=document.getElementById(String(index+size-1));
+              placeCourante.textContent=motadev[size-1];
+            }
+            majTableau(lettre,size);
+          }
+          if(niveau==2){
+            if(index%size ==0){
+              lettre = motadev[0];
+              
+            }
+            majTableau(lettre,size);
+          };
+        };
       };
-     };
     }
 
     /*getMotActuel
@@ -113,21 +116,23 @@ document.addEventListener("DOMContentLoaded", () => {
      * la fonction ajoute au tableau des mots la lettre soumise et réalise l'affichage dans la grille
      */
     function majTableau(lettre, size){
-      motadev=motADevine
-      const motActuel= getMotActuel();
-      if(motActuel && motActuel.length<size){
-        motActuel.push(lettre);
-        const placeCourante=document.getElementById(String(index));
-        index=index+1;
-        placeCourante.textContent=lettre;
-      }
-      if(niveau==1 && motActuel.length==size-1){
-        const derlettre = motadev[size-1]
-        motActuel.push(derlettre);
-        const placeCourante=document.getElementById(String(index));
-        placeCourante.textContent=derlettre;
-        index=index+1;
-      }
+      if(victoire==0){
+        motadev=motADevine
+        const motActuel= getMotActuel();
+        if(motActuel && motActuel.length<size){
+          motActuel.push(lettre);
+          const placeCourante=document.getElementById(String(index));
+          index=index+1;
+          placeCourante.textContent=lettre;
+        }
+        if(niveau==1 && motActuel.length==size-1){
+          const derlettre = motadev[size-1]
+          motActuel.push(derlettre);
+          const placeCourante=document.getElementById(String(index));
+          placeCourante.textContent=derlettre;
+          index=index+1;
+        }
+      };
     }
 
 
@@ -171,7 +176,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 var numeroligne=motsTentees.length-2; /* je recupere le numero de la derniere ligne dans lequel l'utilisateur a écrit*/
                 var tailleMot=motADevine.length;
-                majlettreniveau();
+                if(victoire==0){
+                  majlettreniveau();
+                }
                 for (let i = 0; i<couleur[1].length; i++){ 
                   var numerodecase=numeroligne*tailleMot+i; /* je calcule la case à colorer*/
                   let square=document.getElementById(numerodecase); /*je recupere le div correspondant*/
@@ -205,11 +212,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 if(mot==motADevine){
                   startConfetti();
                   window.alert("BRAVO");
-                  
-                  
-                  
-
-            
+                  victoire=1;
+                  for (let i = index; i < size*nbrEssais; i++) {
+                    var doc = document.getElementById(index);
+                    doc.textContent="";
+                  }
                 }
                 else{
                   if(motsTentees.length>nbrEssais){
@@ -234,8 +241,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
                 //alerte que le mot n'existe pas
                 alert("ton mot n'est pas dans le dictionnaire")
-                majlettreniveau();
               }
+              if(victoire==0){
+                majlettreniveau();
+              };
             };
           };
           //appel de la requête sur le mot
@@ -258,13 +267,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //cette partie correspond à l'écoute de l'entrée standard
     window.addEventListener("keydown", function (event) {
+      if(victoire==0){
       if (event.defaultPrevented) {
         return; // Ne devrait rien faire si l'événement de la touche était déjà consommé.
       }
       switch (event.key) {
         case "Enter":
           gestionEntree();
-
           break;
         case "Backspace":
           gestionSupprime();
@@ -300,9 +309,10 @@ document.addEventListener("DOMContentLoaded", () => {
         default:
           return; // Quitter lorsque cela ne gère pas l'événement touche.
       }
-    
+      
       // Annuler l'action par défaut pour éviter qu'elle ne soit traitée deux fois.
       event.preventDefault();
+    }
     }, true);
     
   
