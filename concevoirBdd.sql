@@ -40,11 +40,11 @@ CREATE TABLE Mot_du_Jour (
 --n'hesitez pas à rajouter des lignes pour que la BDD soit remplie au max !
 --Table Partie--
 INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes, victoire) 
-    VALUES (1, 'lola', '2022-04-16', 'jour', 'fr', 3,6,'faire', 3, 'crane raser jeter',0);
+    VALUES (1, 'lola', '2022-04-16', 'jour', 'fr', 3,6,'FAIRE', 3, 'CRANE RASER JETER',0);
 INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes,victoire) 
-    VALUES (2, 'lola', '2022-04-16', 'libre', 'fr', 3,6,'arbre', 3, 'crane raser jeter',0);
+    VALUES (2, 'lola', '2022-04-16', 'libre', 'fr', 3,6,'arbre', 3, 'CRANE RASER JETER',0);
 SELECT id_partie, type_de_jeu,niveau_difficulte, mot_a_deviner, m_tentes FROM Partie WHERE pseudo='lola' and DATE='2022-04-16';--a tester--
-UPDATE Partie SET m_tentes='boire poire faire' where id_partie=1 AND pseudo='lola';
+UPDATE Partie SET m_tentes='BOIRE POIRE FAIRE' where id_partie=1 AND pseudo='lola';
 DELETE FROM Partie WHERE id_partie=1 and pseudo='lola';
 --Table Joueur--
 INSERT into Joueur (pseudo, email, mdp, nombre_parties) 
@@ -55,12 +55,14 @@ SELECT pseudo FROM Joueur WHERE nombre_parties=3;
 
 --Table Mot_du_Jour
 INSERT INTO Mot_du_Jour (date_de_la_partie, mot)
-    VALUES ('2022-04-16', 'jeter');
+    VALUES ('2022-04-16', 'JETER');
 INSERT INTO Mot_du_Jour (date_de_la_partie, mot)
-    VALUES ('2022-04-15', 'arbre');
-UPDATE Mot_du_Jour SET mot='sache' WHERE date_de_la_partie='2022-04-16';
+    VALUES ('2022-04-15', 'ARBRE');
+UPDATE Mot_du_Jour SET mot='SACHE' WHERE date_de_la_partie='2022-04-16';
 DELETE FROM Mot_du_Jour WHERE date_de_la_partie='2022-04-15';
 
+
+--Remplissage Bdd--
 INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes, victoire) 
     VALUES (1, 'lucie', '2022-04-29', 'jour', 'fr', 3,6, 'MERCI', 3, ' CRANE PRISE MERCI', 1);
 
