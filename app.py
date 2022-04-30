@@ -198,7 +198,7 @@ def jeu():
             niveau=3
         motadev = session.get("mot")
     t=query_db("SELECT victoire FROM Partie WHERE type_de_jeu=? AND date=? AND pseudo=?",("jour",date.today(),session.get("pseudo")))
-    if t!=[]:
+    if t!=[] and mode_libre==0:
         return redirect("/config")
     else:
         return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre, niveaux=niveau, langs=int(lang))
