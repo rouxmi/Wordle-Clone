@@ -170,7 +170,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
               var numeroligne=motsTentees.length-2; /* je recupere le numero de la derniere ligne dans lequel l'utilisateur a écrit*/
               var tailleMot=motADevine.length;
-              majlettreniveau();
+              if (motsTentees[motsTentees.length-2].join("")!=motADevine){
+                majlettreniveau();
+              }
               for (let i = 0; i<couleur[1].length; i++){ 
                 var numerodecase=numeroligne*tailleMot+i; /* je calcule la case à colorer*/
                 let square=document.getElementById(numerodecase); /*je recupere le div correspondant*/
@@ -204,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
               if(mot==motADevine){
                 startConfetti();
                 window.alert("BRAVO");
-                victoire=1;
+                var victoire=1;
               }
               else{
                 if(motsTentees.length>nbrEssais){
