@@ -61,6 +61,8 @@ INSERT INTO Mot_du_Jour (date_de_la_partie, mot)
 UPDATE Mot_du_Jour SET mot='SACHE' WHERE date_de_la_partie='2022-04-16';
 DELETE FROM Mot_du_Jour WHERE date_de_la_partie='2022-04-15';
 
+
+--Remplissage Bdd--
 INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes, victoire) 
     VALUES (7, 'lucie', '2022-04-29', 'jour', 'fr', 3,6, 'MERCI', 3, ' CRANE PRISE MERCI', 1);
 
