@@ -142,8 +142,11 @@ def getclassement(pseudo):
                         clas.append([i,str(j+1)+"er"])
                     else:
                         clas.append([i,str(j+1)+"ème"])
+            if len(clas)!=i:
+                clas.append([i,'Pas joué'])
         else:
             clas.append([i,'Pas joué'])
+
     return clas
 
 
@@ -194,7 +197,11 @@ def jeu():
         else:
             niveau=3
         motadev = session.get("mot")
-    return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre, niveaux=niveau, langs=int(lang))
+    t=query_db("SELECT victoire FROM Partie WHERE type_de_jeu=? AND date=? AND pseudo=?",("jour",date.today(),session.get("pseudo")))
+    if t!=[]:
+        return redirect("/config")
+    else:
+        return render_template("jeu.html", nbEssais=nbEssais, tailleMot=nbLettres, libre=mode_libre, niveaux=niveau, langs=int(lang))
 
 @app.route('/regles')
 def regles():
@@ -289,6 +296,17 @@ def getclassementdata(niveau):
         for i in range(min(5,len(a))):
             L.append([a[i][0],a[i][1]])
     return L
+
+@app.route("/profile/<pseudo>")
+def seepseudo(pseudo):
+    if not session.get("pseudo"):
+       return redirect("/")
+    a=query_db("SELECT * FROM Joueur WHERE pseudo=:pseudo", {"pseudo": pseudo})
+    if a==[]:
+        return redirect('/config')
+    c=query_db("SELECT MAX(id_partie) FROM Partie WHERE pseudo=:pseudo",{"pseudo":pseudo})
+    clas=getclassement(pseudo)
+    return render_template("profile.html",infos = a[0],parties=c[0],clas=clas)
 
     
 if __name__=='__main__':
