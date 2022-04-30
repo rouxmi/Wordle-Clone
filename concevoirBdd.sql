@@ -58,3 +58,8 @@ INSERT INTO Mot_du_Jour (date_de_la_partie, mot)
 INSERT INTO Mot_du_Jour (date_de_la_partie, mot)
     VALUES ('2022-04-15', 'arbre');
 
+INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes, victoire) 
+    VALUES (7, 'lucie', '2022-04-29', 'jour', 'fr', 3,6, 'MERCI', 3, ' CRANE PRISE MERCI', 1);
+
+INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes, victoire) 
+    VALUES (6, 'boby', '2022-04-29', 'jour', 'fr', 3,6, 'MERCI', 4, 'CRANE PRISE LIVRE MERCI', 1);
