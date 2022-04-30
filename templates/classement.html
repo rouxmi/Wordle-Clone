@@ -60,9 +60,10 @@
                     </h2>
                         <ol>
                         {% for k in range(data|length) %}
-                        <li>
+                        <li><a href="/profile/{{data[k][0]}}">
                             <mark>{{data[k][0]}}</mark>
                             <small>{{data[k][1]}}</small>
+                           </a>
                         </li>
                         {% endfor %}
                         {% for k in range(5-(data|length)) %}

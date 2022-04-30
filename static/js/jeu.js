@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (motADevine!=''){  //vérication que la réponse n'est pas vide
         //lancement de la partie
         start(motADevine) 
-        console.log(motADevine)
       }
       };
   //lancement de la fonction asyncrone
