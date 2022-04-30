@@ -48,7 +48,7 @@ UPDATE Partie SET m_tentes='boire poire faire' where id_partie=1 AND pseudo='lol
 DELETE FROM Partie WHERE id_partie=1 and pseudo='lola';
 --Table Joueur--
 INSERT into Joueur (pseudo, email, mdp, nombre_parties) 
-    VALUES ('lucie', 'lucie.boucher@telecomnancy.eu', 'qzhnjqzhnj', 3);
+    VALUES ('lucie', 'lucie.boucher@telecomnancy.eu', 'qzhnjqzhnj', 1;
 UPDATE Joueur SET nombre_parties =10 WHERE pseudo='lucie';
 DELETE FROM Joueur WHERE pseudo='lucie';
 SELECT pseudo FROM Joueur WHERE nombre_parties=3;
@@ -62,7 +62,10 @@ UPDATE Mot_du_Jour SET mot='sache' WHERE date_de_la_partie='2022-04-16';
 DELETE FROM Mot_du_Jour WHERE date_de_la_partie='2022-04-15';
 
 INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes, victoire) 
-    VALUES (7, 'lucie', '2022-04-29', 'jour', 'fr', 3,6, 'MERCI', 3, ' CRANE PRISE MERCI', 1);
+    VALUES (1, 'lucie', '2022-04-29', 'jour', 'fr', 3,6, 'MERCI', 3, ' CRANE PRISE MERCI', 1);
 
 INSERT into Partie (id_partie, pseudo, date, type_de_jeu, langue, niveau_difficulte, nombre_e_max, mot_a_deviner, nombre_m_tentes, m_tentes, victoire) 
-    VALUES (6, 'boby', '2022-04-29', 'jour', 'fr', 3,6, 'MERCI', 4, 'CRANE PRISE LIVRE MERCI', 1);
+    VALUES (1, 'boby', '2022-04-29', 'jour', 'fr', 3,6, 'MERCI', 4, 'CRANE PRISE LIVRE MERCI', 1);
+
+INSERT into Joueur (pseudo, email, mdp, nombre_parties) 
+    VALUES ('boby', 'boby.boucher@telecomnancy.eu', 'qzhnjqzhnj', 1)
