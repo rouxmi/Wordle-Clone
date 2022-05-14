@@ -9,7 +9,7 @@
 #define __TABLE_H__
 
 
-struct _list_t
+struct element
 {
     char lettre;
     int place;
@@ -17,9 +17,12 @@ struct _list_t
     int essai;
 };
 
-typedef struct _list_t list_t;
+typedef struct element element;
 
-list_t * crea_tableau(int nbr_essai, int nbr_lettres); 
-list_t * crea_element(char lettre1 ,int place1, int position1, int essai1);
+element * crea_tableau(int nbr_essai, int nbr_lettres); 
+element  crea_element(char lettre1 ,int place1, int position1, int essai1);
+void print_element(element elt);
+int main();
 
 #endif
+
