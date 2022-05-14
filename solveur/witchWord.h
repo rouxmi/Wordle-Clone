@@ -7,4 +7,8 @@
 
 #define LONG 255
 
+/* RandomInFile
+@param char* name : le nom d'un fichier
+@return un mot aléatoire contenu dans le fichier
+*/
 char* randomInFile(char* name);
