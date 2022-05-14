@@ -19,6 +19,7 @@ struct _list_t
 
 typedef struct _list_t list_t;
 
-void crea_tableau(int nbr_essai, int nbr_lettres); 
+list_t * crea_tableau(int nbr_essai, int nbr_lettres); 
+list_t * crea_element(char lettre1 ,int place1, int position1, int essai1);
 
 #endif
