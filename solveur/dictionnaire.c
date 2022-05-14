@@ -3,23 +3,25 @@
 #include <err.h>
 #include <errno.h>
 #include <assert.h>
-#include <dictionnaire.h>
-#include <tableau.h>
+#include "dictionnaire.h"
+#include "tableau.h"
 #include <string.h>
 
 int taillefichiertxt ()
 {
     int compteur=0;
     FILE *f = ("test.txt","rt");
-    int c;
+    char c;
     while((c=fgetc(f)) != EOF)
     {
         if(c=='\n')
+        {
             compteur++;
+        }
     }
     return compteur;
 }
-bool contains(char* pasceslettres, char* mot) //cette fonction sert à trier les mots contenant les lettres qui ont la valeur 0 lors de la coloration, pasceslettres est une chaine contenant ces caractères 
+bool contains(char pasceslettres[] , char mot[]) //cette fonction sert à trier les mots contenant les lettres qui ont la valeur 0 lors de la coloration, pasceslettres est une chaine contenant ces caractères 
 {
     int sontpresents=NULL;
     if (mot!=NULL)
@@ -34,6 +36,21 @@ bool contains(char* pasceslettres, char* mot) //cette fonction sert à trier les
             return true;
         }
     }
+}
+bool acetteplace(int position, char x, char mot[])
+{
+    char tab=malloc(sizeof(mot));
+    char c;
+    if (mot[position]==x)
+    {
+        return true; 
+    }
+    else
+    {
+        return false;
+    }
+
+
 }
 
 //bool dico(char x, int taillefichier)//pour un mot de longueur 5 taillemot=6
