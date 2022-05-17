@@ -1,4 +1,4 @@
-#include "witchWord.h"
+#include "whichWord.h"
 
 char* randomInFile(char* name){
     srand( time( NULL ) );
