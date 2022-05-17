@@ -6,11 +6,12 @@
 #include "dictionnaire.h"
 #include "tableau.h"
 #include <string.h>
+#include <stdbool.h>
 
 int taillefichiertxt ()
 {
-    int compteur=0;
-    FILE *f = ("test.txt","rt");
+    int compteur=1;
+    FILE *f=fopen("test.txt","rt");
     char c;
     while((c=fgetc(f)) != EOF)
     {
@@ -21,10 +22,10 @@ int taillefichiertxt ()
     }
     return compteur;
 }
-bool contains(char pasceslettres[] , char mot[]) //cette fonction sert à trier les mots contenant les lettres qui ont la valeur 0 lors de la coloration, pasceslettres est une chaine contenant ces caractères 
+bool contains(char *pasceslettres , char* mot) //cette fonction sert à trier les mots contenant les lettres qui ont la valeur 0 lors de la coloration, pasceslettres est une chaine contenant ces caractères 
 {
-    int sontpresents=NULL;
-    if (mot!=NULL)
+    char *sontpresents;
+    assert(mot!=NULL);
     {
         sontpresents = strpbrk(mot,pasceslettres);
         if (sontpresents==NULL)
@@ -36,11 +37,10 @@ bool contains(char pasceslettres[] , char mot[]) //cette fonction sert à trier 
             return true;
         }
     }
+
 }
-bool acetteplace(int position, char x, char mot[])
+bool acetteplace(int position, char x, char *mot)
 {
-    char tab=malloc(sizeof(mot));
-    char c;
     if (mot[position]==x)
     {
         return true; 
