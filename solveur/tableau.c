@@ -1,8 +1,10 @@
 #include "tableau.h"
 
-void init_tableau(element tab[30],element L){
-    for(int i=0; i<30; i++){
-        if(sizeof(tab[i])==0){
+
+
+void init_tableau(element tab[size*nbessais],element L,int indice){
+    for(int i=0; i<size*nbessais; i++){
+        if(i==indice){
             tab[i]=L;
         }
     }
@@ -17,40 +19,46 @@ void  init_element(element *elt,char lettre1 ,int place1, int coloration1, int e
 }
 
 void print_element(element elt){
+    printf("[");
     printf("%c ", elt.lettre);
+    printf(",");
     printf("%d ", elt.place);
-    printf("%d ", elt.essai);
+    printf(",");
+    printf("%d ", elt.coloration);
+    printf(",");
     printf("%d ",elt.essai);
+    printf("]");
 } 
 
-void print_tableau(element tab[30]){
-    for(int i=0; i<30;i++){
+void print_tableau(element tab[size*nbessais]){
+    printf("[");
+    for(int i=0; i<size*nbessais;i++){
         print_element(tab[i]);
+        printf("\n");
     }
+    printf("]\n");
 }
 
-void ajout_mot(char* mot, int num_essai, element tab[30], char* coloration,int taille_mot){
-    //printf("%c",mot[1]);
-    
-    for(int i=0; i<taille_mot;i++){
+void ajout_mot(char* mot, int num_essai, element tab[size*nbessais], char* coloration,int taille_mot){
+   
+   for(int i=0; i<taille_mot;i++){
         element L;
         int color;
         char coloration_i=(int)(coloration[i]);
         sscanf(&coloration_i,"%d",&color);
-        //printf("%d\n",color);
-        init_element(&L,mot[i],i+1,coloration_i,num_essai);
-        print_element(L);
-        printf("\n");
-        init_tableau(tab,L);
-        //print_tableau(tab);
-        
-    }
+        init_element(&L,mot[i],i+1,color,num_essai);
+        init_tableau(tab,L,i+(num_essai-1)*size);
+        }    
 }
 
 int main(){
-    element  T[30] ;
-    ajout_mot("merci",1,T,"20202",5);
-    //print_tableau(T);
+    element  T[size*nbessais] ;
+    ajout_mot("hello",1,T,"20202",size);
+    ajout_mot("merci",2,T,"01211",size);
+    ajout_mot("casse",3,T,"01022",size);
+    ajout_mot("tetes",4,T,"02211",size);
+    ajout_mot("mains",5,T,"22222",size);
+    print_tableau(T);
     return 0;
 }
 
