@@ -13,15 +13,16 @@ struct element
 {
     char lettre;
     int place;
-    int position;
+    int coloration;
     int essai;
 };
 
 typedef struct element element;
 
-void  init_tableau(element tab[30],int nbr_essai, int nbr_lettres); 
-void  init_element(element *elt,char lettre1 ,int place1, int position1, int essai1);
+void  init_tableau(element tab[30],element L); 
+void  init_element(element *elt,char lettre1 ,int place1, int coloration1, int essai1);
 void print_element(element elt);
+void ajout_mot(char* mot, int num_essai, element tab[30], char* coloration,int taille_mot);
 int main();
 
 #endif

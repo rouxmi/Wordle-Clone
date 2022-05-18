@@ -9,9 +9,10 @@
 #define __DICTIONNAIRE__H__
 
 int taillefichiertxt ();
-bool contains(char pasceslettres[] , char mot[]);
-bool acetteplace(int position, char x, char mot[]);
+bool contains(char *pasceslettres , char* mot, int longueur_mot);
 
+bool acetteplace(int position, char x, char mot[]);
+bool containsexceptposition(char* mot,char x,int position, int longueur_mot);
 
 
 #endif
