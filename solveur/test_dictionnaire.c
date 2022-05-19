@@ -36,16 +36,16 @@ int main()
     char x='l';
     append(str,x);
     printf("%s\n",str);
-    FILE *f=fopen("test.txt","r");
+    FILE *f=fopen("/texte/test.txt","r");
     char *jeveuxsavoir=contentofline(f, 3, 5,6);
     printf("%s\n",jeveuxsavoir);
     free(jeveuxsavoir);
     fclose(f);
-    FILE *p=fopen("test.txt","a");
+    FILE *p=fopen("/texte/test.txt","a");
     char * ajout="ajout";
     addintofile(p, ajout,taillefichiertxt(p));
     fclose(p);*/
-    FILE *f=fopen("test.txt","r");
+    FILE *f=fopen("/texte/test.txt","r");
     int len=taillefichiertxt(f);
     fclose(f);
    

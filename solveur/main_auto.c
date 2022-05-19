@@ -78,7 +78,7 @@ int main() {
     FILE* ptr;
     char word[50];
     char word_coupe[len_mot + 1];
-    ptr = fopen("dict.txt", "a+");
+    ptr = fopen("texte/dict.txt", "a+");
  
     if (NULL == ptr) {
         printf("file can't be opened \n");
@@ -102,7 +102,7 @@ int main() {
 
     char buff2[255];
 
-    fp = fopen("stats.txt", "rw");
+    fp = fopen("texte/stats.txt", "rw");
     fgets(buff2, 255, (FILE*)fp);
     printf("%s\n",buff2);
     if ((char *)buff2==(char *)"Stats du solveur V1"){

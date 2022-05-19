@@ -37,9 +37,9 @@ char* randomInFile(char* name){
 
 /**
 int main(){
-    char* mot = randomInFile("test.txt");
+    char* mot = randomInFile("/texte/test.txt");
     printf("%s", mot);
-    return 0;
+    return 0
 }
 **/
 

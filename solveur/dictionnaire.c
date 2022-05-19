@@ -147,12 +147,12 @@ void dico(element *tab[30], int nb_essai, int longueur_mot, int longueur_fichier
     int position;
     char espace=' ';
     element *current;
-    FILE *f=fopen("test.txt","rt");
-    FILE *d1=fopen("dico1txt","a");
-    FILE *d2=fopen("dico2.txt","a");
-    FILE *d3=fopen("dico3.txt","a");
-    FILE *d4=fopen("dico4.txt","a");
-    FILE *d5=fopen("dico5.txt","a");
+    FILE *f=fopen("texte/test.txt","rt");
+    FILE *d1=fopen("texte/dico1txt","a");
+    FILE *d2=fopen("texte/dico2.txt","a");
+    FILE *d3=fopen("texte/dico3.txt","a");
+    FILE *d4=fopen("texte/dico4.txt","a");
+    FILE *d5=fopen("texte/dico5.txt","a");
     FILE *intermediaire1=fopen("dicointer1.txt","a");
     FILE *intermediaire2=fopen("dicointer3.txt","a");
     FILE *list_dico[6]={f,d1,d2,d3,d4,d5};
