@@ -98,7 +98,7 @@ char * contentofline(FILE *f, int linenumber, int longueur_mot, int longueur_dic
     assert(f!=NULL);
     assert(longueur_dico>linenumber);
     char FILENAME[FILENAME_SIZE];
-    char *buffer=malloc(sizeof(char)*MAX_LINE);
+    char *buffer=(char*)malloc(sizeof(char)*MAX_LINE);
     bool keep_reading=true;
     int current_line=1;
     do
@@ -143,7 +143,7 @@ void dico(element *tab[30], int nb_essai, int longueur_mot, int longueur_fichier
 {
     char *right_place=createplace(longueur_mot);
     char *wrong_place=createplace(longueur_mot);
-    char not_here[26];
+    char not_here[100];
     int position;
     char espace=' ';
     element *current;
