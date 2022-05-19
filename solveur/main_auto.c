@@ -70,6 +70,7 @@ char * str_slice(const char * str, char * word_coupe, size_t start, size_t end)
         word_coupe[j++] = str[i];
     }
     word_coupe[j] = 0;
+ 
 }
 
 int main() {
