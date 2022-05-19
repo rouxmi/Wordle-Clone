@@ -2,8 +2,8 @@
 // Created by lucie on 18/05/22.
 //
 
-#ifndef GRAPH_ETAT_H
-#define GRAPH_ETAT_H
+#ifndef ETAT_H
+#define ETAT_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,5 +37,14 @@ void arbre_etat_delete (arbre_etat* a);
 
 void arbre_etat_print(arbre_etat* a);
 
+void arbre_etat_print_2D (arbre_etat* a, int niveau);
 
-#endif //GRAPH_ETAT_H
+arbre_etat* arbre_etat_insert(arbre_etat* a, etat data);
+
+int max(int a, int b);
+
+int arbre_etat_hauteur(arbre_etat* a);
+
+
+
+#endif //ETAT_H
