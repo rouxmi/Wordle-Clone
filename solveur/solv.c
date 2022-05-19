@@ -6,9 +6,9 @@ int main(){
     int nombre_essais = 0;
 
     //lecture dans wsolf.txt le nombre de lettre du mot à deviné
-    FILE *f = fopen("wsolf.txt","r");
+    FILE *f = fopen("/textewsolf.txt","r");
     if ( f== NULL ) {
-        printf( "Cannot open file %s\n", "wsolf.txt" );
+        printf( "Cannot open file %s\n", "/texte/wsolf.txt" );
         exit( 0 );
     }
     char c = (int)(fgetc(f));
