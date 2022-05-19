@@ -8,6 +8,8 @@
 #ifndef __TABLE__H__
 #define __TABLE_H__
 
+int size=5;
+int nbessais=5;
 
 struct element
 {
@@ -19,10 +21,10 @@ struct element
 
 typedef struct element element;
 
-void  init_tableau(element tab[30],element L); 
+void  init_tableau(element tab[size],element L,int indice); 
 void  init_element(element *elt,char lettre1 ,int place1, int coloration1, int essai1);
 void print_element(element elt);
-void ajout_mot(char* mot, int num_essai, element tab[30], char* coloration,int taille_mot);
+void ajout_mot(char* mot, int num_essai, element tab[size], char* coloration,int taille_mot);
 int main();
 
 #endif
