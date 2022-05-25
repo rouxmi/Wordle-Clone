@@ -46,13 +46,26 @@ int main()
     fclose(p);*/
     /*FILE *f=fopen("/texte/test.txt","r");
     int len=taillefichiertxt(f);
+    printf("%d\n",len);
 
     fclose(f);*/
-    
-    int len=11;
+    /*char* right_place="abc";
+    int positions[3]={0,1,2};
+    char *mot="abcde";
+    char* mot2="dbabc";
+    char* mot3="deabc";
+    int index=2;
+    printf("%d\n",positions[index]);
+    printf("%d\n",containsexceptposition(mot,right_place,positions,3,5));
+    printf("%d\n",containsexceptposition(mot2,right_place,positions,3,5));
+    printf("%d\n",containsexceptposition(mot3,right_place,positions,3,5));
+    //printf("%d\n",acetteplace(right_place,mot2,positions,3));*/
+    int len=19;
     element  T[30] ;
-    ajout_mot("merci",1,T,"20202",5);
-    dico(T, 0, 5, len);
+    ajout_mot("merci",1,T,"21202",5);
+    dico(T, 0, 5);
+    //il faut vider dicointer1 et dicointer2 après chaque essai
+    
     //printf("%s","coucou");
     return 0;
 }
