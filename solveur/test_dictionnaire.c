@@ -5,7 +5,6 @@
 #include <assert.h>
 #include "dictionnaire.h"
 #include <stdbool.h>
-#include "tableau.h"
 #include <string.h>
 
 
@@ -45,13 +44,15 @@ int main()
     char * ajout="ajout";
     addintofile(p, ajout,taillefichiertxt(p));
     fclose(p);*/
-    FILE *f=fopen("/texte/test.txt","r");
+    /*FILE *f=fopen("/texte/test.txt","r");
     int len=taillefichiertxt(f);
-    fclose(f);
-   
+
+    fclose(f);*/
+    
+    int len=11;
     element  T[30] ;
     ajout_mot("merci",1,T,"20202",5);
     dico(T, 0, 5, len);
-
+    //printf("%s","coucou");
     return 0;
 }
