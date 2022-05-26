@@ -55,6 +55,5 @@ void list_edge_print_rec(list_edge* one_list);
 
 list_edge* list_edge_remove_node_by_id(list_edge* one_list, int id);
 
-node* node
 
 #endif //GRAPH_H
