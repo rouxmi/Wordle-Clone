@@ -26,8 +26,8 @@ void test_list_base(){
     edge e1 = edge_create(&n1, 1, 'a');
     edge e2= edge_create(&n2, 2, 'b');
 
-    l= list_edge_add_head(&e1, l);
-    l= list_edge_add_head(&e2, l);
+    l= list_edge_add_head(e1, l);
+    l= list_edge_add_head(e2, l);
 
     //list_edge_print_rec(l);
     l = list_edge_remove_node_by_id(l, 2);
@@ -42,8 +42,10 @@ void test_node_add_word(){
     node n3 = node_create(3);
     node_add_child(&n1, &n2, 'a', 1);
     node_add_child(&n1, &n3, 'b', 2);
-    n1.listEdge = list_edge_destroy(n1.listEdge);
+    node_print(&n1);
     node_add_word(&n1, "cat");
+    node_print(&n1);
+    node_destroy_all_children(&n1);
 }
 
 
