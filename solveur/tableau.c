@@ -60,7 +60,7 @@ void ajout_mot(char* mot, int num_essai, element tab[size*nbessais], char* color
         }    
 }
 
-int main(){
+/*int main(){
     element  T[size*nbessais] ;
     ajout_mot("hello",0,T,"20202",size);
     ajout_mot("merci",1,T,"01211",size);
@@ -69,5 +69,5 @@ int main(){
     ajout_mot("mains",4,T,"22222",size);
     print_tableau(T);
     return 0;
-}
+} */
 
