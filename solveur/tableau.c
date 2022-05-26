@@ -49,7 +49,7 @@ void print_tableau(element tab[size*nbessais]){
 // grace à la fonction element et apres ajoute au tableau cette élement. 
 //Avec un mot de taille 5, la fonction va créer 5 éléments qu'elle ajoute successivement au tableau
 void ajout_mot(char* mot, int num_essai, element tab[size*nbessais], char* coloration,int taille_mot){
-   for(int i=0; i<taille_mot;i++){
+    for(int i=0; i<taille_mot;i++){
         element L;
         int color;
         char coloration_i=(int)(coloration[i]);

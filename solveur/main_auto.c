@@ -167,8 +167,8 @@ int main() {
 			if (i<=1){
 				FILE* erase1;
 				FILE* erase2;
-				erase1 = fopen("texte/dicointer1.txt", "w");
-				erase2 = fopen("texte/dicointer2.txt", "w");
+				erase1 = fopen("dicointer1.txt", "w");
+				erase2 = fopen("dicointer2.txt", "w");
 				ftruncate(fileno(erase1), 0);
 				ftruncate(fileno(erase2), 0);
 			}
