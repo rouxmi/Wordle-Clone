@@ -62,13 +62,13 @@ int main()
     //printf("%d\n",acetteplace(right_place,mot2,positions,3));*/
     int len=19;
     element  T[30] ;
-    ajout_mot("merci",0,T,"20202",5);
+    ajout_mot("merci",0,T,"00000",5);
     print_tableau(T);
     dico(T,0,5);
     /*FILE * test=fopen("dicointer2.txt","r");
     int te=taillefichiertxt(test);
     printf("%d\n",te);*/
-    /*ajout_mot("apple",1,T,"20022",5);
+    /*ajout_mot("mazed",1,T,"22010",5);
     print_tableau(T);
     dico(T,1,5);*/
     //il faut vider dicointer1 et dicointer2 après chaque essai
