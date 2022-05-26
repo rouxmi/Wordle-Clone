@@ -13,14 +13,15 @@
 
 int taillefichiertxt (FILE *f)
 {
-    int compteur=1;
+    int compteur=0;
     char c;
     while((c=fgetc(f)) != EOF)
     {
         if(c=='\n')
         {
-            //printf("coucou");
+            printf("coucou");
             compteur++;
+            printf("compteur %d\n",compteur);
         }
     }
 
@@ -58,7 +59,6 @@ bool contains(char *ceslettres , char* mot, int longueur_mot) //cette fonction s
 bool acetteplace(char ceslettres[], char *mot, int positions[],int index)
 {
     int compteur=0;
-    //printf("coucou");
     for (int j=0;j<index;j++)
     {
         int p=positions[j];
@@ -66,6 +66,7 @@ bool acetteplace(char ceslettres[], char *mot, int positions[],int index)
         if (mot[p]==c)
         {
             compteur++;
+
         }
 
     }
@@ -153,12 +154,11 @@ void addintofile(FILE *f, char *word_to_add)
 
 void coloration0(element tab[30],int nb_essai, int longueur_mot)
 {
-   
-    char not_here  [100];
+    char not_here[100];
     int index=0;
     int nb_not_here=0;
     element current;
-    char *list_dico[7]={"texte/dico0.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
+    char *list_dico[7]={"texte/dict.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
     FILE *dico=fopen(list_dico[nb_essai],"r");
     FILE *intermediaire1=fopen("dicointer1.txt","w");
     for (int i=0;i<longueur_mot;i++)
@@ -221,12 +221,16 @@ void coloration2(element tab[30],int nb_essai, int longueur_mot)
     FILE *intermediaire2=fopen("dicointer2.txt","w");
     for (int i=0;i<longueur_mot;i++)
     {
+        printf("%d\n",i);
         current=tab[nb_essai+i];
+        printf("%c\n",current.lettre);
         
         if (current.coloration==2)
         {
+
             right_place[index]=current.lettre;
             positions_rp[index]=current.place-1;
+            printf("%d\n",current.place);
             index++;
             nb_here++;
             //printf("%s\n",not_here);
@@ -234,6 +238,7 @@ void coloration2(element tab[30],int nb_essai, int longueur_mot)
         }
     
     }
+    printf("%d\n",index);
     if (nb_here==0)
     {
         int len=taillefichiertxt(intermediaire1);
@@ -261,6 +266,7 @@ void coloration2(element tab[30],int nb_essai, int longueur_mot)
             if (acetteplace(right_place,current_word,positions_rp,index)==true)
             {
                 //printf("%s\n",current_word);
+                //printf("%s\n",current_word);
                 addintofile(intermediaire2,current_word);//faire une fonction pour écrire dans un nouveau dico, on écrit dans intermédiaire1
             }
             free(current_word);
@@ -282,7 +288,10 @@ void coloration1(element tab[30],int nb_essai, int longueur_mot)
     int nb_notexactly=0;
     element current;
     FILE *intermediaire2=fopen("dicointer2.txt","r");
-    char *list_dico[7]={"texte/dico0.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
+    int len=taillefichiertxt(intermediaire2);
+    printf(" longueur %d\n",len);
+    rewind(intermediaire2);
+    char *list_dico[7]={"texte/dict.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
     FILE *dico=fopen(list_dico[nb_essai+1],"a");
     for (int i=0;i<longueur_mot;i++)
     {
@@ -299,29 +308,29 @@ void coloration1(element tab[30],int nb_essai, int longueur_mot)
         }
     
     }
-
+    printf("nb_notexactly %d\n",nb_notexactly);
     if (nb_notexactly==0)
     {
-        int len=taillefichiertxt(intermediaire2);
-        rewind(intermediaire2);
+        
         for (int j=0;j<len;j++)
+
         {
+            printf("bonjour\n");
             char *current_word=contentofline(intermediaire2,j,longueur_mot+1,len);
     
+            //printf("%s\n",current_word);
             addintofile(dico,current_word);//faire une fonction pour écrire dans un nouveau dico, on écrit dans intermédiaire1
      
             free(current_word);
         }
     }
     else{
-        int len=taillefichiertxt(intermediaire2);
-        rewind(intermediaire2);
         for (int j=0;j<len;j++)
         {
             char *current_word=contentofline(intermediaire2,j,longueur_mot+1,len);
             if (containsexceptposition(current_word, wrong_place, positions_wp,index,longueur_mot)==true)
             {
-                //printf("jesuisla");
+                printf("jesuisla");
                 addintofile(dico,current_word);//faire une fonction pour écrire dans un nouveau dico, on écrit dans intermédiaire1
             }
             free(current_word);

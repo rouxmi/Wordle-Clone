@@ -10,6 +10,10 @@
 
 #define size 5 
 #define nbessais 5 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0d7a5244a1ba84f94669a5bb989246cbac08f835
 
 struct element
 {
