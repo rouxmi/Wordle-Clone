@@ -8,8 +8,8 @@
 #ifndef __TABLE__H__
 #define __TABLE_H__
 
-#define size 5
-#define nbessais 5
+int size=5 ;
+int nbessais=5 ;
 
 struct element
 {
