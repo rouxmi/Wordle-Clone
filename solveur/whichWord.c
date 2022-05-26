@@ -1,8 +1,8 @@
 #include "whichWord.h"
 
 char* randomInFile(char* name){
-    srand( time( NULL ) );
     FILE *f = fopen(name,"r");
+    rewind(f);
     if ( f== NULL ) {
         printf( "Cannot open file %s\n", name );
         exit( 0 );
@@ -14,8 +14,9 @@ char* randomInFile(char* name){
         max++;
     }
     fclose(f);
-
+    printf("max: %d\n",max);
     int indiceLigne = rand() % max+1;
+    printf("n°ligne:%d\n",indiceLigne);
 
     f = fopen(name,"r");
     if ( f== NULL ) {
