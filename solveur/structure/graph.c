@@ -26,17 +26,18 @@ node node_create(int id){
 void node_switch_terminal(node* n){
     n->terminal = !(n->terminal);
 }
+void node_print(node* n){
+    printf("%d\n", n->id);
+    list_edge_print_rec(n->listEdge);
+}
 
 void node_add_child(node* n1, node* n2, char label, int id){
     edge e = edge_create(n2, id, label);
     n2->nbrAretesEntrantes +=1;
-    list_edge_add_head(&e, n1->listEdge);
-
+    n1->listEdge = list_edge_add_head(&e, n1->listEdge);
+    node_print(n1);
 }
 
-void node_print(node* n){
-    printf("%d\n", n->id);
-}
 
 list_edge* list_edge_create() {
     list_edge* one_list = (list_edge*)malloc(sizeof(list_edge));
@@ -45,7 +46,7 @@ list_edge* list_edge_create() {
     return one_list;
 }
 
-void list_edge_destroy(list_edge* one_list)
+list_edge* list_edge_destroy(list_edge* one_list)
 {
     list_edge* tmp = one_list;
     list_edge* tmpnext;
@@ -55,6 +56,7 @@ void list_edge_destroy(list_edge* one_list)
         tmp = tmpnext;
     }
     free(tmp);
+    return NULL;
 }
 
 bool list_edge_is_empty(list_edge * one_list) {
@@ -78,9 +80,11 @@ list_edge* liste_edge_next(list_edge* one_list){
 }
 
 void list_edge_print_rec(list_edge* one_list){
-    if(!list_edge_is_empty(one_list)){
-        edge_print(liste_edge_first(one_list));
-        list_edge_print_rec(liste_edge_next(one_list));
+    if(one_list != NULL){
+        if(!list_edge_is_empty(one_list)){
+            edge_print(liste_edge_first(one_list));
+            list_edge_print_rec(liste_edge_next(one_list));
+        }
     }
 }
 
@@ -105,3 +109,52 @@ list_edge* list_edge_remove_node_by_id(list_edge* one_list, int id)
         return one_list;
     }
 }
+
+bool list_edge_contains_by_label(list_edge* one_list, char valeur)
+{
+    list_edge* tmp=one_list;
+    /* Tant que l'on n'est pas au bout de la liste */
+    while(tmp != NULL && tmp->e !=NULL)
+    {
+        if(tmp->e->label == valeur)
+        {
+            /* Si l'élément a la valeur recherchée, on renvoie son adresse */
+            return true;
+        }
+        tmp = tmp->next;
+    }
+    return false;
+}
+
+void node_add_word(node* n1, char* mot){
+    if(n1 != NULL && n1->listEdge!=NULL){
+        bool f = false;
+        list_edge* tmp=n1->listEdge;
+        /* Tant que l'on n'est pas au bout de la liste */
+        while(tmp != NULL && tmp->e !=NULL)
+        {
+            if(mot != NULL && tmp->e->label == mot[0] )
+            {
+                if(&(*(mot+1)) ==NULL){
+                node_switch_terminal(n1->listEdge->e->node);
+                }
+                node_add_word(n1->listEdge->e->node, &(*(mot+1)));
+                f=true;
+            }
+            tmp = tmp->next;
+        }
+        if(!f && mot != NULL){
+            int id = 4;
+            node n2 = node_create(id);
+            if(&(*(mot+1)) ==NULL){
+                node_switch_terminal(&n2);
+            }
+            node_add_child(n1, &n2, mot[0], id);
+            node_add_word(&n2, &(*(mot+1)));
+        }
+    }
+}
+
+
+
+

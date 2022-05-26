@@ -16,7 +16,7 @@ typedef struct _node node;
 typedef struct _edge edge;
 
 struct _list_edge{
-    edge *e;
+    edge* e;
     list_edge *next;
 };
 
@@ -46,7 +46,7 @@ void node_print(node* n);
 
 //fonctions sur la structure liste_edge
 list_edge* list_edge_create();
-void list_edge_destroy(list_edge* one_list);
+list_edge* list_edge_destroy(list_edge* one_list);
 bool list_edge_is_empty(list_edge * one_list);
 edge * liste_edge_first(list_edge* one_list);
 list_edge* liste_edge_next(list_edge* one_list);
@@ -55,5 +55,7 @@ void list_edge_print_rec(list_edge* one_list);
 
 list_edge* list_edge_remove_node_by_id(list_edge* one_list, int id);
 
+bool list_edge_contains_by_label(list_edge* one_list, char valeur);
+void node_add_word(node* n1, char* mot);
 
 #endif //GRAPH_H
