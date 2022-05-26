@@ -15,10 +15,7 @@ typedef struct _list_edge list_edge;
 typedef struct _node node;
 typedef struct _edge edge;
 
-struct _list_edge{
-    edge* e;
-    list_edge *next;
-};
+
 
 struct _node {
     list_edge* listEdge;
@@ -32,7 +29,10 @@ struct _edge {
     int id;
     char label;
 };
-
+struct _list_edge{
+    edge e;
+    list_edge *next;
+};
 
 //fonctions de base sur la structure edge
 edge edge_create(node* n,int id, char label);
@@ -43,14 +43,16 @@ node node_create(int id);
 void node_switch_terminal(node* n);
 void node_add_child(node* n1, node* n2, char label, int id);
 void node_print(node* n);
+void node_destroy(node* n);
+void node_destroy_all_children(node* n);
 
 //fonctions sur la structure liste_edge
 list_edge* list_edge_create();
 list_edge* list_edge_destroy(list_edge* one_list);
 bool list_edge_is_empty(list_edge * one_list);
-edge * liste_edge_first(list_edge* one_list);
+edge liste_edge_first(list_edge* one_list);
 list_edge* liste_edge_next(list_edge* one_list);
-list_edge * list_edge_add_head(edge* e, list_edge* one_list);
+list_edge * list_edge_add_head(edge e, list_edge* one_list);
 void list_edge_print_rec(list_edge* one_list);
 
 list_edge* list_edge_remove_node_by_id(list_edge* one_list, int id);
