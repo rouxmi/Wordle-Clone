@@ -9,7 +9,7 @@
 
 #define len_mot 5
 #define FILENAME_SIZE 1024
-#define MAX_LINE 2048
+#define MAX_LINE 7048
 
 int taillefichiertxt (FILE *f)
 {
@@ -157,7 +157,7 @@ void coloration0(element tab[30],int nb_essai, int longueur_mot)
     char not_here  [100];
     int index=0;
     element current;
-    char *list_dico[7]={"texte/test.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
+    char *list_dico[7]={"texte/dico0.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
     FILE *dico=fopen(list_dico[nb_essai],"r");
     FILE *intermediaire1=fopen("dicointer1.txt","a");
     for (int i=0;i<longueur_mot;i++)
@@ -248,7 +248,7 @@ void coloration1(element tab[30],int nb_essai, int longueur_mot)
     int index=0;
     element current;
     FILE *intermediaire2=fopen("dicointer2.txt","r");
-    char *list_dico[7]={"texte/test.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
+    char *list_dico[7]={"texte/dico0.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
     FILE *dico=fopen(list_dico[nb_essai+1],"a");
     for (int i=0;i<longueur_mot;i++)
     {
@@ -287,9 +287,11 @@ void coloration1(element tab[30],int nb_essai, int longueur_mot)
 
 void dico(element tab[30], int nb_essai, int longueur_mot)
 {
+    printf("debut dict\n");
     coloration0(tab, nb_essai,longueur_mot);
     coloration2(tab, nb_essai,longueur_mot);
     coloration1(tab, nb_essai,longueur_mot);
+    printf("Fin dict\n");
 }
 
 

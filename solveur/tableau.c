@@ -40,14 +40,13 @@ void print_tableau(element tab[size*nbessais]){
 }
 
 void ajout_mot(char* mot, int num_essai, element tab[size*nbessais], char* coloration,int taille_mot){
-   
    for(int i=0; i<taille_mot;i++){
         element L;
         int color;
         char coloration_i=(int)(coloration[i]);
         sscanf(&coloration_i,"%d",&color);
         init_element(&L,mot[i],i+1,color,num_essai);
-        init_tableau(tab,L,i+(num_essai-1)*size);
+        init_tableau(tab,L,i+num_essai*taille_mot);
         }    
 }
 
