@@ -158,7 +158,7 @@ void coloration0(element tab[30],int nb_essai, int longueur_mot)
     int index=0;
     int nb_not_here=0;
     element current;
-    char *list_dico[7]={"texte/test.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
+    char *list_dico[7]={"texte/dict.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
     FILE *dico=fopen(list_dico[nb_essai],"r");
     FILE *intermediaire1=fopen("dicointer1.txt","a");
     for (int i=0;i<longueur_mot;i++)
@@ -282,7 +282,7 @@ void coloration1(element tab[30],int nb_essai, int longueur_mot)
     int nb_notexactly=0;
     element current;
     FILE *intermediaire2=fopen("dicointer2.txt","r");
-    char *list_dico[7]={"texte/test.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
+    char *list_dico[7]={"texte/dict.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
     FILE *dico=fopen(list_dico[nb_essai+1],"a");
     for (int i=0;i<longueur_mot;i++)
     {
@@ -308,6 +308,7 @@ void coloration1(element tab[30],int nb_essai, int longueur_mot)
         {
             char *current_word=contentofline(intermediaire2,j,longueur_mot+1,len);
     
+            printf("%s\n",current_word);
             addintofile(dico,current_word);//faire une fonction pour écrire dans un nouveau dico, on écrit dans intermédiaire1
      
             free(current_word);
