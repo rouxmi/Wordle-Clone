@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <unistd.h>
+#include <sys/types.h>
 #include "whichWord.h"
 #include "dictionnaire.h"
 //doit dépendre du dict
 #define len_mot 5
 #define FILENAME_SIZE 1024
 #define MAX_LINE 7048
-#define nbessais 5
+
 
 
 int lettrepos(const char * str, char lettre) {
@@ -55,9 +57,9 @@ char* coloration(const char * mot_a_test,const char * mot_a_dev){
 		}
 		i = 0;
 		while (copy_test[i]) {
-			pos = lettrepos(copy_test, copy_dev[i]);
+			pos = lettrepos(copy_dev, copy_test[i]);
 			//la lettre doit exister mais ne dois pas remplacer un bon choix
-			if (pos >= 0 && res[i] != '2') {
+			if (pos >= 0 && res[pos] != '2') {
 				//lettre trouver mais position fausse
 				res[i] = '1';
 				copy_test[pos] = '_';
@@ -89,6 +91,10 @@ void str_slice(const char * str, char * word_coupe, size_t start, size_t end)
 
 int main() {
     
+	char* color;
+	color=coloration("after","arabe");
+	printf("%s\n",color);
+
     FILE* ptr;
     char word_dev[len_mot + 1];
 	char word_test[len_mot + 1];
@@ -104,6 +110,21 @@ int main() {
 	element  T[size*nbessais] ;
 	srand( time( NULL ) );
     for (int j=0;j<tailledict-1;j++){
+		FILE* reset1;
+		FILE* reset2;
+		FILE* reset3;
+		FILE* reset4;
+		FILE* reset5;
+		reset1 = fopen("texte/dico1.txt", "w");
+		reset2 = fopen("texte/dico2.txt", "w");
+		reset3 = fopen("texte/dico3.txt", "w");
+		reset4 = fopen("texte/dico4.txt", "w");
+		reset5 = fopen("texte/dico5.txt", "w");
+		ftruncate(fileno(reset1), 0);
+		ftruncate(fileno(reset2), 0);
+		ftruncate(fileno(reset3), 0);	
+		ftruncate(fileno(reset4), 0);
+		ftruncate(fileno(reset5), 0);
 		printf("Début nouveau nouveau à deviner\n");
 
 		//cherche le prochain mot à faire deviner
@@ -144,8 +165,12 @@ int main() {
 			ajout_mot(word_test,i,T,color,len_mot);
 			free(color);
 			if (i<=1){
-				remove("dicointer1.txt");
-				remove("dicointer2.txt");
+				FILE* erase1;
+				FILE* erase2;
+				erase1 = fopen("texte/dicointer1.txt", "w");
+				erase2 = fopen("texte/dicointer2.txt", "w");
+				ftruncate(fileno(erase1), 0);
+				ftruncate(fileno(erase2), 0);
 			}
 		}
 		//met à jour avec la coloration

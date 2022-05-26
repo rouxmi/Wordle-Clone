@@ -8,7 +8,7 @@
 #include <stdbool.h>
 
 #define len_mot 5
-#define FILENAME_SIZE 1024
+#define FILENAME_SIZE 7048
 #define MAX_LINE 7048
 
 int taillefichiertxt (FILE *f)
@@ -160,7 +160,7 @@ void coloration0(element tab[30],int nb_essai, int longueur_mot)
     element current;
     char *list_dico[7]={"texte/dico0.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
     FILE *dico=fopen(list_dico[nb_essai],"r");
-    FILE *intermediaire1=fopen("dicointer1.txt","a");
+    FILE *intermediaire1=fopen("dicointer1.txt","w");
     for (int i=0;i<longueur_mot;i++)
     {
         current=tab[nb_essai+i];
@@ -218,7 +218,7 @@ void coloration2(element tab[30],int nb_essai, int longueur_mot)
     int nb_here=0;
     element current;
     FILE *intermediaire1=fopen("dicointer1.txt","r");
-    FILE *intermediaire2=fopen("dicointer2.txt","a");
+    FILE *intermediaire2=fopen("dicointer2.txt","w");
     for (int i=0;i<longueur_mot;i++)
     {
         current=tab[nb_essai+i];
