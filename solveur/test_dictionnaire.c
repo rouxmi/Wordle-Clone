@@ -62,7 +62,7 @@ int main()
     //printf("%d\n",acetteplace(right_place,mot2,positions,3));*/
     int len=19;
     element  T[30] ;
-    ajout_mot("merci",1,T,"21202",5);
+    ajout_mot("merci",1,T,"20202",5);
     dico(T, 0, 5);
     //il faut vider dicointer1 et dicointer2 après chaque essai
     
