@@ -20,8 +20,8 @@ int main(){
     for (int i =0; i < nbr_essais; i++)
     {
         int coloration;
-        char* mot_test=malloc(sizeof(mot_test[longueur]));
-        mot_test= randomInFile("dicointer1.txt");
+        //char* mot_test=malloc(sizeof(mot_test[longueur]));
+        char* mot_test= randomInFile("dicointer1.txt");
         printf("le mot à tester est %s \n",mot_test);
         printf("Entrez la coloration \n");
         scanf("%c",coloration);
