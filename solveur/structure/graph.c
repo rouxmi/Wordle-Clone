@@ -164,6 +164,8 @@ void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN, bool terminal){
             node_add_child(n1, n3, c, *idMaxE);
 
             *idMaxE+=1;
+        }else{
+            if(terminal) node_switch_terminal(n1->listEdge->e.node);
         }
     }
 }
@@ -180,3 +182,54 @@ void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN){
     }
  }
 
+
+void node_get_chemin(int tab[5], node* no, char* mot){
+    int i=0;
+    node* noeud;
+    node* n = no;
+    while(mot[i]){
+        noeud = node_get_by_label(n->listEdge,mot[i]);
+        int id_i= noeud->id ;
+        tab[i]=id_i;
+        i+=1;
+        n=noeud;
+    }
+
+}
+
+void print_tableau(int tab[5]){
+    printf("0");
+    for(int i=0; i<5;i++){
+        printf("->%d", tab[i]);
+    }
+    printf("\n");
+}
+
+bool node_remove_unaccessibles(node* n1){
+    if(n1!=NULL){
+        if(n1->listEdge != NULL){
+            n1->listEdge = list_edge_remove_unaccessibles(n1->listEdge);
+        }
+        else{
+            if(!n1->terminal)
+            {
+                node_destroy_all_children(n1);
+                return 1;
+            }  
+        }
+    }
+    return 0;
+}
+
+list_edge* list_edge_remove_unaccessibles(list_edge* one_list){
+    list_edge* tmp = one_list;
+    list_edge* tmpnext;
+    bool b;
+    while(tmp != NULL){
+        tmpnext = tmp->next;
+        b=node_remove_unaccessibles(tmp->e.node);
+        if(b) free(tmp);
+        tmp = tmpnext;
+    }
+    return one_list;
+}

@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <assert.h>
+#include <string.h>
 
 typedef struct _list_edge list_edge;
 typedef struct _node node;
@@ -62,5 +63,9 @@ list_edge* list_edge_remove_node_by_id(list_edge* one_list, int id);
 bool list_edge_contains_by_label(list_edge* one_list, char valeur);
 void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN, bool terminal);
 void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN);
+void node_get_chemin(int tab[5], node* no, char* mot);
+void print_tableau(int tab[5]);
+bool node_remove_unaccessibles(node* n1);
+list_edge* list_edge_remove_unaccessibles(list_edge* one_list);
 
 #endif //GRAPH_H
