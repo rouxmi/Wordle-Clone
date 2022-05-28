@@ -8,6 +8,7 @@
 void test_edge_base();
 void test_node_base();
 void test_list_base();
+void test_node_get_by_id();
 
 
 void all_test_list();
