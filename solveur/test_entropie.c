@@ -13,18 +13,34 @@ int main()
     /*hash_map* map=create_hashmap();
     //printf("coucou");
     destroy_hashmap(map);*/
-    int res=get_ponderation("texte/test.txt",5,'a',3);
+    int res=get_ponderation("texte/test.txt",5,'A',3);
     printf("1: %d\n",res);
-    int res1=get_ponderation("texte/test.txt",5,'a',0);
+    int res1=get_ponderation("texte/test.txt",5,'A',0);
     printf("4: %d\n",res1);
-    int res2=get_ponderation("texte/test.txt",5,'r',2);
+    int res2=get_ponderation("texte/test.txt",5,'A',2);
     printf("6: %d\n",res2);
-    hash_list* list=initialize_hash_list("texte/test.txt",5,'a');
+    /*hash_map* map=initialize_hash_map("texte/test.txt",5);
+    hash_list* list=initialize_hash_list("te");
+    append_hash_list(list, 0);
+    append_hash_list(list, 2);
+
+   /* int res3=get_ponderation_hash_list(list,4);
+    printf("res3 %d\n",res3);
     printf("sortie\n");
     
     destroy_hash_list(list);
     printf("definitive\n");
-    //hash_map* map=create_hashmap;
-    //destroy_hashmap(map);
+    //hash_map* map=create_hashmap();
+    destroy_hashmap(map);*/
+    hash_map* map=initialize_hash_map("texte/test.txt",6);
+    /*int ans0=get_hash_map(map,0,'Z');
+    int ans1=get_hash_map(map,1,'Z');
+    int ans2=get_hash_map(map,2,'Z');
+    int ans3=get_hash_map(map,3,'Z');
+    int ans4=get_hash_map(map,4,'Z');*/
+    int ans=get_hash_map(map,5,'J');
+    printf("%d\n",ans);
+    destroy_hashmap(map);
+    printf("jesuistropforte\n");
     return 0;
 }
