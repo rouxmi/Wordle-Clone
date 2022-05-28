@@ -153,6 +153,7 @@ void addintofile(FILE *f, char *word_to_add)
 void coloration0(element tab[size*nbessais],int nb_essai, int longueur_mot)
 {
     char not_here[100];
+    printf("%s\n",not_here);
     int index=0;
     int nb_not_here=0;
     element current;
@@ -168,6 +169,8 @@ void coloration0(element tab[size*nbessais],int nb_essai, int longueur_mot)
             not_here[index]=current.lettre;
             index++;
             nb_not_here++;
+            printf("%s\n",not_here);
+            printf("%d\n",index);
             //printf("%s\n",not_here);
               
         }
@@ -220,7 +223,9 @@ void coloration2(element tab[size*nbessais],int nb_essai, int longueur_mot)
     for (int i=0;i<longueur_mot;i++)
     {
 
+        printf("%d\n", nb_essai+i);
         current=tab[nb_essai+i];
+        printf("%c\n",current.lettre);
 
         if (current.coloration==2)
         {
@@ -230,11 +235,13 @@ void coloration2(element tab[size*nbessais],int nb_essai, int longueur_mot)
   
             index++;
             nb_here++;
-            //printf("%s\n",not_here);
+            printf("%d\n",index);
               
         }
     
     }
+    printf("%d\n",index);
+    printf("right place %s\n",right_place);
 
     if (nb_here==0)
     {
