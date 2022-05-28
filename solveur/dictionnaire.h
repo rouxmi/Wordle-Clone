@@ -4,7 +4,7 @@
 #include <err.h>
 #include <errno.h>
 #include <assert.h>
-#include "tableau.h"
+#include "tableau.c"
 
 
 #ifndef __DICTIONNAIRE__H__
@@ -22,10 +22,10 @@ char * contentofline(FILE *f, int linenumber, int longueur_mot, int longueur_dic
 //attention: contentofline est une fonction dit "à responsabilité", cad que il faut faire char*str=contentofline(...) puis free(str)
 //cette fonction renvoie le contenu de la ligne numéro linenumber, il faut ouvrir le file avant la fonction et le fermer après 
 
-void coloration0(element tab[30],int nb_essai, int longueur_mot);
-void coloration1(element tab[30],int nb_essai, int longueur_mot);
-void coloration2(element tab[30],int nb_essai, int longueur_mot);
-void dico(element tab[30], int nb_essai, int longueur_mot);
+void coloration0(element tab[size*nbessais],int nb_essai, int longueur_mot);
+void coloration1(element tab[size*nbessais],int nb_essai, int longueur_mot);
+void coloration2(element tab[size*nbessais],int nb_essai, int longueur_mot);
+void dico(element tab[size*nbessais], int nb_essai, int longueur_mot);
 //épuration du dico
 
 void addintofile(FILE *f, char *word_to_add);

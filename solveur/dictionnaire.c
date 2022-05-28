@@ -19,9 +19,7 @@ int taillefichiertxt (FILE *f)
     {
         if(c=='\n')
         {
-            printf("coucou");
             compteur++;
-            printf("compteur %d\n",compteur);
         }
     }
 
@@ -152,9 +150,10 @@ void addintofile(FILE *f, char *word_to_add)
     mot[position]=ca;
 }*/
 
-void coloration0(element tab[30],int nb_essai, int longueur_mot)
+void coloration0(element tab[size*nbessais],int nb_essai, int longueur_mot)
 {
     char not_here[100];
+    printf("%s\n",not_here);
     int index=0;
     int nb_not_here=0;
     element current;
@@ -170,6 +169,8 @@ void coloration0(element tab[30],int nb_essai, int longueur_mot)
             not_here[index]=current.lettre;
             index++;
             nb_not_here++;
+            printf("%s\n",not_here);
+            printf("%d\n",index);
             //printf("%s\n",not_here);
               
         }
@@ -209,7 +210,7 @@ void coloration0(element tab[30],int nb_essai, int longueur_mot)
 
 }
 
-void coloration2(element tab[30],int nb_essai, int longueur_mot)
+void coloration2(element tab[size*nbessais],int nb_essai, int longueur_mot)
 {
    
     char right_place[10];
@@ -221,24 +222,27 @@ void coloration2(element tab[30],int nb_essai, int longueur_mot)
     FILE *intermediaire2=fopen("dicointer2.txt","w");
     for (int i=0;i<longueur_mot;i++)
     {
-        printf("%d\n",i);
+
+        printf("%d\n", nb_essai+i);
         current=tab[nb_essai+i];
         printf("%c\n",current.lettre);
-        
+
         if (current.coloration==2)
         {
 
             right_place[index]=current.lettre;
             positions_rp[index]=current.place-1;
-            printf("%d\n",current.place);
+  
             index++;
             nb_here++;
-            //printf("%s\n",not_here);
+            printf("%d\n",index);
               
         }
     
     }
     printf("%d\n",index);
+    printf("right place %s\n",right_place);
+
     if (nb_here==0)
     {
         int len=taillefichiertxt(intermediaire1);
@@ -273,13 +277,13 @@ void coloration2(element tab[30],int nb_essai, int longueur_mot)
         }
     
     }
-    
+    fclose(intermediaire2);
     fclose(intermediaire1);
     
 
 }
 
-void coloration1(element tab[30],int nb_essai, int longueur_mot)
+void coloration1(element tab[size*nbessais],int nb_essai, int longueur_mot)
 {
    
     char wrong_place[10];
@@ -289,7 +293,6 @@ void coloration1(element tab[30],int nb_essai, int longueur_mot)
     element current;
     FILE *intermediaire2=fopen("dicointer2.txt","r");
     int len=taillefichiertxt(intermediaire2);
-    printf(" longueur %d\n",len);
     rewind(intermediaire2);
     char *list_dico[7]={"texte/dict.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt","texte/dico6.txt"};
     FILE *dico=fopen(list_dico[nb_essai+1],"a");
@@ -308,14 +311,14 @@ void coloration1(element tab[30],int nb_essai, int longueur_mot)
         }
     
     }
-    printf("nb_notexactly %d\n",nb_notexactly);
+ 
     if (nb_notexactly==0)
     {
         
         for (int j=0;j<len;j++)
 
         {
-            printf("bonjour\n");
+
             char *current_word=contentofline(intermediaire2,j,longueur_mot+1,len);
     
             //printf("%s\n",current_word);
@@ -330,7 +333,7 @@ void coloration1(element tab[30],int nb_essai, int longueur_mot)
             char *current_word=contentofline(intermediaire2,j,longueur_mot+1,len);
             if (containsexceptposition(current_word, wrong_place, positions_wp,index,longueur_mot)==true)
             {
-                printf("jesuisla");
+           
                 addintofile(dico,current_word);//faire une fonction pour écrire dans un nouveau dico, on écrit dans intermédiaire1
             }
             free(current_word);
@@ -341,7 +344,7 @@ void coloration1(element tab[30],int nb_essai, int longueur_mot)
     fclose(intermediaire2);
 }
 
-void dico(element tab[30], int nb_essai, int longueur_mot)
+void dico(element tab[size*nbessais], int nb_essai, int longueur_mot)
 {
     printf("debut dict\n");
     coloration0(tab, nb_essai,longueur_mot);
