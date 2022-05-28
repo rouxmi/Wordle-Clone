@@ -42,11 +42,6 @@ void node_print(node* n){
     }
 }
 
-void node_destroy(node* n){
-    n->listEdge = list_edge_destroy(n->listEdge);
-    free(n);
-}
-
 void node_destroy_all_children(node* n){
     if(n!=NULL){
         if(n->listEdge != NULL){
@@ -127,7 +122,7 @@ void list_edge_print_rec(list_edge* one_list){
         }
     }
 }
-/*
+
 list_edge* list_edge_remove_node_by_id(list_edge* one_list, int id)
 {
     if(one_list == NULL)
@@ -141,7 +136,7 @@ list_edge* list_edge_remove_node_by_id(list_edge* one_list, int id)
         one_list->next = list_edge_remove_node_by_id(one_list->next, id);
         return one_list;
     }
-}*/
+}
 
 bool list_edge_contains_by_label(list_edge* one_list, char valeur)
 {
@@ -159,13 +154,15 @@ bool list_edge_contains_by_label(list_edge* one_list, char valeur)
     return false;
 }
 
-void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN){
+void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN, bool terminal){
     if (n1!=NULL){
         list_edge* tmp = n1->listEdge;
         if(node_get_by_label(tmp, c)==NULL){
             node* n3 = node_create(*idMaxN);
+            if(terminal) node_switch_terminal(n3);
             *idMaxN+=1;
             node_add_child(n1, n3, c, *idMaxE);
+
             *idMaxE+=1;
         }
     }
@@ -173,7 +170,11 @@ void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN){
  
 void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN){
     if(mot[0]){
-        node_add_char(n1, mot[0], idMaxE, idMaxN);
+        bool terminal=false;
+        if(!mot[1]){
+            terminal= !terminal;
+        }
+        node_add_char(n1, mot[0], idMaxE, idMaxN, terminal);
         node* child = node_get_by_label(n1->listEdge, mot[0]);
         node_add_word(child, mot+1, idMaxE, idMaxN);
     }

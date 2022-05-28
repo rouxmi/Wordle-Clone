@@ -7,14 +7,14 @@ void test_edge_base(){
     edge e = edge_create(NULL, 1, 'a');
     assert(e.id == 1);
     assert(e.label == 'a');
-    //edge_print(&e);
 }
 
 void test_node_base(){
     node *n = node_create(1);
     assert(n->id == 1);
-    //node_print(&n);
-    node_destroy(n);
+    assert(!n->terminal);
+    assert(n->nbrAretesEntrantes==0);
+    node_destroy_all_children(n);
 }
 
 void test_list_base(){
@@ -30,9 +30,8 @@ void test_list_base(){
     l= list_edge_add_head(e1, l);
     l= list_edge_add_head(e2, l);
 
-    //list_edge_print_rec(l);
     //list_edge_remove_node_by_id(l, 2);
-    //list_edge_print_rec(l);
+
     l=list_edge_destroy(l);
 }
 
@@ -67,9 +66,9 @@ void test_node_add_char(){
     node *n1 = node_create(idMaxNode);
     idMaxNode+=1;
 
-    node_add_char(n1, 'c', &idMaxEdge, &idMaxNode);
+    node_add_char(n1, 'c', &idMaxEdge, &idMaxNode, false);
     node* child = node_get_by_label(n1->listEdge, 'c');
-    node_add_char(child, 'a', &idMaxEdge, &idMaxNode);
+    node_add_char(child, 'a', &idMaxEdge, &idMaxNode, true);
     node_destroy_all_children(n1);
 }
 
@@ -80,17 +79,22 @@ void test_node_add_word(){
     idMaxNode+=1;
 
     node_add_word(n1, "lucie", &idMaxEdge, &idMaxNode);
-    node_add_word(n1, "lucal", &idMaxEdge, &idMaxNode);
+    node_add_word(n1, "luc", &idMaxEdge, &idMaxNode);
     node_add_word(n1, "fabri", &idMaxEdge, &idMaxNode);
     node* child = node_get_by_label(n1->listEdge, 'l');
     node* child2 = node_get_by_label(child->listEdge, 'u');
     node* child3 = node_get_by_label(child2->listEdge, 'c');
     node* child4 = node_get_by_label(child3->listEdge, 'i');
+    node* child5 = node_get_by_label(child4->listEdge, 'e');
     node_print(n1);
     node_print(child);
     node_print(child2);
     node_print(child3);
     node_print(child4);
+    node_print(child5);
+    assert(!child2->terminal);
+    assert(child3->terminal);
+    assert(child5->terminal);
     node_destroy_all_children(n1);
 }
 

@@ -43,7 +43,6 @@ node* node_create(int id);
 void node_switch_terminal(node* n);
 void node_add_child(node* n1, node* n2, char label, int id);
 void node_print(node* n);
-void node_destroy(node* n);
 void node_destroy_all_children(node* n);
 node* node_get_by_id(list_edge* one_list, int id);
 node* node_get_by_label(list_edge* one_list, char label);
@@ -61,7 +60,7 @@ void list_edge_print_rec(list_edge* one_list);
 list_edge* list_edge_remove_node_by_id(list_edge* one_list, int id);
 
 bool list_edge_contains_by_label(list_edge* one_list, char valeur);
-void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN);
+void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN, bool terminal);
 void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN);
 
 #endif //GRAPH_H
