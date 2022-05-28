@@ -27,44 +27,40 @@ int lettrepos(const char * str, char lettre) {
 }
 
 
+
+
 char* coloration(const char * mot_a_test,const char * mot_a_dev){
-	printf("ok\n");
 	char* copy_test=malloc(sizeof(char)*(len_mot+2));
 	char* copy_dev=malloc(sizeof(char)*(len_mot+2));
 	strcpy(copy_test, mot_a_test);
 	strcpy(copy_dev, mot_a_dev);
-    printf("%s,%s\n",mot_a_dev,mot_a_test);	
-	printf("%lu,%lu\n",strlen(copy_dev),strlen(copy_test));
     if (strlen(copy_dev) == strlen(copy_test)) {
-		int i = 0;
-		int pos = -1;
+		int i, n = strlen(mot_a_test);
+
+		int ix;
+		char *ptr;
 		//on copie la liste pour enlever les caractères
 		//pour gérer les lettres doubles
 		
 		char* res=malloc(sizeof(char)*(len_mot+1));
 		res[len_mot] = 0;
 		//les positions correctes
-		while (copy_test[i]) {
-			if (copy_test[i] == copy_dev[i]) {
-				//lettre bonne et à la bonne place
+		for (i = 0; i < n; ++i) {
+			if (mot_a_test[i] == copy_dev[i]) {
+				copy_dev[i] = '\v';
 				res[i] = '2';
-				copy_test[i] = '_';
-			} else {
-				//on met des zéros partout ailleurs
-				res[i] = '0';
+        	}
+			else{
+				res[i]='0';
 			}
-			++i;
 		}
-		i = 0;
-		while (copy_test[i]) {
-			pos = lettrepos(copy_dev, copy_test[i]);
-			//la lettre doit exister mais ne dois pas remplacer un bon choix
-			if (pos >= 0 && res[pos] != '2') {
-				//lettre trouver mais position fausse
+		for (i = 0; i < n; ++i) {
+			if ((ptr = strchr(copy_dev, mot_a_test[i])) != NULL) {
+				ix = ptr - copy_dev;
+				copy_dev[ix] = '\v';
 				res[i] = '1';
-				copy_test[pos] = '_';
-			}
-			++i;
+        	}
+			
 		}
 		printf("%s\n", res);
 		char* result=res;
@@ -90,15 +86,11 @@ void str_slice(const char * str, char * word_coupe, size_t start, size_t end)
 }
 
 int main() {
-    
-	char* color;
-	color=coloration("after","arabe");
-	printf("%s\n",color);
 
     FILE* ptr;
     char word_dev[len_mot + 1];
 	char word_test[len_mot + 1];
-    ptr = fopen("texte/dictauto.txt", "a+");
+    ptr = fopen("texte/dictauto.txt", "r");
 
 	
 	int tailledict;
@@ -107,8 +99,8 @@ int main() {
     if (NULL == ptr) {
         printf("file can't be opened \n");
     }
-	element  T[size*nbessais] ;
 	srand( time( NULL ) );
+	element  T[tailledict][size*6];
     for (int j=0;j<tailledict-1;j++){
 		FILE* reset1;
 		FILE* reset2;
@@ -137,8 +129,8 @@ int main() {
 		for (int i=0;i<6;i++){
 			if (i>=1){
 				printf("Mise a jour dico\n");
-				print_tableau(T);
-				dico(T,i-1,len_mot);
+				print_tableau(T[j]);
+				dico(T[j],i-1,len_mot);
 			}
 			char istr[5];
 			sprintf( istr, "%d", i);
@@ -158,13 +150,13 @@ int main() {
 			free(name);
 		
 			//colore le mot donnée
-			char* color;
+			char* color="00000";
 			printf("mot a test: %s\n",word_test);
 			color=coloration(word_test,word_dev);
 			printf("%s\n",color);
-			ajout_mot(word_test,i,T,color,len_mot);
+			ajout_mot(word_test,i,T[j],color,len_mot);
 			free(color);
-			if (i<=1){
+			if (i>=1){
 				FILE* erase1;
 				FILE* erase2;
 				erase1 = fopen("dicointer1.txt", "w");
@@ -182,7 +174,7 @@ int main() {
     
     
     
-
+	/*
     FILE *fp;
 
     char buff2[255];
@@ -194,6 +186,7 @@ int main() {
         fputs("Stats du solveur V1\n", fp);
     };
     fclose(fp);
+	*/
 
     return 0;
 

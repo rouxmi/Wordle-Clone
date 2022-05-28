@@ -15,7 +15,7 @@ char* randomInFile(char* name){
     }
     fclose(f);
     printf("max: %d\n",max);
-    int indiceLigne = rand() % max+1;
+    int indiceLigne = rand() % max;
     printf("n°ligne:%d\n",indiceLigne);
 
     f = fopen(name,"r");

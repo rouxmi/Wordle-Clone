@@ -38,7 +38,7 @@ void print_element(element elt){
 //la fonction affiche le tableau composé d'éléments, elle appelle la fonction print_element à chaque itérations
 void print_tableau(element tab[size*nbessais]){
     printf("[");
-    for(int i=0; i<size*(nbessais-1);i++){
+    for(int i=0; i<size*(nbessais);i++){
         print_element(tab[i]);
         printf("\n");
     }
@@ -58,6 +58,7 @@ void ajout_mot(char* mot, int num_essai, element tab[size*nbessais], char* color
         init_tableau(tab,L,i+num_essai*taille_mot);
         }    
 }
+
 
 /*int main(){
     element  T[size*nbessais] ;
