@@ -86,15 +86,34 @@ void test_node_add_word(){
     node* child3 = node_get_by_label(child2->listEdge, 'c');
     node* child4 = node_get_by_label(child3->listEdge, 'i');
     node* child5 = node_get_by_label(child4->listEdge, 'e');
-    node_print(n1);
-    node_print(child);
-    node_print(child2);
-    node_print(child3);
-    node_print(child4);
-    node_print(child5);
     assert(!child2->terminal);
     assert(child3->terminal);
     assert(child5->terminal);
+    node_destroy_all_children(n1);
+}
+
+
+void test_node_get_chemin(){
+    int idMaxEdge=0;
+    int idMaxNode=0;
+    node *n1 = node_create(idMaxNode);
+    idMaxNode+=1;
+
+    node_add_word(n1, "lucie", &idMaxEdge, &idMaxNode);
+    node_add_word(n1, "lucia", &idMaxEdge, &idMaxNode);
+    node_add_word(n1, "fabri", &idMaxEdge, &idMaxNode);
+    node* child = node_get_by_label(n1->listEdge, 'l');
+    node* child2 = node_get_by_label(child->listEdge, 'u');
+    node* child3 = node_get_by_label(child2->listEdge, 'c');
+    node* child4 = node_get_by_label(child3->listEdge, 'i');
+    node* child5 = node_get_by_label(child4->listEdge, 'e');
+    int tab[5];
+    node_get_chemin(tab, n1, "lucie");
+    print_tableau(tab);
+    node_switch_terminal(child5);
+    node_print(child4);
+    //bool b=node_remove_unaccessibles(n1);
+    node_print(child4);
     node_destroy_all_children(n1);
 }
 
@@ -104,5 +123,6 @@ void all_test_list(){
     test_list_base();
     test_node_add_word();
     test_node_get_by_id();
+    test_node_get_chemin();
 }
 
