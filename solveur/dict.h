@@ -18,8 +18,12 @@ bool contains(char lettre, char* mot);
 bool acetteplace(char lettre, char *mot, int position);
 //renvoie true si mot[position]==x et false sinon
 bool containsexceptposition(char* mot,char lettre,char color[len_mot],int position);
+
+void str_slice(const char * str, char * word_coupe, size_t start, size_t end);
 //renvoie true si le char x est présent dans mot sauf à la position position
-char * contentofline(FILE *f, int linenumber, int longueur_dico);//
+char * contentofline(FILE *f);//
+
+void resetdict(char* name);
 //attention: contentofline est une fonction dit "à responsabilité", cad que il faut faire char*str=contentofline(...) puis free(str)
 //cette fonction renvoie le contenu de la ligne numéro linenumber, il faut ouvrir le file avant la fonction et le fermer après 
 

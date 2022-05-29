@@ -2,11 +2,12 @@
 
 char* randomInFile(char* name){
     FILE *f = fopen(name,"r");
-    rewind(f);
     if ( f== NULL ) {
         printf( "Cannot open file %s\n", name );
         exit( 0 );
     }
+    rewind(f);
+    printf("ok\n");
     char ligne[LONG];
     int max = 0;
     while (fgets(ligne, LONG,f)!=NULL)
