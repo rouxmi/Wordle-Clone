@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include "whichWord.h"
-#include "dictionnaire.h"
+#include "dict.h"
 //doit dépendre du dict
 #define len_mot 5
 #define FILENAME_SIZE 1024
@@ -55,7 +55,7 @@ char* coloration(const char * mot_a_test,const char * mot_a_dev){
 			}
 		}
 		for (i = 0; i < n; ++i) {
-			if ((ptr = strchr(copy_dev, mot_a_test[i])) != NULL) {
+			if ((ptr = strchr(copy_dev, mot_a_test[i])) != NULL && res[i]!='2') {
 				ix = ptr - copy_dev;
 				copy_dev[ix] = '\v';
 				res[i] = '1';
@@ -74,16 +74,7 @@ char* coloration(const char * mot_a_test,const char * mot_a_dev){
 	return result;
 }
 
-void str_slice(const char * str, char * word_coupe, size_t start, size_t end)
-{
-    
-    size_t j = 0;
-    for ( size_t i = start; i <= end; ++i ) {
-        word_coupe[j++] = str[i];
-    }
-    word_coupe[j] = 0;
- 
-}
+
 
 int main() {
 
@@ -102,25 +93,10 @@ int main() {
 	srand( time( NULL ) );
 	element  T[tailledict][size*6];
     for (int j=0;j<tailledict-1;j++){
-		FILE* reset1;
-		FILE* reset2;
-		FILE* reset3;
-		FILE* reset4;
-		FILE* reset5;
-		reset1 = fopen("texte/dico1.txt", "w");
-		reset2 = fopen("texte/dico2.txt", "w");
-		reset3 = fopen("texte/dico3.txt", "w");
-		reset4 = fopen("texte/dico4.txt", "w");
-		reset5 = fopen("texte/dico5.txt", "w");
-		ftruncate(fileno(reset1), 0);
-		ftruncate(fileno(reset2), 0);
-		ftruncate(fileno(reset3), 0);	
-		ftruncate(fileno(reset4), 0);
-		ftruncate(fileno(reset5), 0);
 		printf("Début nouveau nouveau à deviner\n");
 
 		//cherche le prochain mot à faire deviner
-		char* copy_word=contentofline(ptr,j,len_mot+1,tailledict);
+		char* copy_word=contentofline(ptr);
 		char* word;
 		printf("%s\n",copy_word);
         str_slice(copy_word, word_dev, 0, len_mot-1);
