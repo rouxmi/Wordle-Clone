@@ -12,14 +12,15 @@ edge edge_create(node *n, int id, char label){
 }
 
 void edge_print(edge *e){
-    printf("%d : %c\n", e->id, e->label);
+    printf("%d: -%c-> (%d)\n",e->id, e->label, e->node->id);
 }
 
-node node_create(int id){
-    node n;
-    n.id = id;
-    n.terminal = false;
-    n.listEdge = NULL;
+node* node_create(int id){
+    node* n = (node*)calloc(1, sizeof(node));
+    n->id = id;
+    n->terminal = false;
+    n->listEdge = NULL;
+    n->nbrAretesEntrantes = 0;
     return n;
 }
 
@@ -35,23 +36,44 @@ void node_add_child(node* n1, node* n2, char label, int id){
 }
 
 void node_print(node* n){
-    printf("%d\n", n->id);
-    list_edge_print_rec(n->listEdge);
-}
-
-void node_destroy(node* n){
-    n->listEdge = list_edge_destroy(n->listEdge);
+    if (n !=NULL){
+        printf("%d\n", n->id);
+        if(n->listEdge!=NULL) list_edge_print_rec(n->listEdge);
+    }
 }
 
 void node_destroy_all_children(node* n){
-    list_edge* tmp= n->listEdge;
-    while(tmp != NULL){
-        node_destroy_all_children(tmp->e.node);
-        tmp=tmp->next;
+    if(n!=NULL){
+        if(n->listEdge != NULL){
+            n->listEdge = list_edge_destroy(n->listEdge);
+        }
+        free(n);
     }
-    n->listEdge = list_edge_destroy(n->listEdge);
 }
 
+node* node_get_by_id(list_edge* one_list, int id){
+    if(!list_edge_is_empty(one_list)){
+        list_edge* tmp= one_list;
+        while(tmp != NULL){
+            if(tmp->e.node->id == id)
+                return tmp->e.node;
+            tmp=tmp->next;
+        }
+    }
+    return NULL;
+}
+
+node* node_get_by_label(list_edge* one_list, char label){
+    if(!list_edge_is_empty(one_list)){
+        list_edge* tmp= one_list;
+        while(tmp != NULL){
+            if(tmp->e.label == label)
+                return tmp->e.node;
+            tmp=tmp->next;
+        }
+    }
+    return NULL;
+}
 
 list_edge* list_edge_create() {
     return NULL;
@@ -63,6 +85,7 @@ list_edge* list_edge_destroy(list_edge* one_list)
     list_edge* tmpnext;
     while(tmp != NULL){
         tmpnext = tmp->next;
+        node_destroy_all_children(tmp->e.node);
         free(tmp);
         tmp = tmpnext;
     }
@@ -102,21 +125,14 @@ void list_edge_print_rec(list_edge* one_list){
 
 list_edge* list_edge_remove_node_by_id(list_edge* one_list, int id)
 {
-    /* one_list vide, il n'y a plus rien à supprimer */
     if(one_list == NULL)
         return NULL;
-
-    /* Si l'élément en cours de traitement doit être supprimé */
     if(one_list->e.node!=NULL && one_list->e.node->id == id) {
-            /* On le supprime en prenant soin de mémoriser
-            l'adresse de l'élément suivant */
             list_edge *tmp = one_list->next;
+            node_destroy_all_children(one_list->e.node);
             free(one_list);
             return tmp;
     } else {
-        /* Si l'élement en cours de traitement ne doit pas être supprimé,
-        alors la one_list finale commencera par cet élément et suivra une one_list ne contenant
-        plus d'élément ayant la valeur recherchée */
         one_list->next = list_edge_remove_node_by_id(one_list->next, id);
         return one_list;
     }
@@ -138,35 +154,82 @@ bool list_edge_contains_by_label(list_edge* one_list, char valeur)
     return false;
 }
 
-void node_add_word(node* n1, char* mot){
-    if(n1 != NULL && n1->listEdge!=NULL){
-        bool f = false;
-        list_edge* tmp=n1->listEdge;
-        /* Tant que l'on n'est pas au bout de la liste */
-        while(tmp != NULL)
-        {
-            if(mot != NULL && tmp->e.label == mot[0] )
-            {
-                if(&(*(mot+1)) ==NULL){
-                node_switch_terminal(n1->listEdge->e.node);
-                }
-                node_add_word(n1->listEdge->e.node, &(*(mot+1)));
-                f=true;
-            }
-            tmp = tmp->next;
-        }
-        if(!f && mot != NULL){
-            int id = 4;
-            node n2 = node_create(id);
-            if(&(*(mot+1)) ==NULL){
-                node_switch_terminal(&n2);
-            }
-            node_add_child(n1, &n2, mot[0], id);
-            node_add_word(&n2, &(*(mot+1)));
+void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN, bool terminal){
+    if (n1!=NULL){
+        list_edge* tmp = n1->listEdge;
+        if(node_get_by_label(tmp, c)==NULL){
+            node* n3 = node_create(*idMaxN);
+            if(terminal) node_switch_terminal(n3);
+            *idMaxN+=1;
+            node_add_child(n1, n3, c, *idMaxE);
+
+            *idMaxE+=1;
+        }else{
+            if(terminal) node_switch_terminal(n1->listEdge->e.node);
         }
     }
 }
+ 
+void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN){
+    if(mot[0]){
+        bool terminal=false;
+        if(!mot[1]){
+            terminal= !terminal;
+        }
+        node_add_char(n1, mot[0], idMaxE, idMaxN, terminal);
+        node* child = node_get_by_label(n1->listEdge, mot[0]);
+        node_add_word(child, mot+1, idMaxE, idMaxN);
+    }
+ }
 
 
+void node_get_chemin(int tab[5], node* no, char* mot){
+    int i=0;
+    node* noeud;
+    node* n = no;
+    while(mot[i]){
+        noeud = node_get_by_label(n->listEdge,mot[i]);
+        int id_i= noeud->id ;
+        tab[i]=id_i;
+        i+=1;
+        n=noeud;
+    }
 
+}
 
+void print_tableau(int tab[5]){
+    printf("0");
+    for(int i=0; i<5;i++){
+        printf("->%d", tab[i]);
+    }
+    printf("\n");
+}
+
+bool node_remove_unaccessibles(node* n1){
+    if(n1!=NULL){
+        if(n1->listEdge != NULL){
+            n1->listEdge = list_edge_remove_unaccessibles(n1->listEdge);
+        }
+        else{
+            if(!n1->terminal)
+            {
+                node_destroy_all_children(n1);
+                return 1;
+            }  
+        }
+    }
+    return 0;
+}
+
+list_edge* list_edge_remove_unaccessibles(list_edge* one_list){
+    list_edge* tmp = one_list;
+    list_edge* tmpnext;
+    bool b;
+    while(tmp != NULL){
+        tmpnext = tmp->next;
+        b=node_remove_unaccessibles(tmp->e.node);
+        if(b) free(tmp);
+        tmp = tmpnext;
+    }
+    return one_list;
+}
