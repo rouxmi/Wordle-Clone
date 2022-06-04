@@ -2,8 +2,8 @@
 
 
 // Cette fonction permet d'ajouter chaque element au tableau
-void init_tableau(element tab[size*nbessais],element L,int indice){
-    for(int i=0; i<size*nbessais; i++){
+void init_tableau(element *tab,element L,int indice,int size_mot,int nb_essais){
+    for(int i=0; i<size_mot*nb_essais; i++){
         if(i==indice){
             tab[i]=L;
         }
@@ -36,9 +36,9 @@ void print_element(element elt){
 } 
 
 //la fonction affiche le tableau composé d'éléments, elle appelle la fonction print_element à chaque itérations
-void print_tableau(element tab[size*nbessais]){
+void print_tableau(element *tab,int size_mot,int nb_essais){
     printf("[");
-    for(int i=0; i<size*(nbessais);i++){
+    for(int i=0; i<size_mot*(nb_essais);i++){
         print_element(tab[i]);
         printf("\n");
     }
@@ -48,14 +48,14 @@ void print_tableau(element tab[size*nbessais]){
 // la fonction fait une boucle par rapport à la taille du mot , et à chaque itération elle crée un élément
 // grace à la fonction element et apres ajoute au tableau cette élement. 
 //Avec un mot de taille 5, la fonction va créer 5 éléments qu'elle ajoute successivement au tableau
-void ajout_mot(char* mot, int num_essai, element tab[size*nbessais], char* coloration,int taille_mot){
-    for(int i=0; i<taille_mot;i++){
+void ajout_mot(char* mot, int num_essai, element *tab, char* coloration,int size_mot,int nb_essais){
+    for(int i=0; i<size_mot;i++){
         element L;
         int color;
         char coloration_i=(int)(coloration[i]);
         sscanf(&coloration_i,"%d",&color);
         init_element(&L,mot[i],i+1,color,num_essai);
-        init_tableau(tab,L,i+num_essai*taille_mot);
+        init_tableau(tab,L,i+num_essai*size_mot,size_mot,nb_essais);
         }    
 }
 

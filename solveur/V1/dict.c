@@ -8,12 +8,12 @@
 #include <stdbool.h>
 #include <math.h>
 
-#define len_mot 5
 #define FILENAME_SIZE 7048
 #define MAX_LINE 7048
 
 int taillefichiertxt (FILE *f)
 {   
+    rewind(f);
     int compteur=0;
     char c;
     while((c=fgetc(f)) != EOF)
@@ -54,7 +54,7 @@ bool acetteplace(char lettre, char *mot, int position)
     return valid;
 
 }
-bool containsexceptposition(char* mot,char lettre,char color[len_mot],int position)
+bool containsexceptposition(char* mot,char lettre,char *color,int position)
 {
 
     bool valid=false;
@@ -131,16 +131,33 @@ void str_slice(const char * str, char * word_coupe, size_t start, size_t end)
 
 
 
-void dico(element tab[size*nbessais],int nb_essai, int longueur_mot)
+void dico(element *tab,int nb_essai, int longueur_mot)
 {
-    char *list_dico[6]={"texte/dico0.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt"};
+    char istr[5];
+	sprintf( istr, "%d", nb_essai);
+    char istr2[5];
+	sprintf( istr2, "%d", nb_essai+1);
+    char txt[7]=".txt";
+	char dict[100]="../texte/Dictionnaire/dico";
+	char* name=malloc(sizeof("../texte/Dictionnaire/dico60000.txt"));
+    char* name2=malloc(sizeof("../texte/Dictionnaire/dico60000.txt"));
+	strcpy(name,dict);
+	strcat(name, istr);
+    if (nb_essai==0){
+		char strlong[5];
+		sprintf(strlong,"%d",longueur_mot);
+		strcat(name,strlong);
+	}
+	strcat(name, txt);
+    strcpy(name2,dict);
+	strcat(name2, istr2);
+	strcat(name2, txt);
+    resetdict(name2);
     element current;
-    resetdict(list_dico[nb_essai+1]);
-    char * name=list_dico[nb_essai+1];
-    FILE *anciendico=fopen(list_dico[nb_essai],"r");
+    FILE *anciendico=fopen(name,"r");
     int n=taillefichiertxt(anciendico);
     rewind(anciendico);
-    char* mot_actuel=malloc(sizeof(char)*(longueur_mot+2));
+    char* mot_actuel=malloc(sizeof(char)*(longueur_mot+7));
     for (int i=0;i<n;i++){
 
         bool mot_possible=true;
@@ -151,9 +168,6 @@ void dico(element tab[size*nbessais],int nb_essai, int longueur_mot)
             current=tab[nb_essai*longueur_mot+j];
             if (current.coloration==2)
             {
-                if (i==0){
-                    print_element(current);
-                }
                 if (!acetteplace(current.lettre,mot_actuel,current.place)){
                     mot_possible=false;
                 }
@@ -179,8 +193,8 @@ void dico(element tab[size*nbessais],int nb_essai, int longueur_mot)
                 }   
                 else{if (current.coloration==1){
                     int color=7;
-                    char scolor[longueur_mot+2];
-                    char stcolor[longueur_mot+1];
+                    char scolor[longueur_mot+10];
+                    char stcolor[longueur_mot+10];
                     for (int m=0;m<longueur_mot;m++){
                         element o=tab[nb_essai*longueur_mot+m];
                         color=color*10+o.coloration;
@@ -198,12 +212,14 @@ void dico(element tab[size*nbessais],int nb_essai, int longueur_mot)
         }
 
         if (mot_possible){
-            addintofile(name,mot_actuel);//faire une fonction pour écrire dans un nouveau dico, on écrit dans intermédiaire1
+            addintofile(name2,mot_actuel);//faire une fonction pour écrire dans un nouveau dico, on écrit dans intermédiaire1
             
         }
         
         
     }
+    free(name);
+    free(name2);
     free(mot_actuel);
     fclose(anciendico);
 
