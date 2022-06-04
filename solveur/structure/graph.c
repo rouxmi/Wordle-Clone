@@ -205,31 +205,39 @@ void print_tableau(int tab[5]){
     printf("\n");
 }
 
-bool node_remove_unaccessibles(node* n1){
+bool node_is_unaccessible(node* n){
+    if(!n->listEdge && !n->terminal){
+        return true;
+    }
+    return false;
+}
+
+
+void node_remove_unaccessibles(node* n1){
     if(n1!=NULL){
-        if(n1->listEdge != NULL){
-            n1->listEdge = list_edge_remove_unaccessibles(n1->listEdge);
+        if(node_is_unaccessible(n1)){
+            node_destroy_all_children(n1);
         }
         else{
-            if(!n1->terminal)
-            {
-                node_destroy_all_children(n1);
-                return 1;
-            }  
-        }
+            n1->listEdge = list_edge_remove_unaccessibles(n1->listEdge);
+        }  
     }
-    return 0;
+    
 }
 
 list_edge* list_edge_remove_unaccessibles(list_edge* one_list){
     list_edge* tmp = one_list;
     list_edge* tmpnext;
-    bool b;
     while(tmp != NULL){
         tmpnext = tmp->next;
-        b=node_remove_unaccessibles(tmp->e.node);
-        if(b) free(tmp);
+        if(node_is_unaccessible(tmp->e.node)){
+            one_list= list_edge_remove_node_by_id(one_list, tmp->e.node->id);
+        }
+        else{
+            tmp->e.node->listEdge = list_edge_remove_unaccessibles(tmp->e.node->listEdge);
+        }
         tmp = tmpnext;
     }
     return one_list;
 }
+

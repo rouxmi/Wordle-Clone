@@ -112,7 +112,8 @@ void test_node_get_chemin(){
     print_tableau(tab);
     node_switch_terminal(child5);
     node_print(child4);
-    //bool b=node_remove_unaccessibles(n1);
+    assert(node_is_unaccessible(child5));
+    node_remove_unaccessibles(n1);
     node_print(child4);
     node_destroy_all_children(n1);
 }
