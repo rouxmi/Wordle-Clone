@@ -121,9 +121,12 @@ void test_node_add_all_words()
 {
     char *name="../../texte/dict.txt";
     node * n=node_add_all_words(name);
-    int tab[5];
-    node_get_chemin(tab, n, "GRADS");
-    print_tableau(tab);
+    int tab1[5];
+    node_get_chemin(tab1, n, "WHICH");
+    print_tableau(tab1);
+    int tab2[5];
+    node_get_chemin(tab2, n, "PUPAL");
+    print_tableau(tab2);
     node_destroy_all_children(n);
 
 }
