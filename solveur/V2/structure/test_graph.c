@@ -118,9 +118,13 @@ void test_node_get_chemin(){
 }
 void test_node_add_all_words()
 {
-    int length=5;
-    char *name="../texte/dict.txt";
-    node_add_all_words(name,length);
+    char *name="../../texte/dict.txt";
+    node * n=node_add_all_words(name);
+    int tab[5];
+    node_get_chemin(tab, n, "GRADS");
+    print_tableau(tab);
+    node_destroy_all_children(n);
+
 }
 
 void all_test_list(){
