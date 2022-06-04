@@ -4,7 +4,7 @@
 #include <err.h>
 #include <errno.h>
 #include <assert.h>
-#include "tableau.h"
+#include "../tableau.h"
 
 
 #ifndef __DICTIONNAIRE__H__

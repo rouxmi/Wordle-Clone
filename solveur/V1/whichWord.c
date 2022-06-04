@@ -7,7 +7,6 @@ char* randomInFile(char* name){
         exit( 0 );
     }
     rewind(f);
-    printf("ok\n");
     char ligne[LONG];
     int max = 0;
     while (fgets(ligne, LONG,f)!=NULL)
@@ -15,9 +14,7 @@ char* randomInFile(char* name){
         max++;
     }
     fclose(f);
-    printf("max: %d\n",max);
     int indiceLigne = rand() % max;
-    printf("n°ligne:%d\n",indiceLigne);
 
     f = fopen(name,"r");
     if ( f== NULL ) {

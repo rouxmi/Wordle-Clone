@@ -8,11 +8,12 @@
 #include <assert.h>
 #include <string.h>
 
+
 int main(){
 
     int nbr_essais= 5;
-    char *list_dico[6]={"texte/dico0.txt","texte/dico1.txt","texte/dico2.txt","texte/dico3.txt","texte/dico4.txt","texte/dico5.txt"};
-    FILE *fichier=fopen("texte/wsolf.txt","r");
+    
+    FILE *fichier=fopen("../texte/wsolf.txt","r");
     char* longueur_mot=contentofline(fichier);
     fclose(fichier);
     //printf("%s \n",longueur_mot);
@@ -20,26 +21,41 @@ int main(){
     //printf("%d \n",longueur);
     free(longueur_mot);
     element T[nbr_essais*longueur];
+    char word_test[longueur + 1];
     srand( time( NULL ) );
     for (int i =0; i < nbr_essais; i++)
     {
         char coloration[longueur+2];
         //char* mot_test=malloc(sizeof(mot_test[longueur]));
-        char* mot_test= randomInFile(list_dico[i]);
+        char istr[5];
+		sprintf( istr, "%d", i);
+		char txt[7]=".txt";
+		char strdico[100]="../texte/Dictionnaire/dico";
+		char* dico_mot=malloc(sizeof("../texte/Dictionnaire/dico60.txt"));
+		strcpy(dico_mot,strdico);
+		strcat(dico_mot, istr);
+        if (i==0){
+            char strlong[5];
+            sprintf(strlong,"%d",longueur);
+            strcat(dico_mot,strlong);
+        }
+		strcat(dico_mot, txt);
+        char* mot_test= randomInFile(dico_mot);
+        str_slice(mot_test,word_test,0,longueur-1);
+        free(dico_mot);
         printf("le mot à tester est %s \n",mot_test);
         printf("Entrez la coloration \n");
         scanf("%s",coloration);
-        printf("%s\n",coloration);
-        if (coloration=="-1"){
+        if (!strcmp(coloration,"-1")){
             printf("vous arrêtez de jouer");
             break;
         }
-        if (coloration=="22222"){
+        if (!strcmp(coloration,"22222")){
             printf("le solveur a gagné");
             break;
         }
         else{
-            ajout_mot(mot_test,i,T,coloration,longueur);
+            ajout_mot(word_test,i,T,coloration,longueur,nbr_essais);
             dico(T,i,longueur);
 
         }
