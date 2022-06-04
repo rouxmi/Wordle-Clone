@@ -290,7 +290,6 @@ char best_char_simple(node* n){
     char c='\0';
     int p=0;
     if(n!= NULL){
-        node_print(n);
         list_edge* current_elt= n->listEdge;
         while (current_elt != NULL)
         {
@@ -306,18 +305,18 @@ char best_char_simple(node* n){
 }
 
 char* best_word_simple(node* n){
-    char bestword[size];
+    char bestword[5];
     if(n!=NULL){
         node* tmp=n;
         int i=0;
         while(i<size){
             char lettre= best_char_simple(tmp);
-            strncat(bestword,&lettre,1);
+            bestword[i]=lettre;
             tmp= node_get_by_label(tmp->listEdge,lettre);
             i++;
         }
     }
-    char* res = bestword;
+    char* res = &(bestword[0]);
     return res;
 }
 

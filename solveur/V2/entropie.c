@@ -69,7 +69,7 @@ int get_ponderation_hash_list(hash_list* list,int position)
             return -1;
         }
     }
-   // return -1;
+    return -1;
 }
 
 int get_ponderation(char* name_txt, char letter, int position)
