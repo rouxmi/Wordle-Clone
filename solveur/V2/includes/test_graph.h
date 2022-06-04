@@ -10,6 +10,7 @@ void test_node_base();
 void test_list_base();
 void test_node_get_by_id();
 void test_node_get_chemin();
+void test_best_word();
 
 
 void all_test_list();

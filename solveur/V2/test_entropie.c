@@ -4,7 +4,7 @@
 #include <err.h>
 #include <errno.h>
 #include <assert.h>
-#include "entropie.h"
+#include "includes/entropie.h"
 
 
 int main()

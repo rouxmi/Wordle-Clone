@@ -4,7 +4,7 @@
 #include "includes/graph.h"
 
 void test_edge_base(){
-    edge e = edge_create(NULL, 1, 'a');
+    edge e = edge_create(NULL, 1, 'a',5);
     assert(e.id == 1);
     assert(e.label == 'a');
 }
@@ -24,8 +24,8 @@ void test_list_base(){
 
     node* n1 = node_create(1);
     node* n2 = node_create(2);
-    edge e1 = edge_create(n1, 1, 'a');
-    edge e2= edge_create(n2, 2, 'b');
+    edge e1 = edge_create(n1, 1, 'a',5);
+    edge e2= edge_create(n2, 2, 'b',5);
 
     l= list_edge_add_head(e1, l);
     l= list_edge_add_head(e2, l);
@@ -47,9 +47,9 @@ void test_node_get_by_id(){
     idMaxNode+=1;
     node *n3 = node_create(idMaxNode);
     idMaxNode+=1;
-    node_add_child(n1, n2, 'a', idMaxEdge);
+    node_add_child(n1, n2, 'a', idMaxEdge,5);
     idMaxEdge+=1;
-    node_add_child(n1, n3, 'b', idMaxEdge);
+    node_add_child(n1, n3, 'b', idMaxEdge,5);
     idMaxEdge+=1;
     node *n4 = node_get_by_id(n1->listEdge, 1);
     assert(n4->id == 1);
@@ -66,9 +66,9 @@ void test_node_add_char(){
     node *n1 = node_create(idMaxNode);
     idMaxNode+=1;
 
-    node_add_char(n1, 'c', &idMaxEdge, &idMaxNode, false);
+    node_add_char(n1, 'c', &idMaxEdge, &idMaxNode, false,5);
     node* child = node_get_by_label(n1->listEdge, 'c');
-    node_add_char(child, 'a', &idMaxEdge, &idMaxNode, true);
+    node_add_char(child, 'a', &idMaxEdge, &idMaxNode, true,5);
     node_destroy_all_children(n1);
 }
 
@@ -78,18 +78,21 @@ void test_node_add_word(){
     node *n1 = node_create(idMaxNode);
     idMaxNode+=1;
 
-    node_add_word(n1, "lucie", &idMaxEdge, &idMaxNode);
-    node_add_word(n1, "luc", &idMaxEdge, &idMaxNode);
-    node_add_word(n1, "fabri", &idMaxEdge, &idMaxNode);
-    node* child = node_get_by_label(n1->listEdge, 'l');
-    node* child2 = node_get_by_label(child->listEdge, 'u');
-    node* child3 = node_get_by_label(child2->listEdge, 'c');
-    node* child4 = node_get_by_label(child3->listEdge, 'i');
-    node* child5 = node_get_by_label(child4->listEdge, 'e');
+    hash_map* h = initialize_hash_map("test_node_add_word.txt", 5);
+
+    node_add_word(n1, "LUCIE", &idMaxEdge, &idMaxNode,h);
+    node_add_word(n1, "LUCAS", &idMaxEdge, &idMaxNode,h);
+    node_add_word(n1, "FABRI", &idMaxEdge, &idMaxNode,h);
+    node* child = node_get_by_label(n1->listEdge, 'L');
+    node* child2 = node_get_by_label(child->listEdge, 'U');
+    node* child3 = node_get_by_label(child2->listEdge, 'C');
+    node* child4 = node_get_by_label(child3->listEdge, 'I');
+    node* child5 = node_get_by_label(child4->listEdge, 'E');
     assert(!child2->terminal);
-    assert(child3->terminal);
+    assert(!child3->terminal);
     assert(child5->terminal);
     node_destroy_all_children(n1);
+    destroy_hashmap(h);
 }
 
 
@@ -98,28 +101,31 @@ void test_node_get_chemin(){
     int idMaxNode=0;
     node *n1 = node_create(idMaxNode);
     idMaxNode+=1;
-
-    node_add_word(n1, "lucie", &idMaxEdge, &idMaxNode);
-    node_add_word(n1, "lucia", &idMaxEdge, &idMaxNode);
-    node_add_word(n1, "fabri", &idMaxEdge, &idMaxNode);
-    node* child = node_get_by_label(n1->listEdge, 'l');
-    node* child2 = node_get_by_label(child->listEdge, 'u');
-    node* child3 = node_get_by_label(child2->listEdge, 'c');
-    node* child4 = node_get_by_label(child3->listEdge, 'i');
-    node* child5 = node_get_by_label(child4->listEdge, 'e');
+    hash_map* h = initialize_hash_map("test_node_add_word.txt", 5);
+    node_add_word(n1, "LUCIE", &idMaxEdge, &idMaxNode,h);
+    node_add_word(n1, "LUCIS", &idMaxEdge, &idMaxNode,h);
+    node_add_word(n1, "FABRI", &idMaxEdge, &idMaxNode,h);
+    node* child = node_get_by_label(n1->listEdge, 'L');
+    node* child2 = node_get_by_label(child->listEdge, 'U');
+    node* child3 = node_get_by_label(child2->listEdge, 'C');
+    node* child4 = node_get_by_label(child3->listEdge, 'I');
+    node* child5 = node_get_by_label(child4->listEdge, 'E');
     int tab[5];
-    node_get_chemin(tab, n1, "lucie");
+    node_get_chemin(tab, n1, "LUCIE");
     print_tableau(tab);
+
     node_switch_terminal(child5);
     node_print(child4);
     assert(node_is_unaccessible(child5));
     node_remove_unaccessibles(n1);
     node_print(child4);
     node_destroy_all_children(n1);
+    destroy_hashmap(h);
 }
+
 void test_node_add_all_words()
 {
-    char *name="../../texte/dict.txt";
+    char *name="../texte/dict.txt";
     node * n=node_add_all_words(name);
     int tab1[5];
     node_get_chemin(tab1, n, "WHICH");
@@ -131,13 +137,25 @@ void test_node_add_all_words()
 
 }
 
+void test_best_word()
+{
+    char *name="test_node_add_word.txt";
+    node * n=node_add_all_words(name);
+    char c=best_char_simple(n);
+    char* s = best_word_simple(n);
+    printf("%c \n",c);
+    printf("%s \n",s);
+    node_destroy_all_children(n);
+}
+
 void all_test_list(){
     test_edge_base();
     test_node_base();
     test_list_base();
-    test_node_add_word();
-    test_node_get_by_id();
-    test_node_get_chemin();
-    test_node_add_all_words();
+    //test_node_add_word();
+    //test_node_get_by_id();
+    //test_node_get_chemin();
+    //test_node_add_all_words();
+    test_best_word();
 }
 

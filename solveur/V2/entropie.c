@@ -4,7 +4,7 @@
 #include <err.h>
 #include <errno.h>
 #include <assert.h>
-#include "entropie.h"
+#include "includes/entropie.h"
 #define LONG 255
 
 //fonctions de pondération 
@@ -32,7 +32,7 @@ hash_list* initialize_hash_list(char *name_txt,int length_word,char lettre)
     for (int i=0;i<length_word;i++)
     {
         //printf("dans la bouvle\n");
-        int ponderation=get_ponderation(name_txt,length_word,lettre,i);
+        int ponderation=get_ponderation(name_txt,lettre,i);
         //printf("p: %d\n",ponderation);
         append_hash_list(list,ponderation);
     
@@ -68,11 +68,11 @@ int get_ponderation_hash_list(hash_list* list,int position)
             }
             return -1;
         }
-        
     }
+   // return -1;
 }
 
-int get_ponderation(char* name_txt, int length_word, char letter, int position)
+int get_ponderation(char* name_txt, char letter, int position)
 {
     int ponderation=0;
     FILE*f=fopen(name_txt, "r");

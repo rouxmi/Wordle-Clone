@@ -36,7 +36,7 @@ int get_hash_map(hash_map* map, int position, char lettre);
 
 
 
-int get_ponderation(char* name_txt, int length_word, char letter,int position);
+int get_ponderation(char* name_txt, char letter,int position);
 hash_element create_hash_element(int ponderation);
 hash_list *create_hash_list();
 
@@ -45,4 +45,6 @@ void destroy_hash_list(hash_list *list);
 void append_hash_list(hash_list* list, int ponderation);
 hash_list* initialize_hash_list(char *name_txt,int length_word,char lettre);
 int get_ponderation_hash_list(hash_list* list, int position);
+
 #endif 
+
