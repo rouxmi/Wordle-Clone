@@ -65,7 +65,8 @@ void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN, bool terminal);
 void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN);
 void node_get_chemin(int tab[5], node* no, char* mot);
 void print_tableau(int tab[5]);
-bool node_remove_unaccessibles(node* n1);
+bool node_is_unaccessible(node* n);
+void node_remove_unaccessibles(node* n1);
 list_edge* list_edge_remove_unaccessibles(list_edge* one_list);
 
 #endif //GRAPH_H
