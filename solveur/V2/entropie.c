@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <assert.h>
 #include "entropie.h"
-#include "dictionnaire.h"
+#define LONG 255
 
 //fonctions de pondération 
 hash_map* initialize_hash_map(char* name_txt, int length_word)
@@ -76,19 +76,29 @@ int get_ponderation(char* name_txt, int length_word, char letter, int position)
 {
     int ponderation=0;
     FILE*f=fopen(name_txt, "r");
-    int len= taillefichiertxt(f);
+    int len=0;
+    char c;
+    while((c=fgetc(f)) != EOF)
+    {
+        if(c=='\n')
+        {
+            len++;
+        }
+    }
     rewind(f);
+    char ligne[LONG];
     for (int j=0;j<len+1;j++)
     {
-        char* current_word=contentofline(f,j,length_word,len);
+        fgets(ligne, LONG,f);
+        char* res = ligne;
        
-        if (current_word[position]==letter)
+        if (res[position]==letter)
         {
             //printf("%s\n",current_word);
             ponderation++;
         }
 
-        free(current_word);
+    
     }
     fclose(f);
     return ponderation;
