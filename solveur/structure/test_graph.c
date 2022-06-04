@@ -116,6 +116,12 @@ void test_node_get_chemin(){
     node_print(child4);
     node_destroy_all_children(n1);
 }
+void test_node_add_all_words()
+{
+    int length=5;
+    char *name="../texte/dict.txt";
+    node_add_all_words(name,length);
+}
 
 void all_test_list(){
     test_edge_base();
@@ -124,5 +130,6 @@ void all_test_list(){
     test_node_add_word();
     test_node_get_by_id();
     test_node_get_chemin();
+    test_node_add_all_words();
 }
 

@@ -2,6 +2,7 @@
 // Created by lucie on 25/05/22.
 //
 #include "includes/graph.h"
+#include "dictionnaire.h"
 
 edge edge_create(node *n, int id, char label){
     edge e;
@@ -232,4 +233,23 @@ list_edge* list_edge_remove_unaccessibles(list_edge* one_list){
         tmp = tmpnext;
     }
     return one_list;
+}
+
+node * node_add_all_words(char* nametxt,int length_word)
+{
+    FILE *f=fopen(nametxt,"r");
+    int len=taillefichiertxt(f);
+    rewind(f);
+    int idMaxEdge=0;
+    int idMaxNode=0;
+    node *n1 = node_create(idMaxNode);
+    idMaxNode+=1;
+    char* currentword;
+    for (int i=0;i<len+1;i++)
+    {
+        currentword=contentofline(f,i,length_word,len);
+        node_add_word(n1, currentword, &idMaxEdge, &idMaxNode);
+    }
+    free(currentword);
+    
 }

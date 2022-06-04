@@ -47,7 +47,7 @@ void node_print(node* n);
 void node_destroy_all_children(node* n);
 node* node_get_by_id(list_edge* one_list, int id);
 node* node_get_by_label(list_edge* one_list, char label);
-
+node * node_add_all_words(char* nametxt,int length_word);
 //fonctions sur la structure liste_edge
 list_edge* list_edge_create();
 list_edge* list_edge_destroy(list_edge* one_list);
