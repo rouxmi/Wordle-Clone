@@ -3,17 +3,19 @@
 //
 #include "includes/graph.h"
 #define LONG 255
+#define size 5
 
-edge edge_create(node *n, int id, char label){
+edge edge_create(node *n, int id, char label, int p){
     edge e;
     e.node = n;
     e.id = id;
     e.label = label;
+    e.ponderation=p;
     return e;
 }
 
 void edge_print(edge *e){
-    printf("%d: -%c-> (%d)\n",e->id, e->label, e->node->id);
+    printf("%d: -%c-%d-> (%d)\n",e->id, e->label,e->ponderation, e->node->id);
 }
 
 node* node_create(int id){
@@ -30,8 +32,8 @@ void node_switch_terminal(node* n){
 }
 
 
-void node_add_child(node* n1, node* n2, char label, int id){
-    edge e = edge_create(n2, id, label);
+void node_add_child(node* n1, node* n2, char label, int id, int p){
+    edge e = edge_create(n2, id, label,p);
     n2->nbrAretesEntrantes +=1;
     n1->listEdge = list_edge_add_head(e, n1->listEdge);
 }
@@ -107,7 +109,7 @@ list_edge* liste_edge_next(list_edge* one_list){
 }
 
 
- list_edge* list_edge_add_head(edge e, list_edge* one_list){
+list_edge* list_edge_add_head(edge e, list_edge* one_list){
     list_edge * nouvelElement = (list_edge*) malloc(sizeof(list_edge));
     nouvelElement->e = e;
     nouvelElement->next = one_list;
@@ -155,14 +157,14 @@ bool list_edge_contains_by_label(list_edge* one_list, char valeur)
     return false;
 }
 
-void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN, bool terminal){
+void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN, bool terminal, int p){
     if (n1!=NULL){
         list_edge* tmp = n1->listEdge;
         if(node_get_by_label(tmp, c)==NULL){
             node* n3 = node_create(*idMaxN);
             if(terminal) node_switch_terminal(n3);
             *idMaxN+=1;
-            node_add_child(n1, n3, c, *idMaxE);
+            node_add_child(n1, n3, c, *idMaxE, p);
 
             *idMaxE+=1;
         }else{
@@ -171,15 +173,18 @@ void node_add_char(node* n1, char c, int* idMaxE, int* idMaxN, bool terminal){
     }
 }
  
-void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN){
+void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN, hash_map* h){
     if(mot[0]){
         bool terminal=false;
         if(!mot[1]){
             terminal= !terminal;
         }
-        node_add_char(n1, mot[0], idMaxE, idMaxN, terminal);
+        //printf("%c\n", mot[0]);
+        //printf("%d, %d, %d\n",size, (int)strlen(mot), size-((int)(strlen(mot))-1));
+        int p = get_hash_map(h,size-((int)(strlen(mot))-1),mot[0]);
+        node_add_char(n1, mot[0], idMaxE, idMaxN, terminal,p);
         node* child = node_get_by_label(n1->listEdge, mot[0]);
-        node_add_word(child, mot+1, idMaxE, idMaxN);
+        node_add_word(child, mot+1, idMaxE, idMaxN, h);
     }
  }
 
@@ -248,6 +253,8 @@ list_edge* list_edge_remove_unaccessibles(list_edge* one_list){
 
 node *node_add_all_words(char* nametxt)
 {
+
+    hash_map* h = initialize_hash_map(nametxt, size);
     FILE *f=fopen(nametxt,"r");
     assert(f!=NULL);
     int len=0;
@@ -271,10 +278,45 @@ node *node_add_all_words(char* nametxt)
     
         fgets(ligne, LONG,f);
         char* res = ligne;
-        node_add_word(n1, res, &idMaxEdge, &idMaxNode);
+        node_add_word(n1, res, &idMaxEdge, &idMaxNode, h);
        
     }
-     
+    destroy_hashmap(h);
     fclose(f);
     return n1;
 }
+
+char best_char_simple(node* n){
+    char c='\0';
+    int p=0;
+    if(n!= NULL){
+        list_edge* current_elt= n->listEdge;
+        while (current_elt != NULL)
+        {
+            if(p<current_elt->e.ponderation){
+                p=current_elt->e.ponderation;
+                c=current_elt->e.label;
+            }
+            current_elt=current_elt->next;
+        }
+    }
+    return c;
+    
+}
+
+char* best_word_simple(node* n){
+    char bestword[5];
+    if(n!=NULL){
+        node* tmp=n;
+        int i=0;
+        while(i<size){
+            char lettre= best_char_simple(tmp);
+            bestword[i]=lettre;
+            tmp= node_get_by_label(tmp->listEdge,lettre);
+            i++;
+        }
+    }
+    char* res = &(bestword[0]);
+    return res;
+}
+
