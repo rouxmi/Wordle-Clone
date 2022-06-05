@@ -1,5 +1,5 @@
 #include "test_dict.h"
-#include "dict.h"
+#include "../dict.h"
 
 int main(){
     test_taille_file();

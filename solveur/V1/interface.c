@@ -11,7 +11,7 @@
 
 int main(){
 
-    int nbr_essais= 5;
+    int nbr_essais= 6;
     
     FILE *fichier=fopen("../texte/wsolf.txt","r");
     char* longueur_mot=contentofline(fichier);
@@ -27,17 +27,29 @@ int main(){
     {
         char coloration[longueur+2];
         //char* mot_test=malloc(sizeof(mot_test[longueur]));
-        char istr[5];
-		sprintf( istr, "%d", i);
+        
 		char txt[7]=".txt";
 		char strdico[100]="../texte/Dictionnaire/dico";
-		char* dico_mot=malloc(sizeof("../texte/Dictionnaire/dico60.txt"));
+		char* dico_mot=malloc(sizeof("../texte/Dictionnaire/dicoimpair.txt"));
 		strcpy(dico_mot,strdico);
-		strcat(dico_mot, istr);
         if (i==0){
+            char istr[5];
+		    sprintf( istr, "%d", i);
+            strcat(dico_mot, istr);
             char strlong[5];
             sprintf(strlong,"%d",longueur);
             strcat(dico_mot,strlong);
+        }
+        else{
+            if (i%2==0){
+            char pair[5]="pair";
+            strcat(dico_mot, pair);
+            }
+            else{
+                
+                char impair[5]="imp";
+                strcat(dico_mot, impair);
+            }
         }
 		strcat(dico_mot, txt);
         char* mot_test= randomInFile(dico_mot);
@@ -50,11 +62,22 @@ int main(){
             printf("vous arrêtez de jouer");
             break;
         }
-        if (!strcmp(coloration,"22222")){
+        char* color="00000";
+        color=coloration(word_test,word_dev,longeur_mot);
+        char oui[longueur_mot+2];
+        char l='2';
+        for (int r=0;r<longueur_mot;r++){
+            oui[r]=l;
+        }
+        oui[longueur_mot]=0;
+        if (!strcmp(coloration,oui)){
             printf("le solveur a gagné");
             break;
         }
         else{
+            if (i==nbr_essais-1){
+                printf("Le solveur a perdu")
+            }
             ajout_mot(word_test,i,T,coloration,longueur,nbr_essais);
             dico(T,i,longueur);
 

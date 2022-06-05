@@ -133,24 +133,39 @@ void str_slice(const char * str, char * word_coupe, size_t start, size_t end)
 
 void dico(element *tab,int nb_essai, int longueur_mot)
 {
-    char istr[5];
-	sprintf( istr, "%d", nb_essai);
-    char istr2[5];
-	sprintf( istr2, "%d", nb_essai+1);
     char txt[7]=".txt";
 	char dict[100]="../texte/Dictionnaire/dico";
 	char* name=malloc(sizeof("../texte/Dictionnaire/dico60000.txt"));
     char* name2=malloc(sizeof("../texte/Dictionnaire/dico60000.txt"));
 	strcpy(name,dict);
-	strcat(name, istr);
-    if (nb_essai==0){
-		char strlong[5];
-		sprintf(strlong,"%d",longueur_mot);
-		strcat(name,strlong);
-	}
+	if (nb_essai==0){
+            char istr[5];
+		    sprintf( istr, "%d", nb_essai);
+            strcat(name, istr);
+            char strlong[5];
+            sprintf(strlong,"%d",longueur_mot);
+            strcat(name,strlong);
+        }
+    else{
+            if (nb_essai%2==0){
+                char pair[5]="pair";
+                strcat(name, pair);
+            }
+            else{
+                char impair[5]="imp";
+                strcat(name, impair);
+            }
+        }
 	strcat(name, txt);
     strcpy(name2,dict);
-	strcat(name2, istr2);
+	if (nb_essai%2==1){
+            char pair[5]="pair";
+            strcat(name2, pair);
+        }
+    else{
+        char impair[5]="imp";
+        strcat(name2, impair);
+    }
 	strcat(name2, txt);
     resetdict(name2);
     element current;

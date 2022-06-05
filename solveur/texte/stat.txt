@@ -1,0 +1,1800 @@
+test n°1 sur les mot de longeur:2
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:5
+nombre de mot trouvé à l'essai n°3:7
+nombre de mot trouvé à l'essai n°4:11
+nombre de mot trouvé à l'essai n°5:12
+nombre de mot trouvé à l'essai n°6:6
+nombre de mot trouvé à l'essai n°7:5
+nombre de mot trouvé à l'essai n°8:2
+nombre de mot trouvé à l'essai n°9:4
+nombre de mot trouvé à l'essai n°10:1
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.981482
+54
+test sur le tout le dico de cette taille en 0.050579 secondes
+test n°1 sur les mot de longeur:3
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:9
+nombre de mot trouvé à l'essai n°3:45
+nombre de mot trouvé à l'essai n°4:62
+nombre de mot trouvé à l'essai n°5:83
+nombre de mot trouvé à l'essai n°6:60
+nombre de mot trouvé à l'essai n°7:37
+nombre de mot trouvé à l'essai n°8:33
+nombre de mot trouvé à l'essai n°9:5
+nombre de mot trouvé à l'essai n°10:4
+nombre de mot trouvé à l'essai n°11:1
+nombre de mot trouvé à l'essai n°12:1
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:5.302053
+341
+test sur le tout le dico de cette taille en 0.578305 secondes
+test n°1 sur les mot de longeur:4
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:41
+nombre de mot trouvé à l'essai n°3:174
+nombre de mot trouvé à l'essai n°4:270
+nombre de mot trouvé à l'essai n°5:245
+nombre de mot trouvé à l'essai n°6:160
+nombre de mot trouvé à l'essai n°7:66
+nombre de mot trouvé à l'essai n°8:27
+nombre de mot trouvé à l'essai n°9:10
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.665996
+994
+test sur le tout le dico de cette taille en 2.711911 secondes
+test n°1 sur les mot de longeur:5
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:96
+nombre de mot trouvé à l'essai n°3:534
+nombre de mot trouvé à l'essai n°4:735
+nombre de mot trouvé à l'essai n°5:466
+nombre de mot trouvé à l'essai n°6:140
+nombre de mot trouvé à l'essai n°7:49
+nombre de mot trouvé à l'essai n°8:8
+nombre de mot trouvé à l'essai n°9:4
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.104720
+2034
+test sur le tout le dico de cette taille en 9.047385 secondes
+test n°1 sur les mot de longeur:6
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:198
+nombre de mot trouvé à l'essai n°3:1131
+nombre de mot trouvé à l'essai n°4:1260
+nombre de mot trouvé à l'essai n°5:447
+nombre de mot trouvé à l'essai n°6:87
+nombre de mot trouvé à l'essai n°7:15
+nombre de mot trouvé à l'essai n°8:1
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:1
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.729299
+3140
+test sur le tout le dico de cette taille en 21.395038 secondes
+test n°1 sur les mot de longeur:7
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:337
+nombre de mot trouvé à l'essai n°3:1763
+nombre de mot trouvé à l'essai n°4:1258
+nombre de mot trouvé à l'essai n°5:243
+nombre de mot trouvé à l'essai n°6:18
+nombre de mot trouvé à l'essai n°7:1
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.404032
+3621
+test sur le tout le dico de cette taille en 28.901529 secondes
+test n°1 sur les mot de longeur:8
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:498
+nombre de mot trouvé à l'essai n°3:2045
+nombre de mot trouvé à l'essai n°4:916
+nombre de mot trouvé à l'essai n°5:91
+nombre de mot trouvé à l'essai n°6:7
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.173974
+3558
+test sur le tout le dico de cette taille en 30.065510 secondes
+test n°1 sur les mot de longeur:9
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:675
+nombre de mot trouvé à l'essai n°3:1815
+nombre de mot trouvé à l'essai n°4:448
+nombre de mot trouvé à l'essai n°5:20
+nombre de mot trouvé à l'essai n°6:1
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.937817
+2959
+test sur le tout le dico de cette taille en 22.675038 secondes
+test n°1 sur les mot de longeur:10
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:714
+nombre de mot trouvé à l'essai n°3:1302
+nombre de mot trouvé à l'essai n°4:180
+nombre de mot trouvé à l'essai n°5:5
+nombre de mot trouvé à l'essai n°6:1
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.762596
+2203
+test sur le tout le dico de cette taille en 13.904910 secondes
+test n°1 sur les mot de longeur:11
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:695
+nombre de mot trouvé à l'essai n°3:684
+nombre de mot trouvé à l'essai n°4:80
+nombre de mot trouvé à l'essai n°5:1
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.580137
+1460
+test sur le tout le dico de cette taille en 7.117147 secondes
+test n°1 sur les mot de longeur:12
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:542
+nombre de mot trouvé à l'essai n°3:328
+nombre de mot trouvé à l'essai n°4:20
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.413483
+890
+test sur le tout le dico de cette taille en 3.018589 secondes
+test n°1 sur les mot de longeur:13
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:369
+nombre de mot trouvé à l'essai n°3:133
+nombre de mot trouvé à l'essai n°4:6
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.285433
+508
+test sur le tout le dico de cette taille en 1.083241 secondes
+test n°1 sur les mot de longeur:14
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:219
+nombre de mot trouvé à l'essai n°3:68
+nombre de mot trouvé à l'essai n°4:2
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.249135
+289
+test sur le tout le dico de cette taille en 0.392751 secondes
+test n°1 sur les mot de longeur:15
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:118
+nombre de mot trouvé à l'essai n°3:10
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.061538
+130
+test sur le tout le dico de cette taille en 0.093376 secondes
+test n°1 sur les mot de longeur:16
+nombre de mot trouvé à l'essai n°1:3
+nombre de mot trouvé à l'essai n°2:32
+nombre de mot trouvé à l'essai n°3:1
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.944444
+36
+test sur le tout le dico de cette taille en 0.009149 secondes
+test n°1 sur les mot de longeur:17
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:19
+nombre de mot trouvé à l'essai n°3:1
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.050000
+20
+test sur le tout le dico de cette taille en 0.003779 secondes
+test n°1 sur les mot de longeur:18
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:10
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.909091
+11
+test sur le tout le dico de cette taille en 0.001541 secondes
+test n°1 sur les mot de longeur:19
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:0
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.000000
+2
+test sur le tout le dico de cette taille en 0.000079 secondes
+test n°2 sur les mot de longeur:2
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:6
+nombre de mot trouvé à l'essai n°3:12
+nombre de mot trouvé à l'essai n°4:6
+nombre de mot trouvé à l'essai n°5:8
+nombre de mot trouvé à l'essai n°6:6
+nombre de mot trouvé à l'essai n°7:7
+nombre de mot trouvé à l'essai n°8:4
+nombre de mot trouvé à l'essai n°9:2
+nombre de mot trouvé à l'essai n°10:2
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.962963
+54
+test sur le tout le dico de cette taille en 0.036091 secondes
+test n°2 sur les mot de longeur:3
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:17
+nombre de mot trouvé à l'essai n°3:40
+nombre de mot trouvé à l'essai n°4:64
+nombre de mot trouvé à l'essai n°5:78
+nombre de mot trouvé à l'essai n°6:63
+nombre de mot trouvé à l'essai n°7:34
+nombre de mot trouvé à l'essai n°8:25
+nombre de mot trouvé à l'essai n°9:12
+nombre de mot trouvé à l'essai n°10:7
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:5.263930
+341
+test sur le tout le dico de cette taille en 0.562287 secondes
+test n°2 sur les mot de longeur:4
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:46
+nombre de mot trouvé à l'essai n°3:184
+nombre de mot trouvé à l'essai n°4:272
+nombre de mot trouvé à l'essai n°5:254
+nombre de mot trouvé à l'essai n°6:145
+nombre de mot trouvé à l'essai n°7:60
+nombre de mot trouvé à l'essai n°8:21
+nombre de mot trouvé à l'essai n°9:9
+nombre de mot trouvé à l'essai n°10:2
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.589537
+994
+test sur le tout le dico de cette taille en 2.842356 secondes
+test n°2 sur les mot de longeur:5
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:91
+nombre de mot trouvé à l'essai n°3:502
+nombre de mot trouvé à l'essai n°4:743
+nombre de mot trouvé à l'essai n°5:474
+nombre de mot trouvé à l'essai n°6:156
+nombre de mot trouvé à l'essai n°7:54
+nombre de mot trouvé à l'essai n°8:11
+nombre de mot trouvé à l'essai n°9:2
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.154867
+2034
+test sur le tout le dico de cette taille en 9.281601 secondes
+test n°2 sur les mot de longeur:6
+nombre de mot trouvé à l'essai n°1:3
+nombre de mot trouvé à l'essai n°2:181
+nombre de mot trouvé à l'essai n°3:1085
+nombre de mot trouvé à l'essai n°4:1337
+nombre de mot trouvé à l'essai n°5:420
+nombre de mot trouvé à l'essai n°6:101
+nombre de mot trouvé à l'essai n°7:9
+nombre de mot trouvé à l'essai n°8:4
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.748089
+3140
+test sur le tout le dico de cette taille en 21.391447 secondes
+test n°2 sur les mot de longeur:7
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:331
+nombre de mot trouvé à l'essai n°3:1737
+nombre de mot trouvé à l'essai n°4:1249
+nombre de mot trouvé à l'essai n°5:275
+nombre de mot trouvé à l'essai n°6:27
+nombre de mot trouvé à l'essai n°7:1
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.428335
+3621
+test sur le tout le dico de cette taille en 28.196065 secondes
+test n°2 sur les mot de longeur:8
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:542
+nombre de mot trouvé à l'essai n°3:2055
+nombre de mot trouvé à l'essai n°4:868
+nombre de mot trouvé à l'essai n°5:88
+nombre de mot trouvé à l'essai n°6:3
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.142496
+3558
+test sur le tout le dico de cette taille en 28.322651 secondes
+test n°2 sur les mot de longeur:9
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:678
+nombre de mot trouvé à l'essai n°3:1793
+nombre de mot trouvé à l'essai n°4:465
+nombre de mot trouvé à l'essai n°5:23
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.943562
+2959
+test sur le tout le dico de cette taille en 21.667677 secondes
+test n°2 sur les mot de longeur:10
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:767
+nombre de mot trouvé à l'essai n°3:1265
+nombre de mot trouvé à l'essai n°4:163
+nombre de mot trouvé à l'essai n°5:8
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.733091
+2203
+test sur le tout le dico de cette taille en 13.450111 secondes
+test n°2 sur les mot de longeur:11
+nombre de mot trouvé à l'essai n°1:3
+nombre de mot trouvé à l'essai n°2:694
+nombre de mot trouvé à l'essai n°3:680
+nombre de mot trouvé à l'essai n°4:80
+nombre de mot trouvé à l'essai n°5:3
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.579452
+1460
+test sur le tout le dico de cette taille en 6.745015 secondes
+test n°2 sur les mot de longeur:12
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:508
+nombre de mot trouvé à l'essai n°3:352
+nombre de mot trouvé à l'essai n°4:28
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.456180
+890
+test sur le tout le dico de cette taille en 2.856283 secondes
+test n°2 sur les mot de longeur:13
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:362
+nombre de mot trouvé à l'essai n°3:141
+nombre de mot trouvé à l'essai n°4:3
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.285433
+508
+test sur le tout le dico de cette taille en 1.043684 secondes
+test n°2 sur les mot de longeur:14
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:221
+nombre de mot trouvé à l'essai n°3:63
+nombre de mot trouvé à l'essai n°4:3
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.231834
+289
+test sur le tout le dico de cette taille en 0.380586 secondes
+test n°2 sur les mot de longeur:15
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:123
+nombre de mot trouvé à l'essai n°3:7
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.053846
+130
+test sur le tout le dico de cette taille en 0.088880 secondes
+test n°2 sur les mot de longeur:16
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:35
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.972222
+36
+test sur le tout le dico de cette taille en 0.009101 secondes
+test n°2 sur les mot de longeur:17
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:17
+nombre de mot trouvé à l'essai n°3:1
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.950000
+20
+test sur le tout le dico de cette taille en 0.003884 secondes
+test n°2 sur les mot de longeur:18
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:9
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.818182
+11
+test sur le tout le dico de cette taille en 0.001352 secondes
+test n°2 sur les mot de longeur:19
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:2
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.000000
+2
+test sur le tout le dico de cette taille en 0.000241 secondes
+test n°3 sur les mot de longeur:2
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:2
+nombre de mot trouvé à l'essai n°3:5
+nombre de mot trouvé à l'essai n°4:7
+nombre de mot trouvé à l'essai n°5:12
+nombre de mot trouvé à l'essai n°6:12
+nombre de mot trouvé à l'essai n°7:5
+nombre de mot trouvé à l'essai n°8:5
+nombre de mot trouvé à l'essai n°9:3
+nombre de mot trouvé à l'essai n°10:1
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:1
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:5.648148
+54
+test sur le tout le dico de cette taille en 0.044423 secondes
+test n°3 sur les mot de longeur:3
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:17
+nombre de mot trouvé à l'essai n°3:38
+nombre de mot trouvé à l'essai n°4:61
+nombre de mot trouvé à l'essai n°5:72
+nombre de mot trouvé à l'essai n°6:67
+nombre de mot trouvé à l'essai n°7:39
+nombre de mot trouvé à l'essai n°8:27
+nombre de mot trouvé à l'essai n°9:12
+nombre de mot trouvé à l'essai n°10:6
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:1
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:5.348974
+341
+test sur le tout le dico de cette taille en 0.546496 secondes
+test n°3 sur les mot de longeur:4
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:46
+nombre de mot trouvé à l'essai n°3:172
+nombre de mot trouvé à l'essai n°4:280
+nombre de mot trouvé à l'essai n°5:276
+nombre de mot trouvé à l'essai n°6:121
+nombre de mot trouvé à l'essai n°7:65
+nombre de mot trouvé à l'essai n°8:26
+nombre de mot trouvé à l'essai n°9:5
+nombre de mot trouvé à l'essai n°10:2
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.590543
+994
+test sur le tout le dico de cette taille en 2.628886 secondes
+test n°3 sur les mot de longeur:5
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:94
+nombre de mot trouvé à l'essai n°3:500
+nombre de mot trouvé à l'essai n°4:793
+nombre de mot trouvé à l'essai n°5:423
+nombre de mot trouvé à l'essai n°6:158
+nombre de mot trouvé à l'essai n°7:55
+nombre de mot trouvé à l'essai n°8:9
+nombre de mot trouvé à l'essai n°9:1
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.124877
+2034
+test sur le tout le dico de cette taille en 8.579673 secondes
+test n°3 sur les mot de longeur:6
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:183
+nombre de mot trouvé à l'essai n°3:1168
+nombre de mot trouvé à l'essai n°4:1203
+nombre de mot trouvé à l'essai n°5:474
+nombre de mot trouvé à l'essai n°6:94
+nombre de mot trouvé à l'essai n°7:14
+nombre de mot trouvé à l'essai n°8:4
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.740764
+3140
+test sur le tout le dico de cette taille en 19.231196 secondes
+test n°3 sur les mot de longeur:7
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:308
+nombre de mot trouvé à l'essai n°3:1782
+nombre de mot trouvé à l'essai n°4:1251
+nombre de mot trouvé à l'essai n°5:257
+nombre de mot trouvé à l'essai n°6:22
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.420050
+3621
+test sur le tout le dico de cette taille en 27.366422 secondes
+test n°3 sur les mot de longeur:8
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:531
+nombre de mot trouvé à l'essai n°3:2055
+nombre de mot trouvé à l'essai n°4:869
+nombre de mot trouvé à l'essai n°5:100
+nombre de mot trouvé à l'essai n°6:2
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.152333
+3558
+test sur le tout le dico de cette taille en 28.458609 secondes
+test n°3 sur les mot de longeur:9
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:648
+nombre de mot trouvé à l'essai n°3:1818
+nombre de mot trouvé à l'essai n°4:476
+nombre de mot trouvé à l'essai n°5:16
+nombre de mot trouvé à l'essai n°6:1
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.953701
+2959
+test sur le tout le dico de cette taille en 21.953773 secondes
+test n°3 sur les mot de longeur:10
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:748
+nombre de mot trouvé à l'essai n°3:1249
+nombre de mot trouvé à l'essai n°4:194
+nombre de mot trouvé à l'essai n°5:12
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.759419
+2203
+test sur le tout le dico de cette taille en 13.616188 secondes
+test n°3 sur les mot de longeur:11
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:676
+nombre de mot trouvé à l'essai n°3:701
+nombre de mot trouvé à l'essai n°4:78
+nombre de mot trouvé à l'essai n°5:3
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.591781
+1460
+test sur le tout le dico de cette taille en 6.821097 secondes
+test n°3 sur les mot de longeur:12
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:530
+nombre de mot trouvé à l'essai n°3:336
+nombre de mot trouvé à l'essai n°4:23
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.428090
+890
+test sur le tout le dico de cette taille en 2.863915 secondes
+test n°3 sur les mot de longeur:13
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:360
+nombre de mot trouvé à l'essai n°3:143
+nombre de mot trouvé à l'essai n°4:4
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.295276
+508
+test sur le tout le dico de cette taille en 1.049705 secondes
+test n°3 sur les mot de longeur:14
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:238
+nombre de mot trouvé à l'essai n°3:47
+nombre de mot trouvé à l'essai n°4:3
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.179931
+289
+test sur le tout le dico de cette taille en 0.386897 secondes
+test n°3 sur les mot de longeur:15
+nombre de mot trouvé à l'essai n°1:3
+nombre de mot trouvé à l'essai n°2:120
+nombre de mot trouvé à l'essai n°3:7
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.030769
+130
+test sur le tout le dico de cette taille en 0.087452 secondes
+test n°3 sur les mot de longeur:16
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:34
+nombre de mot trouvé à l'essai n°3:2
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.055556
+36
+test sur le tout le dico de cette taille en 0.010295 secondes
+test n°3 sur les mot de longeur:17
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:19
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.950000
+20
+test sur le tout le dico de cette taille en 0.003563 secondes
+test n°3 sur les mot de longeur:18
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:11
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.000000
+11
+test sur le tout le dico de cette taille en 0.001546 secondes
+test n°3 sur les mot de longeur:19
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:1
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.500000
+2
+test sur le tout le dico de cette taille en 0.000159 secondes
+test n°1 sur les mot de longeur:2
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:5
+nombre de mot trouvé à l'essai n°3:15
+nombre de mot trouvé à l'essai n°4:6
+nombre de mot trouvé à l'essai n°5:8
+nombre de mot trouvé à l'essai n°6:5
+nombre de mot trouvé à l'essai n°7:8
+nombre de mot trouvé à l'essai n°8:4
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:1
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.629630
+54
+test sur le tout le dico de cette taille en 0.047076 secondes
+test n°1 sur les mot de longeur:3
+nombre de mot trouvé à l'essai n°1:3
+nombre de mot trouvé à l'essai n°2:17
+nombre de mot trouvé à l'essai n°3:41
+nombre de mot trouvé à l'essai n°4:73
+nombre de mot trouvé à l'essai n°5:80
+nombre de mot trouvé à l'essai n°6:62
+nombre de mot trouvé à l'essai n°7:41
+nombre de mot trouvé à l'essai n°8:10
+nombre de mot trouvé à l'essai n°9:9
+nombre de mot trouvé à l'essai n°10:3
+nombre de mot trouvé à l'essai n°11:1
+nombre de mot trouvé à l'essai n°12:1
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:5.058651
+341
+test sur le tout le dico de cette taille en 0.552649 secondes
+test n°1 sur les mot de longeur:4
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:38
+nombre de mot trouvé à l'essai n°3:173
+nombre de mot trouvé à l'essai n°4:313
+nombre de mot trouvé à l'essai n°5:247
+nombre de mot trouvé à l'essai n°6:128
+nombre de mot trouvé à l'essai n°7:51
+nombre de mot trouvé à l'essai n°8:30
+nombre de mot trouvé à l'essai n°9:10
+nombre de mot trouvé à l'essai n°10:2
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.586519
+994
+test sur le tout le dico de cette taille en 2.472306 secondes
+test n°1 sur les mot de longeur:5
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:97
+nombre de mot trouvé à l'essai n°3:525
+nombre de mot trouvé à l'essai n°4:739
+nombre de mot trouvé à l'essai n°5:434
+nombre de mot trouvé à l'essai n°6:183
+nombre de mot trouvé à l'essai n°7:41
+nombre de mot trouvé à l'essai n°8:11
+nombre de mot trouvé à l'essai n°9:3
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.127827
+2034
+test sur le tout le dico de cette taille en 8.019295 secondes
+test n°1 sur les mot de longeur:6
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:201
+nombre de mot trouvé à l'essai n°3:1134
+nombre de mot trouvé à l'essai n°4:1272
+nombre de mot trouvé à l'essai n°5:438
+nombre de mot trouvé à l'essai n°6:83
+nombre de mot trouvé à l'essai n°7:10
+nombre de mot trouvé à l'essai n°8:2
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.715287
+3140
+test sur le tout le dico de cette taille en 20.064565 secondes
+test n°1 sur les mot de longeur:7
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:320
+nombre de mot trouvé à l'essai n°3:1781
+nombre de mot trouvé à l'essai n°4:1242
+nombre de mot trouvé à l'essai n°5:263
+nombre de mot trouvé à l'essai n°6:15
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.412317
+3621
+test sur le tout le dico de cette taille en 27.866238 secondes
+test n°1 sur les mot de longeur:8
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:539
+nombre de mot trouvé à l'essai n°3:2022
+nombre de mot trouvé à l'essai n°4:898
+nombre de mot trouvé à l'essai n°5:92
+nombre de mot trouvé à l'essai n°6:5
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:1
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.157673
+3558
+test sur le tout le dico de cette taille en 30.952901 secondes
+test n°1 sur les mot de longeur:9
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:663
+nombre de mot trouvé à l'essai n°3:1833
+nombre de mot trouvé à l'essai n°4:435
+nombre de mot trouvé à l'essai n°5:26
+nombre de mot trouvé à l'essai n°6:1
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.940858
+2959
+test sur le tout le dico de cette taille en 24.324371 secondes
+test n°1 sur les mot de longeur:10
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:714
+nombre de mot trouvé à l'essai n°3:1296
+nombre de mot trouvé à l'essai n°4:182
+nombre de mot trouvé à l'essai n°5:11
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.768497
+2203
+test sur le tout le dico de cette taille en 14.109326 secondes
+test n°1 sur les mot de longeur:11
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:705
+nombre de mot trouvé à l'essai n°3:676
+nombre de mot trouvé à l'essai n°4:75
+nombre de mot trouvé à l'essai n°5:3
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.571233
+1460
+test sur le tout le dico de cette taille en 6.852807 secondes
+test n°1 sur les mot de longeur:12
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:551
+nombre de mot trouvé à l'essai n°3:317
+nombre de mot trouvé à l'essai n°4:22
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.405618
+890
+test sur le tout le dico de cette taille en 2.985784 secondes
+test n°1 sur les mot de longeur:13
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:367
+nombre de mot trouvé à l'essai n°3:134
+nombre de mot trouvé à l'essai n°4:6
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.285433
+508
+test sur le tout le dico de cette taille en 1.135097 secondes
+test n°1 sur les mot de longeur:14
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:233
+nombre de mot trouvé à l'essai n°3:52
+nombre de mot trouvé à l'essai n°4:2
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.186851
+289
+test sur le tout le dico de cette taille en 0.411897 secondes
+test n°1 sur les mot de longeur:15
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:115
+nombre de mot trouvé à l'essai n°3:14
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.100000
+130
+test sur le tout le dico de cette taille en 0.097198 secondes
+test n°1 sur les mot de longeur:16
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:34
+nombre de mot trouvé à l'essai n°3:1
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.000000
+36
+test sur le tout le dico de cette taille en 0.010797 secondes
+test n°1 sur les mot de longeur:17
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:17
+nombre de mot trouvé à l'essai n°3:1
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.950000
+20
+test sur le tout le dico de cette taille en 0.003585 secondes
+test n°1 sur les mot de longeur:18
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:9
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.818182
+11
+test sur le tout le dico de cette taille en 0.001517 secondes
+test n°1 sur les mot de longeur:19
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:0
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:1.000000
+2
+test sur le tout le dico de cette taille en 0.000133 secondes
+test n°2 sur les mot de longeur:2
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:7
+nombre de mot trouvé à l'essai n°3:8
+nombre de mot trouvé à l'essai n°4:7
+nombre de mot trouvé à l'essai n°5:12
+nombre de mot trouvé à l'essai n°6:8
+nombre de mot trouvé à l'essai n°7:7
+nombre de mot trouvé à l'essai n°8:3
+nombre de mot trouvé à l'essai n°9:1
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:1
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.944445
+54
+test sur le tout le dico de cette taille en 0.039933 secondes
+test n°2 sur les mot de longeur:3
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:16
+nombre de mot trouvé à l'essai n°3:46
+nombre de mot trouvé à l'essai n°4:71
+nombre de mot trouvé à l'essai n°5:63
+nombre de mot trouvé à l'essai n°6:63
+nombre de mot trouvé à l'essai n°7:38
+nombre de mot trouvé à l'essai n°8:22
+nombre de mot trouvé à l'essai n°9:12
+nombre de mot trouvé à l'essai n°10:4
+nombre de mot trouvé à l'essai n°11:3
+nombre de mot trouvé à l'essai n°12:1
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:5.231671
+341
+test sur le tout le dico de cette taille en 0.579047 secondes
+test n°2 sur les mot de longeur:4
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:50
+nombre de mot trouvé à l'essai n°3:183
+nombre de mot trouvé à l'essai n°4:289
+nombre de mot trouvé à l'essai n°5:242
+nombre de mot trouvé à l'essai n°6:129
+nombre de mot trouvé à l'essai n°7:63
+nombre de mot trouvé à l'essai n°8:25
+nombre de mot trouvé à l'essai n°9:10
+nombre de mot trouvé à l'essai n°10:3
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.577465
+994
+test sur le tout le dico de cette taille en 2.623107 secondes
+test n°2 sur les mot de longeur:5
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:108
+nombre de mot trouvé à l'essai n°3:517
+nombre de mot trouvé à l'essai n°4:742
+nombre de mot trouvé à l'essai n°5:455
+nombre de mot trouvé à l'essai n°6:156
+nombre de mot trouvé à l'essai n°7:41
+nombre de mot trouvé à l'essai n°8:12
+nombre de mot trouvé à l'essai n°9:2
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:4.104228
+2034
+test sur le tout le dico de cette taille en 9.352676 secondes
+test n°2 sur les mot de longeur:6
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:193
+nombre de mot trouvé à l'essai n°3:1119
+nombre de mot trouvé à l'essai n°4:1250
+nombre de mot trouvé à l'essai n°5:481
+nombre de mot trouvé à l'essai n°6:80
+nombre de mot trouvé à l'essai n°7:13
+nombre de mot trouvé à l'essai n°8:3
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.740127
+3140
+test sur le tout le dico de cette taille en 23.419071 secondes
+test n°2 sur les mot de longeur:7
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:343
+nombre de mot trouvé à l'essai n°3:1725
+nombre de mot trouvé à l'essai n°4:1286
+nombre de mot trouvé à l'essai n°5:244
+nombre de mot trouvé à l'essai n°6:22
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.412869
+3621
+test sur le tout le dico de cette taille en 32.642604 secondes
+test n°2 sur les mot de longeur:8
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:481
+nombre de mot trouvé à l'essai n°3:2035
+nombre de mot trouvé à l'essai n°4:920
+nombre de mot trouvé à l'essai n°5:114
+nombre de mot trouvé à l'essai n°6:7
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:3.192805
+3558
+test sur le tout le dico de cette taille en 34.640592 secondes
+test n°2 sur les mot de longeur:9
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:689
+nombre de mot trouvé à l'essai n°3:1818
+nombre de mot trouvé à l'essai n°4:424
+nombre de mot trouvé à l'essai n°5:27
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.928016
+2959
+test sur le tout le dico de cette taille en 26.062130 secondes
+test n°2 sur les mot de longeur:10
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:776
+nombre de mot trouvé à l'essai n°3:1245
+nombre de mot trouvé à l'essai n°4:175
+nombre de mot trouvé à l'essai n°5:6
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.731730
+2203
+test sur le tout le dico de cette taille en 16.624344 secondes
+test n°2 sur les mot de longeur:11
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:712
+nombre de mot trouvé à l'essai n°3:679
+nombre de mot trouvé à l'essai n°4:68
+nombre de mot trouvé à l'essai n°5:1
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.560274
+1460
+test sur le tout le dico de cette taille en 8.056234 secondes
+test n°2 sur les mot de longeur:12
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:540
+nombre de mot trouvé à l'essai n°3:336
+nombre de mot trouvé à l'essai n°4:14
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.408989
+890
+test sur le tout le dico de cette taille en 3.382828 secondes
+test n°2 sur les mot de longeur:13
+nombre de mot trouvé à l'essai n°1:2
+nombre de mot trouvé à l'essai n°2:345
+nombre de mot trouvé à l'essai n°3:151
+nombre de mot trouvé à l'essai n°4:10
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.332677
+508
+test sur le tout le dico de cette taille en 1.238482 secondes
+test n°2 sur les mot de longeur:14
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:238
+nombre de mot trouvé à l'essai n°3:49
+nombre de mot trouvé à l'essai n°4:2
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.183391
+289
+test sur le tout le dico de cette taille en 0.434612 secondes
+test n°2 sur les mot de longeur:15
+nombre de mot trouvé à l'essai n°1:1
+nombre de mot trouvé à l'essai n°2:120
+nombre de mot trouvé à l'essai n°3:9
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.061538
+130
+test sur le tout le dico de cette taille en 0.100893 secondes
+test n°2 sur les mot de longeur:16
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:36
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.000000
+36
+test sur le tout le dico de cette taille en 0.010546 secondes
+test n°2 sur les mot de longeur:17
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:19
+nombre de mot trouvé à l'essai n°3:1
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.050000
+20
+test sur le tout le dico de cette taille en 0.006515 secondes
+test n°2 sur les mot de longeur:18
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:11
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.000000
+11
+test sur le tout le dico de cette taille en 0.001615 secondes
+test n°2 sur les mot de longeur:19
+nombre de mot trouvé à l'essai n°1:0
+nombre de mot trouvé à l'essai n°2:2
+nombre de mot trouvé à l'essai n°3:0
+nombre de mot trouvé à l'essai n°4:0
+nombre de mot trouvé à l'essai n°5:0
+nombre de mot trouvé à l'essai n°6:0
+nombre de mot trouvé à l'essai n°7:0
+nombre de mot trouvé à l'essai n°8:0
+nombre de mot trouvé à l'essai n°9:0
+nombre de mot trouvé à l'essai n°10:0
+nombre de mot trouvé à l'essai n°11:0
+nombre de mot trouvé à l'essai n°12:0
+nombre de mot trouvé à l'essai n°13:0
+nombre de mot trouvé à l'essai n°14:0
+nombre de mot trouvé à l'essai n°15:0
+nombre de mot non trouvé: 0
+moyenne d'essais:2.000000
+2
+test sur le tout le dico de cette taille en 0.000253 secondes

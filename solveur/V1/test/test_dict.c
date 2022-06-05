@@ -1,4 +1,4 @@
-#include "dict.h"
+#include "../dict.h"
 #include <string.h>
 
 void test_taille_file(){

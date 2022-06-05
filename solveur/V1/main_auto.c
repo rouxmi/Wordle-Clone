@@ -6,6 +6,7 @@
 #include <sys/types.h>
 #include "whichWord.h"
 #include "dict.h"
+#include <time.h>
 //doit dépendre du dict
 #define nb_essais 15
 #define FILENAME_SIZE 1024
@@ -87,6 +88,8 @@ void solvauto() {
 	rewind(fichier);
 	for (int g=0;g<2;g++){
 		for (int t=2;t<20;t++){
+			clock_t debuttime;
+    		debuttime = clock();
 			len_mot=t;
 			
 			int essai_vict[nb_essais];
@@ -129,17 +132,28 @@ void solvauto() {
 					if (i>=1){
 						dico(&T[j],i-1,len_mot);
 					}
-					char istr[5];
-					sprintf( istr, "%d", i);
 					char txt[7]=".txt";
 					char dico[100]="../texte/Dictionnaire/dico";;
 					char* name=malloc(sizeof("../texte/Dictionnaire/dico6000.txt"));
 					strcpy(name,dico);
-					strcat(name, istr);
 					if (i==0){
+						char istr[5];
+						sprintf( istr, "%d", i);
+						strcat(name, istr);
 						char strlong[5];
 						sprintf(strlong,"%d",len_mot);
 						strcat(name,strlong);
+					}
+					else{
+						if (i%2==0){
+						char pair[5]="pair";
+						strcat(name, pair);
+						}
+						else{
+							
+							char impair[5]="imp";
+							strcat(name, impair);
+						}
 					}
 					strcat(name, txt);
 
@@ -171,20 +185,47 @@ void solvauto() {
 			}
 			int sum=0;
 			float moyenne=0;
+			FILE *fp = fopen("../texte/stat.txt", "a");
+			if (fp == NULL)
+			{
+				printf("Error opening the file %s", "stat.txt");
+			}
 			printf("test n°%d sur les mot de longeur:%d\n",g+1,t);
+			char temps[200];
+			sprintf( temps, "test n°%d sur les mot de longeur:%d\n",g+1,t);
+			fputs(temps,fp);
 			for (int i=0;i<nb_essais+1;i++){
 				if (i==nb_essais){
 					printf("nombre de mot non trouvé: %d\n",tailledict-sum);
+					char temps2[200];
+					sprintf( temps2, "nombre de mot non trouvé: %d\n",tailledict-sum);
+					fputs(temps2,fp);
 					printf("moyenne d'essais:%f\n",moyenne/tailledict);
-					printf("%d\n",compt_victoire);	
+					char temps3[200];
+					sprintf( temps3, "moyenne d'essais:%f\n",moyenne/tailledict);
+					fputs(temps3,fp);
+					printf("%d\n",compt_victoire);
+					char temps4[200];
+					sprintf( temps4,"%d\n",compt_victoire);
+					fputs(temps4,fp);
+					debuttime = clock() - debuttime;
+					double time_taken = ((double)debuttime)/CLOCKS_PER_SEC; // in seconds
+					char temps6[200];
+					sprintf( temps6,"test sur le tout le dico de cette taille en %f secondes\n", time_taken);
+					fputs(temps6,fp);
+					printf("test sur le tout le dico de cette taille en %f secondes\n", time_taken);
 				}
 				else{
 					moyenne=moyenne+(essai_vict[i]*(i+1));
 					sum=sum+essai_vict[i];	
 					printf("nombre de mot trouvé à l'essai n°%d:%d\n",i+1,essai_vict[i]);
+					char temps5[200]	;
+					sprintf( temps5,"nombre de mot trouvé à l'essai n°%d:%d\n",i+1,essai_vict[i]);
+					fputs(temps5,fp);
 					
 				}
 			}
+			fclose(fp);
 			free(namedictauto);
 			fclose(ptr);
 			free(T);

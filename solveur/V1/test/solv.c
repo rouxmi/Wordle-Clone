@@ -1,4 +1,4 @@
-#include "tableau.h"
+#include "../tableau.h"
 
 
 int main(){
