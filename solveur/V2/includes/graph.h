@@ -74,5 +74,8 @@ list_edge* list_edge_remove_unaccessibles(list_edge* one_list);
 
 char best_char_simple(node* n);
 char* best_word_simple(node* n);
+char best_char_recur(node* n);
+char* best_word_recur(node* n);
+int ponderation_get_by_label(node* n, char c);
 
 #endif //GRAPH_H

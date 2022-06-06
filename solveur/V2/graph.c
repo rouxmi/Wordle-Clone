@@ -305,7 +305,7 @@ char best_char_simple(node* n){
 }
 
 char* best_word_simple(node* n){
-    char bestword[5];
+    char bestword[size];
     if(n!=NULL){
         node* tmp=n;
         int i=0;
@@ -319,4 +319,60 @@ char* best_word_simple(node* n){
     char* res = &(bestword[0]);
     return res;
 }
+
+
+int ponderation_get_by_label(node* n, char c){
+    int p=0;
+    if(n !=NULL){
+        node* tmp=n;
+        list_edge* liste=tmp->listEdge;
+        while (liste->next !=NULL)
+        {
+           char lettre= liste->e.label;
+           if(c==lettre){
+               p= liste->e.ponderation;
+           }
+           else{
+               liste=liste->next;
+           }
+        }
+    }
+    return p;
+}
+
+
+char* best_word_recur(node* n){
+    char bestword[size];
+    int p=0;
+    if(n!=NULL){
+        node* tmp=n;
+        int i=0;
+        list_edge* liste= tmp->listEdge;
+        while (liste->next!=NULL)
+        {
+            while (i<size)
+            {
+                int pb=0;
+                char word[size];
+                char lettre=best_char_simple(tmp);
+                pb= pb + ponderation_get_by_label(tmp,lettre);
+                word[i]=lettre;
+                tmp= node_get_by_label(tmp->listEdge,lettre);
+                i++;
+                if (pb>p)
+                {
+                    p=pb;
+                    for(int j=0;j<size;j++){
+                        bestword[j]=word[j];
+                    } 
+                }
+            }
+            liste=liste->next;
+
+        }
+    }
+    char* res= &(bestword[0]);
+    return res;
+}
+
 
