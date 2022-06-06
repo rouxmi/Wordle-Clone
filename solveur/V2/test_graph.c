@@ -110,10 +110,11 @@ void test_node_get_chemin(){
     node* child3 = node_get_by_label(child2->listEdge, 'C');
     node* child4 = node_get_by_label(child3->listEdge, 'I');
     node* child5 = node_get_by_label(child4->listEdge, 'E');
+    int p= ponderation_get_by_label(n1,'P');
     int tab[5];
     node_get_chemin(tab, n1, "LUCIE");
-    print_tableau(tab);
-
+    //print_tableau(tab);
+    printf("%d c'est moi \n",p);
     node_switch_terminal(child5);
     node_print(child4);
     assert(node_is_unaccessible(child5));
@@ -148,6 +149,17 @@ void test_best_word()
     node_destroy_all_children(n);
 }
 
+void test_best_word_recur()
+{
+    char *name="test_node_add_word.txt";
+    node * n=node_add_all_words(name);
+    //char c= best_char_simple(n);
+    char* s = best_word_recur(n);
+    //printf("%c \n",c);
+    printf("%s \n",s);
+    node_destroy_all_children(n);
+}
+
 void all_test_list(){
     test_edge_base();
     test_node_base();
@@ -156,6 +168,7 @@ void all_test_list(){
     //test_node_get_by_id();
     //test_node_get_chemin();
     //test_node_add_all_words();
-    test_best_word();
+    //test_best_word();
+    //test_best_word_recur();
 }
 
