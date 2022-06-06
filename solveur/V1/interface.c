@@ -63,20 +63,19 @@ int main(){
             break;
         }
         char* color="00000";
-        color=coloration(word_test,word_dev,longeur_mot);
-        char oui[longueur_mot+2];
+        char oui[longueur+2];
         char l='2';
-        for (int r=0;r<longueur_mot;r++){
+        for (int r=0;r<longueur;r++){
             oui[r]=l;
         }
-        oui[longueur_mot]=0;
+        oui[longueur]=0;
         if (!strcmp(coloration,oui)){
             printf("le solveur a gagné");
             break;
         }
         else{
             if (i==nbr_essais-1){
-                printf("Le solveur a perdu")
+                printf("Le solveur a perdu");
             }
             ajout_mot(word_test,i,T,coloration,longueur,nbr_essais);
             dico(T,i,longueur);

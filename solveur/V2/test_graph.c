@@ -143,6 +143,7 @@ void test_best_word()
     node * n=node_add_all_words(name);
     char c=best_char_simple(n);
     char* s = best_word_simple(n);
+    printf("ok");
     printf("%c \n",c);
     printf("%s \n",s);
     node_destroy_all_children(n);
@@ -152,10 +153,10 @@ void all_test_list(){
     test_edge_base();
     test_node_base();
     test_list_base();
-    //test_node_add_word();
-    //test_node_get_by_id();
-    //test_node_get_chemin();
-    //test_node_add_all_words();
+    test_node_add_word();
+    test_node_get_by_id();
+    test_node_get_chemin();
+    test_node_add_all_words();
     test_best_word();
 }
 
