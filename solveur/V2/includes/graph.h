@@ -89,6 +89,9 @@ motpondere node_best_word(node* n);
 motpondere list_edge_best_word(list_edge* one_list);
 
 void chrcat(char* appendTo, char what);
+void get_best_word_from_color(node* n, char* color,char* mot_tester);
+char* node_get_word(node*n);
+char* list_edge_get_word(list_edge* one_list);
 
 
 #endif //GRAPH_H

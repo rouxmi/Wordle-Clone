@@ -189,6 +189,10 @@ void all_test_list(){
     //test_node_get_chemin();
     //test_node_add_all_words();
     //test_best_word();
-    test_best_word_recur();
+    //test_best_word_recur();
+    char *name="test_node_add_word.txt";
+    node * n=node_add_all_words(name);
+    get_best_word_from_color(n,"02002","POURI");
+    node_destroy_all_children(n);
 }
 
