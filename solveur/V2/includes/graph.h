@@ -37,6 +37,13 @@ struct _list_edge{
     list_edge *next;
 };
 
+
+typedef struct _motpondere{
+    char* mot;
+    int pond;
+}motpondere;
+
+
 //fonctions de base sur la structure edge
 edge edge_create(node* n,int id, char label,int p);
 void edge_print(edge* e);
@@ -77,5 +84,11 @@ char* best_word_simple(node* n);
 char best_char_recur(node* n);
 char* best_word_recur(node* n);
 int ponderation_get_by_label(node* n, char c);
+
+motpondere node_best_word(node* n);
+motpondere list_edge_best_word(list_edge* one_list);
+
+void chrcat(char* appendTo, char what);
+
 
 #endif //GRAPH_H

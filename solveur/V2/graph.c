@@ -7,7 +7,7 @@
 
 edge edge_create(node *n, int id, char label, int p){
     edge e;
-    e.node = n;
+    e.node = n; 
     e.id = id;
     e.label = label;
     e.ponderation=p;
@@ -374,5 +374,106 @@ char* best_word_recur(node* n){
     char* res= &(bestword[0]);
     return res;
 }
+
+
+motpondere node_best_word(node* n){
+    printf("appel node+best\n");
+    if(n!=NULL){
+        if(n->terminal){
+            motpondere mp;
+            mp.mot=calloc(20, sizeof(char));
+            mp.pond=0;
+            return mp;
+        }
+        else{
+            return list_edge_best_word(n->listEdge);
+        }  
+    }
+    printf("ol la lal\n");
+    motpondere mp;
+    mp.mot=NULL;
+    mp.pond=0;
+    return mp;
+}
+
+long lengthOfArray(const char *arr)
+{
+    long size2 = 0;
+
+    while (*arr) {
+        size2 += 1;
+        arr +=1;
+    }
+
+    return size2;
+}
+
+void chrcat(char* appendTo, char what) {
+    printf("appent: %p\n", appendTo);
+    int taille = strlen(appendTo);
+    appendTo[taille] = what;
+    appendTo[taille+1] = 0x00;
+
+    //int len= lengthOfArray(appendTo);
+    //int size2 = 0;
+    //if (appendTo == NULL) len=0;
+    //else len = sizeof(&appendTo)/sizeof(&appendTo[0]);
+    //printf("%d\n %c\n", len, appendTo[len-1]);
+    //while (*appendTo) {
+    //    size2+=1;
+    //    appendTo +=1;
+    //    if (size2==len){
+    //        appendTo=&what;
+    //    }
+    //}
+    //appendTo[len] = what;
+    //appendTo[len + 1] = 0;
+    //return appendTo;
+}
+
+
+motpondere list_edge_best_word(list_edge* one_list){
+    printf("list best\n");
+    list_edge* tmp = one_list;
+    list_edge* tmpnext;
+    motpondere tmpmotp;
+    motpondere bestmot;
+    bestmot.mot = NULL;
+    bestmot.pond = 0;
+    while(tmp != NULL){
+        tmpnext = tmp->next;
+        tmpmotp = node_best_word(tmp->e.node);
+        printf("ici : %p\n", tmpmotp.mot);
+        /*char * mot;
+        mot=malloc(sizeof("motcompletementrandom"));
+        strcpy(mot,&tmpmotp.mot);
+        char c;
+        c=tmp->e.label;
+        char* mot_final=malloc(sizeof("motcompletementrandom"));
+        strcpy(mot_final,mot);
+        mot_final=chrcat(mot_final,c);
+        printf("%s\n",mot_final);
+        tmpmotp.mot=mot_final;
+        free(mot);
+        free(mot_final);*/
+        chrcat(tmpmotp.mot, tmp->e.label);
+        printf("ajout de %c\n", tmp->e.label);
+        printf("ponde: %i\n", tmp->e.ponderation);
+        tmpmotp.pond += tmp->e.ponderation;
+        if(tmpmotp.pond > bestmot.pond){
+            printf("je le garde \n");
+            bestmot = tmpmotp;
+        } else {
+            printf("je le jete\n");
+            free(tmpmotp.mot);
+        }
+        tmp = tmpnext;
+    }
+    printf("retourn : %p\n", bestmot.mot);
+    return bestmot;
+}
+
+
+
 
 
