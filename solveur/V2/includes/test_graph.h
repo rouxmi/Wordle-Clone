@@ -15,5 +15,6 @@ void test_best_word_recur();
 
 void all_test_list();
 void test_node_add_all_words();
+void test_node_remove_word();
 
 #endif //TEST_GRAPH_H
