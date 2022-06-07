@@ -155,11 +155,15 @@ void test_best_word_recur()
     char *name="test_node_add_word.txt";
     node * n=node_add_all_words(name);
     //char c= best_char_simple(n);
-    char* s = best_word_recur(n);
+    motpondere mp;
+    mp = node_best_word(n);
     //printf("%c \n",c);
-    printf("%s \n",s);
+    printf("%s \n",mp.mot);
+    free(mp.mot);
     node_destroy_all_children(n);
 }
+
+
 
 void all_test_list(){
     test_edge_base();
@@ -170,6 +174,6 @@ void all_test_list(){
     //test_node_get_chemin();
     //test_node_add_all_words();
     //test_best_word();
-    //test_best_word_recur();
+    test_best_word_recur();
 }
 
