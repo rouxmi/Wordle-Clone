@@ -167,7 +167,14 @@ void test_node_remove_word(){
     node_destroy_all_children(n);
 }
 
-
+void test_get_word(){
+    char *name="test_node_add_word.txt";
+    node * n=node_add_all_words(name);
+    node* n1=node_create(0);
+    int futur_taille=get_best_word_from_color(n1,n,"22202","POURI",4);
+    printf("%d\n",futur_taille);
+    node_destroy_all_children(n1);
+}
 
 void all_test_list(){
     test_edge_base();
@@ -179,10 +186,7 @@ void all_test_list(){
     //test_node_add_all_words();
     //test_best_word();
     //test_best_word_recur();
-    char *name="test_node_add_word.txt";
-    node * n=node_add_all_words(name);
-    get_best_word_from_color(n,"02002","POURI");
-    node_destroy_all_children(n);
-    test_node_remove_word();
+    test_get_word();
+    //test_node_remove_word();
 }
 

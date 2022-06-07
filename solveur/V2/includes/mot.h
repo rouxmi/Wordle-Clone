@@ -9,6 +9,7 @@
 #ifndef __MOT__H__
 #define __MOT__H__
 
+int taillefichiertxt (FILE *f);
 //renvoie le nombre de ligne d'un fichier txt 
 bool contains(char lettre, char* mot);
 //cette fonction renvoie true si mot contient des lettres du char * ceslettres et false sinon
@@ -23,6 +24,6 @@ void str_slice(const char * str, char * word_coupe, size_t start, size_t end);
 
 bool mot_valid(char* color, char* mot_donne, char* mot_a_test,int longueur_mot);
 //dis si un mot est possible ou non
-
+char * contentofline(FILE *f);
 
 #endif

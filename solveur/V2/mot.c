@@ -11,6 +11,32 @@
 #define FILENAME_SIZE 7048
 #define MAX_LINE 7048
 
+int taillefichiertxt (FILE *f)
+{   
+    rewind(f);
+    int compteur=0;
+    char c;
+    while((c=fgetc(f)) != EOF)
+    {
+        if(c=='\n')
+        {
+            compteur++;
+        }
+    }
+
+    return compteur;
+}
+
+char * contentofline(FILE *f)
+{
+    assert(f!=NULL);
+    char *buffer=(char*)calloc(MAX_LINE, sizeof(char));
+    fgets(buffer,MAX_LINE,f);
+    return buffer;
+    
+    
+}
+
 bool contains(char lettre , char* mot) //cette fonction sert à trier les mots contenant les lettres qui ont la valeur 0 lors de la coloration, pasceslettres est une chaine contenant ces caractères 
 {
     assert(mot!=NULL);

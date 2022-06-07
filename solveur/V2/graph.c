@@ -373,19 +373,51 @@ int ponderation_get_by_label(node* n, char c){
     return res;
 }*/
 
-void get_best_word_from_color(node* n, char* color,char* mot_tester){
+int get_best_word_from_color(node* n1,node* n, char* color,char* mot_tester,int taille_dict){
+    
     int len_mot=strlen(color);
-    char* s=node_get_word(n);
-    printf("%s\n",s);
-    free(s);
-
+    char txt[7]=".txt";
+    char strdico[100]="../texte/Dictionnaire/dico0";
+    char* dico_mot=malloc(sizeof("../texte/Dictionnaire/dicoimpair.txt"));
+    strcpy(dico_mot,strdico);
+    char strlong[5];
+    sprintf(strlong,"%d",len_mot);
+    strcat(dico_mot,strlong);
+    strcat(dico_mot, txt);
+    hash_map* h = initialize_hash_map(dico_mot, size);
+    FILE *f=fopen(dico_mot,"r");   
+    free(dico_mot); 
+    assert(f!=NULL);
+    int len=0;
+    char c;
+    while((c=fgetc(f)) != EOF)
+    {
+        if(c=='\n')
+        {
+            len++;
+        }
+    }
+    rewind(f);
+    int idMaxEdge=0;
+    int idMaxNode=1;
+    int comp=0;
+    for (int u=0;u<taille_dict;u++){
+        char* s=node_get_word(n);
+        if (mot_valid(color,mot_tester,s,len_mot)){
+            node_add_word(n1, s, &idMaxEdge, &idMaxNode, h);
+            comp++;
+        }
+        node_remove_word(n,s);
+        free(s);
+    }
+    destroy_hashmap(h);
+    return comp;
 }
 
 char* node_get_word(node*n){
     if(n!=NULL){
         if(n->terminal){
             char* mot=NULL;
-            printf("je calloc\n");
             mot=calloc(20, sizeof(char));
             return mot;
         }
@@ -414,7 +446,6 @@ void node_remove_word(node* n, char* mot){
         node_remove_unaccessibles(n);
         i+=1;
     }
-    node_print(n);
 }
 
 

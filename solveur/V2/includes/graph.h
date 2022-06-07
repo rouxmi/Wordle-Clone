@@ -12,6 +12,7 @@
 #include <assert.h>
 #include <string.h>
 #include "entropie.h"
+#include "mot.h"
 
 #define LONG 255
 #define size 5
@@ -91,7 +92,7 @@ motpondere list_edge_best_word(list_edge* one_list);
 void node_remove_word(node* n, char* mot);
 
 void chrcat(char* appendTo, char what);
-void get_best_word_from_color(node* n, char* color,char* mot_tester);
+int get_best_word_from_color(node* n1,node* n, char* color,char* mot_tester,int taille_dict);
 char* node_get_word(node*n);
 char* list_edge_get_word(list_edge* one_list);
 
