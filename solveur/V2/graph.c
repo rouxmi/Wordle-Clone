@@ -375,4 +375,10 @@ char* best_word_recur(node* n){
     return res;
 }
 
+char* get_best_word_from_color(node* n, char* color,char* mot_tester){
+    int len_mot=strlen(color)
+    
+
+}
+
 
