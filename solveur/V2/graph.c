@@ -456,8 +456,17 @@ motpondere node_best_word(node* n){
 
 void chrcat(char* appendTo, char what) {
     int taille = strlen(appendTo);
-    appendTo[taille] = what;
-    appendTo[taille+1] = 0x00;
+    int i = 1;
+    char tmp=appendTo[0];
+    appendTo[0]=what;
+    char tmp2 = appendTo[1];
+    while(i<=taille){
+       
+        appendTo[i]=tmp;
+        tmp=tmp2;
+        tmp2 = appendTo[i+1];
+        i++;
+    }
 }
 
 
