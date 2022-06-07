@@ -2,8 +2,6 @@
 // Created by lucie on 25/05/22.
 //
 #include "includes/graph.h"
-#define LONG 255
-#define size 5
 
 edge edge_create(node *n, int id, char label, int p){
     edge e;
@@ -179,8 +177,6 @@ void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN, hash_map* h){
         if(!mot[1]){
             terminal= !terminal;
         }
-        //printf("%c\n", mot[0]);
-        //printf("%d, %d, %d\n",size, (int)strlen(mot), size-((int)(strlen(mot))-1));
         int p = get_hash_map(h,size-((int)(strlen(mot))),mot[0]);
         node_add_char(n1, mot[0], idMaxE, idMaxN, terminal,p);
         node* child = node_get_by_label(n1->listEdge, mot[0]);
@@ -189,7 +185,7 @@ void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN, hash_map* h){
  }
 
 
-void node_get_chemin(int tab[5], node* no, char* mot){
+void node_get_chemin(int tab[size], node* no, char* mot){
     int i=0;
     node* noeud;
     node* n = no;
@@ -203,9 +199,9 @@ void node_get_chemin(int tab[5], node* no, char* mot){
 
 }
 
-void print_tableau(int tab[5]){
+void print_tableau(int tab[size]){
     printf("0");
-    for(int i=0; i<5;i++){
+    for(int i=0; i<size;i++){
         printf("->%d", tab[i]);
     }
     printf("\n");
@@ -400,6 +396,31 @@ char* node_get_word(node*n){
     char* mot=NULL;
     return mot;
 }
+void node_remove_word(node* n, char* mot){
+    int i=0;
+    node* noeud;
+    node* no=n;
+    while(mot[i]){
+        noeud = node_get_by_label(no->listEdge,mot[i]);
+        i+=1;
+        no=noeud;
+        if(i==size){
+            node_switch_terminal(no);
+        }
+    }
+    i=0;
+    node_remove_unaccessibles(n);
+    while(i<size){
+        node_remove_unaccessibles(n);
+        i+=1;
+    }
+    node_print(n);
+}
+
+
+/*char* get_best_word_from_color(node* n, char* color,char* mot_tester){
+    int len_mot=strlen(color);
+}*/
 
 char* list_edge_get_word(list_edge* one_list){
     list_edge* tmp = one_list;
@@ -432,38 +453,11 @@ motpondere node_best_word(node* n){
     return mp;
 }
 
-long lengthOfArray(const char *arr)
-{
-    long size2 = 0;
-
-    while (*arr) {
-        size2 += 1;
-        arr +=1;
-    }
-
-    return size2;
-}
 
 void chrcat(char* appendTo, char what) {
     int taille = strlen(appendTo);
     appendTo[taille] = what;
     appendTo[taille+1] = 0x00;
-
-    //int len= lengthOfArray(appendTo);
-    //int size2 = 0;
-    //if (appendTo == NULL) len=0;
-    //else len = sizeof(&appendTo)/sizeof(&appendTo[0]);
-    //printf("%d\n %c\n", len, appendTo[len-1]);
-    //while (*appendTo) {
-    //    size2+=1;
-    //    appendTo +=1;
-    //    if (size2==len){
-    //        appendTo=&what;
-    //    }
-    //}
-    //appendTo[len] = what;
-    //appendTo[len + 1] = 0;
-    //return appendTo;
 }
 
 
@@ -477,22 +471,10 @@ motpondere list_edge_best_word(list_edge* one_list){
     while(tmp != NULL){
         tmpnext = tmp->next;
         tmpmotp = node_best_word(tmp->e.node);
-
-        /*char * mot;
-        mot=malloc(sizeof("motcompletementrandom"));
-        strcpy(mot,&tmpmotp.mot);
-        char c;
-        c=tmp->e.label;
-        char* mot_final=malloc(sizeof("motcompletementrandom"));
-        strcpy(mot_final,mot);
-        mot_final=chrcat(mot_final,c);
-        printf("%s\n",mot_final);
-        tmpmotp.mot=mot_final;
-        free(mot);
-        free(mot_final);*/
         chrcat(tmpmotp.mot, tmp->e.label);
         tmpmotp.pond += tmp->e.ponderation;
         if(tmpmotp.pond > bestmot.pond){
+            free(bestmot.mot);
             bestmot = tmpmotp;
         } else {
             free(tmpmotp.mot);
