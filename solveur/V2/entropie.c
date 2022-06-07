@@ -87,7 +87,7 @@ int get_ponderation(char* name_txt, char letter, int position)
     }
     rewind(f);
     char ligne[LONG];
-    for (int j=0;j<len+1;j++)
+    for (int j=0;j<len;j++)
     {
         fgets(ligne, LONG,f);
         char* res = ligne;

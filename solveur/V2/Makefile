@@ -22,5 +22,13 @@ entropie.o : includes/entropie.h entropie.c
 main.o : main.c
 	clang -c -Wall -Wextra -pedantic -O0 -g3 -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls main.c
 
+test_entropie: test_entropie.o entropie.o mot.o
+	clang -std=c99 -Wall -Wextra -pedantic -g3 -fsanitize=address mot.o test_entropie.o entropie.o -o test_entropie
+
+
+test_entropie.o: test_entropie.c
+	clang -c -Wall -Wextra -pedantic -O0 -g3 -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls test_entropie.c
+
+
 clean:
 	@rm -d *.o

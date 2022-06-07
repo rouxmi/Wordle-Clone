@@ -181,7 +181,8 @@ void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN, hash_map* h){
         }
         //printf("%c\n", mot[0]);
         //printf("%d, %d, %d\n",size, (int)strlen(mot), size-((int)(strlen(mot))-1));
-        int p = get_hash_map(h,size-((int)(strlen(mot))-1),mot[0]);
+        int p = get_hash_map(h,size-((int)(strlen(mot))),mot[0]);
+        printf("%d,%c,%d,%s,%d\n",p,mot[0],size-((int)(strlen(mot))),mot,strlen(mot));
         node_add_char(n1, mot[0], idMaxE, idMaxN, terminal,p);
         node* child = node_get_by_label(n1->listEdge, mot[0]);
         node_add_word(child, mot+1, idMaxE, idMaxN, h);
@@ -272,12 +273,15 @@ node *node_add_all_words(char* nametxt)
     node *n1 = node_create(idMaxNode);
     idMaxNode+=1; 
     char ligne[LONG];
-    for (int i=0;i<len+1;i++)
+    for (int i=0;i<len;i++)
     {
     
     
         fgets(ligne, LONG,f);
         char* res = ligne;
+        size_t taille_mot = strlen(res);
+        if (taille_mot > 0 && res[taille_mot-1] == '\n') res[--taille_mot] = '\0';
+        printf("%s\n",res);
         node_add_word(n1, res, &idMaxEdge, &idMaxNode, h);
        
     }
@@ -375,11 +379,11 @@ char* best_word_recur(node* n){
     return res;
 }
 
-char* get_best_word_from_color(node* n, char* color,char* mot_tester){
-    int len_mot=strlen(color)
+/*char* get_best_word_from_color(node* n, char* color,char* mot_tester){
+    int len_mot=strlen(color);
     
 
-}
+}*/
 
 
 motpondere node_best_word(node* n){
