@@ -36,7 +36,7 @@ Notre projet contient deux versions de solveur, mis respectivement dans les doss
 
 Il faut donc installer clang.
 
-*[Installer Clang](http://clang.org/)
+* [Installer Clang](http://clang.org/)
 
 ## Démarrage 
 
