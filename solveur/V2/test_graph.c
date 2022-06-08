@@ -171,8 +171,9 @@ void test_get_word(){
     char *name="test_node_add_word.txt";
     node * n=node_add_all_words(name);
     node* n1=node_create(0);
-    int futur_taille=get_best_word_from_color(n1,n,"22202","POURI",4);
+    int futur_taille=get_best_word_from_color(n1,n,"02220","PUCIS",4);
     printf("%d\n",futur_taille);
+    node_print(n1);
     node_destroy_all_children(n1);
 }
 

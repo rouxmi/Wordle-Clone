@@ -19,5 +19,7 @@ int main()
     char* mot_test3="sater";
     char* color_test3="00111";
     assert(mot_valid(color_test3,mot,mot_test3,5)==1);
+    FILE* f=fopen("test_node_add_word.txt","r");
+    assert(taillefichiertxt(f)==4);
     return 0;
 }

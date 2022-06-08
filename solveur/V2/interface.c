@@ -19,6 +19,7 @@ int main(){
     //printf("%d \n",longueur);
     free(longueur_mot);
     node* n;
+    node* n2=NULL;
     int taille_futur;
     for (int i =0; i < nbr_essais; i++)
     {
@@ -28,16 +29,23 @@ int main(){
         char* dico_mot=malloc(sizeof("../texte/Dictionnaire/dicoimpair.txt"));
         strcpy(dico_mot,strdico);
         char strlong[5];
-        sprintf(strlong,"%d",longueur);
+        sprintf(strlong,"%d",longueur+1);
         strcat(dico_mot,strlong);
         strcat(dico_mot, txt);
-        FILE* f=fopen(dico_mot,"a");
+        //dico_mot="test_node_add_word.txt";
+        FILE* f=fopen(dico_mot,"r");
+        printf("%s\n",dico_mot);
         if (i==0){
             n=node_add_all_words(dico_mot);
+            printf("ok");
+            node_print(n);
+            rewind(f);
             taille_futur=taillefichiertxt(f);
+            printf("d'accord:%d\n",taille_futur);
         }
-        fclose(f);
-        free(dico_mot);
+        else{
+            node*n=n2;
+        }
         char* mot_test=node_best_word(n).mot;
         printf("le mot à tester est %s \n",mot_test);
         printf("Entrez la coloration \n");
@@ -61,15 +69,19 @@ int main(){
                 printf("Le solveur a perdu");
             }
             node* n2=node_create(0);
-            taille_futur=get_best_word_from_color(n2,n,coloration,mot_test,taille_futur);
-            node* n=n2;
-            node_destroy_all_children(n2);
+            printf("la totale:%s,%s,%d",coloration,mot_test,taille_futur);
             node_print(n);
+            node_print(n2);
+            int taille_futur1=taille_futur+1-1;
+            taille_futur=get_best_word_from_color(n2,n,coloration,mot_test,taille_futur1);
+            printf("taille_futur:%d\n",taille_futur);
+            node_print(n2);
         }
-        free(mot_test);
+        fclose(f);
+        free(mot_test); 
 
     }
-    free(n);
+    free(n2);
     
     
     //print_tableau(T)
