@@ -19,39 +19,40 @@ int main(){
     //printf("%d \n",longueur);
     free(longueur_mot);
     node* n;
-    node* n2=NULL;
+    node* n2=node_create(0);
+    char* mot_test = NULL;
     int taille_futur;
     for (int i =0; i < nbr_essais; i++)
     {
         char coloration[longueur+2];
-        char txt[7]=".txt";
-        char strdico[100]="../texte/Dictionnaire/dico0";
-        char* dico_mot=malloc(sizeof("../texte/Dictionnaire/dicoimpair.txt"));
-        strcpy(dico_mot,strdico);
-        char strlong[5];
-        sprintf(strlong,"%d",longueur+1);
-        strcat(dico_mot,strlong);
-        strcat(dico_mot, txt);
-        //dico_mot="test_node_add_word.txt";
-        FILE* f=fopen(dico_mot,"r");
-        printf("%s\n",dico_mot);
         if (i==0){
+            char txt[7]=".txt";
+            char strdico[100]="../texte/Dictionnaire/dico0";
+            char* dico_mot=calloc(60,sizeof(char));
+            strcpy(dico_mot,strdico);
+            char strlong[5];
+            sprintf(strlong,"%d",longueur+1);
+            strcat(dico_mot,strlong);
+            strcat(dico_mot, txt);
+            dico_mot="test_node_add_word2.txt";
+            FILE* f=fopen(dico_mot,"r");
             n=node_add_all_words(dico_mot);
-            printf("ok");
-            node_print(n);
             rewind(f);
             taille_futur=taillefichiertxt(f);
-            printf("d'accord:%d\n",taille_futur);
+            //free(dico_mot);
+            fclose(f);
         }
         else{
-            node*n=n2;
+            n=n2;
+            n2 = node_create(0);
         }
-        char* mot_test=node_best_word(n).mot;
+        mot_test=node_best_word(n).mot;
         printf("le mot à tester est %s \n",mot_test);
+        
         printf("Entrez la coloration \n");
         scanf("%s",coloration);
         if (!strcmp(coloration,"-1")){
-            printf("vous arrêtez de jouer");
+            printf("vous arrêtez de jouer\n");
             break;
         }
         char oui[longueur+2];
@@ -61,27 +62,27 @@ int main(){
         }
         oui[longueur]=0;
         if (!strcmp(coloration,oui)){
-            printf("le solveur a gagné");
+            printf("le solveur a gagné\n");
             break;
         }
         else{
             if (i==nbr_essais-1){
-                printf("Le solveur a perdu");
+                printf("Le solveur a perdu\n");
             }
-            node* n2=node_create(0);
-            printf("la totale:%s,%s,%d",coloration,mot_test,taille_futur);
+            printf("color%s,%s,%d",coloration,mot_test,taille_futur);
+            printf("n avant:\n");
             node_print(n);
+            printf("n2 avant:\n");
             node_print(n2);
-            int taille_futur1=taille_futur+1-1;
-            taille_futur=get_best_word_from_color(n2,n,coloration,mot_test,taille_futur1);
+            taille_futur=get_best_word_from_color(n2,n,coloration,mot_test,taille_futur);
             printf("taille_futur:%d\n",taille_futur);
+            printf("n2 apres:\n");
             node_print(n2);
         }
-        fclose(f);
-        free(mot_test); 
+         
 
     }
-    free(n2);
+    node_destroy_all_children(n);
     
     
     //print_tableau(T)

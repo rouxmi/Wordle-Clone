@@ -486,6 +486,8 @@ motpondere node_best_word(node* n){
 
 
 void chrcat(char* appendTo, char what) {
+    printf("append TO : %s\n", appendTo);
+    printf("what : %c\n", what);
     int taille = strlen(appendTo);
     int i = 1;
     char tmp=appendTo[0];
@@ -511,8 +513,6 @@ motpondere list_edge_best_word(list_edge* one_list){
     while(tmp != NULL){
         tmpnext = tmp->next;
         tmpmotp = node_best_word(tmp->e.node);
-        list_edge_print_rec(tmp);
-        printf("oui%s\n",tmpmotp.mot);
         chrcat(tmpmotp.mot, tmp->e.label);
         tmpmotp.pond += tmp->e.ponderation;
         if(tmpmotp.pond > bestmot.pond){
