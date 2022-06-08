@@ -24,6 +24,25 @@ Il faut donc installer python3, flask et sqlite3
 La simple commande ``python3 app.py`` lance l'application
 
 
+# Solveur
+
+Le solveur permet de trouver une valeur optimale pour un problème donné. Au fur et à mesure, le solveur affine ses recherches et propose la solution qui lui paraît la plus adéquate.
+
+Voici notre version du Solveur ...
+
+## Pré-requis et Installation
+
+Notre projet contient deux versions de solveur, mis respectivement dans les dossiers V1 et V2. Afin de compiler nos solveurs, nous utilisons le compilateur clang.
+
+Il faut donc installer clang.
+
+*[Installer Clang](http://clang.org/)
+
+## Démarrage 
+
+L'enchaînement des commandes ``make interface`` et ``./interface`` permet le lancement du solveur.
+
+
 ## Auteurs
 Groupe E26 constitué de
  * Lola Montignier
