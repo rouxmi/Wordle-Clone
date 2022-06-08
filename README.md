@@ -40,6 +40,7 @@ Il faut donc installer clang.
 
 ## Démarrage 
 
+Une fois dans le dossier Solveur, entrez la commande ``cd V1`` ou ``cd V2`` . 
 L'enchaînement des commandes ``make interface`` et ``./interface`` permet le lancement du solveur.
 
 
