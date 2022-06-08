@@ -178,9 +178,9 @@ void test_get_word(){
 }
 
 void test_entropie(){
-    char *name="../texte/Dictionnaire/dico03.txt";
+    char *name="../texte/Dictionnaire/dico05.txt";
     node * n=node_add_all_words(name);
-    FILE *f=fopen("../texte/Dictionnaire/dico03.txt","r");
+    FILE *f=fopen("../texte/Dictionnaire/dico05.txt","r");
     int taille_dict=taillefichiertxt(f);
     int moy=test_all_color("PROUT",n,taille_dict);
     printf("%d\n",moy);

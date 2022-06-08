@@ -31,10 +31,10 @@ int main(){
             char* dico_mot=calloc(60,sizeof(char));
             strcpy(dico_mot,strdico);
             char strlong[5];
-            sprintf(strlong,"%d",longueur+1);
+            sprintf(strlong,"%d",longueur);
             strcat(dico_mot,strlong);
             strcat(dico_mot, txt);
-            dico_mot="test_node_add_word2.txt";
+            //dico_mot="test_node_add_word2.txt";
             FILE* f=fopen(dico_mot,"r");
             n=node_add_all_words(dico_mot);
             rewind(f);

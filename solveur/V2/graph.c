@@ -491,8 +491,6 @@ motpondere node_best_word(node* n){
 
 
 void chrcat(char* appendTo, char what) {
-    printf("append TO : %s\n", appendTo);
-    printf("what : %c\n", what);
     int taille = strlen(appendTo);
     int i = 1;
     char tmp=appendTo[0];
@@ -557,7 +555,6 @@ int test_all_color(char* mot_tester,node* graph,int taille_dict){
     destroy_hashmap(h);
     free(dico_mot);
     node_destroy_all_children(copy2);
-    node_destroy_all_children(copy);
     return comp;
 }
 
