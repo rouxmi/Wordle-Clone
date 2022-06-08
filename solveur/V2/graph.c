@@ -373,9 +373,7 @@ int ponderation_get_by_label(node* n, char c){
     return res;
 }*/
 
-int get_best_word_from_color(node* n1,node* n, char* color,char* mot_tester,int taille_dict){
-    
-    int len_mot=strlen(color);
+char* get_dict_name(int len_mot){
     char txt[7]=".txt";
     char strdico[100]="../texte/Dictionnaire/dico0";
     char* dico_mot=malloc(sizeof("../texte/Dictionnaire/dicoimpair.txt"));
@@ -384,7 +382,14 @@ int get_best_word_from_color(node* n1,node* n, char* color,char* mot_tester,int 
     sprintf(strlong,"%d",len_mot);
     strcat(dico_mot,strlong);
     strcat(dico_mot, txt);
-    hash_map* h = initialize_hash_map(dico_mot, size);
+    return dico_mot;
+}
+
+int get_best_word_from_color(node* n1,node* n, char* color,char* mot_tester,int taille_dict){
+    
+    int len_mot=strlen(color);
+    char * dico_mot=get_dict_name(len_mot);
+    hash_map* h = initialize_hash_map(dico_mot, len_mot);
     FILE *f=fopen(dico_mot,"r");   
     free(dico_mot); 
     assert(f!=NULL);
@@ -486,8 +491,6 @@ motpondere node_best_word(node* n){
 
 
 void chrcat(char* appendTo, char what) {
-    printf("append TO : %s\n", appendTo);
-    printf("what : %c\n", what);
     int taille = strlen(appendTo);
     int i = 1;
     char tmp=appendTo[0];
@@ -500,6 +503,59 @@ void chrcat(char* appendTo, char what) {
         tmp2 = appendTo[i+1];
         i++;
     }
+}
+
+char* convert_base_3(int N,int taille_mot){
+    
+    char* result = malloc(sizeof(char)*(taille_mot+1));
+    int i=0;
+    char remstr[3];
+    int max = ceil(log(N+1)/log(3));
+    while(N>0){
+        int rem = N%3;
+        N = N/3;
+        sprintf(remstr,"%d",rem);
+        result[i] = remstr[0];
+        i++;
+    }
+    for (int r=0;r<taille_mot-max;r++){
+        result[taille_mot-r-1] = '0';
+    }
+    result[taille_mot]='\0';
+    return result;
+
+}
+
+
+//test toute les couleurs sur un mot et renvoie la moyenne sur ce mot
+int test_all_color(char* mot_tester,node* graph,int taille_dict){
+    node* copy;
+    node* copy2=graph;
+    int taille_mot=strlen(mot_tester);
+    int comp=0;
+    char * dico_mot=get_dict_name(taille_mot);
+    hash_map* h = initialize_hash_map(dico_mot, taille_mot);
+    for (int i=0;i<pow(3,taille_mot);i++){ 
+        char* color= convert_base_3(i,taille_mot);
+        copy=copy2;
+        copy2=node_create(0);
+        int idMaxEdge=0;
+        int idMaxNode=1;
+        for (int u=0;u<taille_dict;u++){
+            char* s=node_get_word(copy);
+            if (mot_valid(color,mot_tester,s,taille_mot)){
+                comp++;
+            }
+            node_remove_word(copy,s);
+            node_add_word(copy2,s,&idMaxEdge,&idMaxNode,h);
+            free(s);
+        }
+        free(color);
+    }
+    destroy_hashmap(h);
+    free(dico_mot);
+    node_destroy_all_children(copy2);
+    return comp;
 }
 
 

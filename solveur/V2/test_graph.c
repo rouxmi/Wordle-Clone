@@ -177,17 +177,27 @@ void test_get_word(){
     node_destroy_all_children(n1);
 }
 
+void test_entropie(){
+    char *name="../texte/Dictionnaire/dico05.txt";
+    node * n=node_add_all_words(name);
+    FILE *f=fopen("../texte/Dictionnaire/dico05.txt","r");
+    int taille_dict=taillefichiertxt(f);
+    int moy=test_all_color("PROUT",n,taille_dict);
+    printf("%d\n",moy);
+}
+
 void all_test_list(){
-    test_edge_base();
-    test_node_base();
-    test_list_base();
+    //test_edge_base();   
+    //test_node_base();
+    //test_list_base();
     //test_node_add_word();
     //test_node_get_by_id();
     //test_node_get_chemin();
     //test_node_add_all_words();
     //test_best_word();
     //test_best_word_recur();
-    test_get_word();
+    //test_get_word();
+    test_entropie();
     //test_node_remove_word();
 }
 
