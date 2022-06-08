@@ -177,8 +177,7 @@ void node_add_word(node* n1, char* mot, int* idMaxE, int* idMaxN, hash_map* h){
         if(!mot[1]){
             terminal= !terminal;
         }
-        int size_mot=strlen(mot);
-        int p = get_hash_map(h,size_mot-((int)(strlen(mot))),mot[0]);
+        int p = get_hash_map(h,size-((int)(strlen(mot))),mot[0]);
         node_add_char(n1, mot[0], idMaxE, idMaxN, terminal,p);
         node* child = node_get_by_label(n1->listEdge, mot[0]);
         node_add_word(child, mot+1, idMaxE, idMaxN, h);
@@ -251,6 +250,7 @@ list_edge* list_edge_remove_unaccessibles(list_edge* one_list){
 node *node_add_all_words(char* nametxt)
 {
 
+    hash_map* h = initialize_hash_map(nametxt, size);
     FILE *f=fopen(nametxt,"r");
     assert(f!=NULL);
     int len=0;
@@ -268,17 +268,13 @@ node *node_add_all_words(char* nametxt)
     node *n1 = node_create(idMaxNode);
     idMaxNode+=1; 
     char ligne[LONG];
-    hash_map* h;
     for (int i=0;i<len;i++)
     {
     
-
+    
         fgets(ligne, LONG,f);
         char* res = ligne;
         size_t taille_mot = strlen(res);
-        if (i==0){
-            h = initialize_hash_map(nametxt, (int)taille_mot);
-        }
         if (taille_mot > 0 && res[taille_mot-1] == '\n') res[--taille_mot] = '\0';
         node_add_word(n1, res, &idMaxEdge, &idMaxNode, h);
        
@@ -441,18 +437,17 @@ void node_remove_word(node* n, char* mot){
     int i=0;
     node* noeud;
     node* no=n;
-    int len_mot=strlen(mot);
     while(mot[i]){
         noeud = node_get_by_label(no->listEdge,mot[i]);
         i+=1;
         no=noeud;
-        if(i==len_mot){
+        if(i==size){
             node_switch_terminal(no);
         }
     }
     i=0;
     node_remove_unaccessibles(n);
-    while(i<len_mot){
+    while(i<size){
         node_remove_unaccessibles(n);
         i+=1;
     }
@@ -560,6 +555,7 @@ int test_all_color(char* mot_tester,node* graph,int taille_dict){
     destroy_hashmap(h);
     free(dico_mot);
     node_destroy_all_children(copy2);
+    node_destroy_all_children(copy);
     return comp;
 }
 
@@ -574,6 +570,8 @@ motpondere list_edge_best_word(list_edge* one_list){
     while(tmp != NULL){
         tmpnext = tmp->next;
         tmpmotp = node_best_word(tmp->e.node);
+        list_edge_print_rec(tmp);
+        printf("oui%s\n",tmpmotp.mot);
         chrcat(tmpmotp.mot, tmp->e.label);
         tmpmotp.pond += tmp->e.ponderation;
         if(tmpmotp.pond > bestmot.pond){
