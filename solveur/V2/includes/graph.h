@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <string.h>
+#include <math.h>
 #include "entropie.h"
 #include "mot.h"
 
@@ -95,6 +96,9 @@ void chrcat(char* appendTo, char what);
 int get_best_word_from_color(node* n1,node* n, char* color,char* mot_tester,int taille_dict);
 char* node_get_word(node*n);
 char* list_edge_get_word(list_edge* one_list);
+char* convert_base_3(int N,int taille_mot);
+int test_all_color(char* mot_tester,node* graph,int taille_dict);
+char* get_dict_name(int len_mot);
 
 
 #endif //GRAPH_H
