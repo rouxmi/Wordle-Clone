@@ -36,10 +36,11 @@ Notre projet contient deux versions de solveur, mis respectivement dans les doss
 
 Il faut donc installer clang.
 
-*[Installer Clang](http://clang.org/)
+* [Installer Clang](http://clang.org/)
 
 ## Démarrage 
 
+Une fois dans le dossier Solveur, entrez la commande ``cd V1/`` ou ``cd V2/`` . 
 L'enchaînement des commandes ``make interface`` et ``./interface`` permet le lancement du solveur.
 
 
