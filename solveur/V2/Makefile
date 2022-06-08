@@ -13,5 +13,11 @@ interface: interface.o entropie.o graph.o mot.o
 interface.o:	
 	clang -std=c99 -c -Wall -Wextra -pedantic -g3 -fsanitize=address -c interface.c
 
+main_auto: entropie.o main_auto.o mot.o graph.o
+	clang -std=c99 -c -Wall -Wextra -pedantic -g3 -fsanitize=address entropie.o main_auto.o mot.o graph.o -o main_auto
+
+main_auto.o:
+	clang -std=c99 -c -Wall -Wextra -pedantic -g3 -fsanitize=address -c main_auto.c
+
 clean:
 	@rm -d *.o
