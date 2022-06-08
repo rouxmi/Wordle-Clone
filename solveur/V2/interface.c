@@ -34,7 +34,6 @@ int main(){
             sprintf(strlong,"%d",longueur);
             strcat(dico_mot,strlong);
             strcat(dico_mot, txt);
-            //dico_mot="test_node_add_word2.txt";
             FILE* f=fopen(dico_mot,"r");
             n=node_add_all_words(dico_mot);
             rewind(f);
