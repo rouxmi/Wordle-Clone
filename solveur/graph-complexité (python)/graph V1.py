@@ -82,6 +82,8 @@ for i in range(18):
     else:
         Liste[i]=[Liste_moyenne[i-18],"Moyenne",int(i-18+2)]
 
+print(Liste_moyenne[3])
+
 array2=np.array(Liste)
 data2=pd.DataFrame(array2)
 data2.columns=["données","Type","Nombres de lettres"]

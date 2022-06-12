@@ -29,7 +29,7 @@ int lettrepos(const char * str, char lettre) {
 
 
 
-char* coloration(const char * mot_a_test,const char * mot_a_dev,int size_mot){
+char* coloration(char * mot_a_test,char * mot_a_dev,int size_mot){	
 	char* copy_test=malloc(sizeof(char)*(size_mot+2));
 	char* copy_dev=malloc(sizeof(char)*(size_mot+2));
 	strcpy(copy_test, mot_a_test);
@@ -85,8 +85,8 @@ void solvauto() {
     //printf("%d \n",longueur);
     free(longueur_mot);
 	rewind(fichier);
-	for (int g=0;g<2;g++){
-		for (int t=2;t<20;t++){
+	for (int g=0;g<20;g++){
+		for (int t=6;t<20;t++){
 			clock_t debuttime;
     		debuttime = clock();
 			len_mot=t;
@@ -98,7 +98,6 @@ void solvauto() {
 			int compt_victoire=0;
 			FILE* ptr;
 			char word_dev[len_mot + 1];
-			char word_test[len_mot + 1];
 			char len_motstr[5];
 			sprintf( len_motstr, "%d", len_mot);
 			char txt[7]=".txt";
@@ -117,41 +116,35 @@ void solvauto() {
 				printf("file can't be opened \n");
 			}
 			srand( time( NULL ) );
+			free(namedictauto);
 			for (int j=0;j<tailledict;j++){
 
 				//cherche le prochain mot à faire deviner
 				char* copy_word=contentofline(ptr);
-				char* word;
 				str_slice(copy_word, word_dev, 0, len_mot-1);
 				free(copy_word);
+				printf("word dev:%s\n",word_dev);
                 node* n;
                 node* n2=node_create(0);
-                char* mot_test = NULL;
+                
 				//va chercher le dict
                 int taille_futur;
-				for (int i=0;i<nb_essais;i++){
-                    char coloration[t+2];
+				int i=0;
+				while(i<nb_essais){
                     if (i==0){
-                        char txt[7]=".txt";
-                        char strdico[100]="../texte/Dictionnaire/dico0";
-                        char* dico_mot=calloc(60,sizeof(char));
-                        strcpy(dico_mot,strdico);
-                        char strlong[5];
-                        sprintf(strlong,"%d",longueur);
-                        strcat(dico_mot,strlong);
-                        strcat(dico_mot, txt);
-                        //dico_mot="test_node_add_word2.txt";
-                        FILE* f=fopen(dico_mot,"r");
-                        n=node_add_all_words(dico_mot);
-                        rewind(f);
-                        taille_futur=taillefichiertxt(f);
-                        //free(dico_mot);
-                        fclose(f);
+                        char* dico_mot=get_dict_name(t);
+						FILE* f=fopen(dico_mot,"r");
+						n=node_add_all_words(dico_mot,t);
+						rewind(f);
+						taille_futur=taillefichiertxt(f);
+						//free(dico_mot);
+						fclose(f);
                     }
                     else{
                         n=n2;
                         n2 = node_create(0);
                     }
+					char* mot_test = malloc(sizeof(char)*t);
                     mot_test=node_best_word(n).mot;
 
                     char oui[t+2];
@@ -160,35 +153,36 @@ void solvauto() {
                         oui[r]=l;
                     }
                     oui[t]=0;
-                    }
+                    
 
                                 
 					//colore le mot donnée
-					char* color="00000";
-					color=coloration(word_test,word_dev,len_mot);
-					char oui[len_mot+2];
-					char l='2';
-					for (int r=0;r<len_mot;r++){
-						oui[r]=l;
-					}
-					oui[len_mot]=0;
+					char* color=malloc(sizeof(char)*len_mot);
+					color=coloration(mot_test,word_dev,len_mot);
+					
 					if (!strcmp(color,oui)){
 						essai_vict[i]++;
 						compt_victoire++;
 						free(color);
+						i=nb_essais;
 
 					}
-                    taille_futur=get_best_word_from_color(n2,n,coloration,mot_test,taille_futur);
-					free(color);
-                    node_destroy_all_children(n);
+					else{
+                    	taille_futur=make_new_graph(n2,n,color,mot_test,taille_futur);
+						free(color);
+					}
+					free(mot_test);
+					i++;
 				}
 				//met à jour avec la coloration
             
-			free(namedictauto);
+			
+			
+			}
 			fclose(ptr);
 			int sum=0;
 			float moyenne=0;
-			FILE *fp = fopen("../texte/stat.txt", "a");
+			FILE *fp = fopen("../texte/stats2.txt", "a");
 			if (fp == NULL)
 			{
 				printf("Error opening the file %s", "stat.txt");
@@ -227,14 +221,16 @@ void solvauto() {
 					fputs(temps5,fp);
 					
 				}
-                fclose(fp);
+                
             
 			}
-        }
+			fclose(fp);
+        
 			
 		}
 		
 	}
+}
 
 int main(){
 	solvauto();

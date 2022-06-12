@@ -104,24 +104,20 @@ bool mot_valid(char* color, char* mot_donne, char* mot_a_test,int longueur_mot)
 {
     bool mot_possible=true;
     for (int j=0;j<longueur_mot;j++){
-            int colorj=0;
             char cj=color[j];
-            sscanf(&cj, "%d", &colorj);
-            if (colorj==2)
+            if (cj=='2')
             {
                 if (!acetteplace(mot_donne[j],mot_a_test,j+1)){
                     mot_possible=false;
                 }
                 
             }
-            else{if (colorj==0){
+            else{if (cj=='0'){
                     int nb_pos2=0;
                     int nb_pos=0;
                     for (int g=0;g<longueur_mot;g++){
-                        int colorg=0;
                         char cg=color[g];
-                        sscanf(&cg, "%d", &colorg);
-                        if (mot_donne[g]==mot_donne[j] && colorg!=0){
+                        if (mot_donne[g]==mot_donne[j] && cg!='0'){
                             nb_pos++;
                         }
                     }
@@ -134,8 +130,8 @@ bool mot_valid(char* color, char* mot_donne, char* mot_a_test,int longueur_mot)
                         mot_possible=false;
 
                     }
-                }   
-                else{if (colorj==1){
+                }
+                else{if (cj=='1'){
                     if (!containsexceptposition(mot_a_test,mot_donne[j],color,j+1)){
                         mot_possible=false;
                     }
