@@ -29,6 +29,7 @@ La simple commande ``python3 app.py`` lance l'application
 Le solveur permet de trouver une valeur optimale pour un problème donné. Au fur et à mesure, le solveur affine ses recherches et propose la solution qui lui paraît la plus adéquate.
 
 Voici notre version du Solveur ...
+Pour la version 2, seule la version avec les mots de 5 lettres fonctionne.
 
 ## Pré-requis et Installation
 
