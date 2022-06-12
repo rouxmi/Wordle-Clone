@@ -403,6 +403,7 @@ int make_new_graph(node* n1,node* n, char* color,char* mot_tester,int taille_dic
         free(s);
     }
     destroy_hashmap(h);
+    free(dico_mot);
     return comp;
 }
 
