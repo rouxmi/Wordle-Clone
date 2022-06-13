@@ -31,8 +31,8 @@ int main(){
             n=node_add_all_words(dico_mot,longueur);
             rewind(f);
             taille_futur=taillefichiertxt(f);
-            //free(dico_mot);
             fclose(f);
+            free(dico_mot);
         }
         else{
             n=n2;
@@ -55,16 +55,21 @@ int main(){
         oui[longueur]=0;
         if (!strcmp(coloration,oui)){
             printf("le solveur a gagné\n");
+            free(n2);
+            free(mot_test);
             break;
         }
         else{
             if (i==nbr_essais-1){
                 printf("Le solveur a perdu\n");
+                free(n2);
+                free(mot_test);
+                break;
             }
             taille_futur=make_new_graph(n2,n,coloration,mot_test,taille_futur);
         }
          
-
+    free(mot_test);
     }
     node_destroy_all_children(n);
     
