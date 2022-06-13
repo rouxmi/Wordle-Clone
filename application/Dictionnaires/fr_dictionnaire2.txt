@@ -9,9 +9,7 @@ BU
 CE
 CI
 DE
-DE
 DO
-DU
 DU
 EH
 EN
@@ -28,18 +26,14 @@ MI
 NI
 NU
 OC
-IL
-UF
 OH
 OK
 ON
 OR
 OS
 OU
-OU
 PO
 PU
-RE
 RE
 RI
 RU
@@ -48,7 +42,7 @@ SU
 TA
 TE
 TU
+UF
 UN
 US
-VU
 VU

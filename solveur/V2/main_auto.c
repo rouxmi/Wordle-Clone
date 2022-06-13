@@ -86,7 +86,7 @@ void solvauto() {
     free(longueur_mot);
 	rewind(fichier);
 	for (int g=0;g<20;g++){
-		for (int t=6;t<20;t++){
+		for (int t=5;t<6;t++){
 			clock_t debuttime;
     		debuttime = clock();
 			len_mot=t;
@@ -182,7 +182,7 @@ void solvauto() {
 			fclose(ptr);
 			int sum=0;
 			float moyenne=0;
-			FILE *fp = fopen("../texte/stats2.txt", "a");
+			FILE *fp = fopen("../texte/stats3.txt", "a");
 			if (fp == NULL)
 			{
 				printf("Error opening the file %s", "stat.txt");

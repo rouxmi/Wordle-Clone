@@ -11,7 +11,7 @@ Liste_temp=[0]*18
 Liste_div=[54, 341, 994, 2034, 3140, 3621, 3558, 2959, 2203, 1460, 890, 508, 289, 130, 36, 20, 11, 2]
 
 
-data= open("solveur/texte/stats.txt",'r')
+data= open("solveur/texte/stats2.txt",'r')
 
 lines= data.readlines()
 
@@ -21,22 +21,23 @@ j=-1
 k=-1
 
 for line in lines:
+    print(line)
     if i==0:
         j=(j+1)%18
     if j==0 and i==0:
         k+=1
     if 0<i<16:
-        Liste_vict[(i-1)+j*15][2]+=int(line.replace("\n","").split(":")[1])/(100*Liste_div[j])
+        Liste_vict[(i-1)+j*15][2]+=int(line.replace("\n","").split(":")[1])/(Liste_div[j])
         if k==0:
             Liste_vict[(i-1)+j*15][0]=i
             Liste_vict[(i-1)+j*15][1]=j+2
 
     if i==16:
-        Liste_nT[j]=Liste_nT[j]+float(line.replace("\n","").split(":")[1])/100
+        Liste_nT[j]=Liste_nT[j]+float(line.replace("\n","").split(":")[1])
     if i==17:
-        Liste_moyenne[j]+=float(line.replace("\n","").split(":")[1])/100
+        Liste_moyenne[j]+=float(line.replace("\n","").split(":")[1])
     if i==19:
-        Liste_temp[j]+=float(line.replace("\n","").split("en ")[1].split(" ")[0])/100
+        Liste_temp[j]+=float(line.replace("\n","").split("en ")[1].split(" ")[0])
 
     i=(i+1)%20
 
@@ -82,7 +83,11 @@ for i in range(18):
     else:
         Liste[i]=[Liste_moyenne[i-18],"Moyenne",int(i-18+2)]
 
-print(Liste_moyenne[3])
+tot=0
+for i in range(len(Liste_temp)):
+    tot+=Liste_temp[i]
+print(tot)
+
 
 array2=np.array(Liste)
 data2=pd.DataFrame(array2)
