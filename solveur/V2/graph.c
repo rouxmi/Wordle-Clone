@@ -279,7 +279,6 @@ node *node_add_all_words(char* nametxt,int len_mot)
         node_add_word(n1, res, &idMaxEdge, &idMaxNode, h,taille_mot);
        
     }
-    printf("%d\n",idMaxNode);
     destroy_hashmap(h);
     fclose(f);
     return n1;
